@@ -1,13 +1,15 @@
 <template>
   <div class="grid gap-5 p-5 w-screen">
-    <div class="justify-center grid gap-5 md:grid-cols-2 lg:grid-cols-3 grid-cols-1">
+    <div
+      class="justify-center grid gap-5 md:grid-cols-2 lg:grid-cols-3 grid-cols-1"
+    >
       <div class="flex flex-col gap-2 lg:col-span-2">
         <h1 class="text-primary text-6xl text-center">
-          welcome to <br /><span class="pl-40">my website</span>
+          welcome to <br /><span class="lg:pl-40">my website</span>
         </h1>
-        <div class="grid gap-2 grid-cols-4">
-          <div class="col-span-3">
-            <h2 class="text-3xl text-primary">~ about me</h2>
+        <div class="grid gap-2 lg:grid-cols-2">
+          <div class="">
+            <h2 class="text-3xl text-primary italic">who am i???</h2>
             <div
               class="bg-base-200 border-2 p-2 border-primary rounded-xl space-y-2"
             >
@@ -29,58 +31,48 @@
           </div>
 
           <div>
-            <h2 class="text-3xl text-primary">
-              ~ socials</h2>
+            <h2 class="text-3xl text-primary">socials</h2>
             <div
               class="bg-base-200 border-2 p-2 border-primary rounded-xl text-center"
             >
-              <a
+              e-mail ~ <a
                 href="mailto:tiger@kittycat.homes"
                 class="text-accent underline"
-                >e-mail</a
-              ><br />
-              
-              <a href="https://discord.com" class="text-accent underline"
-                >discord</a
-              ><br />
-              
-              <a
+                >tiger@kittycat.homes</a>
+              <br />
+
+              discord ~ <a href="https://discord.com" class="text-accent underline">comforttiger#0</a>
+              <br />
+
+              cohost ~ <a
                 href="https://cohost.org/comforttiger"
                 class="text-accent underline"
-                >cohost</a
-              ><br />
-              
-              <a
-                href="https://twitch.tv/comforttiger"
-                class="text-accent underline"
-                >twitch</a
-              >
+                >comforttiger</a>
             </div>
           </div>
         </div>
-
-        <h2 class="text-3xl text-primary">~ webring</h2>
-        <div
-          class="bg-base-200 border-2 p-2 border-primary rounded-xl space-y-2 text-center"
-        >
-          <a
-            href="https://webring.kittycat.homes/previous/tiger"
-            class="text-accent underline"
-            >prev</a
-          >
-          ~
-          <a
-            href="https://webring.kittycat.homes/"
-            class="text-accent underline"
-            >kittycat.homes</a
-          >
-          ~
-          <a
-            href="https://webring.kittycat.homes/next/tiger"
-            class="text-accent underline"
-            >next</a
-          >
-        </div>
+        <h2 class="text-3xl text-primary">webring</h2>
+            <div
+              class="bg-base-200 border-2 p-2 border-primary rounded-xl text-center w-max"
+            >
+              <a
+                href="https://webring.kittycat.homes/previous/tiger"
+                class="text-accent underline"
+                >prev</a
+              >
+              ~
+              <a
+                href="https://webring.kittycat.homes/"
+                class="text-accent underline"
+                >kittycat.homes</a
+              >
+              ~
+              <a
+                href="https://webring.kittycat.homes/next/tiger"
+                class="text-accent underline"
+                >next</a
+              >
+            </div>
       </div>
 
       <div class="grid grid-cols-2 gap-2">
