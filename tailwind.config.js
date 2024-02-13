@@ -25,11 +25,11 @@ export default {
           warning: "#ffffff",
           error: "#ffffff",
         },
-        tiger: {
+        dark2: {
           primary: "#E63E62",
-          secondary: "#BFEF8D",
-          accent: "#37f6f2",
-          neutral: "#dcf0f7",
+          secondary: "#3EE6C2",
+          accent: "#3eb6e6",
+          neutral: "#eff3f3",
           "base-100": "#031014",
           info: "#ffffff",
           success: "#00ffff",
@@ -39,5 +39,5 @@ export default {
       },
     ],
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require("@tailwindcss/typography")],
 };
