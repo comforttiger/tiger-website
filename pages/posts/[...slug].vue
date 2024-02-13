@@ -6,7 +6,7 @@
     <p class="italic">{{ post.date }}</p>
     </div>
     <div class="text-neutral">
-      <ContentRenderer :value="post" />
+      <ContentRenderer :value="post" class="space-y-2" />
     </div>
     </div>
   </article>

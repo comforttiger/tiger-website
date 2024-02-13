@@ -5,6 +5,13 @@
       <AboutMe />
       <SocialsLinks />
       <WebringNavigation />
+      <div>
+        <h2 class="text-primary text-4xl">i recently posted this</h2>
+        <RecentPosts />
+      </div>
+      <div>
+        <h2 class="text-primary text-4xl">i recently made this</h2>
+      </div>
     </div>
   </div>
 </template>
