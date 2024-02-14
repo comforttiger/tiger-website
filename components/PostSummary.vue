@@ -1,7 +1,9 @@
 <template>
     <div>
-        <PostBlog :post="post" v-if="post.category == 'diary'" />
-        <PostGame :post="post" v-else-if="post.category == 'game'" />
+        <PostGame :post="post" v-if="post.category == 'game'" />
+        <PostPhotography :post="post" v-else-if="post.category == 'photography'" />
+        <PostArt :post="post" v-else-if="post.category == 'art'" />
+        <PostBlog :post="post" v-else />
     </div>
 </template>
 

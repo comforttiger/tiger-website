@@ -1,7 +1,8 @@
 ---
 title: untitled plant game
 date: 2021-12-09
-image: https://tiger.kittycat.homes/assets/untitled-plant-game.png
+image: /images/made/games/untitled-plant-game.png
+image_description: screenshot of a game. on the left there is a plant, on the right there is a log of the plant saying things.
 url: https://bathearttiger.itch.io/untitled-plant-game
 url_platform: itch.io
 category: game

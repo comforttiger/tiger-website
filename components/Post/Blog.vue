@@ -5,7 +5,7 @@
       :src="post.image"
       :alt="post.image_description"
     />
-    <h3 class="text-2xl text-primary">{{ post.title }}</h3>
+    <h3 class="text-3xl text-primary">{{ post.title }}</h3>
     <div class="flex gap-2">
     <DateComponent :date="post.date" class="italic" /> <span>~</span> <span>{{ post.category }}</span>
     </div>

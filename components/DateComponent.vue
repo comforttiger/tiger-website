@@ -1,5 +1,5 @@
 <template>
-    <p>{{ convertDate(date) }}</p>
+    <p>{{ convertDate(new Date(date)) }}</p>
 </template>
 
 <script setup lang="ts">
@@ -11,6 +11,6 @@ function convertDate(date: Date) {
   });
 }
 defineProps({
-  date: { type: Date, required: true }
+  date: { type: String, required: true }
 })
 </script>

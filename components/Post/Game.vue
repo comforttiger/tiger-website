@@ -6,7 +6,7 @@
         :alt="post.image_description"
       />
       <iframe v-if="post.video" :src="post.video" class="w-full aspect-video" ></iframe>
-      <h3 class="text-2xl text-primary">{{ post.title }}</h3>
+      <h3 class="text-3xl text-primary">{{ post.title }}</h3>
       <div class="flex gap-2">
       <DateComponent :date="post.date" class="italic" /> <span>~</span> <span>{{ post.category }}</span>
       </div>
