@@ -1,6 +1,6 @@
 <template>
     <article class="w-full flex items-center justify-center flex-col">
-      <div class="w-2/3">
+      <div class="md:w-2/3 w-screen">
         <div class="p-5 pl-0">
           <LikesTitle page="girlfriend">{{ post.title }}</LikesTitle>
         </div>

@@ -3,7 +3,7 @@
   <div class="p-10 xl:w-1/2 w-full flex flex-col gap-10">
     <MadeTitle page="games">tiger's games :3</MadeTitle>
     <ContentList :query="query" v-slot="{ list }">
-      <div v-for="post in list" :key="post._path">
+      <div v-for="post in list" :key="post._path" class="border-l-4 border-accent pl-5">
         <img
           v-if="post.image"
           :src="post.image"
@@ -14,8 +14,8 @@
           :src="post.video"
           class="w-full aspect-video"
         ></iframe>
-        <h3 class="text-3xl text-primary">{{ post.title }}</h3>
-        <DateComponent :date="post.date" class="italic" />
+        <h3 class="text-3xl text-accent">{{ post.title }}</h3>
+        <DateComponent :date="post.date" class="italic text-accent" />
         <ContentRenderer :value="post" />
         <a :href="post.url" class="underline text-secondary"
           >check it out on {{ post.url_platform }}</a

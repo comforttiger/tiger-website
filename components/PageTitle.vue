@@ -1,5 +1,5 @@
 <template>
-  <div class="p-20 pb-40">
+  <div class="md:p-20 md:pb-40 pb-20">
     <div class="breadcrumbs text-accent" v-if="!home">
       <ul>
         <li><NuxtLink to="/">home</NuxtLink></li>

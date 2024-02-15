@@ -1,5 +1,5 @@
 <template>
-  <div class="p-20">
+  <div class="md:p-20">
     <MadeTitle page="photography">tiger's photos :3</MadeTitle>
     <ContentList :query="query" v-slot="{ list }">
       <div class="lg:columns-md columns-2xs gap-8">

@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex items-center justify-center flex-col">
-    <div class="w-2/3">
+    <div class="md:w-2/3 w-screen">
       <BlogTitle page="programming">
         programming :3
         </BlogTitle>
