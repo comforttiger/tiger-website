@@ -12,7 +12,9 @@ export default {
     fontFamily: {
       sans: ["Atkinson"],
       italic: ["Atkinson"],
-      bold: ["Atkinson"]
+      bold: ["Atkinson"],
+      "front-page-display": ["BerkshireSwash"],
+      display: ["Dosis"]
     },
     extend: {},
   },

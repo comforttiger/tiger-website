@@ -4,7 +4,7 @@
     class="border-2 border-secondary bg-base-100 text-neutral flex w-72 h-full gap-3 p-5 hover:bg-secondary"
   >
     <div class="flex flex-col gap-1">
-      <h3 class="text-2xl text-primary text-center">
+      <h3 class="text-2xl font-display text-primary text-center">
         {{ title }}
       </h3>
       <p v-if="date">{{ date }}</p>

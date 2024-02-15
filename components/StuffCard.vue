@@ -1,7 +1,7 @@
 <template>
   <div>
     <NuxtLink :to="post.url">
-    <h2 class="text-4xl text-accent">{{ post.title }}</h2>
+    <h2 class="text-4xl font-display text-accent">{{ post.title }}</h2>
     <p>{{ post.description }}</p>
     </NuxtLink>
   </div>

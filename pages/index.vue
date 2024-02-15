@@ -12,7 +12,7 @@
       </div>
       <div class="md:grid gap-5 grid-cols-2">
         <div class="flex flex-col gap-2">
-          <h2 class="text-primary text-4xl">
+          <h2 class="text-primary text-4xl font-display">
             <NuxtLink to="/blog">i recently posted this</NuxtLink>
           </h2>
           <RecentPosts path="/blog" limit="6" />
@@ -21,7 +21,7 @@
           >
         </div>
         <div class="flex flex-col gap-2">
-          <h2 class="text-primary text-4xl">
+          <h2 class="text-primary text-4xl font-display">
             <NuxtLink to="/made">i recently made this</NuxtLink>
           </h2>
           <RecentPosts path="/made" limit="3" />

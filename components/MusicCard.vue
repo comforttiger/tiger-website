@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="text-3xl text-accent">
+    <h2 class="text-3xl font-display text-accent">
       <NuxtLink :to="artist.url">{{ artist.title }}</NuxtLink>
     </h2>
     <div v-for="album in artist.albums">

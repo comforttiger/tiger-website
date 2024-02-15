@@ -1,7 +1,7 @@
 <template>
     <div>
       <iframe :src="post.url" class="w-full aspect-video" ></iframe>
-      <h3 class="text-3xl text-accent">{{ post.title }}</h3>
+      <h3 class="text-3xl font-display text-accent">{{ post.title }}</h3>
       <p>{{ post.description }}</p>
     </div>
   </template>

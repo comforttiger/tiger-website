@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <h2 class="text-primary text-4xl">who am i???</h2>
+      <h2 class="text-primary text-4xl font-display">who am i???</h2>
       <div class="space-y-2">
         <p>hi! i'm tiger, a queer autistic nerd who's inside ur puter!!!</p>
         <p>i love to fuck around, but somehow i have yet to find out...</p>

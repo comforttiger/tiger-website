@@ -5,8 +5,8 @@
       :src="post.image"
       :alt="post.image_description"
     />
-    <h3 v-if="post.updated_title" class="text-3xl text-accent">{{ post.updated_title }}</h3>
-    <h3 v-else class="text-3xl text-accent">{{ post.title }}</h3>
+    <h3 v-if="post.updated_title" class="text-3xl text-accent font-display">{{ post.updated_title }}</h3>
+    <h3 v-else class="text-3xl text-accent font-display">{{ post.title }}</h3>
     <div class="flex gap-2 text-accent">
     <span v-if="post.created" class="italic">updated</span> <DateComponent :date="post.date" class="italic"/> <span>~</span> <span>{{ post.category }}</span>
     </div>

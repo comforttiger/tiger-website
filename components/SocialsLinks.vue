@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="text-primary text-4xl">socials</h2>
+    <h2 class="text-primary text-4xl font-display">socials</h2>
     <div>
       <ul>
         <li>

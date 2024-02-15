@@ -5,7 +5,7 @@
         <li><NuxtLink to="/">home</NuxtLink></li>
       </ul>
     </div>
-    <h1 class="text-primary text-7xl underline decoration-accent decoration-8">
+    <h1 class="text-primary font-front-page-display text-7xl underline decoration-accent decoration-8">
       <slot />
     </h1>
   </div>

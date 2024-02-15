@@ -25,3 +25,13 @@
     src: url("/fonts/Atkinson-Hyperlegible-Italic-102.woff");
     font-style: italic;
 }
+
+@font-face {
+    font-family: "BerkshireSwash";
+    src: url("/fonts/BerkshireSwash-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Dosis";
+    src: url("/fonts/Dosis-Bold.ttf");
+}

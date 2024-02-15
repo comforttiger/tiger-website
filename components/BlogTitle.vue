@@ -9,7 +9,7 @@
         <li v-if="page == 'blorbo'"><NuxtLink to="/blog/blorbo">blorbo</NuxtLink></li>
       </ul>
     </div>
-    <h1 class="text-primary text-7xl underline decoration-accent decoration-8">
+    <h1 class="text-primary font-display text-7xl underline decoration-accent decoration-8 pb-1">
       <slot />
     </h1>
     <div class="flex gap-2" v-if="page == 'blog'">

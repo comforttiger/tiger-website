@@ -9,7 +9,7 @@
         <li v-if="page == 'photography'"><NuxtLink to="/made/photography">photography</NuxtLink></li>
       </ul>
     </div>
-    <h1 class="text-primary text-7xl underline decoration-accent decoration-8">
+    <h1 class="text-primary font-display text-7xl underline decoration-accent decoration-8 pb-1">
       <slot />
     </h1>
     <div class="flex gap-2" v-if="page == 'index'">
