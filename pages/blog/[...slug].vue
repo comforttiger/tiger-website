@@ -13,7 +13,7 @@
   </article>
 </template>
 
-<script>
+<!-- <script>
 import { defineComponent } from "@vue/composition-api";
 import { useRoute } from "vue-router";
 
@@ -29,4 +29,10 @@ export default defineComponent({
     };
   },
 });
+</script> -->
+
+<script setup lang="ts">
+  import {useRoute} from "vue-router";
+
+  const post = await queryContent(useRoute().path).findOne();
 </script>

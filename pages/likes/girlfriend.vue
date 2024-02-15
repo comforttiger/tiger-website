@@ -11,20 +11,6 @@
     </article>
   </template>
   
-  <script>
-  import { defineComponent } from "@vue/composition-api";
-  import { useRoute } from "vue-router";
-  
-  export default defineComponent({
-    async setup() {
-      const route = useRoute();
-      const { data: post } = await useAsyncData("post", () =>
-        queryContent("/likes/girlfriend").findOne()
-      );
-  
-      return {
-        post,
-      };
-    },
-  });
-  </script>
+  <script setup lang="ts">
+  const post = await queryContent("/likes/girlfriend").findOne();
+</script>
