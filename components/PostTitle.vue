@@ -1,5 +1,5 @@
 <template>
-  <div class="md:p-20 md:pb-40 pb-20">
+  <div class="md:p-20">
     <div class="breadcrumbs text-accent">
       <ul>
         <li>

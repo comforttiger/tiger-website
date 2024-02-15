@@ -1,12 +1,12 @@
 <template>
-  <div class="md:p-20 md:pb-40 pb-20">
+  <div class="md:p-20">
     <div class="breadcrumbs text-accent">
       <ul>
         <li><NuxtLink to="/">home</NuxtLink></li>
         <li><NuxtLink to="/made">made</NuxtLink></li>
         <li v-if="page == 'art'"><NuxtLink to="/made/art">art</NuxtLink></li>
         <li v-if="page == 'games'"><NuxtLink to="/made/games">games</NuxtLink></li>
-        <li v-if="page == 'photography'"><NuxtLink to="/made/art">photography</NuxtLink></li>
+        <li v-if="page == 'photography'"><NuxtLink to="/made/photography">photography</NuxtLink></li>
       </ul>
     </div>
     <h1 class="text-primary text-7xl underline decoration-accent decoration-8">
