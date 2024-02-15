@@ -1,9 +1,9 @@
 <template>
   <div class="w-full flex items-center justify-center flex-col">
-    <h1 class="text-primary text-7xl underline decoration-accent p-20 pb-40 decoration-8">
+    <PageTitle home="yeah">
       tiger's <br/>
       website :3
-    </h1>
+    </PageTitle>
     <div class="md:w-4/5 w-full md:px-5 flex flex-col gap-3">
       <div class="md:grid grid-cols-3 gap-5">
         <AboutMe class="md:col-span-2" />

@@ -1,7 +1,0 @@
----
-image: /images/made/art/art2.png
-image_description: a little fence with cows in it
-date: 2022-05-24
-category: art
-hide: false
----

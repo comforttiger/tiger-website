@@ -1,0 +1,38 @@
+title: crywank
+url: https://crywank.bandcamp.com/
+albums: [
+  album: {
+    title: narcissist on the verge of a nervous breakdown,
+    url: https://crywank.bandcamp.com/album/narcissist-on-the-verge-of-a-nervous-breakdown,
+    songs: [
+      song: {
+        title: nostril tampon,
+        url: https://crywank.bandcamp.com/track/nostril-tampon,
+      }
+    ]
+  },
+  album: {
+    title: egg on face. foot in mouth. wriggling wriggling wriggling,
+    url: https://crywank.bandcamp.com/album/egg-on-face-foot-in-mouth-wriggling-wriggling-wriggling,
+    songs: [
+      song: {
+        title: "part 2: electric boogaloo",
+        url: https://crywank.bandcamp.com/track/part-2-electric-boogaloo
+      }
+    ]
+  },
+  album: {
+    title: wearing beige on a grey day,
+    url: https://crywank.bandcamp.com/album/wearing-beige-on-a-grey-day,
+    songs: [
+      song: {
+        title: JK,
+        url: https://crywank.bandcamp.com/track/jk
+      },
+      song: {
+        title: it was a swift not a swallow (i never listen),
+        url: https://crywank.bandcamp.com/track/it-was-a-swift-not-a-swallow-i-never-listen
+      }
+    ]
+  }
+]

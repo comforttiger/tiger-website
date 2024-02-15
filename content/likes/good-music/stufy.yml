@@ -1,0 +1,24 @@
+title: stufy
+url: https://stufy.bandcamp.com/
+albums: [
+  album: {
+    title: "excalibur: ruby version",
+    url: https://stufy.bandcamp.com/album/excalibur-ruby-version,
+    songs: [
+      song: {
+        title: the most personal song ever written by me,
+        url: https://stufy.bandcamp.com/track/the-most-personal-song-ever-written-by-me,
+      }
+    ]
+  },
+  album: {
+    title: PANK! EP,
+    url: https://stufy.bandcamp.com/album/pank-ep,
+    songs: [
+      song: {
+        title: "the bomb song",
+        url: https://stufy.bandcamp.com/track/the-bomb-song
+      }
+    ]
+  }
+]

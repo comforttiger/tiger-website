@@ -1,0 +1,18 @@
+title: willow
+url: https://soundcloud.com/willowsmith
+albums: [
+  album: {
+    title: lately i feel EVERYTHING,
+    url: https://soundcloud.com/willowsmith/sets/lately-i-feel-everything,
+    songs: [
+      song: {
+        title: t r a n s p a r e n t s o u l,
+        url: https://soundcloud.com/willowsmith/t-r-a-n-s-p-a-r-e-n-t-s-o-u-l?in=willowsmith/sets/lately-i-feel-everything
+      },
+      song: {
+        title: "¡BREAKOUT!",
+        url: https://soundcloud.com/willowsmith/track-11?in=willowsmith/sets/lately-i-feel-everything
+      }
+    ]
+  }
+]

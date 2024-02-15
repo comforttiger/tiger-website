@@ -1,0 +1,34 @@
+title: blue scholars
+url: https://bluescholars.bandcamp.com/
+albums: [
+  album: {
+    title: blue scholars,
+    url: https://bluescholars.bandcamp.com/album/blue-scholars,
+    songs: [
+      song: {
+        title: life & debt,
+        url: https://bluescholars.bandcamp.com/track/life-debt
+      }
+    ]
+  },
+  album: {
+    title: the long march EP,
+    url: https://bluescholars.bandcamp.com/album/the-long-march-ep,
+    songs: [
+      song: {
+        title: proletariat blues,
+        url: https://bluescholars.bandcamp.com/track/proletariat-blues
+      }
+    ]
+  },
+  album: {
+    title: BAYANI (ReDux),
+    url: https://bluescholars.bandcamp.com/album/bayani-redux,
+    songs: [
+      song: {
+        title: 50 thousand deep,
+        url: https://bluescholars.bandcamp.com/track/50-thousand-deep
+      }
+    ]
+  }
+]

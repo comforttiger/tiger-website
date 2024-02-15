@@ -1,0 +1,24 @@
+title: pigeon pit
+url: https://pigeonpit.bandcamp.com/
+albums: [
+  album: {
+    title: shut in,
+    url: https://pigeonpit.bandcamp.com/album/shut-in,
+    songs: [
+      song: {
+        title: nights like these,
+        url: https://pigeonpit.bandcamp.com/track/nights-like-these-2
+      }
+    ]
+  },
+  album: {
+    title: treehouse,
+    url: https://pigeonpit.bandcamp.com/album/treehouse,
+    songs: [
+      song: {
+        title: black metal,
+        url: https://pigeonpit.bandcamp.com/track/black-metal
+      }
+    ]
+  }
+]

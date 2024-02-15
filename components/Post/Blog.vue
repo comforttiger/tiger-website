@@ -10,8 +10,7 @@
     <div class="flex gap-2 text-accent">
     <span v-if="post.created" class="italic">updated</span> <DateComponent :date="post.date" class="italic"/> <span>~</span> <span>{{ post.category }}</span>
     </div>
-    <p v-if="post.updated_description">{{ post.updated_description }}</p>
-    <p v-else>{{ post.description }}</p>
+    <p>{{ post.description }}</p>
     <NuxtLink v-if="post.link_id" :to="`${post._path}#${post.link_id}`" class="underline text-secondary"
       >read more...</NuxtLink
     >

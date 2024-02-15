@@ -1,7 +1,0 @@
----
-image: /images/made/art/art3.png
-image_description: a cargo container filled with rocks
-date: 2022-05-24
-category: art
-hide: false
----

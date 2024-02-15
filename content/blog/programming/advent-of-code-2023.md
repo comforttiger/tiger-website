@@ -1,11 +1,10 @@
 ---
 title: advent of code 2023 solutions
 date: 2023-12-11
-description: not all my solutions are great
+description: "space!!! i enjoyed doing this one. ruby's #transpose and #combination were very useful today"
 category: programming
 created: 2023-12-01
 updated_title: advent of code 2023 - day 11
-updated_description: "space!!! i enjoyed doing this one. ruby's #transpose and #combination were very useful today"
 link_id: day-11
 hide: false
 ---

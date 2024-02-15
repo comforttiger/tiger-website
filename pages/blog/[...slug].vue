@@ -1,10 +1,11 @@
 <template>
   <article class="w-full flex items-center justify-center flex-col">
     <div class="w-2/3">
-      <div class="p-5 pl-0">
+      <PostTitle :date="post.date" :category="post.category">{{ post.title }}</PostTitle>
+      <!-- <div class="p-5 pl-0">
         <h1 class="text-4xl text-primary">{{ post.title }}</h1>
         <DateComponent :date="post.date" class="italic text-accent" />
-      </div>
+      </div> -->
       <div class="text-neutral">
         <ContentRenderer :value="post" class="space-y-2" />
       </div>
@@ -29,15 +30,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<!-- <template>
-    <div class="w-full flex items-center justify-center flex-col">
-        <ContentDoc v-slot="{ doc }">
-            <h1 class="text-4xl text-primary p-5">{{ doc.title }}</h1>
-            <p>{{ doc.date }}</p>
-            <div class="w-2/3 text-neutral">
-                <ContentRenderer :value="doc" />
-            </div>
-        </ContentDoc>
-    </div>
-</template> -->

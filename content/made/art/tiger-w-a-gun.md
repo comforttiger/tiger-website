@@ -1,7 +1,0 @@
----
-image: /images/made/art/art1.png
-image_description: tiger in a purple dress holding a gun
-date: 2021-12-03
-category: art
-hide: false
----

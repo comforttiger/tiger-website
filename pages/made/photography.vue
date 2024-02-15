@@ -1,6 +1,6 @@
 <template>
   <div class="p-20">
-    <h1 class="text-7xl text-primary text-center pb-40">tiger's photos :3</h1>
+    <MadeTitle page="photography">tiger's photos :3</MadeTitle>
     <ContentList :query="query" v-slot="{ list }">
       <div class="lg:columns-md columns-2xs gap-8">
         <div v-for="post in list" :key="post._path">

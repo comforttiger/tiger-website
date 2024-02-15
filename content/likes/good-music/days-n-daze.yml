@@ -1,0 +1,32 @@
+title: days n daze
+url: https://daysndaze.bandcamp.com/
+albums: [
+  album: {
+    title: rogue taxidermy,
+    url: https://daysndaze.bandcamp.com/album/rogue-taxidermy,
+    songs: [
+      song: {
+        title: call in the coroner,
+        url: https://daysndaze.bandcamp.com/track/call-in-the-coroner,
+      },
+      song: {
+        title: muddy knees,
+        url: https://daysndaze.bandcamp.com/track/muddy-knees-2
+      },
+      song: {
+        title: day gaunts,
+        url: https://daysndaze.bandcamp.com/track/day-gaunts
+      }
+    ]
+  },
+  album: {
+    title: crustfall,
+    url: https://daysndaze.bandcamp.com/album/crustfall,
+    songs: [
+      song: {
+        title: save a life,
+        url: https://daysndaze.bandcamp.com/track/save-a-life-feat-joey-steel
+      }
+    ]
+  }
+]
