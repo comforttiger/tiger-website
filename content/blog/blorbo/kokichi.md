@@ -2,6 +2,7 @@
 title: Kokichi Oma
 date: 2022-05-09
 category: blorbo
+hide: false
 ---
 
 kokichi oma is from danganronpa v3!!! in general danganronpa v3 is like.

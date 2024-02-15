@@ -3,6 +3,7 @@ title: Shuntaro Chishiya
 date: 2023-01-15
 category: blorbo
 description: chishiya is from alice in borderland! the moment they appeared on my screen i knew this would be the character im most obsessed with.
+hide: false
 ---
 
 > thats bad.

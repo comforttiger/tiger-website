@@ -1,5 +1,26 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
+      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+      title: "tiger's website"
+    }
+  },
+  content: {
+    highlight: {
+      langs: [
+        'rust',
+        'ruby',
+      ],
+      theme: {
+        default: 'github-dark',
+        dark: 'dracula',
+        light: 'github-light'
+      }
+    }
+  },
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
   modules: ["@nuxt/content"],

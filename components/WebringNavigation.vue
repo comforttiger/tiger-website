@@ -3,17 +3,17 @@
     <h2 class="text-primary text-4xl">webring</h2>
     <a
       href="https://webring.kittycat.homes/previous/tiger"
-      class="underline text-accent"
+      class="underline text-secondary"
       >previous</a
     >
     ~
-    <a href="https://webring.kittycat.homes/" class="underline text-accent"
+    <a href="https://webring.kittycat.homes/" class="underline text-secondary"
       >kittycat.homes</a
     >
     ~
     <a
       href="https://webring.kittycat.homes/next/tiger"
-      class="underline text-accent"
+      class="underline text-secondary"
       >next</a
     >
   </div>

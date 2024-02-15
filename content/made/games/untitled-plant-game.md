@@ -6,6 +6,7 @@ image_description: screenshot of a game. on the left there is a plant, on the ri
 url: https://bathearttiger.itch.io/untitled-plant-game
 url_platform: itch.io
 category: game
+hide: false
 ---
 
 untitled plant game is a game where you take care of a very talkative plant.

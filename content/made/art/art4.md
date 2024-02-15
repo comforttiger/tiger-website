@@ -3,4 +3,5 @@ image: /images/made/art/art4.png
 image_description: a container with computer chip graphics on it, and text that says "cool wares"
 date: 2022-05-24
 category: art
+hide: false
 ---

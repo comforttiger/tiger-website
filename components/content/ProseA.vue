@@ -2,7 +2,7 @@
     <NuxtLink
       :href="href"
       :target="target"
-      class="text-accent underline"
+      class="text-secondary underline"
     >
       <slot />
     </NuxtLink>

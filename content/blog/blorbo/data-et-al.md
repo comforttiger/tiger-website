@@ -2,6 +2,7 @@
 title: Data (and the other star trek characters like him) 
 date: 2023-01-27
 category: blorbo
+hide: false
 ---
 
 ok so this one is more about a genre of characters thats in star trek.
@@ -28,7 +29,7 @@ afterwards it feels a bit like picard forgot about this though because he never 
 
 either way though, data was a character who made me very happy to see on screen. also his friendship with geordi is great
 
-also also i know that many other autistic ppl have said they related to data and found him to unintentionally be good autistic representation. one of the writers said hes glad it turned out that way because if he had tried to do it intentionally he wouldve probably fucked up.
+also also i know that many other autistic ppl have said they related to data and found him to unintentionally be good autistic representation. one of the writers said hes glad it turned out that way because if he had tried to do it intentionally he wouldve probably fucked up. (i don't know if this is actually true)
 
 ## Odo
 

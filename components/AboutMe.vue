@@ -6,11 +6,12 @@
         <p>hi! i'm tiger, a queer autistic nerd who's inside ur puter!!!</p>
         <p>i'm many thigns. i do many things. i'm multifaceted like that</p>
         <p>
-          some of my hobbies include <a class="underline text-accent">art</a>,
-          <a class="underline text-accent">gamedev</a>,
-          <a class="underline text-accent">programming</a>,
-          <a class="underline text-accent">photography</a>,
-          <a class="underline text-accent">the list is endless!</a> but i hope
+          some of my hobbies include <NuxtLink to="/made/art" class="underline text-secondary">making art</NuxtLink>,
+          <NuxtLink to="/made/games" class="underline text-secondary">developing games</NuxtLink>,
+          <NuxtLink to="/blog/games" class="underline text-secondary">playing games</NuxtLink>,
+          <NuxtLink to="/blog/programming" class="underline text-secondary">making computers do things</NuxtLink>, and
+          <NuxtLink to="/made/photography" class="underline text-secondary">taking pictures</NuxtLink>!
+          the full list is endless, but i hope
           this small selection of things will satisfy you. for now.
         </p>
       </div>

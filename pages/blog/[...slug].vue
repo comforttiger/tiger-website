@@ -1,13 +1,13 @@
 <template>
   <article class="w-full flex items-center justify-center flex-col">
     <div class="w-2/3">
-    <div class="p-5 pl-0">
-    <h1 class="text-4xl text-primary">{{ post.title }}</h1>
-    <DateComponent :date="post.date" class="italic"/>
-    </div>
-    <div class="text-neutral">
-      <ContentRenderer :value="post" class="space-y-2" />
-    </div>
+      <div class="p-5 pl-0">
+        <h1 class="text-4xl text-primary">{{ post.title }}</h1>
+        <DateComponent :date="post.date" class="italic text-accent" />
+      </div>
+      <div class="text-neutral">
+        <ContentRenderer :value="post" class="space-y-2" />
+      </div>
     </div>
   </article>
 </template>

@@ -3,4 +3,5 @@ image: /images/made/art/PlantBondsCharacterRunning.gif
 image_description: pixel art character running
 date: 2023-01-29
 category: art
+hide: false
 ---

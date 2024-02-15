@@ -14,13 +14,10 @@
 import type { QueryBuilderParams } from "@nuxt/content/dist/runtime/types";
 const props = defineProps({
   path: { type: String, required: true },
-  limit: { type: String, required: true },
 });
 
 const query: QueryBuilderParams = {
   path: props.path,
-  limit: parseInt(props.limit),
-  where: [{ hide: false  }],
   sort: [{ date: -1 }],
 };
 </script>
