@@ -9,6 +9,11 @@ export default {
     "./error.vue",
   ],
   theme: {
+    fontFamily: {
+      sans: ["Atkinson"],
+      italic: ["Atkinson"],
+      bold: ["Atkinson"]
+    },
     extend: {},
   },
   daisyui: {
