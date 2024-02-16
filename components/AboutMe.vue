@@ -25,12 +25,12 @@
           will satisfy you. for now.
         </p>
         <p>
-          i like to
+          some things i like are
           <NuxtLink to="likes/funny-videos" class="underline text-secondary"
-            >watch funny videos</NuxtLink
+            >funny videos</NuxtLink
           >,
           <NuxtLink to="likes/good-music" class="underline text-secondary"
-            >listen to good music</NuxtLink
+            >good music</NuxtLink
           >,
           <NuxtLink to="/likes/girlfriend" class="underline text-secondary"
             >my girlfriend</NuxtLink
