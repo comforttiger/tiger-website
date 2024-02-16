@@ -10,6 +10,9 @@
           >
         </li>
         <li>
+          matrix ~ <NuxtLink to="https://matrix.to/#/@tiger:matrix.kittycat.homes" class="text-secondary underline">@tiger:matrix.kittycat.homes</NuxtLink>
+        </li>
+        <li>
             discord ~ <NuxtLink to="https://discord.com/users/152843864342790145" class="text-secondary underline">comforttiger#0</NuxtLink>
         </li>
         <li>
