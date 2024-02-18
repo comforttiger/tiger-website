@@ -10,10 +10,7 @@ export default {
   ],
   theme: {
     fontFamily: {
-      sans: ["Atkinson"],
-      italic: ["Atkinson"],
-      bold: ["Atkinson"],
-      "front-page-display": ["BerkshireSwash"],
+      sans: ["Fredoka"],
       display: ["Dosis"]
     },
     extend: {},
