@@ -15,7 +15,7 @@ export default {
     },
     extend: {
       backgroundImage: {
-        'background-repeat': "url('/images/background-repeat.jpg')",
+        'background-repeat': "url('/images/background-repeat.png')",
         // 'background-index': "url('/images/background-index.jpg')"
       }
     },
