@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="bg-base-100 rounded-xl p-5">
       <h2 class="text-primary text-4xl font-display">who am i???</h2>
       <div class="space-y-2">
         <p>hi! i'm tiger, a queer autistic nerd who's inside ur puter!!!</p>

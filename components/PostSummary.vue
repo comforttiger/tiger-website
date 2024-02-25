@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bg-base-100 rounded-xl p-5 border-l-4 border-accent">
         <PostGame :post="post" v-if="post.category == 'game'" />
         <PostPhotography :post="post" v-else-if="post.category == 'photography'" />
         <PostArt :post="post" v-else-if="post.category == 'art'" />

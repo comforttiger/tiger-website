@@ -5,14 +5,16 @@
         <li><NuxtLink to="/">home</NuxtLink></li>
       </ul>
     </div>
-    <h1 class="text-primary font-display text-7xl underline decoration-accent decoration-8">
-      <slot />
+    <h1
+      class="text-primary font-display md:text-7xl text-4xl underline decoration-accent decoration-8 bg-base-100 rounded-xl p-5"
+    >
+      <span><slot /></span>
     </h1>
   </div>
 </template>
 
 <script setup lang="ts">
 defineProps({
-  home: { type: String, required: false }
-})
+  home: { type: String, required: false },
+});
 </script>

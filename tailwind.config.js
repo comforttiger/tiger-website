@@ -10,10 +10,15 @@ export default {
   ],
   theme: {
     fontFamily: {
-      sans: ["Fredoka"],
+      sans: ["Ubuntu"],
       display: ["Dosis"]
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'background-repeat': "url('/images/background-repeat.jpg')",
+        // 'background-index': "url('/images/background-index.jpg')"
+      }
+    },
   },
   daisyui: {
     themes: [

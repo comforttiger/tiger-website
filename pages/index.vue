@@ -12,20 +12,20 @@
       </div>
       <div class="md:grid gap-5 grid-cols-2">
         <div class="flex flex-col gap-2">
-          <h2 class="text-primary text-4xl font-display">
+          <h2 class="text-primary text-4xl font-display bg-base-100 rounded-xl p-3">
             <NuxtLink to="/blog">i recently posted this</NuxtLink>
           </h2>
           <RecentPosts path="/blog" limit="6" />
-          <NuxtLink to="/blog" class="underline text-secondary"
+          <NuxtLink to="/blog" class="underline text-secondary bg-base-100 rounded-xl p-2"
             >see all posts here</NuxtLink
           >
         </div>
         <div class="flex flex-col gap-2">
-          <h2 class="text-primary text-4xl font-display">
+          <h2 class="text-primary text-4xl font-display bg-base-100 rounded-xl p-3">
             <NuxtLink to="/made">i recently made this</NuxtLink>
           </h2>
           <RecentPosts path="/made" limit="3" />
-          <NuxtLink to="/made" class="underline text-secondary"
+          <NuxtLink to="/made" class="underline text-secondary bg-base-100 rounded-xl p-2"
             >see more things i've made here</NuxtLink
           >
         </div>

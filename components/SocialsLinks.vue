@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-base-100 rounded-xl p-5">
     <h2 class="text-primary text-4xl font-display">socials</h2>
     <div>
       <ul>

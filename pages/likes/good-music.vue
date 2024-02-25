@@ -8,7 +8,6 @@
               <div
                 v-for="artist in list"
                 :key="artist._path"
-                class="pl-5 border-l-4 border-accent"
               >
                 <MusicCard :artist="artist" />
               </div>

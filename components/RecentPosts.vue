@@ -2,7 +2,7 @@
   <div>
     <ContentList :query="query" v-slot="{ list }">
       <div class="flex flex-col gap-5">
-        <div v-for="post in list" :key="post._path" class="pl-5 border-l-4 border-accent">
+        <div v-for="post in list" :key="post._path">
           <PostSummary :post="post" />
         </div>
       </div>

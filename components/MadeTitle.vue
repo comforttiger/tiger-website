@@ -1,6 +1,6 @@
 <template>
   <div class="md:p-20">
-    <div class="breadcrumbs text-accent">
+    <div class="breadcrumbs text-accent bg-base-100 w-fit p-2 rounded-xl mb-2">
       <ul>
         <li><NuxtLink to="/">home</NuxtLink></li>
         <li><NuxtLink to="/made">made</NuxtLink></li>
@@ -9,10 +9,10 @@
         <li v-if="page == 'photography'"><NuxtLink to="/made/photography">photography</NuxtLink></li>
       </ul>
     </div>
-    <h1 class="text-primary font-display text-7xl underline decoration-accent decoration-8 pb-1">
+    <h1 class="text-primary font-display text-7xl underline decoration-accent decoration-8 bg-base-100 rounded-xl p-5 w-fit">
       <slot />
     </h1>
-    <div class="flex gap-2" v-if="page == 'index'">
+    <div class="flex gap-2 bg-base-100 w-fit p-2 rounded-xl mt-2" v-if="page == 'index'">
       <NuxtLink to="/made/art" class="underline text-secondary">art</NuxtLink>
       <NuxtLink to="/made/games" class="underline text-secondary"
         >games</NuxtLink

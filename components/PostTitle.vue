@@ -22,7 +22,7 @@
     <!-- <div v-if="category == 'art' || category == 'photography' || category == 'game'">
       <NuxtLink to="/made" class="underline text-secondary">/made</NuxtLink><NuxtLink to="/made/art" v-if="category == 'art'">/art</NuxtLink>
     </div> -->
-    <h1 class="text-primary font-display text-7xl underline decoration-accent decoration-8 pb-1">
+    <h1 class="text-primary font-display text-7xl underline decoration-accent decoration-8 bg-base-100 rounded-xl p-5 w-fit">
       <slot />
     </h1>
     <DateComponent :date="date" class="italic text-accent"/>

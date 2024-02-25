@@ -8,7 +8,6 @@
             <div
               v-for="post in list"
               :key="post._path"
-              class="pl-5 border-l-4 border-accent"
             >
               <VideoCard :post="post" />
             </div>

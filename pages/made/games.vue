@@ -3,7 +3,7 @@
   <div class="p-10 xl:w-1/2 w-full flex flex-col gap-10">
     <MadeTitle page="games">tiger's games :3</MadeTitle>
     <ContentList :query="query" v-slot="{ list }">
-      <div v-for="post in list" :key="post._path" class="border-l-4 border-accent pl-5">
+      <div v-for="post in list" :key="post._path" class="bg-base-100 rounded-xl p-5 border-l-4 border-accent">
         <img
           v-if="post.image"
           :src="post.image"

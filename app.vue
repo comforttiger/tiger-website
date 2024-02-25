@@ -1,8 +1,10 @@
 <template>
+  <div class="bg-background-repeat bg-repeat-y">
   <div>
     <NuxtPage class="text-neutral pb-20"/>
   </div>
-  <footer class="text-center text-sm pb-10"> kittycats rule teh world forevah © 2024 </footer>
+  <footer class="text-center text-sm pb-10"> <span class="bg-base-100 rounded-xl p-2">kittycats rule teh world forevah © 2024</span> </footer>
+  </div>
 </template>
 
 <style>

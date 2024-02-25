@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-base-100 rounded-xl p-5">
     <NuxtLink :to="post.url">
     <h2 class="text-4xl font-display text-accent">{{ post.title }}</h2>
     <p>{{ post.description }}</p>

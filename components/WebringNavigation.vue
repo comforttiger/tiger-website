@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-base-100 rounded-xl p-5">
     <h2 class="text-primary text-4xl font-display">webring</h2>
     <a
       href="https://webring.kittycat.homes/previous/tiger"

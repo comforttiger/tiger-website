@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-base-100 rounded-xl p-5 border-l-4 border-accent">
     <h2 class="text-3xl font-display text-accent">
       <NuxtLink :to="artist.url">{{ artist.title }}</NuxtLink>
     </h2>

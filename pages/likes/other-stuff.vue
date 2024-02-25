@@ -1,6 +1,6 @@
 <template>
     <div class="w-full flex items-center justify-center flex-col">
-      <div class="md:w-1/2 w-screen">
+      <div class="md:w-1/2 w-screen min-h-screen">
         <LikesTitle page="other-stuff"> other stuff </LikesTitle>
         <div>
           <ContentList :query="query" v-slot="{ list }">

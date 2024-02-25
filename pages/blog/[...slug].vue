@@ -1,10 +1,10 @@
 <template>
   <article class="w-full flex items-center justify-center flex-col">
-    <div class="md:w-2/3 w-screen">
+    <div class="md:w-2/3 w-screen min-h-screen">
       <PostTitle :date="post.date" :category="post.category">{{
         post.title
       }}</PostTitle>
-      <div class="text-neutral p-5">
+      <div class="text-neutral p-5 bg-base-100 rounded-xl">
         <ContentRenderer :value="post" class="space-y-2" />
       </div>
     </div>
