@@ -1,6 +1,6 @@
 <template>
   <div class="md:p-20">
-    <div class="breadcrumbs text-accent">
+    <div class="breadcrumbs text-accent bg-base-100 rounded-xl p-2 mb-2 w-fit">
       <ul>
         <li>
           <NuxtLink to="/">home</NuxtLink>

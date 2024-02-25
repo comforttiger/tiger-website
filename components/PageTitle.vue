@@ -6,7 +6,7 @@
       </ul>
     </div>
     <h1
-      class="text-primary font-display md:text-7xl text-4xl underline decoration-accent decoration-8 bg-base-100 rounded-xl p-5"
+      class="text-primary font-display text-7xl underline decoration-accent decoration-8 bg-base-100 rounded-xl p-5"
     >
       <span><slot /></span>
     </h1>
