@@ -29,6 +29,5 @@ useSeoMeta({
   ogTitle: "funny videos",
   description: "tiger's collection of her favourite videos",
   ogDescription: "tiger's collection of her favourite videos",
-  ogImage: '/favicon.png',
 })
 </script>

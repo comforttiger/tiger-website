@@ -38,6 +38,5 @@
 useSeoMeta({
   title: "tiger's website :3",
   ogTitle: "tiger's website :3",
-  ogImage: '/favicon.png',
 })
 </script>

@@ -31,6 +31,5 @@ useSeoMeta({
   ogTitle: "tiger's photos",
   description: "nice fotos tiger",
   ogDescription: "nice fotos tiger",
-  ogImage: '/favicon.png',
 })
 </script>

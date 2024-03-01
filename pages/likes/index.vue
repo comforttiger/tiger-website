@@ -25,6 +25,5 @@
   ogTitle: "stuff i like",
   description: "a collection of things i like :3",
   ogDescription: "a collection of things i like :3",
-  ogImage: '/favicon.png',
 })
   </script>

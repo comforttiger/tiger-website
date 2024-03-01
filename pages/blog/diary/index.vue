@@ -16,6 +16,5 @@ useSeoMeta({
   ogTitle: "tiger's diary!",
   description: 'dont worry, youre allowed to read it. its not a *secret* diary.',
   ogDescription: 'dont worry, youre allowed to read it. its not a *secret* diary.',
-  ogImage: '/favicon.png',
 })
 </script>

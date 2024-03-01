@@ -16,6 +16,5 @@ useSeoMeta({
   ogTitle: 'guitar',
   description: "tiger's posts about her journey learning how 2 play the guitar",
   ogDescription: "tiger's posts about her journey learning how 2 play the guitar",
-  ogImage: '/favicon.png',
 })
 </script>

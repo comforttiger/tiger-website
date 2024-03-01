@@ -29,6 +29,5 @@
   ogTitle: "good music",
   description: "tiger's collection of her fav music",
   ogDescription: "tiger's collection of her fav music",
-  ogImage: '/favicon.png',
 })
   </script>

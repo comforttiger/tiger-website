@@ -13,6 +13,5 @@ useSeoMeta({
   ogTitle: "tiger's blog",
   description: 'tiger is an awesome kitty',
   ogDescription: 'tiger is an awesome kitty',
-  ogImage: '/favicon.png',
 })
 </script>

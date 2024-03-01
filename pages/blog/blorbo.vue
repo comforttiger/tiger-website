@@ -16,6 +16,5 @@ useSeoMeta({
   ogTitle: 'blorbos',
   description: 'posts about my blorbos!',
   ogDescription: 'posts about my blorbos!',
-  ogImage: '/favicon.png',
 })
 </script>

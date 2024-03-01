@@ -40,6 +40,5 @@ useSeoMeta({
   ogTitle: "tiger's games :3",
   description: "games made by a literal tiger",
   ogDescription: "games made by a literal tiger",
-  ogImage: '/favicon.png',
 })
 </script>

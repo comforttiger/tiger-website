@@ -17,6 +17,5 @@ useSeoMeta({
   ogTitle: 'programming',
   description: 'posts about programming!',
   ogDescription: 'posts about programming!',
-  ogImage: '/favicon.png',
 })
 </script>

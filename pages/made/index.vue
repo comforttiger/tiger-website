@@ -13,6 +13,5 @@ useSeoMeta({
   ogTitle: "stuff i made",
   description: "a collection of things ive made that im proud of :3",
   ogDescription: "a collection of things ive made that im proud of :3",
-  ogImage: '/favicon.png',
 })
 </script>

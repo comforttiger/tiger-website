@@ -25,7 +25,7 @@ useSeoMeta({
   ogTitle: post.title,
   description: post.description,
   ogDescription: post.description,
-  ogImage: '/favicon.png',
+  ogImage: post.image,
 })
 
 </script>

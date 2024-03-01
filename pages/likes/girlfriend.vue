@@ -18,6 +18,5 @@
   ogTitle: post.title,
   description: post.description,
   ogDescription: post.description,
-  ogImage: '/favicon.png',
 })
 </script>
