@@ -23,4 +23,12 @@ import type { QueryBuilderParams } from "@nuxt/content/dist/runtime/types";
 const query: QueryBuilderParams = {
   path: "/likes/funny-videos",
 };
+
+useSeoMeta({
+  title: "funny videos",
+  ogTitle: "funny videos",
+  description: "tiger's collection of her favourite videos",
+  ogDescription: "tiger's collection of her favourite videos",
+  ogImage: '/favicon.png',
+})
 </script>

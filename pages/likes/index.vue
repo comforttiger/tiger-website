@@ -19,9 +19,12 @@
     </div>
   </template>
   
-  <!-- <script setup lang="ts">
-  import type { QueryBuilderParams } from "@nuxt/content/dist/runtime/types";
-  const query: QueryBuilderParams = {
-    path: "/likes/other-stuff",
-  };
-  </script> -->
+  <script setup lang="ts">
+  useSeoMeta({
+  title: "stuff i like",
+  ogTitle: "stuff i like",
+  description: "a collection of things i like :3",
+  ogDescription: "a collection of things i like :3",
+  ogImage: '/favicon.png',
+})
+  </script>

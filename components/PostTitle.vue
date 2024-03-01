@@ -17,6 +17,9 @@
         <li v-if="category == 'programming'">
           <NuxtLink to="/blog/programming">programming</NuxtLink>
         </li>
+        <li v-if="sub_category == 'guitar'">
+          <NuxtLink to="/blog/diary/guitar">guitar</NuxtLink>
+        </li>
       </ul>
     </div>
     <!-- <div v-if="category == 'art' || category == 'photography' || category == 'game'">
@@ -32,6 +35,7 @@
 <script setup lang="ts">
 defineProps({
   category: { type: String, required: true },
+  sub_category: { type: String, required: false },
   date: { type: String, required: true }
 })
 </script>

@@ -13,4 +13,11 @@
   
   <script setup lang="ts">
   const post = await queryContent("/likes/girlfriend").findOne();
+  useSeoMeta({
+  title: post.title,
+  ogTitle: post.title,
+  description: post.description,
+  ogDescription: post.description,
+  ogImage: '/favicon.png',
+})
 </script>

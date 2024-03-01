@@ -23,4 +23,12 @@
   const query: QueryBuilderParams = {
     path: "/likes/good-music",
   };
+
+  useSeoMeta({
+  title: "good music",
+  ogTitle: "good music",
+  description: "tiger's collection of her fav music",
+  ogDescription: "tiger's collection of her fav music",
+  ogImage: '/favicon.png',
+})
   </script>

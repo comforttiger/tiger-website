@@ -25,4 +25,12 @@ const query: QueryBuilderParams = {
   path: "/made/photography",
   sort: [{ date: -1 }],
 };
+
+useSeoMeta({
+  title: "tiger's photos",
+  ogTitle: "tiger's photos",
+  description: "nice fotos tiger",
+  ogDescription: "nice fotos tiger",
+  ogImage: '/favicon.png',
+})
 </script>

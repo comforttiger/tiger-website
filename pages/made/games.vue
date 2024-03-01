@@ -34,4 +34,12 @@ const query: QueryBuilderParams = {
   path: "/made/games",
   sort: [{ date: -1 }],
 };
+
+useSeoMeta({
+  title: "tiger's games :3",
+  ogTitle: "tiger's games :3",
+  description: "games made by a literal tiger",
+  ogDescription: "games made by a literal tiger",
+  ogImage: '/favicon.png',
+})
 </script>

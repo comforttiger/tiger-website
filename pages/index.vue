@@ -33,3 +33,11 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+useSeoMeta({
+  title: "tiger's website :3",
+  ogTitle: "tiger's website :3",
+  ogImage: '/favicon.png',
+})
+</script>
