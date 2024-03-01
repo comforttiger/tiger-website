@@ -4,7 +4,6 @@
       :alt="alt"
       :width="width"
       :height="height"
-      class="float-right"
     >
   </template>
   

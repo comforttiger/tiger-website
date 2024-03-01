@@ -3,6 +3,7 @@ title: starting to learn guitar!
 date: 2024-02-29
 category: diary
 sub_category: guitar
+image: /images/blog/diary/guitar/learning/guitar-selfie.png
 hide: false
 ---
 
@@ -17,12 +18,14 @@ anyways. that's enough rambling about my origin story and stuff.
 
 ## actually beginning to learn
 
-i got a cheap electric guitar kit from gear4music. its cheap, but i think the quality is perfect for me right now, and i couldnt afford spending a million on guitar rn.
+i got a cheap electric guitar kit from gear4music. its cheap, but i think the quality is fine for me right now, and i couldnt afford spending a million on guitar rn.
+
+![a picture of me holding a black and white electric guitar. the background is pink and blurry.](/images/blog/diary/guitar/learning/guitar-selfie.png)
 
 so! the learning! ive been following courses on justinguitar.com. i saw a lot of recommendations
 for these courses online, so i wanna follow them and try out playing songs i like on the side.
 
-so far ive not gotten *that* far. i got to the lessons that cover the D and Am chords. \
+so far ive not gotten *that* far. i got to the lessons that cover the D and A chords. \
 it's really strange playing guitar after all this time. i used to be able to play the D really easily before, but now i find myself frequently messing it up. it's difficult! and my fingers hurt! but ive learned this once before, i know i can do it again. and i already think im slowly getting better at that D chord.
 
 i also struggle A LOT with holding the guitar properly. i think there are some habits that i still have from acoustic back when i was 15, so i keep feeling like the guitar is just like... too thin. since acoustic is muuuch thicker. but im sure i'll get used to that!
