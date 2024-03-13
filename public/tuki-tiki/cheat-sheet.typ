@@ -15,6 +15,7 @@
 
 #columns(3)[
 #[
+#set text(size:9pt)
 #let titi(body) = {
   set text(font: "sitelen seli kiwen mono atuki", size: 14pt)
   [#body]
