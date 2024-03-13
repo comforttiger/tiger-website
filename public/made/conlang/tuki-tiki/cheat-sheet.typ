@@ -123,7 +123,7 @@ _tula_ #titi[tula] -- know / understand / feel / perceive / document
 
 _ku_ #titi[ku] -- air / spirit / feeling / vibe / sound
 
-== object
+== objects
 objects (what is being affected by the predicate) are introduced with _i_ #titi[i].
 
 _ka li paka i ilu mi_ #titi[ka li paka i ilu mi] \
@@ -194,15 +194,4 @@ _lapi_ #titi[lapi] / _lapi ala_ #titi[lapi ala] / _ala_ #titi[ala] \
 open-ended questions are asked by replacing the missing information with timi.
 
 _li timi_ #titi[li timi] -- what is this?
-
-// == la
-// la establishes context. what comes before la is context for what comes after. it's kind of like a reverse lu. la can have a whole sentence before it.
-
-// == where's pi?!
-// tuki tiki doesn't have any pi equivalent. instead, context determines whether a phrase means something which would feature pi or not.
-
-// _kiku tuki tiki_ \
-// #titi[kiku tuki titi] \
-
-// is tuki tiki modfying kiku, or is tiki modifying kiku tuki? it's up to context!
 ]

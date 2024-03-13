@@ -3,6 +3,7 @@
         <PostGame :post="post" v-if="post.category == 'game'" />
         <PostPhotography :post="post" v-else-if="post.category == 'photography'" />
         <PostArt :post="post" v-else-if="post.category == 'art'" />
+        <PostConlang :post="post" v-else-if="post.category == 'conlang'" />
         <PostBlog :post="post" v-else />
     </div>
 </template>
