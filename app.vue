@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-background-repeat bg-repeat">
+  <div class="bg-background-repeat bg-repeat min-h-screen">
   <div>
     <NuxtPage class="text-neutral pb-20"/>
   </div>
