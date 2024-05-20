@@ -6,6 +6,10 @@
 
 #set page(
   margin: 0.5cm,
+  footer: context [
+    #set align(center)
+    #[#sym.copyright soweli Tesa. 2024. #underline[#text(fill: blue)[#link("https://creativecommons.org/licenses/by-sa/4.0/")[CC BY-SA 4.0]]]]
+  ]
 )
 
 #let titi(body) = {
