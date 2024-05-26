@@ -1,6 +1,7 @@
 ---
 title: lipu sona
-date: 2022-06-02
+date: 2024-05-17
+created: 2022-06-02
 category: conlang
 sub_category: toki pona
 url: https://lipu-sona.kittycat.homes/en

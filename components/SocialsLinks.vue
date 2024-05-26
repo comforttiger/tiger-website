@@ -10,6 +10,9 @@
           >
         </li>
         <li>
+          xmpp ~ comforttiger@sure.im
+        </li>
+        <li>
           matrix ~ <NuxtLink to="https://matrix.to/#/@tiger:matrix.kittycat.homes" class="text-secondary underline">@tiger:matrix.kittycat.homes</NuxtLink>
         </li>
         <li>

@@ -24,7 +24,7 @@
           <h2 class="text-primary text-4xl font-display bg-base-100 rounded-xl p-3">
             <NuxtLink to="/made">i recently made this</NuxtLink>
           </h2>
-          <RecentPosts path="/made" limit="3" />
+          <RecentPosts path="/made" limit="4" />
           <NuxtLink to="/made" class="underline text-secondary bg-base-100 rounded-xl p-2"
             >see more things i've made here</NuxtLink
           >
