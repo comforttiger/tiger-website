@@ -1,0 +1,14 @@
+title: kaki king
+url: https://kakiking.bandcamp.com/
+albums: [
+  album: {
+    title: "... Until We Felt Red",
+    url: https://kakiking.bandcamp.com/album/until-we-felt-red,
+    songs: [
+      song: {
+        title: Goby,
+        url: https://kakiking.bandcamp.com/track/goby
+      }
+    ]
+  }
+]
