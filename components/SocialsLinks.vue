@@ -21,7 +21,7 @@
         <li>
             cohost ~ <NuxtLink to="https://cohost.org/comforttiger" class="text-secondary underline">@comforttiger</NuxtLink>
         </li>
-        <li>newgrounds ~ <NuxtLink to="https://comforttiger.newgrounds.com">comforttiger</NuxtLink></li>
+        <li>newgrounds ~ <NuxtLink to="https://comforttiger.newgrounds.com" class="text-secondary underline">comforttiger</NuxtLink></li>
       </ul>
       <p class="pt-2">i have other socials too but they r secret. this intrigues the reader.</p>
     </div>
