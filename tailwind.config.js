@@ -24,9 +24,9 @@ export default {
     themes: [
       {
         light: {
-          primary: "#E63E62",
+          primary: "#6633EE",
           secondary: "#3e62e6",
-          accent: "#e63eb6",
+          accent: "#EE6633",
           neutral: "#031014",
           "base-100": "#EFF3F3",
           info: "#3eb6e6",
@@ -35,9 +35,9 @@ export default {
           error: "#ffffff",
         },
         dark: {
-          primary: "#E63E62",
-          secondary: "#3eb6e6",
-          accent: "#3EE6C2",
+          primary: "#6633EE",
+          secondary: "#EE6633",
+          accent: "#EE6633",
           neutral: "#eff3f3",
           "base-100": "#031014",
           info: "#3eb6e6",
