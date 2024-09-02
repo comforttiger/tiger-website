@@ -1,7 +1,7 @@
 <template>
     <div class="w-full flex items-center justify-center flex-col">
       <div class="md:w-1/2 w-screen h-screen">
-        <LikesTitle page="index"> stuff i like </LikesTitle>
+        <LikesTitle page="index" index> stuff i like </LikesTitle>
         <!-- <div>
           <ContentList :query="query" v-slot="{ list }">
             <div class="flex flex-col gap-5">

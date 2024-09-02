@@ -32,6 +32,7 @@
           <NuxtLink to="likes/good-music" class="underline text-secondary"
             >good music</NuxtLink
           >,
+          <NuxtLink to="/likes/pets/tiara" class="underline text-secondary">my cat</NuxtLink>,
           <NuxtLink to="/likes/girlfriend" class="underline text-secondary"
             >my girlfriend</NuxtLink
           >, and
