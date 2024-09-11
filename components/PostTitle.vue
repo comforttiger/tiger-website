@@ -11,6 +11,9 @@
         <li v-if="category == 'blorbo'">
           <NuxtLink to="/blog/blorbo">blorbo</NuxtLink>
         </li>
+        <li v-if="category == 'learning'">
+          <NuxtLink to="/blog/learning">learning</NuxtLink>
+        </li>
         <li v-if="category == 'diary'">
           <NuxtLink to="/blog/diary">diary</NuxtLink>
         </li>
@@ -18,7 +21,7 @@
           <NuxtLink to="/blog/programming">programming</NuxtLink>
         </li>
         <li v-if="sub_category == 'guitar'">
-          <NuxtLink to="/blog/diary/guitar">guitar</NuxtLink>
+          <NuxtLink to="/blog/learning/guitar">guitar</NuxtLink>
         </li>
       </ul>
     </div>
