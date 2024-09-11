@@ -10,19 +10,13 @@
           >
         </li>
         <li>
-          xmpp ~ comforttiger@sure.im
-        </li>
-        <li>
           matrix ~ <NuxtLink to="https://matrix.to/#/@tiger:matrix.kittycat.homes" class="text-secondary underline">@tiger:matrix.kittycat.homes</NuxtLink>
         </li>
         <li>
             discord ~ <NuxtLink to="https://discord.com/users/152843864342790145" class="text-secondary underline">comforttiger#0</NuxtLink>
         </li>
         <li>
-            cohost ~ <NuxtLink to="https://cohost.org/comforttiger" class="text-secondary underline">@comforttiger</NuxtLink>
-        </li>
-        <li>
-            bluesky ~ <NuxtLink to="https://bsky.app/profile/tiger.kittycat.homes" class="text-secondary underline">@tiger.kittycat.homes</NuxtLink>
+            fediverse ~ <NuxtLink to="https://goblin.band/@comforttiger" class="text-secondary underline">@comforttiger@goblin.band</NuxtLink>
         </li>
         <li>newgrounds ~ <NuxtLink to="https://comforttiger.newgrounds.com" class="text-secondary underline">comforttiger</NuxtLink></li>
       </ul>

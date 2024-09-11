@@ -9,6 +9,11 @@ export default defineNuxtConfig({
       title: "tiger's website"
     }
   },
+  nitro: {
+    prerender: {
+      routes: [ '/blog/rss.xml' ]
+    }
+  },
   content: {
     highlight: {
       langs: [

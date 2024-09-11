@@ -19,6 +19,10 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@nuxt/content": "^2.12.0"
+    "@nuxt/content": "^2.12.0",
+    "@nuxtjs/feed": "^2.0.0",
+    "feed": "^4.2.2",
+    "rss": "^1.2.2",
+    "showdown": "^2.1.0"
   }
 }
