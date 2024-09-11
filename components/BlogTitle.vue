@@ -23,7 +23,7 @@
       <NuxtLink to="/blog/blorbo" class="underline text-secondary">blorbo</NuxtLink>
     </div>
     <div class="flex gap-2 bg-base-100 rounded-xl p-2 mt-2 w-fit" v-if="index && category == 'learning'">
-      <NuxtLink to="/blog/diary/guitar" class="underline text-secondary">guitar</NuxtLink>
+      <NuxtLink to="/blog/learning/guitar" class="underline text-secondary">guitar</NuxtLink>
     </div>
   </div>
 </template>
