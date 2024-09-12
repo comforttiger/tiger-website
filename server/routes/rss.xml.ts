@@ -55,9 +55,16 @@ export default defineEventHandler(async (event) => {
   const made_posts = docs.filter((doc) => doc?._path?.includes("/made"));
 
   for (const doc of made_posts) {
-    let img = '';
-    if (doc.image != undefined) {
-      img = `<img src='https://tiger.kittycat.homes${doc.image}' /> <p>`
+    let content = '';
+    if (doc.photos != undefined) {
+      for (let photo in doc.photos) {
+        content = content + `<img src='https://tiger.kittycat.homes${photo}' />`
+      }
+    } else if (doc.image != undefined) {
+      content = `<img src='https://tiger.kittycat.homes${doc.image}' />`
+    }
+    if (doc.description != undefined) {
+      content = content + " <p>" + doc.description + "</p>"
     }
 
     feed.item({
@@ -67,7 +74,7 @@ export default defineEventHandler(async (event) => {
       description: doc.description,
       custom_elements: [
         {
-          "content:encoded": { _cdata: img + doc.description + "</p>" },
+          "content:encoded": { _cdata: content },
         },
       ],
     });
