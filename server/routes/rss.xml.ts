@@ -47,7 +47,7 @@ export default defineEventHandler(async (event) => {
       custom_elements: [
         {
           "content:encoded": { _cdata: html },
-          "media:content": { _attr: { medium: "image", URL: img } },
+          "media:content": { _attr: { medium: "image", url: img } },
         },
       ],
     });
@@ -67,7 +67,7 @@ export default defineEventHandler(async (event) => {
       date: doc.date,
       description: doc.description,
       custom_elements: [
-        { "media:content": { _attr: { URL: img, medium: "image" } } },
+        { "media:content": { _attr: { url: img, medium: "image" } } },
       ],
     });
   }
