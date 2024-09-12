@@ -36,12 +36,12 @@ export default defineEventHandler(async (event) => {
     let img = undefined;
 
     if (doc.image != undefined) {
-      img = doc.image;
+      img = `https://tiger.kittycat.homes${doc.image}`;
     }
 
     feed.item({
       title: doc.title,
-      url: `https://tiger.kittycat.homes${doc.image}`,
+      url: `https://tiger.kittycat.homes${doc._path}`,
       date: doc.date,
       description: doc.description,
       custom_elements: [
