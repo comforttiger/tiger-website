@@ -4,6 +4,7 @@ date: 2024-03-13
 category: conlang
 sub_category: tuki tiki
 url: /made/conlang/tuki-tiki/cheat-sheet.pdf
+image: /images/made/conlang/tuki-tiki/cheat-sheet.png
 hide: false
 ---
 

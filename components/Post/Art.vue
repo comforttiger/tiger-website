@@ -6,7 +6,7 @@
         <DateComponent :date="post.date" class="italic" /> <span>~</span>
         <span>{{ post.category }}</span>
       </div>
-      <NuxtLink to="/made/art" class="underline text-secondary">see more</NuxtLink>
+      <NuxtLink :to="`/made/art#${post.identifier}`" class="underline text-secondary">see more</NuxtLink>
   </div>
 </template>
 

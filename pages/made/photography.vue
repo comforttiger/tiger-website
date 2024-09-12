@@ -2,16 +2,10 @@
   <div class="md:p-20">
     <MadeTitle category="photography">tiger's photos :3</MadeTitle>
     <ContentList :query="query" v-slot="{ list }">
-      <div class="lg:columns-md columns-2xs gap-8">
-        <div v-for="post in list" :key="post._path">
-          <div class="gap-8 flex flex-col pb-8" :id="post.title">
-            <img
-              v-for="photo in post.photos"
-              :src="photo"
-              :onclick="`showModal(${photo})`"
-            />
-          </div>
-        </div>
+      <div class="flex flex-col gap-5">
+      <div v-for="post in list" :key="post._path" :id="post.identifier">
+        <PhotoCard :photos="post" />
+      </div>
       </div>
     </ContentList>
   </div>
@@ -31,5 +25,5 @@ useSeoMeta({
   ogTitle: "tiger's photos",
   description: "nice fotos tiger",
   ogDescription: "nice fotos tiger",
-})
+});
 </script>

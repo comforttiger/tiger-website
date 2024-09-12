@@ -4,6 +4,7 @@ date: 2022-05-03
 category: conlang
 sub_category: toki pona
 url: https://nimisin.kittycat.homes/
+image: /images/made/conlang/toki-pona/ilo-pali-pi-nimi-sin.png
 hide: false
 ---
 

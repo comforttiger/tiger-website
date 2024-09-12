@@ -28,14 +28,38 @@ export default defineEventHandler(async (event) => {
     }
     const html = converter.makeHtml(contentWithoutFrontmatter)
 
+    let img = undefined
+
+    if (doc.image) {
+      img = `https://tiger.kittycat.homes${doc.image}`
+    }
+
     feed.item({
       title: doc.title,
       url: `https://tiger.kittycat.homes${doc._path}`,
       date: doc.date,
       description: doc.description,
+      image_url: img,
       custom_elements: [
         { 'content:encoded': { _cdata: html } }
       ]
+    });
+  }
+  
+  const made_posts = docs.filter((doc) => doc?._path?.includes("/made"));
+
+  for (const doc of made_posts) {
+    let img = undefined
+    if (doc.image) {
+      img = `https://tiger.kittycat.homes${doc.image}`
+    }
+    
+    feed.item({
+      title: doc.title,
+      url: doc.url,
+      image_url: img,
+      date: doc.date,
+      description: doc.description
     });
   }
   const feedString = feed.xml({ indent: true });

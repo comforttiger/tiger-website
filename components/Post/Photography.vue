@@ -6,12 +6,14 @@
     <img v-for="photo in post.photos" :src="photo" />
     </div>
     </div>
+    <h3 class="text-3xl font-display text-accent">{{ post.title }}</h3>
     <div class="flex gap-2 text-accent">
       <DateComponent :date="post.date" class="italic" /> <span>~</span>
       <span>{{ post.category }}</span>
     </div>
+    <p>{{ post.description }}</p>
     <NuxtLink
-      :to="`/made/photography#${post.title}`"
+      :to="`/made/photography#${post.identifier}`"
       class="underline text-secondary"
       >see more</NuxtLink
     >

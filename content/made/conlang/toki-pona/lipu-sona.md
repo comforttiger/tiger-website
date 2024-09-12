@@ -4,6 +4,7 @@ date: 2024-05-17
 created: 2022-06-02
 category: conlang
 sub_category: toki pona
+image: /images/made/conlang/toki-pona/lipu-sona.png
 url: https://lipu-sona.kittycat.homes/en
 hide: false
 ---
