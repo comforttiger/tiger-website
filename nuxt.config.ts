@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: [ '/blog/rss.xml' ]
+      routes: [ '/rss.xml' ]
     }
   },
   content: {
