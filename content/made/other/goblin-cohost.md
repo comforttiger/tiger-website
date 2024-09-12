@@ -36,6 +36,8 @@ this one changes the colour scheme to feel more like cohost. let me know if anyt
 
 you can copy paste the css below, or install it from [userstyles.world](https://userstyles.world/style/18082/goblin-cohost)
 
+ONE IMPORTANT THING: use the goblin night theme when using this userstyle. if you use any other theme, it will look bad!
+
 ```css
 * {
     --postBg: rgb(255, 255, 255);
