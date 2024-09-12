@@ -57,7 +57,7 @@ export default defineEventHandler(async (event) => {
   for (const doc of made_posts) {
     let content = '';
     if (doc.photos != undefined) {
-      for (let photo in doc.photos) {
+      for (let photo of doc.photos) {
         content = content + `<img src='https://tiger.kittycat.homes${photo}' />`
       }
     } else if (doc.image != undefined) {
