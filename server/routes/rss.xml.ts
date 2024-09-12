@@ -10,6 +10,9 @@ export default defineEventHandler(async (event) => {
     title: "tiger's blog and stuffz :3",
     site_url: "https://tiger.kittycat.homes",
     feed_url: `https://tiger.kittycat.homes/rss.xml`,
+    custom_namespaces: {
+      media: "http://search.yahoo.com/mrss/",
+    },
   });
 
   const docs = await serverQueryContent(event)
@@ -19,51 +22,53 @@ export default defineEventHandler(async (event) => {
   const posts = docs.filter((doc) => doc?._path?.includes("/blog"));
 
   for (const doc of posts) {
-    const filename = join(process.cwd(), 'content', doc._file ?? "")
-    const markdownText = await readFile(filename, 'utf8')
-    let contentWithoutFrontmatter = markdownText
-    const frontmatterEndIndex = markdownText.indexOf('---', 3)
+    const filename = join(process.cwd(), "content", doc._file ?? "");
+    const markdownText = await readFile(filename, "utf8");
+    let contentWithoutFrontmatter = markdownText;
+    const frontmatterEndIndex = markdownText.indexOf("---", 3);
     if (frontmatterEndIndex !== -1) {
-      contentWithoutFrontmatter = markdownText.slice(frontmatterEndIndex + 3).trim()
+      contentWithoutFrontmatter = markdownText
+        .slice(frontmatterEndIndex + 3)
+        .trim();
     }
-    const html = converter.makeHtml(contentWithoutFrontmatter)
+    const html = converter.makeHtml(contentWithoutFrontmatter);
 
-    let img = undefined
+    let img = undefined;
 
     if (doc.image != undefined) {
-      img = `https://tiger.kittycat.homes${doc.image}`
+      img = doc.image;
     }
 
     feed.item({
       title: doc.title,
-      url: `https://tiger.kittycat.homes${doc._path}`,
+      url: `https://tiger.kittycat.homes${doc.image}`,
       date: doc.date,
       description: doc.description,
-      enclosure: {
-        url: img
-      },
       custom_elements: [
-        { 'content:encoded': { _cdata: html } }
-      ]
+        {
+          "content:encoded": { _cdata: html },
+          "media:content": { _attr: { medium: "image", URL: img } },
+        },
+      ],
     });
   }
 
   const made_posts = docs.filter((doc) => doc?._path?.includes("/made"));
 
   for (const doc of made_posts) {
-    let img = undefined
+    let img = undefined;
     if (doc.image != undefined) {
-      img = `https://tiger.kittycat.homes${doc.image}`
+      img = `https://tiger.kittycat.homes${doc.image}`;
     }
-    
+
     feed.item({
       title: doc.title,
       url: doc.url,
-      enclosure: {
-        url: img
-      },
       date: doc.date,
-      description: doc.description
+      description: doc.description,
+      custom_elements: [
+        { "media:content": { _attr: { URL: img, medium: "image" } } },
+      ],
     });
   }
   const feedString = feed.xml({ indent: true });
