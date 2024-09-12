@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
     site_url: "https://tiger.kittycat.homes",
     feed_url: `https://tiger.kittycat.homes/rss.xml`,
     custom_namespaces: {
-      media: "http://search.yahoo.com/mrss/",
+      "media": "http://search.yahoo.com/mrss/",
     },
   });
 
@@ -47,7 +47,7 @@ export default defineEventHandler(async (event) => {
       custom_elements: [
         {
           "content:encoded": { _cdata: html },
-          "media:content": { _attr: { medium: "image", url: img } },
+          "media:content": { _attr: { url: img } },
         },
       ],
     });
@@ -67,7 +67,7 @@ export default defineEventHandler(async (event) => {
       date: doc.date,
       description: doc.description,
       custom_elements: [
-        { "media:content": { _attr: { url: img, medium: "image" } } },
+        { "media:content": { _attr: { url: img } } },
       ],
     });
   }
