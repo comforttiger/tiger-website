@@ -7,9 +7,9 @@ import { readFile } from "fs/promises";
 export default defineEventHandler(async (event) => {
   const converter = new showdown.Converter();
   const feed = new RSS({
-    title: "tiger's blog :3",
+    title: "tiger's blog and stuffz :3",
     site_url: "https://tiger.kittycat.homes",
-    feed_url: `https://tiger.kittycat.homes/blog/rss.xml`,
+    feed_url: `https://tiger.kittycat.homes/rss.xml`,
   });
 
   const docs = await serverQueryContent(event)
@@ -30,7 +30,7 @@ export default defineEventHandler(async (event) => {
 
     let img = undefined
 
-    if (doc.image) {
+    if (doc.image != undefined) {
       img = `https://tiger.kittycat.homes${doc.image}`
     }
 
@@ -39,25 +39,29 @@ export default defineEventHandler(async (event) => {
       url: `https://tiger.kittycat.homes${doc._path}`,
       date: doc.date,
       description: doc.description,
-      image_url: img,
+      enclosure: {
+        url: img
+      },
       custom_elements: [
         { 'content:encoded': { _cdata: html } }
       ]
     });
   }
-  
+
   const made_posts = docs.filter((doc) => doc?._path?.includes("/made"));
 
   for (const doc of made_posts) {
     let img = undefined
-    if (doc.image) {
+    if (doc.image != undefined) {
       img = `https://tiger.kittycat.homes${doc.image}`
     }
     
     feed.item({
       title: doc.title,
       url: doc.url,
-      image_url: img,
+      enclosure: {
+        url: img
+      },
       date: doc.date,
       description: doc.description
     });
