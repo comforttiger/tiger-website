@@ -33,10 +33,10 @@ export default defineEventHandler(async (event) => {
     }
     const html = converter.makeHtml(contentWithoutFrontmatter);
 
-    let img = undefined;
+    let img = '';
 
     if (doc.image != undefined) {
-      img = `https://tiger.kittycat.homes${doc.image}`;
+      img = `<img src='https://tiger.kittycat.homes${doc.image}' />`;
     }
 
     feed.item({
@@ -44,12 +44,9 @@ export default defineEventHandler(async (event) => {
       url: `https://tiger.kittycat.homes${doc._path}`,
       date: doc.date,
       description: doc.description,
-      enclosure: {
-        'url': img
-      },
       custom_elements: [
         {
-          "content:encoded": { _cdata: html },
+          "content:encoded": { _cdata: img + html },
         },
       ],
     });
@@ -58,9 +55,9 @@ export default defineEventHandler(async (event) => {
   const made_posts = docs.filter((doc) => doc?._path?.includes("/made"));
 
   for (const doc of made_posts) {
-    let img = undefined;
+    let img = '';
     if (doc.image != undefined) {
-      img = `http://tiger.kittycat.homes${doc.image}`;
+      img = `<img src='https://tiger.kittycat.homes${doc.image}' /> <p>`
     }
 
     feed.item({
@@ -68,9 +65,11 @@ export default defineEventHandler(async (event) => {
       url: doc.url,
       date: doc.date,
       description: doc.description,
-      enclosure: {
-        'url': img
-      }
+      custom_elements: [
+        {
+          "content:encoded": { _cdata: img + doc.description + "</p>" },
+        },
+      ],
     });
   }
   const feedString = feed.xml({ indent: true });
