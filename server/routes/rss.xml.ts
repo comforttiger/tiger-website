@@ -44,10 +44,12 @@ export default defineEventHandler(async (event) => {
       url: `https://tiger.kittycat.homes${doc._path}`,
       date: doc.date,
       description: doc.description,
+      enclosure: {
+        'url': img
+      },
       custom_elements: [
         {
           "content:encoded": { _cdata: html },
-          "media:content": { _attr: { url: img } },
         },
       ],
     });
@@ -58,7 +60,7 @@ export default defineEventHandler(async (event) => {
   for (const doc of made_posts) {
     let img = undefined;
     if (doc.image != undefined) {
-      img = `https://tiger.kittycat.homes${doc.image}`;
+      img = `http://tiger.kittycat.homes${doc.image}`;
     }
 
     feed.item({
@@ -66,9 +68,9 @@ export default defineEventHandler(async (event) => {
       url: doc.url,
       date: doc.date,
       description: doc.description,
-      custom_elements: [
-        { "media:content": { _attr: { url: img } } },
-      ],
+      enclosure: {
+        'url': img
+      }
     });
   }
   const feedString = feed.xml({ indent: true });
