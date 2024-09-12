@@ -67,6 +67,20 @@ export default defineEventHandler(async (event) => {
       content = content + " <p>" + doc.description + "</p>"
     }
 
+    if (doc.has_content) {
+      const filename = join(process.cwd(), "content", doc._file ?? "");
+      const markdownText = await readFile(filename, "utf8");
+      let contentWithoutFrontmatter = markdownText;
+      const frontmatterEndIndex = markdownText.indexOf("---", 3);
+      if (frontmatterEndIndex !== -1) {
+        contentWithoutFrontmatter = markdownText
+          .slice(frontmatterEndIndex + 3)
+          .trim();
+      }
+      const html = converter.makeHtml(contentWithoutFrontmatter);
+      content = content + html
+    }
+
     feed.item({
       title: doc.title,
       url: doc.url,

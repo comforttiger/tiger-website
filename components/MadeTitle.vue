@@ -10,6 +10,7 @@
         <li v-if="category == 'conlang'"><NuxtLink to="/made/conlang">conlang</NuxtLink></li>
         <li v-if="sub_category == 'toki pona'"><NuxtLink to="/made/conlang/toki-pona">toki pona</NuxtLink></li>
         <li v-if="sub_category == 'tuki tiki'"><NuxtLink to="/made/conlang/tuki-tiki">tuki tiki</NuxtLink></li>
+        <li v-if="category == 'other'"><NuxtLink to="/made/other">other</NuxtLink></li>
       </ul>
     </div>
     <h1 class="text-primary font-display text-7xl underline decoration-accent decoration-8 bg-base-100 rounded-xl p-5 w-fit">
@@ -22,6 +23,7 @@
       >
       <NuxtLink to="/made/photography" class="underline text-secondary">photography</NuxtLink>
       <NuxtLink to="/made/conlang" class="underline text-secondary">conlang</NuxtLink>
+      <NuxtLink to="/made/other" class="underline text-secondary">other</NuxtLink>
     </div>
     <div class="flex gap-2 bg-base-100 w-fit p-2 rounded-xl mt-2" v-if="index && category == 'conlang'">
       <NuxtLink to="/made/conlang/toki-pona" class="underline text-secondary">toki pona</NuxtLink>

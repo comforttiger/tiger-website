@@ -19,6 +19,7 @@ export default defineNuxtConfig({
       langs: [
         'rust',
         'ruby',
+        'css',
       ],
       theme: {
         default: 'github-dark',
