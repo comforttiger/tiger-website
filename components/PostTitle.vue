@@ -17,9 +17,6 @@
         <li v-if="category == 'diary'">
           <NuxtLink to="/blog/diary">diary</NuxtLink>
         </li>
-        <li v-if="category == 'programming'">
-          <NuxtLink to="/blog/programming">programming</NuxtLink>
-        </li>
         <li v-if="sub_category == 'guitar'">
           <NuxtLink to="/blog/learning/guitar">guitar</NuxtLink>
         </li>

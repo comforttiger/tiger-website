@@ -5,13 +5,13 @@ export default defineNuxtConfig({
     head: {
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
-      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }, { rel: 'alternate', type: 'application/rss+xml', title: "tiger's website", href: '/rss.xml'}],
       title: "tiger's website"
     }
   },
   nitro: {
     prerender: {
-      routes: [ '/rss.xml' ]
+      routes: [ '/rss.xml', '/made/rss.xml', '/blog/rss.xml' ]
     }
   },
   content: {

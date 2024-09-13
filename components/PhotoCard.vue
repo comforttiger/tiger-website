@@ -6,6 +6,7 @@
         </div>
       </div>
     <DateComponent :date="photos.date" class="italic text-accent" />
+    <p class="text-accent">📷 {{photos.taken_with}}</p>
     <p>{{ photos.description }}</p>
   </div>
 </template>

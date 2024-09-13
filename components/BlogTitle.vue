@@ -6,7 +6,6 @@
         <li><NuxtLink to="/blog">blog</NuxtLink></li>
         <li v-if="category == 'diary'" ><NuxtLink to="/blog/diary">diary</NuxtLink></li>
         <li v-if="category == 'learning'" ><NuxtLink to="/blog/learning">learning</NuxtLink></li>
-        <li v-if="category == 'programming'"><NuxtLink to="/blog/programming">programming</NuxtLink></li>
         <li v-if="category == 'blorbo'"><NuxtLink to="/blog/blorbo">blorbo</NuxtLink></li>
         <li v-if="sub_category == 'guitar'"><NuxtLink to="/blog/learning/guitar">guitar</NuxtLink></li>
       </ul>
@@ -17,9 +16,6 @@
     <div class="flex gap-2 bg-base-100 rounded-xl p-2 mt-2 w-fit" v-if="index && category == 'blog'">
       <NuxtLink to="/blog/diary" class="underline text-secondary">diary</NuxtLink>
       <NuxtLink to="/blog/learning" class="underline text-secondary">learning</NuxtLink>
-      <NuxtLink to="/blog/programming" class="underline text-secondary"
-        >programming</NuxtLink
-      >
       <NuxtLink to="/blog/blorbo" class="underline text-secondary">blorbo</NuxtLink>
     </div>
     <div class="flex gap-2 bg-base-100 rounded-xl p-2 mt-2 w-fit" v-if="index && category == 'learning'">

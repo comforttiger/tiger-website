@@ -11,6 +11,7 @@
       <DateComponent :date="post.date" class="italic" /> <span>~</span>
       <span>{{ post.category }}</span>
     </div>
+    <p class="text-accent">📷 {{ post.taken_with }}</p>
     <p>{{ post.description }}</p>
     <NuxtLink
       :to="`/made/photography#${post.identifier}`"
