@@ -6,6 +6,7 @@ image: /images/made/other/goblin-cohost.png
 category: other
 has_content: true
 hide: false
+url: "https://tiger.kittycat.homes/made/other/goblin-cohost"
 ---
 i made two userstyles, one that changes the colour scheme and stuff to make goblin.band feel more like cohost, and one that removes numbers. feel free to install one or the other or both!
 
