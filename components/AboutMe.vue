@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-col gap-2">
     <div class="bg-base-100 rounded-xl p-5">
       <h2 class="text-primary text-4xl font-display">who am i???</h2>
       <div class="space-y-2">
@@ -41,7 +41,12 @@
           >
         </p>
 
+        </div>
+        </div>
+
+        <div class="bg-base-100 rounded-xl p-5">
         <h2 class="text-primary text-4xl font-display">rss feeds</h2>
+        <div class="space-y-2">
         <p>
           i have three rss feeds. <NuxtLink to="/rss.xml" class="underline text-secondary">/rss.xml</NuxtLink> contains everything, <NuxtLink to="/blog/rss.xml" class="underline text-secondary">/blog/rss.xml</NuxtLink> contains just the blog posts, and <NuxtLink to="/made/rss.xml" class="underline text-secondary">/made/rss.xml</NuxtLink> contains just stuff i've made. put whichever one you want into your feed reader of choice!
         </p>

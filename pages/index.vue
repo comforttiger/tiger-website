@@ -1,13 +1,15 @@
 <template>
   <div class="w-full flex items-center justify-center flex-col">
     <PageTitle home="yeah" >
-      tiger's website :3
+      tiger's<br>website :3
     </PageTitle>
-    <div class="md:w-4/5 w-full md:px-5 flex flex-col gap-3">
-      <div class="md:grid grid-cols-3 gap-5">
+    <div class="2xl:w-4/5 w-full md:px-5 flex flex-col gap-3">
+      <div class="2xl:grid grid-cols-3 gap-5">
         <AboutMe class="md:col-span-2" />
-        <SocialsLinks />
+        <div class="flex flex-col gap-3">
+        <SocialsLinks class="h-fit"/>
         <WebringNavigation />
+        </div>
       </div>
       <div class="md:grid gap-5 grid-cols-2">
         <div class="flex flex-col gap-2">
