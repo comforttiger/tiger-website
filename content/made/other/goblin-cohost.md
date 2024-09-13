@@ -22,7 +22,7 @@ this one is simple. it removes numbers. let me know if i missed any numbers!
 you can copy paste the css below, or install it from [userstyles.world](https://userstyles.world/style/18083/no-numbers)
 
 ```css
-.count, .noteCount * > b, .noteCount > b, .status * > b {
+.count, .noteCount * > b, .noteCount > b, .status * > b, ._tab_qvmq5_1._tabActive_qvmq5_14._button > span {
     display: none !important;
 }
 
