@@ -9,8 +9,8 @@ export default defineEventHandler(async (event) => {
   const feed = new RSS({
     title: "tiger's website :3 ~ stuff i made",
     description: "a feed of stuff im making; art, games, photos, etc.!",
-    site_url: "https://tiger.kittycat.homes",
-    feed_url: `https://tiger.kittycat.homes/rss.xml`,
+    site_url: "https://tiger.kittycat.homes/made",
+    feed_url: `https://tiger.kittycat.homes/made/rss.xml`,
     custom_namespaces: {
       "media": "http://search.yahoo.com/mrss/",
     },
@@ -39,6 +39,7 @@ export default defineEventHandler(async (event) => {
       content = content + " <p>taken with " + doc.taken_with + "</p>"
     }
 
+
     if (doc.has_content) {
       const filename = join(process.cwd(), "content", doc._file ?? "");
       const markdownText = await readFile(filename, "utf8");
@@ -61,7 +62,7 @@ export default defineEventHandler(async (event) => {
       custom_elements: [
         {
           "content:encoded": { _cdata: content },
-        },
+        }
       ],
     });
   }

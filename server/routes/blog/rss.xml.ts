@@ -9,8 +9,8 @@ export default defineEventHandler(async (event) => {
   const feed = new RSS({
     title: "tiger's website :3 ~ blog posts",
     description: "a feed for my postss",
-    site_url: "https://tiger.kittycat.homes",
-    feed_url: `https://tiger.kittycat.homes/rss.xml`,
+    site_url: "https://tiger.kittycat.homes/blog",
+    feed_url: `https://tiger.kittycat.homes/blog/rss.xml`,
     custom_namespaces: {
       "media": "http://search.yahoo.com/mrss/",
     },
