@@ -12,18 +12,31 @@ export default defineEventHandler(async (event) => {
     site_url: "https://tiger.kittycat.homes",
     feed_url: `https://tiger.kittycat.homes/rss.xml`,
     custom_namespaces: {
-      "media": "http://search.yahoo.com/mrss/",
+      media: "http://search.yahoo.com/mrss/",
     },
   });
 
   const posts = await serverQueryContent(event)
     .sort({ date: -1 })
     .where({ _partial: false })
-    .where({ tags: { $exists: true }})
+    .where({ tags: { $exists: true } })
     .find();
   // const posts = docs.filter((doc) => doc?._path?.includes("/blog"));
 
   for (const doc of posts) {
+    let content = "";
+    if (doc.image != undefined) {
+      content =
+        content + `<img src='https://tiger.kittycat.homes${doc.image}' />`;
+    }
+
+    if (doc.photos != undefined) {
+      for (let photo in doc.photos) {
+        content =
+          content + `<img src='https://tiger.kittycat.homes${doc.image}' />`;
+      }
+    }
+
     const filename = join(process.cwd(), "content", doc._file ?? "");
     const markdownText = await readFile(filename, "utf8");
     let contentWithoutFrontmatter = markdownText;
@@ -33,20 +46,14 @@ export default defineEventHandler(async (event) => {
         .slice(frontmatterEndIndex + 3)
         .trim();
     }
-    const html = converter.makeHtml(contentWithoutFrontmatter);
-
-    let img = '';
-
-    if (doc.image != undefined) {
-      img = `<img src='https://tiger.kittycat.homes${doc.image}' />`;
-    }
+    content = content + converter.makeHtml(contentWithoutFrontmatter);
 
     feed.item({
       title: doc.title,
       url: `https://tiger.kittycat.homes${doc._path}`,
       date: doc.date,
       tags: doc.tags,
-      description: html,
+      description: content,
       // custom_elements: [
       //   {
       //     "content:encoded": { _cdata: img + html },
