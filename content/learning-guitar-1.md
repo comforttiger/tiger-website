@@ -1,6 +1,6 @@
 ---
 title: starting to learn guitar!
-date: 2024-02-29
+timestamp: 1709161200000
 tags: ["blog", "learning", "guitar"]
 image: /images/blog/diary/guitar/0/guitar-selfie.png
 image_description: "picture of me holding a black and white guitar. the background is pink and blurry."

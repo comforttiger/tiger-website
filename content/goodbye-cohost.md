@@ -1,6 +1,6 @@
 ---
 title: goodbye cohost
-date: 2024-09-11
+timestamp: 1726005600000
 tags: ["blog", "personal"]
 ---
 goodbye cohost, you will be missed

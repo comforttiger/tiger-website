@@ -1,16 +1,17 @@
 <template>
-    <p>{{ convertDate(new Date(date)) }}</p>
+    <p>{{ convertDate(new Date(timestamp)) }}</p>
 </template>
 
 <script setup lang="ts">
-function convertDate(date: Date) {
-  return new Date(date).toLocaleDateString("en-GB", {
+function convertDate(timestamp: Date) {
+  return new Date(timestamp).toLocaleDateString("en-US", {
     year: "numeric",
-    day: "2-digit",
-    month: "2-digit",
-  });
+    day: "numeric",
+    month: "long",
+    timeZone: "Europe/Oslo"
+  }).toLowerCase();
 }
 defineProps({
-  date: { type: String, required: true }
+  timestamp: { type: Number, required: true }
 })
 </script>

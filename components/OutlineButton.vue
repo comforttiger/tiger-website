@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
     defineProps({
-        url: { type: String, required: true },
+        url: { type: String, required: false },
         external: {type: Boolean, required: false}
     })
 </script>

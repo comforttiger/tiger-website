@@ -1,6 +1,6 @@
 ---
 title: Data (and the other star trek characters like him) 
-date: 2023-01-27
+timestamp: 1674774000000
 tags: ["blog", "blorbo"]
 ---
 

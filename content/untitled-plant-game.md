@@ -1,10 +1,10 @@
 ---
 title: untitled plant game
-date: 2021-12-09
+timestamp: 1639004400000
 tags: ["made", "gamedev"]
 image: /images/made/games/untitled-plant-game.png
 image_description: screenshot of a game. on the left there is a plant, on the right there is a log of the plant saying things.
-description: untitled plant game is a game where you take care of a very talkative plant.
+description: a game where you take care of a very talkative plant.
 ---
 untitled plant game is a game where you take care of a very talkative plant.
 

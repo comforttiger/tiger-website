@@ -24,9 +24,9 @@
     >
       <slot />
     </h1>
-    <div class="mt-2 flex gap-2">
+    <div class="mt-2 flex gap-2 flex-wrap">
       <DateComponent
-        :date="date"
+        :timestamp="timestamp"
         class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display h-fit"
       />
       <Tag v-for="tag in tags" :tag="tag" />
@@ -36,7 +36,7 @@
 
 <script setup lang="ts">
 defineProps({
-  date: { type: String, required: true },
+  timestamp: { type: Number, required: true },
   tags: { type: [String], required: false },
 });
 </script>

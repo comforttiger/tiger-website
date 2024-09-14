@@ -1,6 +1,6 @@
 ---
 title: shuntaro chishiya
-date: 2023-01-15
+timestamp: 1673737200000
 tags: ["blog", "blorbo"]
 description: chishiya is from alice in borderland! the moment they appeared on my screen i knew this would be the character im most obsessed with.
 ---

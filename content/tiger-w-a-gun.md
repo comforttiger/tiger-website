@@ -3,7 +3,7 @@ title: tiger with a GUN
 image: /images/made/art/art1.png
 image_description: tiger in a purple dress holding a gun
 description: the first pixel art i ever drew!
-date: 2021-12-03
+timestamp: 1638486000000
 tags: ["made", "art", "pixel art"]
 ---
 the first pixel art i ever drew! i made it while teaching myself godot by making a game i called "goblbin slayer" (named after a game i made in scratch when i was 13). the game was just for my own learning purposes, so no one else will ever see it...

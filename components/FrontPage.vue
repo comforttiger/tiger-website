@@ -5,8 +5,7 @@
       <div class="xl:grid grid-cols-3 gap-5 flex flex-col-reverse">
         <div class="flex flex-col gap-5 md:col-span-2">
           <AboutMe />
-          <TagList />
-          <AllPosts :tag="tag" />
+          <AllPosts />
 
         </div>
         <div class="flex flex-col gap-5">
@@ -21,10 +20,6 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-  tag: { type: String, required: false },
-});
-
 useSeoMeta({
   title: "tiger's website :3",
   ogTitle: "tiger's website :3",

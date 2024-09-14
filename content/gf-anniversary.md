@@ -1,6 +1,6 @@
 ---
 title: gf anniversary!!! (also im still using dvorak)
-date: 2023-01-26
+timestamp: 1674687600000
 tags: ["blog", "personal"]
 ---
 

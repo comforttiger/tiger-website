@@ -1,6 +1,6 @@
 ---
 title: Kokichi Oma
-date: 2022-05-09
+timestamp: 1652047200000
 tags: ["blog", "blorbo"]
 ---
 

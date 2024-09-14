@@ -1,6 +1,6 @@
 ---
 title: things r starting to make sense...
-date: 2024-03-13
+timestamp: 1710284400000
 tags: ["blog", "learning", "guitar"]
 ---
 

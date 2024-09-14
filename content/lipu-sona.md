@@ -1,8 +1,9 @@
 ---
 title: lipu sona
-date: 2024-09-14
+timestamp: 1726264800000
 tags: ["made", "conlang", "toki pona"]
 image: /images/made/conlang/toki-pona/lipu-sona.png
+image_description: the front page of the english version of my toki pona course. lessons are listed on the left, and on the right there's links to translations and other resources
 ---
 
 [https://lipu-sona.kittycat.homes](https://lipu-sona.kittycat.homes)

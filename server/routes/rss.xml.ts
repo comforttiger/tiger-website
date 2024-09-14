@@ -17,7 +17,7 @@ export default defineEventHandler(async (event) => {
   });
 
   const posts = await serverQueryContent(event)
-    .sort({ date: -1 })
+    .sort({ timestamp: -1 })
     .where({ _partial: false })
     .where({ tags: { $exists: true } })
     .find();
@@ -27,7 +27,7 @@ export default defineEventHandler(async (event) => {
     let content = "";
     if (doc.image != undefined) {
       content =
-        content + `<img src='https://tiger.kittycat.homes${doc.image}' />`;
+        content + `<img src='https://tiger.kittycat.homes${doc.image}' alt='${doc.image_description}' />`;
     }
 
     if (doc.photos != undefined) {
@@ -51,7 +51,7 @@ export default defineEventHandler(async (event) => {
     feed.item({
       title: doc.title,
       url: `https://tiger.kittycat.homes${doc._path}`,
-      date: doc.date,
+      date: doc.timestamp,
       categories: doc.tags,
       description: content,
       // custom_elements: [

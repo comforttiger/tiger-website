@@ -2,7 +2,7 @@
   <article class="w-full flex items-center justify-center flex-col gap-2">
     <div class="min-h-screen md:w-2/3 w-screen flex flex-col gap-2">
       <div>
-        <PostTitle :date="post.date" :tags="post.tags">{{ post.title }}</PostTitle>
+        <PostTitle :timestamp="post.timestamp" :tags="post.tags">{{ post.title }}</PostTitle>
         >
         <div class="flex flex-col gap-5">
           <div

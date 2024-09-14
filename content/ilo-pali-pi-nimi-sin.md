@@ -1,6 +1,6 @@
 ---
 title: ilo pali pi nimi sin
-date: 2022-05-03
+timestamp: 1651528800000
 tags: ["made", "conlang", "toki pona"]
 image: /images/made/conlang/toki-pona/ilo-pali-pi-nimi-sin.png
 ---

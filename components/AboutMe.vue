@@ -7,16 +7,16 @@
         <p>i love to fuck around, but somehow i have yet to find out...</p>
         <p>
           some of my hobbies include
-          <NuxtLink to="/tagged/art" class="underline text-secondary"
+          <NuxtLink to="?tag=art" class="underline text-secondary"
             >making art</NuxtLink
           >,
-          <NuxtLink to="/tagged/gamedev" class="underline text-secondary"
+          <NuxtLink to="?tag=gamedev" class="underline text-secondary"
             >developing games</NuxtLink
           >,
           <!-- <NuxtLink to="/blog/games" class="underline text-secondary"
             >playing games</NuxtLink
           >, --> and
-          <NuxtLink to="/tagged/photography" class="underline text-secondary"
+          <NuxtLink to="?tag=photography" class="underline text-secondary"
             >taking pictures</NuxtLink
           >! the full list is endless, but i hope this small selection of things
           will satisfy you. for now.

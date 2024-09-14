@@ -8,10 +8,9 @@
     <div class="flex w-full justify-center items-center">
       <img v-if="post.image" :src="post.image" :alt="post.image_description" />
     </div>
-    <h3 class="text-3xl text-accent font-display">
+    <h3 class="text-3xl text-accent font-display pb-2">
       <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
     </h3>
-    <DateComponent :date="post.date" class="text-accent italic" />
     <div class="flex flex-col">
       <div class="relative" v-if="post.body && post.body.children.length > 0">
         <ContentRenderer
@@ -22,10 +21,11 @@
           class="absolute top-0 left-0 bg-gradient-to-b h-full w-full from-transparent from-85% to-base-100 pointer-events-none"
         ></div>
       </div>
-      <div class="flex gap-2">
+      <div class="flex gap-2 flex-wrap">
         <FilledButton class="py-1" v-if="post._path" :url="post._path"
           >view post</FilledButton
         >
+        <DateComponent :timestamp="post.timestamp" class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit" />
         <Tag v-for="tag in post.tags" :tag="tag" />
       </div>
     </div>
