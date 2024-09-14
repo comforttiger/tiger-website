@@ -13,11 +13,11 @@
     <div v-if="date" class="bg-base-100 rounded-xl p-2">
       <DateComponent :date="date" class="italic text-accent" />
     </div>
-    <NuxtLink
+    <OutlineButton
       external
       v-if="home"
-      to="/rss.xml"
-      class="underline text-secondary bg-base-100 rounded-xl mt-2 p-2 flex gap-2 w-fit hover:brightness-90"
+      url="/rss.xml"
+      class="mt-2 p-2 w-fit flex gap-2"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -30,7 +30,7 @@
           clip-rule="evenodd"
         />
       </svg>
-      rss feed</NuxtLink
+      rss feed</OutlineButton
     >
   </div>
 </template>

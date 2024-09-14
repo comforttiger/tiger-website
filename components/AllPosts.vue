@@ -1,10 +1,7 @@
 <template>
   <div class="flex flex-col gap-2">
     <div v-if="tag" class="rounded-xl bg-base-100 p-5">
-      <h2 class="text-primary text-4xl font-display">
-        posts tagged #{{ tag }}
-      </h2>
-      <NuxtLink to="/" class="underline text-secondary flex gap-2"
+      <OutlineButton url="/" class="flex gap-2 w-fit"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -20,8 +17,11 @@
           />
         </svg>
 
-        view all posts</NuxtLink
+        view all posts</OutlineButton
       >
+      <h2 class="text-primary text-4xl font-display">
+        posts tagged #{{ tag }}
+      </h2>
     </div>
     <div v-else class="rounded-xl bg-base-100 p-5">
       <h2 class="text-primary text-4xl font-display">all posts</h2>

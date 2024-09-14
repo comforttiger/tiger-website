@@ -1,5 +1,5 @@
 <template>
-    <OutlineButton :url="`/tagged/${tag}`">#{{ tag }}</OutlineButton>
+    <OutlineButton class="py-1" :url="`/tagged/${tag}`">#{{ tag }}</OutlineButton>
 </template>
 
 <script setup lang="ts">

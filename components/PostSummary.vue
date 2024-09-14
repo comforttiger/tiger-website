@@ -12,26 +12,30 @@
       <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
     </h3>
     <DateComponent :date="post.date" class="text-accent italic" />
-    <div class="relative" v-if="post.body && post.body.children.length > 0">
-      <!-- Gradient effect applied here -->
-      <ContentRenderer
-        :value="post"
-        class="space-y-2 max-h-32 overflow-hidden"
-      />
-      <div
-        class="absolute top-0 left-0 bg-gradient-to-b h-full w-full from-transparent from-85% to-base-100 pointer-events-none"
-      ></div>
+    <div class="flex flex-col">
+      <div class="relative" v-if="post.body && post.body.children.length > 0">
+        <ContentRenderer
+          :value="post"
+          class="space-y-2 max-h-32 overflow-hidden"
+        />
+        <div
+          class="absolute top-0 left-0 bg-gradient-to-b h-full w-full from-transparent from-85% to-base-100 pointer-events-none"
+        ></div>
+      </div>
+      <div class="flex gap-2">
+        <FilledButton class="py-1" v-if="post._path" :url="post._path"
+          >view post</FilledButton
+        >
+        <Tag v-for="tag in post.tags" :tag="tag" />
+      </div>
     </div>
-    <NuxtLink :to="post._path" class="underline text-secondary"
-      >view post</NuxtLink
-    >
-    <div>
+    <!-- <div>
       <ul class="flex gap-2 mt-5">
         <li v-for="tag in post.tags">
           <Tag :tag="tag" />
         </li>
       </ul>
-    </div>
+    </div> -->
   </div>
 </template>
 
