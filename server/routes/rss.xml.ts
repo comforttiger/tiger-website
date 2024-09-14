@@ -52,7 +52,7 @@ export default defineEventHandler(async (event) => {
       title: doc.title,
       url: `https://tiger.kittycat.homes${doc._path}`,
       date: doc.date,
-      tags: doc.tags,
+      categories: doc.tags,
       description: content,
       // custom_elements: [
       //   {
