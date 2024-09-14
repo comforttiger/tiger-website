@@ -2,7 +2,7 @@
     <NuxtLink
       :href="href"
       :target="target"
-      class="text-secondary underline"
+      class="text-secondary underline hover:brightness-90"
     >
       <slot />
     </NuxtLink>

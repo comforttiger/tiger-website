@@ -17,7 +17,7 @@
       external
       v-if="home"
       to="/rss.xml"
-      class="underline text-secondary bg-base-100 rounded-xl mt-2 p-2 flex gap-2 w-fit"
+      class="underline text-secondary bg-base-100 rounded-xl mt-2 p-2 flex gap-2 w-fit hover:brightness-90"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

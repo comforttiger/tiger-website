@@ -28,9 +28,7 @@
     <div>
       <ul class="flex gap-2 mt-5">
         <li v-for="tag in post.tags">
-          <NuxtLink :to="`/tagged/${tag}`" class="underline text-secondary"
-            >#{{ tag }}</NuxtLink
-          >
+          <Tag :tag="tag" />
         </li>
       </ul>
     </div>

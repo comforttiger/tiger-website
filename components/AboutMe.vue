@@ -10,7 +10,7 @@
           <NuxtLink to="/tagged/art" class="underline text-secondary"
             >making art</NuxtLink
           >,
-          <NuxtLink to="/tagged/games" class="underline text-secondary"
+          <NuxtLink to="/tagged/gamedev" class="underline text-secondary"
             >developing games</NuxtLink
           >,
           <!-- <NuxtLink to="/blog/games" class="underline text-secondary"

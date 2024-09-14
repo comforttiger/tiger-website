@@ -13,8 +13,8 @@
     </h1>
     <div class="mt-2 flex gap-2">
     <DateComponent :date="date" class="italic text-accent bg-base-100 rounded-xl p-2" />
-      <ul class="bg-base-100 rounded-xl p-2 text-accent underline flex gap-2">
-        <li v-for="tag in tags"><NuxtLink :to="`/tagged/${tag}`">#{{ tag }}</NuxtLink></li>
+      <ul class="p-2 flex gap-2">
+        <li v-for="tag in tags"><Tag :tag="tag" /></li>
       </ul>
     </div>
   </div>
