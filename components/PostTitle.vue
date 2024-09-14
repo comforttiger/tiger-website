@@ -1,41 +1,28 @@
 <template>
   <div class="md:p-20">
-    <div class="breadcrumbs text-accent bg-base-100 rounded-xl p-2 mb-2 w-fit">
-      <ul>
-        <li>
-          <NuxtLink to="/">home</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/blog">blog</NuxtLink>
-        </li>
-        <li v-if="category == 'blorbo'">
-          <NuxtLink to="/blog/blorbo">blorbo</NuxtLink>
-        </li>
-        <li v-if="category == 'learning'">
-          <NuxtLink to="/blog/learning">learning</NuxtLink>
-        </li>
-        <li v-if="category == 'diary'">
-          <NuxtLink to="/blog/diary">diary</NuxtLink>
-        </li>
-        <li v-if="sub_category == 'guitar'">
-          <NuxtLink to="/blog/learning/guitar">guitar</NuxtLink>
-        </li>
-      </ul>
+    <div class="breadcrumbs text-accent underline bg-base-100 rounded-xl p-2 mb-2 w-fit">
+      <NuxtLink to="/" class="flex gap-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+</svg>
+ home</NuxtLink>
     </div>
-    <!-- <div v-if="category == 'art' || category == 'photography' || category == 'game'">
-      <NuxtLink to="/made" class="underline text-secondary">/made</NuxtLink><NuxtLink to="/made/art" v-if="category == 'art'">/art</NuxtLink>
-    </div> -->
-    <h1 class="text-primary font-display text-7xl underline decoration-accent decoration-8 bg-base-100 rounded-xl p-5 w-fit">
+    <h1
+      class="text-primary font-display text-7xl underline decoration-accent decoration-8 bg-base-100 rounded-xl p-5 w-fit"
+    >
       <slot />
     </h1>
-    <DateComponent :date="date" class="italic text-accent"/>
+    <div class="mt-2 flex gap-2">
+    <DateComponent :date="date" class="italic text-accent bg-base-100 rounded-xl p-2" />
+      <ul class="bg-base-100 rounded-xl p-2 text-accent underline flex gap-2">
+        <li v-for="tag in tags"><NuxtLink :to="`/tagged/${tag}`">#{{ tag }}</NuxtLink></li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 defineProps({
-  category: { type: String, required: true },
-  sub_category: { type: String, required: false },
-  date: { type: String, required: true }
-})
+  date: { type: String, required: true },
+  tags: { type: [String], required: false }
+});
 </script>

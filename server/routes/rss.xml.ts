@@ -16,11 +16,12 @@ export default defineEventHandler(async (event) => {
     },
   });
 
-  const docs = await serverQueryContent(event)
+  const posts = await serverQueryContent(event)
     .sort({ date: -1 })
     .where({ _partial: false })
+    .where({ tags: { $exists: true }})
     .find();
-  const posts = docs.filter((doc) => doc?._path?.includes("/blog"));
+  // const posts = docs.filter((doc) => doc?._path?.includes("/blog"));
 
   for (const doc of posts) {
     const filename = join(process.cwd(), "content", doc._file ?? "");
@@ -44,59 +45,60 @@ export default defineEventHandler(async (event) => {
       title: doc.title,
       url: `https://tiger.kittycat.homes${doc._path}`,
       date: doc.date,
-      description: doc.description,
-      custom_elements: [
-        {
-          "content:encoded": { _cdata: img + html },
-        },
-      ],
+      tags: doc.tags,
+      description: html,
+      // custom_elements: [
+      //   {
+      //     "content:encoded": { _cdata: img + html },
+      //   },
+      // ],
     });
   }
 
-  const made_posts = docs.filter((doc) => doc?._path?.includes("/made"));
+  // const made_posts = docs.filter((doc) => doc?._path?.includes("/made"));
 
-  for (const doc of made_posts) {
-    let content = '';
-    if (doc.photos != undefined) {
-      for (let photo of doc.photos) {
-        content = content + `<img src='https://tiger.kittycat.homes${photo}' />`
-      }
-    } else if (doc.image != undefined) {
-      content = `<img src='https://tiger.kittycat.homes${doc.image}' />`
-    }
-    if (doc.description != undefined) {
-      content = content + " <p>" + doc.description + "</p>"
-    }
-    if (doc.taken_with != undefined) {
-      content = content + " <p>taken with " + doc.taken_with + "</p>"
-    }
+  // for (const doc of made_posts) {
+  //   let content = '';
+  //   if (doc.photos != undefined) {
+  //     for (let photo of doc.photos) {
+  //       content = content + `<img src='https://tiger.kittycat.homes${photo}' />`
+  //     }
+  //   } else if (doc.image != undefined) {
+  //     content = `<img src='https://tiger.kittycat.homes${doc.image}' />`
+  //   }
+  //   if (doc.description != undefined) {
+  //     content = content + " <p>" + doc.description + "</p>"
+  //   }
+  //   if (doc.taken_with != undefined) {
+  //     content = content + " <p>taken with " + doc.taken_with + "</p>"
+  //   }
 
-    if (doc.has_content) {
-      const filename = join(process.cwd(), "content", doc._file ?? "");
-      const markdownText = await readFile(filename, "utf8");
-      let contentWithoutFrontmatter = markdownText;
-      const frontmatterEndIndex = markdownText.indexOf("---", 3);
-      if (frontmatterEndIndex !== -1) {
-        contentWithoutFrontmatter = markdownText
-          .slice(frontmatterEndIndex + 3)
-          .trim();
-      }
-      const html = converter.makeHtml(contentWithoutFrontmatter);
-      content = content + html
-    }
+  //   if (doc.has_content) {
+  //     const filename = join(process.cwd(), "content", doc._file ?? "");
+  //     const markdownText = await readFile(filename, "utf8");
+  //     let contentWithoutFrontmatter = markdownText;
+  //     const frontmatterEndIndex = markdownText.indexOf("---", 3);
+  //     if (frontmatterEndIndex !== -1) {
+  //       contentWithoutFrontmatter = markdownText
+  //         .slice(frontmatterEndIndex + 3)
+  //         .trim();
+  //     }
+  //     const html = converter.makeHtml(contentWithoutFrontmatter);
+  //     content = content + html
+  //   }
 
-    feed.item({
-      title: doc.title,
-      url: doc.url,
-      date: doc.date,
-      description: doc.description,
-      custom_elements: [
-        {
-          "content:encoded": { _cdata: content },
-        },
-      ],
-    });
-  }
+  //   feed.item({
+  //     title: doc.title,
+  //     url: doc.url,
+  //     date: doc.date,
+  //     description: doc.description,
+  //     custom_elements: [
+  //       {
+  //         "content:encoded": { _cdata: content },
+  //       },
+  //     ],
+  //   });
+  // }
 
   const feedString = feed.xml({ indent: true });
 

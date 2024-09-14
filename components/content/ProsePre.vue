@@ -1,5 +1,5 @@
 <template>
-    <pre :class="$props.class" class="prose-pre"><slot /></pre>
+    <pre :class="$props.class" class="prose-pre overflow-scroll"><slot /></pre>
   </template>
   
   <script setup lang="ts">

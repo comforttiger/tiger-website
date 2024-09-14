@@ -11,7 +11,7 @@
       <DateComponent :date="post.date" class="italic" /> <span>~</span> <span>{{ post.category }}</span>
       </div>
       <p>{{ post.description }}</p>
-      <NuxtLink :to="post.url" class="underline text-secondary">check it out on {{ post.url_platform }}</NuxtLink>
+      <NuxtLink :to="post._path" class="underline text-secondary">read more</NuxtLink>
     </div>
   </template>
   
