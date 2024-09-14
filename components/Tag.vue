@@ -1,6 +1,6 @@
 <template>
     <FilledButton v-if="tag == queryTag" class="py-1" url="/">#{{ tag }}</FilledButton>
-    <OutlineButton v-else class="py-1 hover:cursor-pointer" @click="updateTag">#{{ tag }}</OutlineButton>
+    <OutlineButton v-else class="py-1" :url="`/?tag=${tag}`">#{{ tag }}</OutlineButton>
 </template>
 
 
