@@ -3,7 +3,7 @@
     <NuxtLink
       target="_blank"
       to="https://zatzhing.me/"
-      class="link text-4xl p-5 w-2/3 flex gap-2 items-baseline"
+      class="link text-4xl p-5 w-2/3 flex gap-2 items-baseline justify-center"
       ><img class="h-12" src="/images/other-blogs/myno_amused_blep.png" />
       <span>Myno!</span></NuxtLink
     >
@@ -16,7 +16,6 @@
   border-radius: 20px;
   background-color: #3a205f;
   color: white;
-  font-family: "DM Sans", sans-serif;
   text-align: center;
   font-weight: 600;
   text-decoration: none;
