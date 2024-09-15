@@ -6,6 +6,7 @@
         <li><OtherBlogErysdren /></li>
         <li><OtherBlogAbyss /></li>
         <li><OtherBlogMyno /></li>
+        <li><OtherBlogOatmealine /></li>
     </ul>
   </div>
 </template>

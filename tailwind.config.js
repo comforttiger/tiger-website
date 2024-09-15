@@ -16,6 +16,7 @@ export default {
       erysdren: ["Erysdren"],
       abyss: ["Abyss"],
       myno: ["Myno"],
+      oatmealine: ["Oatmealine"]
     },
     extend: {
       backgroundImage: {

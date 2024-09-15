@@ -2,7 +2,8 @@
   <div class="flex justify-center">
   <div class="bg p-4 rounded-xl flex justify-center w-fit">
     <NuxtLink
-      to="https://kobold60.com/blog.html"
+      target="_blank"
+      to="https://kobold60.com"
       class="internal-link text-5xl font-abyss text-center"
       >ZA ABYSS <span class="blinking">_</span></NuxtLink
     >

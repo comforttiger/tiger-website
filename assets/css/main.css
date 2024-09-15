@@ -47,3 +47,8 @@
   font-family: "Myno";
   src: url("/fonts/other-blogs/myno.ttf");
 }
+
+@font-face {
+  font-family: "Oatmealine";
+  src: url("/fonts/other-blogs/oatmealine.woff")
+}
