@@ -1,7 +1,7 @@
 ---
 title: plant bonds character
 description: "the main character of a game im working on."
-image: /images/made/art/PlantBondsCharacterRunning.gif
+image: /images/made/art/PlantBondsCharacterRunning.webp
 image_description: pixel art character running
 timestamp: 1674946800000
 tags: ["made", "art", "pixel art", "gamedev"]

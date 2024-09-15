@@ -2,7 +2,7 @@
   <div
     class="bg-base-100 rounded-xl p-5 border-l-4 border-accent overflow-hidden"
   >
-    <div v-if="post.photos" class="lg:columns-md columns-2xs gap-2">
+    <div v-if="post.photos" class="2xl:columns-sm columns-2xs gap-2">
       <img loading="lazy" v-for="photo in post.photos" :src="photo" class="pb-2" />
     </div>
     <div class="flex w-full justify-center items-center">

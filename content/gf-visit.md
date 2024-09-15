@@ -8,7 +8,7 @@ i visited my girlfriend!
 
 i got home two days ago but i was TIRED from the plane ride and also MALNOURISHED from the stores being closed so i didnt write any blog post about it yet! but here it is!!!
 
-![zoe and me being cute](https://tiger.kittycat.homes/images/blog/diary/08042023/HOMOSEXUALITY.JPG)
+![zoe and me being cute](https://tiger.kittycat.homes/images/blog/diary/08042023/HOMOSEXUALITY.webp)
 
 visiting my girlfriend was really nice! we mostly just hung out in faer room and cuddled non-stop tbh,, but it was RLY NICE
 
@@ -24,7 +24,7 @@ me and my gf also went for a long walk the final day before i had to go home!
 
 i took lots of pictures on the walk that u can see on my photography page! the walk was really nice :)
 
-![zoe being cute](https://tiger.kittycat.homes/images/blog/diary/08042023/ZOECUTE.JPG)
+![zoe being cute](https://tiger.kittycat.homes/images/blog/diary/08042023/ZOECUTE.webp)
 
 we also made food together a bunch of times it was p cool
 

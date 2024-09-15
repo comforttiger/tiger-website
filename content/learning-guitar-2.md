@@ -1,7 +1,7 @@
 ---
 title: things r starting to make sense...
 timestamp: 1710284400000
-tags: ["blog", "learning", "guitar"]
+tags: ["blog", "learning", "learning guitar"]
 ---
 
 i've gotten better at guitar since my last post! as i'm writing this right now, it has been a couple of days since last time i practiced, but im gonna try to get more practice in tomorrow :3

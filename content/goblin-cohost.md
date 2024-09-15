@@ -2,8 +2,8 @@
 title: goblin cohost theme
 timestamp: 1726092000000
 tags: ["made"]
-image: /images/made/other/goblin-cohost.png
-image_description: a screenshot of the home timeline on goblin.cohost. the colour scheme is similar to cohost\'s
+image: /images/made/other/goblin-cohost.webp
+image_description: "a screenshot of the home timeline on goblin.cohost. the colour scheme is similar to cohost's"
 ---
 i made two userstyles, one that changes the colour scheme and stuff to make goblin.band feel more like cohost, and one that removes numbers. feel free to install one or the other or both!
 

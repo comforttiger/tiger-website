@@ -2,7 +2,7 @@
 title: ilo pali pi nimi sin
 timestamp: 1651528800000
 tags: ["made", "conlang", "toki pona"]
-image: /images/made/conlang/toki-pona/ilo-pali-pi-nimi-sin.png
+image: /images/made/conlang/toki-pona/ilo-pali-pi-nimi-sin.webp
 ---
 [o lukin e ona](https://nimisin.kittycat.homes) (check it out)
 

@@ -1,6 +1,6 @@
 ---
 title: mountains
-image: /images/made/art/art5.png
+image: /images/made/art/art5.webp
 image_description: tall mountains with patches of grass seen from a windowsill
 timestamp: 1653343200000
 tags: ["made", "art", "pixel art"]

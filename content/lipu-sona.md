@@ -2,7 +2,7 @@
 title: lipu sona
 timestamp: 1726264800000
 tags: ["made", "conlang", "toki pona"]
-image: /images/made/conlang/toki-pona/lipu-sona.png
+image: /images/made/conlang/toki-pona/lipu-sona.webp
 image_description: the front page of the english version of my toki pona course. lessons are listed on the left, and on the right there's links to translations and other resources
 ---
 

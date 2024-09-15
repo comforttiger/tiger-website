@@ -1,6 +1,6 @@
 ---
 title: tiger with a GUN
-image: /images/made/art/art1.png
+image: /images/made/art/art1.webp
 image_description: tiger in a purple dress holding a gun
 description: the first pixel art i ever drew!
 timestamp: 1638486000000

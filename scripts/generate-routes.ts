@@ -1,4 +1,4 @@
-import { blog_tags, made_tags } from "../data/tags";
+import { blog_tags, made_tags, unlisted_tags } from "../data/tags";
 
 export function generateRoutes() {
   const startPage = 0
@@ -9,6 +9,9 @@ export function generateRoutes() {
     Array.prototype.push.apply(routes, Array.from({ length: endPage - startPage + 1 }, (_, i) => `/?page=${startPage + i}&tag=${tag}`))
   }
   for (let tag of made_tags) {
+    Array.prototype.push.apply(routes, Array.from({ length: endPage - startPage + 1 }, (_, i) => `/?page=${startPage + i}&tag=${tag}`))
+  }
+  for (let tag of unlisted_tags) {
     Array.prototype.push.apply(routes, Array.from({ length: endPage - startPage + 1 }, (_, i) => `/?page=${startPage + i}&tag=${tag}`))
   }
 

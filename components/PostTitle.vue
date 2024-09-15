@@ -37,6 +37,6 @@
 <script setup lang="ts">
 defineProps({
   timestamp: { type: Number, required: true },
-  tags: { type: [String], required: false },
+  tags: { type: Array<string>, required: false },
 });
 </script>

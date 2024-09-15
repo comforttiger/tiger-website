@@ -3,11 +3,10 @@
     <div class="min-h-screen md:w-2/3 w-screen flex flex-col gap-2">
       <div>
         <PostTitle :timestamp="post.timestamp" :tags="post.tags">{{ post.title }}</PostTitle>
-        >
         <div class="flex flex-col gap-5">
           <div
             v-if="post.photos"
-            class="columns-md gap-2 rounded-xl bg-base-100 p-5"
+            class="columns-lg gap-2 rounded-xl bg-base-100 p-5"
           >
             <div class="flex flex-col gap-2">
               <img v-for="photo in post.photos" :src="photo" />
@@ -17,7 +16,7 @@
             v-if="post.image && post.tags.includes('art')"
             :src="post.image"
             :alt="post.image_description"
-            class="h-screen w-fit p-5 bg-base-100 rounded-xl"
+            class="h-fit w-fit p-5 bg-base-100 rounded-xl"
           />
           <img
             v-else-if="post.image"

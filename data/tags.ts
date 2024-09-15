@@ -1,14 +1,16 @@
-export const blog_tags = ["blog", "personal", "blorbo", "learning", "guitar"];
+export const made_tags = ["made", "photography", "art", "conlang", "gamedev"];
 
-export const made_tags = [
-  "made",
-  "photography",
-  "art",
+export const blog_tags = ["blog", "personal", "blorbo", "learning"];
+
+export const unlisted_tags = [
   "pixel art",
   "doodle",
   "fanart",
-  "conlang",
+  "learning guitar",
   "toki pona",
   "tuki tiki",
-  "gamedev",
+  "panasonic lumix gx8",
+  "sony dsc-wx500",
+  "samsung galaxy s10e",
+  "nokia 2720 flip",
 ];
