@@ -47,7 +47,7 @@
       <li>
         <OutlineButton
           class="flex gap-2 w-fit"
-          url="https://goblin.band/@comforttiger"
+          url="https://goblin.band/@comforttiger" rel="me"
         >
           fediverse</OutlineButton
         >
