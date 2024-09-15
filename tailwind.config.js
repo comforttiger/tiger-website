@@ -14,7 +14,8 @@ export default {
       display: ["Dosis"],
       zoe: ["Zoe"],
       erysdren: ["Erysdren"],
-      elysia: ["Elysia"],
+      abyss: ["Abyss"],
+      myno: ["Myno"],
     },
     extend: {
       backgroundImage: {

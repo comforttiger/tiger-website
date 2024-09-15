@@ -39,6 +39,11 @@
 }
 
 @font-face {
-  font-family: "Elysia";
-  src: url("/fonts/other-blogs/elysia.ttf");
+  font-family: "Abyss";
+  src: url("/fonts/other-blogs/abyss.ttf");
+}
+
+@font-face {
+  font-family: "Myno";
+  src: url("/fonts/other-blogs/myno.ttf");
 }
