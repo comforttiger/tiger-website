@@ -3,7 +3,7 @@
     <NuxtLink
       target="_blank"
       to="https://zatzhing.me/"
-      class="link text-4xl p-5 w-2/3 flex gap-2 items-baseline justify-center"
+      class="link text-4xl p-8 w-full flex gap-2 items-baseline justify-center"
       ><img class="h-12" src="/images/other-blogs/myno_amused_blep.png" />
       <span>Myno!</span></NuxtLink
     >

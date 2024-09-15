@@ -10,11 +10,9 @@
         </div>
         <div class="flex flex-col gap-5">
           <SocialsLinks class="h-fit" />
-          <OtherBlogs />
+          <OtherBlogs class="mb-5" />
           <WebringNavigation />
         </div>
-        <!-- <div class="flex flex-col gap-5 md:col-span-2">
-        </div> -->
       </div>
     </div>
   </div>

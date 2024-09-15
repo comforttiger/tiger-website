@@ -1,14 +1,13 @@
 <template>
-  <div class="flex justify-center">
-  <div class="bg p-4 rounded-xl flex justify-center w-fit">
-    <NuxtLink
-      target="_blank"
-      to="https://kobold60.com"
-      class="internal-link text-5xl font-abyss text-center"
-      >ZA ABYSS <span class="blinking">_</span></NuxtLink
-    >
-  </div>
-  </div>
+  <NuxtLink
+    target="_blank"
+    to="https://kobold60.com"
+    class="bg p-8 rounded-xl flex justify-center w-full"
+  >
+    <div class="internal-link text-5xl font-abyss text-center">
+      ZA ABYSS <span class="blinking">_</span>
+    </div>
+  </NuxtLink>
 </template>
 
 <style scoped>
@@ -36,7 +35,7 @@
   text-shadow: 0 0 8px orange;
 }
 
-.internal-link:hover {
+.bg:hover > .internal-link {
   border: orange 4px solid;
   margin-left: 10pt;
   margin-right: 10pt;

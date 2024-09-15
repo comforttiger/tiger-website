@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-base-100 rounded-xl p-5 flex flex-col gap-5">
-    <h2 class="text-primary text-4xl font-display">cool people</h2>
-    <ul class="flex justify-evenly flex-col gap-5">
+  <div class="flex flex-col gap-10">
+    <h2 class="text-primary text-4xl font-display bg-base-100 rounded-xl p-5 w-full">cool people</h2>
+    <ul class="flex justify-center flex-col gap-10">
         <li><OtherBlogZoe /></li>
         <li><OtherBlogErysdren /></li>
         <li><OtherBlogAbyss /></li>
