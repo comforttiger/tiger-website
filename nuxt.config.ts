@@ -1,3 +1,6 @@
+import { generateRoutes } from "./scripts/generate-routes"
+
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
@@ -36,5 +39,8 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     }
+  },
+  generate: {
+    routes: generateRoutes()
   }
 })

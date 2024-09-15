@@ -27,3 +27,18 @@
     font-family: "Dosis";
     src: url("/fonts/Dosis-Bold.ttf");
 }
+
+@font-face {
+  font-family: "Zoe";
+  src: url("/fonts/other-blogs/zoe.ttf");
+}
+
+@font-face {
+  font-family: "Erysdren";
+  src: url("/fonts/other-blogs/erysdren.ttf");
+}
+
+@font-face {
+  font-family: "Elysia";
+  src: url("/fonts/other-blogs/elysia.ttf");
+}

@@ -11,7 +11,10 @@ export default {
   theme: {
     fontFamily: {
       sans: ["Ubuntu"],
-      display: ["Dosis"]
+      display: ["Dosis"],
+      zoe: ["Zoe"],
+      erysdren: ["Erysdren"],
+      elysia: ["Elysia"],
     },
     extend: {
       backgroundImage: {

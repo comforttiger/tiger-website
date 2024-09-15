@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-2" ref="scrollTarget">
     <TagList />
     <div v-if="tag" class="rounded-xl bg-base-100 p-5">
       <OutlineButton url="/" class="flex gap-2 w-fit"
@@ -27,25 +27,27 @@
       <h2 class="text-primary text-4xl font-display">all posts</h2>
     </div>
     <div class="min-h-screen max-h-full">
-    <transition name="fade" mode="out-in">
-      <div v-if="queryReady" :key="tag">
-        <ContentList :query="query" v-slot="{ list }">
-          <div class="flex flex-col gap-8">
-            <div v-for="post in list" :key="post._path">
-              <PostSummary :post="post" />
+      <transition name="fade" mode="out-in">
+        <div v-if="queryReady" :key="tag" class="flex flex-col gap-5">
+          <ContentList :query="query" v-slot="{ list }">
+            <div class="flex flex-col gap-8">
+              <div v-for="post in list" :key="post._path">
+                <PostSummary :post="post" />
+              </div>
             </div>
-          </div>
-        </ContentList>
-      </div>
-    </transition>
+          </ContentList>
+          <NavigationButtons />
+        </div>
+      </transition>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { QueryBuilderParams } from "@nuxt/content/dist/runtime/types";
-import { useRoute } from 'vue-router';
-import { ref, computed, watch } from 'vue';
+import { useRoute } from "vue-router";
+import { ref, computed, watch } from "vue";
+import NavigationButtons from "./NavigationButtons.vue";
 
 // Get the current route and router instance
 const route = useRoute();
@@ -62,21 +64,31 @@ const tag = computed(() => {
   return tagValue ?? undefined; // Use undefined if the tag is null/undefined
 });
 
-// A ref to hold the dynamic query object
+const page = computed(() => {
+  const pageValue = route.query.page;
+
+  // Ensure the tag is a valid string or undefined
+  if (Array.isArray(pageValue)) {
+    return pageValue[0] || undefined; // Take the first value if it's an array, or undefined if it's empty
+  }
+
+  return pageValue ?? "0";
+});
+
+const prevPage = page.value ? parseInt(page.value) > 0 : false;
+
 const query = ref<QueryBuilderParams>({
   path: "/",
   sort: [{ timestamp: -1 }],
   where: [{ tags: { $exists: true } }],
+  limit: 5,
 });
 
-// A reactive variable to control query readiness
 const queryReady = ref(false);
 
-// Function to update the query dynamically when the tag changes
 function updateQuery() {
-  queryReady.value = true; // Set query as not ready to trigger transition
+  queryReady.value = true;
 
-  // Rebuild query with tag filtering if available
   query.value = {
     path: "/",
     sort: [{ timestamp: -1 }],
@@ -84,28 +96,55 @@ function updateQuery() {
       { tags: { $exists: true } },
       ...(tag.value ? [{ tags: { $contains: tag.value } }] : []),
     ],
+    skip: page.value ? 5 * parseInt(page.value) : 0,
+    limit: 5,
   };
 
-  // Delay query ready to simulate transition and re-render
   setTimeout(() => {
     queryReady.value = true;
-  }, 50); // Slight delay to ensure the transition triggers
+  }, 50);
 }
 
-// Watch the route for changes to the 'tag' query parameter and update the query
 watch(
-  () => route.query.tag, // Watch the 'tag' query parameter
+  () => route.query.tag,
   () => {
-    updateQuery(); // Update the query whenever 'tag' changes
+    updateQuery();
   },
-  { immediate: true } // Run immediately to initialize the query on page load
+  { immediate: true }
 );
 
+watch(
+  () => route.query.page,
+  () => {
+    updateQuery();
+  },
+  { immediate: true }
+);
+
+const scrollTarget = ref<null | HTMLElement>(null);
+
+watch(
+  () => [route.path, route.query.page, route.query.tag], // Watch path and query params
+  () => {
+    // Check if the current route is the home page
+    if (route.path === "/") {
+      // Scroll only when on the home page and query params change
+      if (scrollTarget.value) {
+        scrollTarget.value.scrollIntoView({
+          behavior: "smooth",
+          block: "start", // Aligns the element with the top of the viewport
+        });
+      }
+    }
+  },
+  { immediate: true } // Run the scroll immediately on load if applicable
+);
 </script>
 
 <style scoped>
 /* Fade transition CSS */
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s ease;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {

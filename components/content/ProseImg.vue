@@ -4,6 +4,8 @@
       :alt="alt"
       :width="width"
       :height="height"
+      class="md:w-1/2"
+      loading="lazy"
     >
   </template>
   

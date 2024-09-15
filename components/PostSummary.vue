@@ -3,10 +3,10 @@
     class="bg-base-100 rounded-xl p-5 border-l-4 border-accent overflow-hidden"
   >
     <div v-if="post.photos" class="lg:columns-md columns-2xs gap-2">
-      <img v-for="photo in post.photos" :src="photo" class="pb-2" />
+      <img loading="lazy" v-for="photo in post.photos" :src="photo" class="pb-2" />
     </div>
     <div class="flex w-full justify-center items-center">
-      <img v-if="post.image" :src="post.image" :alt="post.image_description" />
+      <img loading="lazy" v-if="post.image" :src="post.image" :alt="post.image_description" />
     </div>
     <h3 class="text-3xl text-accent font-display pb-2">
       <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
