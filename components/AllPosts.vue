@@ -81,7 +81,7 @@ const query = ref<QueryBuilderParams>({
   path: "/",
   sort: [{ timestamp: -1 }],
   where: [{ tags: { $exists: true } }],
-  limit: 5,
+  limit: 10,
 });
 
 const queryReady = ref(false);
@@ -96,8 +96,8 @@ function updateQuery() {
       { tags: { $exists: true } },
       ...(tag.value ? [{ tags: { $contains: tag.value } }] : []),
     ],
-    skip: page.value ? 5 * parseInt(page.value) : 0,
-    limit: 5,
+    skip: page.value ? 10 * parseInt(page.value) : 0,
+    limit: 10,
   };
 
   setTimeout(() => {

@@ -9,12 +9,12 @@ i made two userstyles, one that changes the colour scheme and stuff to make gobl
 
 i've not tested them that much, so while it should look good when looking at profile pages and at your timeline, i can't guarantee it'll look good everywhere else, although it's probably *fine*. the no numbers userstyle shouldn't be able to cause any issues though
 
-### how to use
+## how to use
 you can go in goblin.band's settings > theme, and plop the css from the two codeblocks into the custom css field. this requires no extensions and should work on any platform that goblin.band works on.
 
 if you can though, i recommend getting an extension like stylus ([firefox](https://addons.mozilla.org/firefox/addon/styl-us/), [chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)), because that way you can disable the theme much quicker, in case it makes a page unreadable.
 
-### no numbers
+## no numbers
 this one is simple. it removes numbers. let me know if i missed any numbers!
 
 you can copy paste the css below, or install it from [userstyles.world](https://userstyles.world/style/18083/no-numbers)
@@ -29,7 +29,7 @@ you can copy paste the css below, or install it from [userstyles.world](https://
 }
 ```
 
-### cohost theme
+## cohost theme
 this one changes the colour scheme to feel more like cohost. let me know if anything's broken, and i'll fix it if i ever have time!
 
 you can copy paste the css below, or install it from [userstyles.world](https://userstyles.world/style/18082/goblin-cohost)

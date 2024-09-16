@@ -27,7 +27,8 @@ export default defineEventHandler(async (event) => {
     let content = "";
     if (doc.image != undefined) {
       content =
-        content + `<img src='https://tiger.kittycat.homes${doc.image}' alt='${doc.image_description}' />`;
+        content +
+        `<img src='https://tiger.kittycat.homes${doc.image}' alt='${doc.image_description}' />`;
     }
 
     if (doc.photos != undefined) {
@@ -53,12 +54,12 @@ export default defineEventHandler(async (event) => {
       url: `https://tiger.kittycat.homes${doc._path}`,
       date: doc.timestamp,
       categories: doc.tags,
-      description: content,
-      // custom_elements: [
-      //   {
-      //     "content:encoded": { _cdata: img + html },
-      //   },
-      // ],
+      description: doc.description,
+      custom_elements: [
+        {
+          "content:encoded": { _cdata: content },
+        },
+      ],
     });
   }
 

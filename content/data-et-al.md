@@ -1,5 +1,5 @@
 ---
-title: Data (and the other star trek characters like him) 
+title: data (and the other star trek characters like him) 
 timestamp: 1674774000000
 tags: ["blog", "blorbo"]
 ---

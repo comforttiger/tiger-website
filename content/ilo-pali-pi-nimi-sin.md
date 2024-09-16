@@ -3,6 +3,7 @@ title: ilo pali pi nimi sin
 timestamp: 1651528800000
 tags: ["made", "conlang", "toki pona"]
 image: /images/made/conlang/toki-pona/ilo-pali-pi-nimi-sin.webp
+description: this website generates a brand new word for the conlang toki pona, along with example sentences and definitions!
 ---
 [o lukin e ona](https://nimisin.kittycat.homes) (check it out)
 

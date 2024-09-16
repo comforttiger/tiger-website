@@ -2,7 +2,7 @@ import { blog_tags, made_tags, unlisted_tags } from "../data/tags";
 
 export function generateRoutes() {
   const startPage = 0
-  const endPage = 10
+  const endPage = 100
   const routes: string[] = Array.from({ length: endPage - startPage + 1 }, (_, i) => `/?page=${startPage + i}`);
 
   for (let tag of blog_tags) {

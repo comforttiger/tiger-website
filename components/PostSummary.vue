@@ -1,33 +1,66 @@
 <template>
   <div
-    class="bg-base-100 rounded-xl p-5 border-l-4 border-accent overflow-hidden"
+    class="bg-base-100 rounded-xl p-5 border-l-4 border-accent flex flex-col gap-5"
   >
-    <div v-if="post.photos" class="2xl:columns-sm columns-2xs gap-2">
-      <img loading="lazy" v-for="photo in post.photos" :src="photo" class="pb-2" />
-    </div>
-    <div class="flex w-full justify-center items-center">
-      <img loading="lazy" v-if="post.image" :src="post.image" :alt="post.image_description" />
-    </div>
-    <h3 class="text-3xl text-accent font-display pb-2">
-      <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
-    </h3>
-    <div class="flex flex-col">
-      <div class="relative" v-if="post.body && post.body.children.length > 0">
-        <ContentRenderer
-          :value="post"
-          class="space-y-2 max-h-32 overflow-hidden"
+    <!-- <div v-if="post.big_pics">
+      <div v-if="post.photos" class="2xl:columns-sm columns-2xs gap-2">
+        <img
+          loading="lazy"
+          v-for="photo in post.photos"
+          :src="photo"
+          class="pb-2"
         />
-        <div
-          class="absolute top-0 left-0 bg-gradient-to-b h-full w-full from-transparent from-85% to-base-100 pointer-events-none"
-        ></div>
       </div>
-      <div class="flex gap-2 flex-wrap">
-        <FilledButton class="py-1" v-if="post._path" :url="post._path"
-          >view post</FilledButton
-        >
-        <DateComponent :timestamp="post.timestamp" class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit" />
-        <Tag v-for="tag in post.tags" :tag="tag" />
+      <div class="flex w-full justify-center items-center">
+        <img
+          loading="lazy"
+          v-if="post.image"
+          :src="post.image"
+          :alt="post.image_description"
+        />
       </div>
+    </div> -->
+    <div class="flex gap-2">
+      <div
+        class="w-1/4 flex items-center justify-center"
+        v-if="post.image || post.photos || post.preview_image"
+      >
+        <img
+          v-if="post.preview_image"
+          loading="lazy"
+          :src="post.preview_image"
+          :alt="post.image_description"
+        />
+        <div v-else>
+          <img
+            loading="lazy"
+            v-if="post.image"
+            :src="post.image"
+            :alt="post.image_description"
+          />
+          <img loading="lazy" v-if="post.photos" :src="post.photos[0]" />
+        </div>
+      </div>
+      <div class="flex items-center">
+        <div>
+          <h3 class="text-3xl text-accent font-display pb-2">
+            <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
+          </h3>
+          <div class="flex flex-col gap-2">
+            {{ post.description }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex gap-2 flex-wrap">
+      <FilledButton class="py-1" v-if="post._path" :url="post._path"
+        >view post</FilledButton
+      >
+      <DateComponent
+        :timestamp="post.timestamp"
+        class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit"
+      />
+      <Tag v-for="tag in post.tags" :tag="tag" />
     </div>
     <!-- <div>
       <ul class="flex gap-2 mt-5">
@@ -44,6 +77,6 @@ import { type ParsedContent } from "@nuxt/content/dist/runtime/types";
 
 defineProps({
   post: { type: Object as PropType<ParsedContent>, required: true },
-  wide: { type: Boolean, required: false },
+  big_pics: { type: Boolean, required: false },
 });
 </script>

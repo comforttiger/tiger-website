@@ -1,6 +1,7 @@
 ---
 title: gf visit! 2!!
 timestamp: 1693173600000
+preview_image: /images/blog/diary/28082023/homosexual.webp
 tags: ["blog", "personal"]
 ---
 

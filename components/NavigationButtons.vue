@@ -59,7 +59,7 @@ watchEffect(async () => {
 });
 
 const hasNextPage = computed(() => {
-  return (page.value + 1) * 5 < queryLength.value; // Assuming 5 items per page
+  return (page.value + 1) * 10 < queryLength.value; // Assuming 5 items per page
 });
 
 const tagLink = computed(() => {

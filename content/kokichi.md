@@ -1,5 +1,5 @@
 ---
-title: Kokichi Oma
+title: kokichi oma
 timestamp: 1652047200000
 tags: ["blog", "blorbo"]
 ---
