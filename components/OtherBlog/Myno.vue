@@ -4,7 +4,7 @@
       target="_blank"
       to="https://zatzhing.me/"
       class="link text-4xl p-8 w-full flex gap-2 items-baseline justify-center"
-      ><img class="h-12" src="/images/other-blogs/myno_amused_blep.png" />
+      ><img class="h-12" src="/images/other-blogs/myno_amused_blep.webp" />
       <span>Myno!</span></NuxtLink
     >
   </div>

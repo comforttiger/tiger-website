@@ -6,9 +6,9 @@
     class="flex justify-center text-center p-8 w-full rounded-xl text-4xl indietsushin-bg font-indietsushin"
   >
     <div class="header-bg px-16 py-4">
-      <div class="flex justify-center text-center link-indietsushin">
-        インディー通信 <br />
-        Indie Tsushin
+      <div class="flex flex-col gap-2 justify-center text-center link-indietsushin">
+        <p class="break-keep">インディー 通信 </p>
+        <p>Indie Tsushin</p>
       </div>
     </div>
   </NuxtLink>

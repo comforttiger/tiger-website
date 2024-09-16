@@ -10,6 +10,7 @@
           currently listening to:
         </h3>
         <div class="grid grid-cols-3 gap-5">
+          <div class="flex items-center">
           <img
             v-if="
               track.image &&
@@ -18,11 +19,13 @@
             "
             :src="track.image"
           />
-          <div class="gap-3 flex flex-col col-span-2 justify-evenly">
-            <p class="text-accent font-display text-2xl">
-              {{ track.artist }} - {{ track.name }}
-            </p>
-            <p class="text-accent font-display text-2xl">{{ track.album }}</p>
+          </div>
+          <div class="flex flex-col gap-5 col-span-2 justify-evenly text-accent font-display">
+              <div>
+              <p class="text-2xl">{{ track.artist }}</p>
+              <p class="text-3xl">{{ track.name }}</p>
+            </div>
+            <p class="font-display text-xl">{{ track.album }}</p>
           </div>
         </div>
       </NuxtLink>

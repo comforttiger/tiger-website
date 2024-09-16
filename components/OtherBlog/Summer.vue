@@ -13,7 +13,7 @@
 
 <style scoped>
 .summer-bg {
-  background-image: url("/images/other-blogs/summer_bg.png");
+  background-image: url("/images/other-blogs/summer_bg.webp");
 }
 
 .summer-bg:hover * {

@@ -4,48 +4,48 @@
 
 @font-face {
     font-family: "Ubuntu";
-    src: url("/fonts/Ubuntu-Regular.ttf");
+    src: url("/fonts/Ubuntu-Regular.woff2");
   }
   @font-face {
     font-family: "Ubuntu";
-    src: url("/fonts/Ubuntu-Italic.ttf");
+    src: url("/fonts/Ubuntu-Italic.woff2");
     font-style: italic;
   }
   @font-face {
     font-family: "Ubuntu";
-    src: url("/fonts/Ubuntu-Bold.ttf");
+    src: url("/fonts/Ubuntu-Bold.woff2");
     font-weight: bold;
   }
   @font-face {
     font-family: "Ubuntu";
-    src: url("/fonts/Ubuntu-BoldItalic.ttf");
+    src: url("/fonts/Ubuntu-BoldItalic.woff2");
     font-weight: bold;
     font-style: italic;
   }
 
 @font-face {
     font-family: "Dosis";
-    src: url("/fonts/Dosis-Bold.ttf");
+    src: url("/fonts/Dosis-Bold.woff2");
 }
 
 @font-face {
   font-family: "Zoe";
-  src: url("/fonts/other-blogs/zoe.ttf");
+  src: url("/fonts/other-blogs/zoe.woff2");
 }
 
 @font-face {
   font-family: "Erysdren";
-  src: url("/fonts/other-blogs/erysdren.ttf");
+  src: url("/fonts/other-blogs/erysdren.woff2");
 }
 
 @font-face {
   font-family: "Abyss";
-  src: url("/fonts/other-blogs/abyss.ttf");
+  src: url("/fonts/other-blogs/abyss.woff2");
 }
 
 @font-face {
   font-family: "Myno";
-  src: url("/fonts/other-blogs/myno.ttf");
+  src: url("/fonts/other-blogs/myno.woff2");
 }
 
 @font-face {
@@ -55,10 +55,10 @@
 
 @font-face {
   font-family: "IndieTsushin";
-  src: url("/fonts/other-blogs/indietsushin.ttf")
+  src: url("/fonts/other-blogs/indietsushin.woff2")
 }
 
 @font-face {
   font-family: "Summer";
-  src: url("/fonts/other-blogs/summer.ttf")
+  src: url("/fonts/other-blogs/summer.woff2")
 }
