@@ -22,7 +22,7 @@ i'm *really* satisfied with how tags work now.
 i also added a system where some tags don't show up in the initial list, but if you pick another tag which has posts w that tag, then they'll show up! so every camera i own doesn't show up in the tag list until you click photography, for example... i wanted to try to make the tag list as uncluttered as possible.
 
 ## pagination
-i've heard that Loading Every Single Post All At Once is called "bad". that's what i used to do! but after much blood, sweat, and tears, i now have pages. pages was *not* as easy as i thought it'd be to add! the actual pagination itself wasn't so bad, cuz there's lots of ppl who have written articles with the title "How To Create Blog With Pagination Using Nuxt Content"
+i've heard that Loading Every Single Post All At Once is called "bad". that's what i used to do! but after much blood, sweat, and tears, i now have pages. pages was *not* as hard as i thought it'd be to add! the actual pagination itself wasn't so bad, cuz there's lots of ppl who have written articles with the title "How To Create Blog With Pagination Using Nuxt Content"
 
 ### the hard part
 the HARD PART was getting the newfangled pages to actually ***load*** when i built the website!
