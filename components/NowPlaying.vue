@@ -4,7 +4,7 @@
       <NuxtLink
         to="https://last.fm/user/comforttiger"
         target="_blank"
-        class="rounded-xl bg-base-100 p-8 flex flex-col gap-5"
+        class="rounded-xl text-accent bg-base-100 p-5 flex flex-col gap-5"
       >
         <h3 class="text-4xl text-primary font-display">
           currently listening to:
@@ -20,7 +20,7 @@
             :src="track.image"
           />
           </div>
-          <div class="flex flex-col gap-5 col-span-2 justify-evenly text-accent font-display">
+          <div class="flex flex-col gap-5 col-span-2 justify-evenly font-display">
               <div>
               <p class="text-2xl">{{ track.artist }}</p>
               <p class="text-3xl">{{ track.name }}</p>
