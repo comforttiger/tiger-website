@@ -1,7 +1,7 @@
 ---
 title: data (and the other star trek characters like him) 
 timestamp: 1674774000000
-tags: ["blog", "blorbo"]
+tags: ["blog", "likes", "blorbos"]
 ---
 
 ok so this one is more about a genre of characters thats in star trek.

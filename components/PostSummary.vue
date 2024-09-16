@@ -4,7 +4,7 @@
   >
     <div class="grid grid-cols-5 gap-2">
       <div
-        class="flex items-center justify-center"
+        class="flex items-center justify-center md:col-span-1 col-span-2"
         v-if="post.image || post.photos || post.preview_image"
       >
         <img
@@ -23,7 +23,7 @@
           <img loading="lazy" v-if="post.photos" :src="post.photos[0]" />
         </div>
       </div>
-      <div class="flex items-center col-span-4">
+      <div class="flex items-center md:col-span-4 col-span-3">
         <div>
           <h3 class="text-3xl text-accent font-display pb-2">
             <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
@@ -35,7 +35,7 @@
       </div>
     </div>
     <div class="flex gap-2 flex-wrap">
-      <FilledButton class="py-1" v-if="post._path" :url="post._path"
+      <FilledButton class="py-1" v-if="post._path && post._extension == 'md'" :url="post._path"
         >view post</FilledButton
       >
       <DateComponent

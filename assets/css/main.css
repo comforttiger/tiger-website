@@ -52,3 +52,13 @@
   font-family: "Oatmealine";
   src: url("/fonts/other-blogs/oatmealine.woff")
 }
+
+@font-face {
+  font-family: "IndieTsushin";
+  src: url("/fonts/other-blogs/indietsushin.ttf")
+}
+
+@font-face {
+  font-family: "Summer";
+  src: url("/fonts/other-blogs/summer.ttf")
+}

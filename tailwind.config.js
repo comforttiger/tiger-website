@@ -16,7 +16,9 @@ export default {
       erysdren: ["Erysdren"],
       abyss: ["Abyss"],
       myno: ["Myno"],
-      oatmealine: ["Oatmealine"]
+      oatmealine: ["Oatmealine"],
+      indietsushin: ["IndieTsushin"],
+      summer: ["Summer"],
     },
     extend: {
       backgroundImage: {

@@ -23,21 +23,21 @@
         </p>
         <p>
           some things i like are
-          <NuxtLink to="/likes/funny-videos" class="underline text-secondary"
+          <!-- <NuxtLink to="/bookmarked-videos" class="underline text-secondary"
             >funny videos</NuxtLink
-          >,
-          <NuxtLink to="/likes/good-music" class="underline text-secondary"
+          >, -->
+          <!-- <NuxtLink to="/?tag=music" class="underline text-secondary"
             >good music</NuxtLink
-          >,
-          <NuxtLink to="/likes/pets/tiara" class="underline text-secondary"
+          >, -->
+          <NuxtLink to="/my-cat" class="underline text-secondary"
             >my cat</NuxtLink
           >,
-          <NuxtLink to="/likes/girlfriend" class="underline text-secondary"
+          <NuxtLink to="/girlfriend" class="underline text-secondary"
             >my girlfriend</NuxtLink
           >, and
-          <NuxtLink to="/likes/other-stuff" class="underline text-secondary"
+          <NuxtLink to="/?tag=likes" class="underline text-secondary"
             >other stuff too!</NuxtLink
-          >
+          > there's lots of stuff i like that i haven't gotten around to writing about yet too, so stay tuned :3c
         </p>
       </div>
     </div>

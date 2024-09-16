@@ -6,9 +6,9 @@
         <div class="flex flex-col gap-5 md:col-span-2">
           <AboutMe />
           <AllPosts />
-
         </div>
         <div class="flex flex-col gap-5">
+          <NowPlaying />
           <SocialsLinks class="h-fit" />
           <OtherBlogs class="mb-5" />
           <WebringNavigation />

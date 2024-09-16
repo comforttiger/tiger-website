@@ -7,6 +7,8 @@
         <li><OtherBlogAbyss /></li>
         <li><OtherBlogMyno /></li>
         <li><OtherBlogOatmealine /></li>
+        <li><OtherBlogSummer /></li>
+        <li><OtherBlogIndieTsushin /></li>
     </ul>
   </div>
 </template>
