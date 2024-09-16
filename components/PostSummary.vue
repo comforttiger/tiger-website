@@ -2,27 +2,9 @@
   <div
     class="bg-base-100 rounded-xl p-5 border-l-4 border-accent flex flex-col gap-5"
   >
-    <!-- <div v-if="post.big_pics">
-      <div v-if="post.photos" class="2xl:columns-sm columns-2xs gap-2">
-        <img
-          loading="lazy"
-          v-for="photo in post.photos"
-          :src="photo"
-          class="pb-2"
-        />
-      </div>
-      <div class="flex w-full justify-center items-center">
-        <img
-          loading="lazy"
-          v-if="post.image"
-          :src="post.image"
-          :alt="post.image_description"
-        />
-      </div>
-    </div> -->
-    <div class="flex gap-2">
+    <div class="grid grid-cols-5 gap-2">
       <div
-        class="w-1/4 flex items-center justify-center"
+        class="flex items-center justify-center"
         v-if="post.image || post.photos || post.preview_image"
       >
         <img
@@ -41,7 +23,7 @@
           <img loading="lazy" v-if="post.photos" :src="post.photos[0]" />
         </div>
       </div>
-      <div class="flex items-center">
+      <div class="flex items-center col-span-4">
         <div>
           <h3 class="text-3xl text-accent font-display pb-2">
             <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
