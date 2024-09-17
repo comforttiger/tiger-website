@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-base-100 rounded-xl p-5 border-l-4 border-accent flex flex-col gap-5"
+    class="bg-base-100 rounded-xl p-5 rounded-l-md border-l-4 border-accent flex flex-col gap-5"
   >
     <div class="grid grid-cols-5 gap-2">
       <div

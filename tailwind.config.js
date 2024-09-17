@@ -19,6 +19,8 @@ export default {
       oatmealine: ["Oatmealine"],
       indietsushin: ["IndieTsushin"],
       summer: ["Summer"],
+      "tulip-one": ["TulipOne"],
+      "tulip-two": ["TulipTwo"]
     },
     extend: {
       backgroundImage: {

@@ -6,6 +6,14 @@
     - goodbye to halos
         - write some words abt how great goodbye to halos is
 3) other cool sites to add
-    - [platinumtulip](https://platinumtulip.garden/)
+    - [pont!](https://pont.cool)
     - [colrana](https://colrana.neocities.org/)
+    - [splash mob](https://splashmob.neocities.org/)
 4) replace kitty with webp
+5) write posts
+    - minecraft
+    - zoe bat
+    - heathers: the musical
+    - guilty gear strive
+    - testament (blorbo)
+    - shadows of doubt ('let's play')

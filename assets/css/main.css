@@ -62,3 +62,12 @@
   font-family: "Summer";
   src: url("/fonts/other-blogs/summer.woff2")
 }
+
+@font-face {
+  font-family: "TulipOne";
+  src: url("/fonts/other-blogs/tulip-one.woff2")
+}
+@font-face {
+  font-family: "TulipTwo";
+  src: url("/fonts/other-blogs/tulip-two.woff2")
+}

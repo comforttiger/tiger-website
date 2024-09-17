@@ -9,6 +9,7 @@
         <li><OtherBlogOatmealine /></li>
         <li><OtherBlogSummer /></li>
         <li><OtherBlogIndieTsushin /></li>
+        <li><OtherBlogTulip /></li>
     </ul>
   </div>
 </template>
