@@ -26,7 +26,7 @@
     </h1>
     <Draft v-if="draft" />
     <div class="flex gap-2 flex-wrap">
-      <DateComponent
+      <DateComponent v-if="!draft"
         :timestamp="timestamp"
         class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display h-fit"
       />
