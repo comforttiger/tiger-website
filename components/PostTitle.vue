@@ -1,6 +1,6 @@
 <template>
-  <div class="md:p-20">
-    <div class="breadcrumbs p-2 mb-2 w-fit">
+  <div class="md:p-20 flex flex-col gap-2">
+    <div class="breadcrumbs p-2 w-fit">
       <OutlineButton url="/" class="flex gap-2"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,8 @@
     >
       <slot />
     </h1>
-    <div class="mt-2 flex gap-2 flex-wrap">
+    <Draft v-if="draft" />
+    <div class="flex gap-2 flex-wrap">
       <DateComponent
         :timestamp="timestamp"
         class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display h-fit"
@@ -38,5 +39,6 @@
 defineProps({
   timestamp: { type: Number, required: true },
   tags: { type: Array<string>, required: false },
+  draft: { type: Boolean, required: false },
 });
 </script>

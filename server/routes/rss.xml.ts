@@ -20,8 +20,8 @@ export default defineEventHandler(async (event) => {
     .sort({ timestamp: -1 })
     .where({ _partial: false })
     .where({ tags: { $exists: true } })
+    .where({ tags: { $not: { $contains: "draft" }}})
     .find();
-  // const posts = docs.filter((doc) => doc?._path?.includes("/blog"));
 
   for (const doc of posts) {
     let content = "";

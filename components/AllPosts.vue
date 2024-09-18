@@ -80,7 +80,7 @@ const prevPage = page.value ? parseInt(page.value) > 0 : false;
 const query = ref<QueryBuilderParams>({
   path: "/",
   sort: [{ timestamp: -1 }],
-  where: [{ tags: { $exists: true } }],
+  where: [{ tags: { $exists: true } }, { tags: { $not: { $contains: "draft" } } }],
   limit: 10,
 });
 
@@ -94,6 +94,7 @@ function updateQuery() {
     sort: [{ timestamp: -1 }],
     where: [
       { tags: { $exists: true } },
+      { tags: { $not: { $contains: "draft" } } },
       ...(tag.value ? [{ tags: { $contains: tag.value } }] : []),
     ],
     skip: page.value ? 10 * parseInt(page.value) : 0,

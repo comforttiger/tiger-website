@@ -8,6 +8,7 @@
 3) other cool sites to add
     - [pont!](https://pont.cool)
     - [colrana](https://colrana.neocities.org/)
+    - [renkotsuban](https://renkotsuban.com/)
     - [splash mob](https://splashmob.neocities.org/)
 4) replace kitty with webp
 5) write posts
@@ -17,3 +18,5 @@
     - guilty gear strive
     - testament (blorbo)
     - shadows of doubt ('let's play')
+    - nonograms
+    - the fifth side

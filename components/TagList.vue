@@ -37,6 +37,7 @@ async function updateTags() {
     const queryResult = await queryContent('/')
       .where({ tags: { $exists: true } })
       .where({ tags: { $contains: tag.value } })
+      .where({ tags: { $not: { $contains: "draft" } } })
       .only('tags')
       .find();
 
