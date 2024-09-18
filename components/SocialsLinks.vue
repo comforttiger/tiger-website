@@ -1,8 +1,16 @@
 <template>
   <div class="bg-base-100 rounded-xl p-5 flex flex-col gap-5">
-    <h2 class="text-primary text-4xl font-display">links</h2>
+    <h2
+      class="text-primary text-4xl font-display text-center"
+    >
+      links
+    </h2>
     <div class="flex justify-evenly">
-      <OutlineButton external url="/rss.xml" target="_blank" class="w-fit flex gap-2"
+      <OutlineButton
+        external
+        url="/rss.xml"
+        target="_blank"
+        class="w-fit flex gap-2"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
