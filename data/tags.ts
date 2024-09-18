@@ -13,4 +13,5 @@ export const unlisted_tags = [
   "sony dsc-wx500",
   "samsung galaxy s10e",
   "blorbos",
+  "draft",
 ];

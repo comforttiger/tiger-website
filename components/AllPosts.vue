@@ -80,7 +80,10 @@ const prevPage = page.value ? parseInt(page.value) > 0 : false;
 const query = ref<QueryBuilderParams>({
   path: "/",
   sort: [{ timestamp: -1 }],
-  where: [{ tags: { $exists: true } }, { tags: { $not: { $contains: "draft" } } }],
+  where: [
+    { tags: { $exists: true } },
+    { tags: { $not: { $contains: "draft" } } },
+  ],
   limit: 10,
 });
 
@@ -89,17 +92,30 @@ const queryReady = ref(false);
 function updateQuery() {
   queryReady.value = true;
 
-  query.value = {
-    path: "/",
-    sort: [{ timestamp: -1 }],
-    where: [
-      { tags: { $exists: true } },
-      { tags: { $not: { $contains: "draft" } } },
-      ...(tag.value ? [{ tags: { $contains: tag.value } }] : []),
-    ],
-    skip: page.value ? 10 * parseInt(page.value) : 0,
-    limit: 10,
-  };
+  if (tag.value == "draft") {
+    query.value = {
+      path: "/",
+      sort: [{ timestamp: -1 }],
+      where: [
+        { tags: { $exists: true } },
+        ...(tag.value ? [{ tags: { $contains: tag.value } }] : []),
+      ],
+      skip: page.value ? 10 * parseInt(page.value) : 0,
+      limit: 10,
+    };
+  } else {
+    query.value = {
+      path: "/",
+      sort: [{ timestamp: -1 }],
+      where: [
+        { tags: { $exists: true } },
+        { tags: { $not: { $contains: "draft" } } },
+        ...(tag.value ? [{ tags: { $contains: tag.value } }] : []),
+      ],
+      skip: page.value ? 10 * parseInt(page.value) : 0,
+      limit: 10,
+    };
+  }
 
   setTimeout(() => {
     queryReady.value = true;

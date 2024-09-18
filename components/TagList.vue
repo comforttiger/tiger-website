@@ -33,26 +33,26 @@ const tagList = ref<string[]>([]);
 
 // Function to update the tags based on the route query
 async function updateTags() {
-  if (tag.value && tag.value !== 'made' && tag.value !== 'blog') {
-    const queryResult = await queryContent('/')
+  if (tag.value && tag.value !== "made" && tag.value !== "blog" && tag.value !== "draft") {
+    const queryResult = await queryContent("/")
       .where({ tags: { $exists: true } })
       .where({ tags: { $contains: tag.value } })
       .where({ tags: { $not: { $contains: "draft" } } })
-      .only('tags')
+      .only("tags")
       .find();
 
     // Extract tags from the query result and ensure they are unique
     const allTags = queryResult.map((item: any) => item.tags).flat();
     const uniqueTags = Array.from(new Set(allTags));
-    
+
     tagList.value = uniqueTags;
-  } else if (tag.value == 'made') {
+  } else if (tag.value == "made") {
     // Default tag list when no specific tag is selected or invalid tag
     tagList.value = made_tags;
-  } else if (tag.value == 'blog') {
+  } else if (tag.value == "blog") {
     tagList.value = blog_tags;
   } else {
-    tagList.value = blog_tags.concat(made_tags)
+    tagList.value = blog_tags.concat(made_tags);
   }
 }
 
