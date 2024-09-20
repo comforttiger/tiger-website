@@ -83,10 +83,10 @@ async function get_song() {
 onMounted(() => {
   setTimeout(get_song, 50);
 
-  const intervalId = setInterval(get_song, 30000);
+  // const intervalId = setInterval(get_song, 30000);
 
-  onBeforeUnmount(() => {
-    clearInterval(intervalId);
-  });
+  // onBeforeUnmount(() => {
+  //   clearInterval(intervalId);
+  // });
 });
 </script>

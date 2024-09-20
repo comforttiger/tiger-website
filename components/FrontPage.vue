@@ -8,6 +8,7 @@
           <AllPosts />
         </div>
         <div class="flex flex-col gap-5">
+          <NowPlayingGame />
           <NowPlaying />
           <SocialsLinks class="h-fit" />
           <OtherBlogs class="mb-5" />
