@@ -3,6 +3,7 @@ title: hoptix
 description: this game makes me feel so fast and cool
 tags: ["blog", "likes", "games"]
 image: /images/hoptix.webp
+image_description: running around a ring really fast and launching off it in hoptix
 timestamp: 1727704973000
 ---
 

@@ -18,4 +18,3 @@
     - nonograms
     - the fifth side
     - learning japanese
-    - hoptix
