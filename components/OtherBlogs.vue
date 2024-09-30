@@ -10,6 +10,7 @@
         <li><OtherBlogSummer /></li>
         <li><OtherBlogIndieTsushin /></li>
         <li><OtherBlogTulip /></li>
+        <li><OtherBlogCeciRobin /></li>
     </ul>
   </div>
 </template>
