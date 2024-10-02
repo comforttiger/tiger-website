@@ -30,7 +30,7 @@
             class="md:w-1/2 w-full aspect-video p-5 bg-base-100 rounded-xl"
           ></iframe>
           <div v-if="post.body && post.body.children.length > 0" class="text-neutral p-5 bg-base-100 rounded-xl">
-            <ContentRenderer :value="post" class="space-y-2" />
+            <ContentRenderer :value="post" class="space-y-3" />
           </div>
         </div>
       </div>

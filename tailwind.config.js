@@ -10,7 +10,7 @@ export default {
   ],
   theme: {
     fontFamily: {
-      sans: ["Ubuntu"],
+      sans: ["Andika"],
       display: ["Dosis"],
       zoe: ["Zoe"],
       erysdren: ["Erysdren"],

@@ -24,6 +24,27 @@
   }
 
 @font-face {
+  font-family: "Andika";
+  src: url("/fonts/Andika-Regular.woff2");
+}
+  @font-face {
+    font-family: "Andika";
+    src: url("/fonts/Andika-Italic.woff2");
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Andika";
+    src: url("/fonts/Andika-Bold.woff2");
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: "Andika";
+    src: url("/fonts/Andika-BoldItalic.woff2");
+    font-weight: bold;
+    font-style: italic;
+  }
+
+@font-face {
     font-family: "Dosis";
     src: url("/fonts/Dosis-Bold.woff2");
 }

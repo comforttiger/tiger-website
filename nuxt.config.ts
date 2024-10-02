@@ -12,11 +12,13 @@ export default defineNuxtConfig({
       title: "tiger's website"
     }
   },
+
   nitro: {
     prerender: {
       routes: [ '/rss.xml' ]
     }
   },
+
   content: {
     highlight: {
       langs: [
@@ -31,16 +33,21 @@ export default defineNuxtConfig({
       }
     }
   },
+
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
   modules: ["@nuxt/content"],
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     }
   },
+
   generate: {
     routes: generateRoutes()
-  }
+  },
+
+  compatibilityDate: '2024-10-02'
 })
