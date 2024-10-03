@@ -19,7 +19,7 @@
       />
     </div>
     <ContentRenderer :value="comment" class="space-y-2"></ContentRenderer>
-    <FilledButton
+    <OutlineButton
       v-if="!showReplyForm"
       @click="toggleReplyForm"
       class="w-fit hover:cursor-pointer flex gap-2"
@@ -35,7 +35,7 @@
           clip-rule="evenodd"
         />
       </svg>
-      reply</FilledButton
+      reply</OutlineButton
     >
     <div v-if="showReplyForm" class="md:w-2/3 w-full">
       <form @submit.prevent="submitReply" class="flex flex-col gap-2">
@@ -58,6 +58,7 @@
           rows="3"
           required
         ></textarea>
+        <div class="flex gap-2">
         <button
           type="submit"
           class="rounded-xl px-2 py-1 text-base-100 bg-accent font-display hover:brightness-90 flex gap-2 items-center w-fit"
@@ -76,6 +77,16 @@
           </svg>
           reply
         </button>
+        <OutlineButton
+        @click="toggleReplyForm"
+        class="w-fit hover:cursor-pointer flex gap-1 items-center"
+        >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+  <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+</svg>
+          close
+        </OutlineButton>
+        </div>
       </form>
     </div>
     <div
