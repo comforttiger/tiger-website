@@ -1,11 +1,11 @@
 <template>
   <div class="rounded-xl bg-base-100 p-4 flex flex-col gap-4">
     <div class="flex gap-2">
-      <OutlineButton
+      <FilledButton
         v-if="comment.website"
         :url="comment.website"
         target="_blank"
-        >{{ comment.name }}</OutlineButton
+        >{{ comment.name }}</FilledButton
       >
       <span
         v-else
@@ -15,7 +15,7 @@
       <DateComponent
         :timestamp="comment.timestamp"
         time
-        class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit"
+        class="px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit"
       />
     </div>
     <ContentRenderer :value="comment" class="space-y-2"></ContentRenderer>
