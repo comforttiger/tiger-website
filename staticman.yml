@@ -122,4 +122,4 @@ asks:
   requiredFields: ["name", "ask"]
 
   transforms:
-    comment: frontmatterContent
+    ask: frontmatterContent
