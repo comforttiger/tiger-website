@@ -46,7 +46,7 @@
         <CommentButton v-if="post.title" :title="post.title" />
       </div> -->
       <CommentForm :slug="useRoute().path.slice(1)" />
-      <div v-if="comments.length" class="flex flex-col gap-2">
+      <div v-if="comments.length" class="flex flex-col gap-2 md:w-2/3 w-screen">
         <Comment :path="useRoute().path" :comment="comment" v-for="comment in comments" />
       </div>
       <div
