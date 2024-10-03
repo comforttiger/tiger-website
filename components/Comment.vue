@@ -21,7 +21,7 @@
     <FilledButton
       v-if="!showReplyForm"
       @click="toggleReplyForm"
-      class="w-fit hover:cursor-pointer flex gap-2 text-lg"
+      class="w-fit hover:cursor-pointer flex gap-2"
       ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -62,7 +62,7 @@
       ></textarea>
       <button
         type="submit"
-        class="rounded-xl px-2 py-1 text-base-100 bg-accent font-display hover:brightness-90 text-lg flex gap-2 items-center w-fit"
+        class="rounded-xl px-2 py-1 text-base-100 bg-accent font-display hover:brightness-90 flex gap-2 items-center w-fit"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
