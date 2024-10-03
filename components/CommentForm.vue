@@ -98,7 +98,7 @@ function submitComment() {
     .then((response) => {
       console.log("Comment submitted successfully:", response);
       // Optionally reset the comment state after submission
-      comment.value.website;
+      comment.value.website = "";
       comment.value.name = "";
       comment.value.comment = "";
     })
