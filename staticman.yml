@@ -81,7 +81,7 @@ asks:
   # Text to use as the commit message or pull request title. Accepts placeholders.
   commitMessage: "new ask!"
 
-  pullRequestBody: "hi! theres a new comment on your post!\n{fields.ask}"
+  pullRequestBody: "hi! youve received a new ask!\n{fields.ask}"
 
   # (*) REQUIRED
   #

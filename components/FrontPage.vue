@@ -11,6 +11,7 @@
           <NowPlayingGame />
           <NowPlaying />
           <SocialsLinks class="h-fit" />
+          <AskForm />
           <OtherBlogs class="mb-5" />
           <WebringNavigation />
         </div>

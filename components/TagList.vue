@@ -13,8 +13,6 @@
 <script setup lang="ts">
 import { made_tags, blog_tags } from "../data/tags";
 import type { QueryBuilderParams } from "@nuxt/content/dist/runtime/types";
-import { ref, computed, watch } from "vue";
-import { useRoute } from "vue-router";
 
 const route = useRoute();
 
@@ -52,7 +50,7 @@ async function updateTags() {
   } else if (tag.value == "blog") {
     tagList.value = blog_tags;
   } else {
-    tagList.value = blog_tags.concat(made_tags);
+    tagList.value = blog_tags.concat(made_tags).concat(['ask']);
   }
 }
 

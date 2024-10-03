@@ -20,7 +20,7 @@ export default defineEventHandler(async (event) => {
     .sort({ timestamp: -1 })
     .where({ _partial: false })
     .where({ tags: { $exists: true } })
-    .where({ tags: { $not: { $contains: "draft" }}})
+    .where({ tags: { $not: { $contains: "draft" } } })
     .find();
 
   for (const doc of posts) {
@@ -38,23 +38,35 @@ export default defineEventHandler(async (event) => {
       }
     }
 
-    const filename = join(process.cwd(), "content", doc._file ?? "");
-    const markdownText = await readFile(filename, "utf8");
-    let contentWithoutFrontmatter = markdownText;
-    const frontmatterEndIndex = markdownText.indexOf("---", 3);
-    if (frontmatterEndIndex !== -1) {
-      contentWithoutFrontmatter = markdownText
-        .slice(frontmatterEndIndex + 3)
-        .trim();
+    // const filename = join(process.cwd(), "content", doc._file ?? "");
+    // const markdownText = await readFile(filename, "utf8");
+    // let contentWithoutFrontmatter = markdownText;
+    // const frontmatterEndIndex = markdownText.indexOf("---", 3);
+    // if (frontmatterEndIndex !== -1) {
+    //   contentWithoutFrontmatter = markdownText
+    //     .slice(frontmatterEndIndex + 3)
+    //     .trim();
+    // }
+    // content = content + converter.makeHtml(contentWithoutFrontmatter);
+
+    let description = doc.description
+
+    if (doc.ask) {
+      const ask = await serverQueryContent(event).where({ _path: {$eq: `/asks/${doc.ask}`} }).findOne();
+      const askText = await readMarkdown(join(process.cwd(), "content/asks/", `${doc.ask}.md`))
+      content = content + `${ask.name} asked: ${askText}<hr>`
+      description = `${ask.name} asked: ${askText}`
     }
-    content = content + converter.makeHtml(contentWithoutFrontmatter);
+
+    const postText = await readMarkdown(join(process.cwd(), "content", doc._file ?? ""))
+    content = content + postText
 
     feed.item({
       title: doc.title,
       url: `https://tiger.kittycat.homes${doc._path}`,
       date: doc.timestamp,
       categories: doc.tags,
-      description: doc.description,
+      description: description,
       custom_elements: [
         {
           "content:encoded": { _cdata: content },
@@ -63,53 +75,22 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  // const made_posts = docs.filter((doc) => doc?._path?.includes("/made"));
-
-  // for (const doc of made_posts) {
-  //   let content = '';
-  //   if (doc.photos != undefined) {
-  //     for (let photo of doc.photos) {
-  //       content = content + `<img src='https://tiger.kittycat.homes${photo}' />`
-  //     }
-  //   } else if (doc.image != undefined) {
-  //     content = `<img src='https://tiger.kittycat.homes${doc.image}' />`
-  //   }
-  //   if (doc.description != undefined) {
-  //     content = content + " <p>" + doc.description + "</p>"
-  //   }
-  //   if (doc.taken_with != undefined) {
-  //     content = content + " <p>taken with " + doc.taken_with + "</p>"
-  //   }
-
-  //   if (doc.has_content) {
-  //     const filename = join(process.cwd(), "content", doc._file ?? "");
-  //     const markdownText = await readFile(filename, "utf8");
-  //     let contentWithoutFrontmatter = markdownText;
-  //     const frontmatterEndIndex = markdownText.indexOf("---", 3);
-  //     if (frontmatterEndIndex !== -1) {
-  //       contentWithoutFrontmatter = markdownText
-  //         .slice(frontmatterEndIndex + 3)
-  //         .trim();
-  //     }
-  //     const html = converter.makeHtml(contentWithoutFrontmatter);
-  //     content = content + html
-  //   }
-
-  //   feed.item({
-  //     title: doc.title,
-  //     url: doc.url,
-  //     date: doc.date,
-  //     description: doc.description,
-  //     custom_elements: [
-  //       {
-  //         "content:encoded": { _cdata: content },
-  //       },
-  //     ],
-  //   });
-  // }
-
   const feedString = feed.xml({ indent: true });
 
   event.node.res.setHeader("content-type", "text/xml");
   event.node.res.end(feedString);
 });
+
+async function readMarkdown(filename: string): Promise<string> {
+  const converter = new showdown.Converter();
+
+  const markdownText = await readFile(filename, "utf8");
+  let contentWithoutFrontmatter = markdownText;
+  const frontmatterEndIndex = markdownText.indexOf("---", 3);
+  if (frontmatterEndIndex !== -1) {
+    contentWithoutFrontmatter = markdownText
+      .slice(frontmatterEndIndex + 3)
+      .trim();
+  }
+  return converter.makeHtml(contentWithoutFrontmatter)
+}

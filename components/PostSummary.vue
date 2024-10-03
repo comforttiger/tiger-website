@@ -24,7 +24,8 @@
         </div>
       </div>
       <div class="flex items-center md:col-span-4 col-span-3">
-        <div>
+        <Ask v-if="post.ask" :ask="post.ask" />
+        <div v-else>
           <h3 class="text-3xl text-accent font-display pb-2">
             <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
           </h3>
@@ -35,7 +36,10 @@
       </div>
     </div>
     <div class="flex gap-2 flex-wrap">
-      <FilledButton class="py-1" v-if="post._path && post._extension == 'md'" :url="post._path"
+      <FilledButton class="py-1" v-if="post._path && post._extension == 'md' && post.ask" :url="post._path"
+        >view answer</FilledButton
+      >
+      <FilledButton class="py-1" v-else-if="post._path && post._extension == 'md'" :url="post._path"
         >view post</FilledButton
       >
       <DateComponent

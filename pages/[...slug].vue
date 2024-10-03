@@ -34,6 +34,7 @@
             :src="post.video"
             class="max-w-full w-fit aspect-video p-5 bg-base-100 rounded-xl"
           ></iframe>
+          <Ask v-if="post.ask" :ask="post.ask" />
           <div
             v-if="post.body && post.body.children.length > 0"
             class="text-neutral p-5 bg-base-100 rounded-xl"
