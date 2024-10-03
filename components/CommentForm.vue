@@ -57,7 +57,7 @@ function submitComment() {
   formData.append("options[slug]", props.slug);
 
   formData.append("fields[name]", comment.value.name);
-  formData.append("fields[message]", comment.value.comment);
+  formData.append("fields[comment]", comment.value.comment);
 
   axios
     .post(
