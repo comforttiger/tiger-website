@@ -11,4 +11,5 @@ also theres replies!!! for a moment there i wasnt sure if i was gonna be able to
 
 all of it was simultaneously p difficult and incredibly easy. the way my comments work now is that when you comment something, it sends a post request to my server, which then sends a pull request containing your comment to my github repository. and then i can approve or delete the pull request!
 
-i do also still have the email button. i think its nice to have a way to speak more privately if ppl prefer that. but comments are nice because they feel a lot more... social, i guess? cuz people other than me can be part of a conversation, if they want to. i think its nice to have that option!
+i also still think people should totally email me if they want to! my email is still available on the front page of my website, and i think its nice to still have a way to speak more privately if ppl prefer it.  
+but comments are nice because they feel a lot more... social, i guess? cuz people other than me can be part of a conversation, if they want to. i think its nice to have that option!
