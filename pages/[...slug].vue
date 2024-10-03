@@ -1,6 +1,6 @@
 <template>
   <article class="w-full flex items-center justify-center flex-col gap-2">
-    <div class="min-h-screen lg:w-1/2 w-screen flex flex-col gap-4">
+    <div class="min-h-screen max-w-3xl flex flex-col gap-4">
       <div>
         <PostTitle
           :timestamp="post.timestamp"
@@ -27,12 +27,12 @@
             v-else-if="post.image"
             :src="post.image"
             :alt="post.image_description"
-            class="md:w-1/2 w-full p-5 bg-base-100 rounded-xl"
+            class="max-w-full w-fit p-5 bg-base-100 rounded-xl"
           />
           <iframe
             v-if="post.video"
             :src="post.video"
-            class="md:w-1/2 w-full aspect-video p-5 bg-base-100 rounded-xl"
+            class="max-w-full w-fit aspect-video p-5 bg-base-100 rounded-xl"
           ></iframe>
           <div
             v-if="post.body && post.body.children.length > 0"
@@ -42,9 +42,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="w-full md:w-2/3 flex justify-start">
-        <CommentButton v-if="post.title" :title="post.title" />
-      </div> -->
       <CommentForm :slug="useRoute().path.slice(1)" />
       <div v-if="comments.length" class="flex flex-col gap-2 md:w-full w-screen">
         <Comment :path="useRoute().path" :comment="comment" v-for="comment in comments" />

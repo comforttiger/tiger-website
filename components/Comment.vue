@@ -1,11 +1,11 @@
 <template>
   <div class="rounded-xl bg-base-100 p-4 flex flex-col gap-4">
     <div class="flex gap-2">
-      <FilledButton
+      <OutlineButton
         v-if="comment.website"
         :url="comment.website"
         target="_blank"
-        >{{ comment.name }}</FilledButton
+        >{{ comment.name }}</OutlineButton
       >
       <span
         v-else
@@ -14,6 +14,7 @@
       >
       <DateComponent
         :timestamp="comment.timestamp"
+        time
         class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit"
       />
     </div>
@@ -37,23 +38,6 @@
       reply</FilledButton
     >
     <div v-if="showReplyForm" class="md:w-2/3 w-full">
-      <div
-        class="rounded-xl flex gap-2 items-center w-fit p-4 bg-base-100 text-accent font-display text-lg"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="size-6"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 0 1 .67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 1 1-.671-1.34l.041-.022ZM12 9a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-            clip-rule="evenodd"
-          />
-        </svg>
-        all comments are manually reviewed before published!
-      </div>
       <form @submit.prevent="submitReply" class="flex flex-col gap-2">
         <input
           v-model="replyComment.name"
@@ -95,6 +79,18 @@
       </form>
     </div>
     <div
+      class="rounded-xl w-fit p-4 bg-base-100 text-accent font-display text-lg border-2 border-accent"
+      v-if="showSuccessDisclaimer"
+    >
+      your reply was successfully sent! all comments are manually reviewed, so it'll take a bit before it shows up!
+    </div>
+    <div
+      class="rounded-xl w-fit p-4 bg-base-100 text-accent font-display border-2 border-accent text-lg"
+      v-if="showFailureDisclaimer"
+    >
+      something went wrong! try again later!
+    </div>
+    <div
       v-if="replies.length"
       class="flex flex-col gap-2 border-l-4 border-accent"
     >
@@ -119,6 +115,8 @@ const props = defineProps({
 
 // State for the reply form
 const showReplyForm = ref(false);
+const showSuccessDisclaimer = ref(false);
+const showFailureDisclaimer = ref(false);
 
 // State for the reply comment
 const replyComment = ref({
@@ -137,11 +135,11 @@ async function submitReply() {
   const formData = new URLSearchParams();
   const name = replyComment.value.name || "anonymous user";
 
-  formData.append("options[slug]", props.path.slice(1)); // Assuming slug is defined elsewhere
+  formData.append("options[slug]", props.path.slice(1));
   formData.append("fields[name]", name);
   formData.append("fields[website]", replyComment.value.website);
   formData.append("fields[comment]", replyComment.value.comment);
-  formData.append("fields[reply]", props.comment._id); // Add the parent comment's ID
+  formData.append("fields[reply]", props.comment._id);
 
   try {
     const response = await axios.post(
@@ -149,14 +147,15 @@ async function submitReply() {
       formData
     );
     console.log("Reply submitted successfully:", response);
-
-    // Optionally reset the reply comment state after submission
     replyComment.value.name = "";
     replyComment.value.website = "";
     replyComment.value.comment = "";
-    showReplyForm.value = false; // Hide the reply form after submission
-  } catch (err) {
-    console.error("Error submitting reply:", err);
+    showReplyForm.value = false;
+    showSuccessDisclaimer.value = true
+  showFailureDisclaimer.value = false
+  } catch (_err) {
+    showSuccessDisclaimer.value = false
+      showFailureDisclaimer.value = true
   }
 }
 
