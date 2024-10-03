@@ -13,7 +13,7 @@
         >{{ comment.name }}</span
       >
       <DateComponent
-        :timestamp="comment.timestamp"
+        :timestamp="comment.timestamp" time
         class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit"
       />
     </div>
