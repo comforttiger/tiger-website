@@ -91,7 +91,7 @@
         >
       </li>
 
-      <li>
+      <!-- <li>
         <OutlineButton
           class="flex gap-2 w-fit"
           url="https://goblin.band/@comforttiger"
@@ -114,8 +114,8 @@
           </svg>
           fediverse</OutlineButton
         >
-      </li>
-      <li>
+      </li> -->
+      <!-- <li>
         <OutlineButton
           class="flex gap-2 w-fit"
           url="https://bsky.app/profile/tiger.kittycat.homes"
@@ -134,7 +134,7 @@
           </svg>
           bluesky</OutlineButton
         >
-      </li>
+      </li> -->
       <li>
         <OutlineButton
           class="flex gap-2 w-fit"

@@ -34,9 +34,10 @@
           </div>
         </div>
       </div>
-      <div class="w-full md:w-2/3 flex justify-start">
+      <!-- <div class="w-full md:w-2/3 flex justify-start">
         <CommentButton v-if="post.title" :title="post.title" />
-      </div>
+      </div> -->
+      <CommentForm :slug="useRoute().path.slice(1)" />
     </div>
   </article>
 </template>
