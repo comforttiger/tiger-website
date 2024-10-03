@@ -1,6 +1,6 @@
 <template>
   <article class="w-full flex items-center justify-center flex-col gap-2">
-    <div class="min-h-screen md:w-2/3 w-screen flex flex-col gap-12">
+    <div class="min-h-screen md:w-2/3 w-screen flex flex-col gap-4">
       <div>
         <PostTitle
           :timestamp="post.timestamp"
