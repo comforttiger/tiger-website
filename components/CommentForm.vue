@@ -1,20 +1,27 @@
 <template>
-  <form @submit.prevent="submitComment" class="flex flex-col gap-2 w-1/2">
+  <div class="md:w-1/2 w-screen flex flex-col gap-4">
+  <h2 class="text-primary text-4xl font-display bg-base-100 rounded-xl w-min p-4">comments</h2>
+  <form @submit.prevent="submitComment" class="flex flex-col gap-2">
     <input
       v-model="comment.name"
       type="text"
-      placeholder="name"
-      id="name"
+      placeholder="name (optional)"
       class="rounded-xl border-accent border-2 bg-base-100 p-2"
-      required
+    />
+    <input
+      v-model="comment.website"
+      type="text"
+      placeholder="website link (optional)"
+      class="rounded-xl border-accent border-2 bg-base-100 p-2"
     />
     <textarea
       v-model="comment.comment"
       placeholder="comment"
       class="rounded-xl border-accent border-2 bg-base-100 p-2"
+      rows="3"
       required
     ></textarea>
-    <div class="flex gap-2 items-center">
+    <div class="flex gap-2 items-center bg-base-100 w-fit p-2 rounded-xl">
       <button
         type="submit"
         class="rounded-xl px-2 py-1 text-base-100 bg-accent font-display hover:brightness-90 text-lg flex gap-2 items-center"
@@ -36,6 +43,24 @@
       or <CommentButton :title="slug" />
     </div>
   </form>
+  <div
+    class="rounded-xl flex gap-2 items-center w-fit p-4 bg-base-100 text-accent font-display text-lg"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="size-6"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 0 1 .67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 1 1-.671-1.34l.041-.022ZM12 9a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+        clip-rule="evenodd"
+      />
+    </svg>
+    all comments are manually reviewed before published!
+  </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -53,10 +78,12 @@ const comment = ref({
 
 function submitComment() {
   const formData = new URLSearchParams();
+  const name = comment.value.name || "anonymous user"
 
   formData.append("options[slug]", props.slug);
 
-  formData.append("fields[name]", comment.value.name);
+  formData.append("fields[name]", name);
+  formData.append("fields[website]", comment.value.website)
   formData.append("fields[comment]", comment.value.comment);
 
   axios
@@ -67,6 +94,7 @@ function submitComment() {
     .then((response) => {
       console.log("Comment submitted successfully:", response);
       // Optionally reset the comment state after submission
+      comment.value.website
       comment.value.name = "";
       comment.value.comment = "";
     })
