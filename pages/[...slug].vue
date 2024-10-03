@@ -1,6 +1,6 @@
 <template>
   <article class="w-full flex items-center justify-center flex-col gap-2">
-    <div class="min-h-screen md:w-2/3 w-screen flex flex-col gap-4">
+    <div class="min-h-screen lg:w-1/2 w-screen flex flex-col gap-4">
       <div>
         <PostTitle
           :timestamp="post.timestamp"
@@ -46,7 +46,7 @@
         <CommentButton v-if="post.title" :title="post.title" />
       </div> -->
       <CommentForm :slug="useRoute().path.slice(1)" />
-      <div v-if="comments.length" class="flex flex-col gap-2 md:w-2/3 w-screen">
+      <div v-if="comments.length" class="flex flex-col gap-2 md:w-full w-screen">
         <Comment :path="useRoute().path" :comment="comment" v-for="comment in comments" />
       </div>
       <div
