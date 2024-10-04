@@ -15,7 +15,7 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      routes: [ '/rss.xml', '/images/anon.webp' ]
+      routes: [ '/rss.xml']
     }
   },
 

@@ -30,30 +30,4 @@ const props = defineProps({
   ask: { type: String, required: true },
 });
 const query = await queryContent(`/asks/${props.ask}`).findOne();
-
-const showGravatar = ref(false);
-
-onMounted(() => {
-  checkGravatar();
-});
-
-function checkGravatar() {
-  if (query.email) {
-    // Create a new image element to check the Gravatar
-    const img = new Image();
-    img.src = `https://gravatar.com/avatar/${query.email}?d=404`;
-
-    img.onload = () => {
-      // Gravatar exists if the image loads successfully
-      showGravatar.value = true;
-    };
-
-    img.onerror = () => {
-      // Gravatar does not exist if there’s an error loading the image
-      showGravatar.value = false;
-    };
-  } else {
-    showGravatar.value = false;
-  }
-}
 </script>
