@@ -2,23 +2,34 @@
   <div class="w-full flex flex-col gap-4 rounded-xl bg-base-100 p-4">
     <h2 class="text-primary text-4xl font-display text-center">send an ask!</h2>
     <form @submit.prevent="submitAsk" class="flex flex-col gap-2">
-      <input
-        v-model="ask.name"
-        type="text"
-        placeholder="name (optional)"
-        class="rounded-xl border-accent border-2 bg-base-100 p-2"
-      />
-      <input
-        v-model="ask.website"
-        type="text"
-        placeholder="website link (optional)"
-        class="rounded-xl border-accent border-2 bg-base-100 p-2"
-      />
+      <div class="grid grid-cols-3 gap-x-2">
+        <label class="font-display text-accent text-lg" for="name">name: </label>
+        <label class="font-display text-accent text-lg" for="email">email: </label>
+        <label class="font-display text-accent text-lg" for="website">website: </label>
+        <input
+          v-model="ask.name"
+          type="text"
+          id="name"
+          class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full"
+        />
+        <input
+          v-model="ask.email"
+          type="email"
+          id="email"
+          class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full"
+        />
+        <input
+          v-model="ask.website"
+          type="url"
+          id="website"
+          class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full"
+        />
+        </div>
       <textarea
         v-model="ask.ask"
         placeholder="ask something!"
         class="rounded-xl border-accent border-2 bg-base-100 p-2"
-        rows="3"
+        rows="6"
         required
       ></textarea>
       <button
@@ -60,6 +71,7 @@ import axios from "axios";
 
 const ask = ref({
   name: "",
+  email: "",
   website: "",
   ask: "",
 });
@@ -72,6 +84,7 @@ function submitAsk() {
   const name = ask.value.name || "anonymous user";
 
   formData.append("fields[name]", name);
+  formData.append("fields[email]", ask.value.email);
   formData.append("fields[website]", ask.value.website);
   formData.append("fields[ask]", ask.value.ask);
 
@@ -82,6 +95,7 @@ function submitAsk() {
     )
     .then((_response) => {
       ask.value.website = "";
+      ask.value.email = "";
       ask.value.name = "";
       ask.value.ask = "";
       showSuccessDisclaimer.value = true;

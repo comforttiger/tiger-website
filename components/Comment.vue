@@ -1,69 +1,37 @@
 <template>
-  <div class="rounded-xl bg-base-100 p-4 flex flex-col gap-4">
-    <div class="flex gap-2">
-      <FilledButton
-        v-if="comment.website"
-        :url="comment.website"
-        target="_blank"
-        >{{ comment.name }}</FilledButton
-      >
-      <span
-        v-else
-        class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit"
-        >{{ comment.name }}</span
-      >
-      <DateComponent
-        :timestamp="comment.timestamp"
-        time
-        class="px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit"
+  <div class="rounded-xl bg-base-100 p-4 flex flex-col gap-6">
+    <div class="flex gap-4">
+      <img
+        v-if="showGravatar"
+        :src="`https://gravatar.com/avatar/${comment.email}?s=64&d=404&r=pg`"
+        class="rounded-xl h-16 w-16"
       />
-    </div>
-    <ContentRenderer :value="comment" class="space-y-2"></ContentRenderer>
-    <OutlineButton
-      v-if="!showReplyForm"
-      @click="toggleReplyForm"
-      class="w-fit hover:cursor-pointer flex gap-2"
-      ><svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="size-6"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M12 2.25c-2.429 0-4.817.178-7.152.521C2.87 3.061 1.5 4.795 1.5 6.741v6.018c0 1.946 1.37 3.68 3.348 3.97.877.129 1.761.234 2.652.316V21a.75.75 0 0 0 1.28.53l4.184-4.183a.39.39 0 0 1 .266-.112c2.006-.05 3.982-.22 5.922-.506 1.978-.29 3.348-2.023 3.348-3.97V6.741c0-1.947-1.37-3.68-3.348-3.97A49.145 49.145 0 0 0 12 2.25ZM8.25 8.625a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Zm2.625 1.125a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875-1.125a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z"
-          clip-rule="evenodd"
-        />
-      </svg>
-      reply</OutlineButton
-    >
-    <div v-if="showReplyForm" class="md:w-2/3 w-full">
-      <form @submit.prevent="submitReply" class="flex flex-col gap-2">
-        <input
-          v-model="replyComment.name"
-          type="text"
-          placeholder="name (optional)"
-          class="rounded-xl border-accent border-2 bg-base-100 p-2"
-        />
-        <input
-          v-model="replyComment.website"
-          type="text"
-          placeholder="website link (optional)"
-          class="rounded-xl border-accent border-2 bg-base-100 p-2"
-        />
-        <textarea
-          v-model="replyComment.comment"
-          placeholder="reply"
-          class="rounded-xl border-accent border-2 bg-base-100 p-2"
-          rows="3"
-          required
-        ></textarea>
-        <div class="flex gap-2">
-        <button
-          type="submit"
-          class="rounded-xl px-2 py-1 text-base-100 bg-accent font-display hover:brightness-90 flex gap-2 items-center w-fit"
-        >
-          <svg
+      <div class="flex flex-col gap-4 w-full">
+          <div class="flex gap-1">
+            <FilledButton
+              v-if="comment.website"
+              :url="comment.website"
+              target="_blank"
+              class="w-fit"
+              >{{ comment.name }}</FilledButton
+            >
+            <span
+              v-else
+              class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit"
+              >{{ comment.name }}</span
+            >
+            <DateComponent
+            :timestamp="comment.timestamp"
+            time
+            class="px-2 py-1 text-accent bg-base-100 rounded-xl font-display italic w-fit"
+          />
+          </div>
+        <ContentRenderer :value="comment" class="space-y-2"></ContentRenderer>
+        <OutlineButton
+          v-if="!showReplyForm"
+          @click="toggleReplyForm"
+          class="w-fit hover:cursor-pointer flex gap-2"
+          ><svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
@@ -75,17 +43,85 @@
               clip-rule="evenodd"
             />
           </svg>
-          reply
-        </button>
-        <OutlineButton
-        @click="toggleReplyForm"
-        class="w-fit hover:cursor-pointer flex gap-1 items-center"
+          reply</OutlineButton
         >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-  <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-</svg>
-          close
-        </OutlineButton>
+      </div>
+    </div>
+    <div v-if="showReplyForm" class="w-full">
+      <form @submit.prevent="submitReply" class="flex flex-col gap-2">
+        <div class="grid grid-cols-3 gap-x-2">
+          <label class="font-display text-accent text-lg" for="name"
+            >name:
+          </label>
+          <label class="font-display text-accent text-lg" for="email"
+            >email:
+          </label>
+          <label class="font-display text-accent text-lg" for="website"
+            >website:
+          </label>
+          <input
+            v-model="replyComment.name"
+            type="text"
+            id="name"
+            class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full"
+          />
+          <input
+            v-model="replyComment.email"
+            type="email"
+            id="email"
+            class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full"
+          />
+          <input
+            v-model="replyComment.website"
+            type="url"
+            id="website"
+            class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full"
+          />
+        </div>
+        <textarea
+          v-model="replyComment.comment"
+          placeholder="write your reply!"
+          class="rounded-xl border-accent border-2 bg-base-100 p-2"
+          rows="6"
+          required
+        ></textarea>
+        <div class="flex gap-2">
+          <button
+            type="submit"
+            class="rounded-xl px-2 py-1 text-base-100 bg-accent font-display hover:brightness-90 flex gap-2 items-center w-fit"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="size-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 2.25c-2.429 0-4.817.178-7.152.521C2.87 3.061 1.5 4.795 1.5 6.741v6.018c0 1.946 1.37 3.68 3.348 3.97.877.129 1.761.234 2.652.316V21a.75.75 0 0 0 1.28.53l4.184-4.183a.39.39 0 0 1 .266-.112c2.006-.05 3.982-.22 5.922-.506 1.978-.29 3.348-2.023 3.348-3.97V6.741c0-1.947-1.37-3.68-3.348-3.97A49.145 49.145 0 0 0 12 2.25ZM8.25 8.625a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Zm2.625 1.125a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875-1.125a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            reply
+          </button>
+          <OutlineButton
+            @click="toggleReplyForm"
+            class="w-fit hover:cursor-pointer flex gap-1 items-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="size-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            close
+          </OutlineButton>
         </div>
       </form>
     </div>
@@ -93,7 +129,8 @@
       class="rounded-xl w-fit p-4 bg-base-100 text-accent font-display text-lg border-2 border-accent"
       v-if="showSuccessDisclaimer"
     >
-      your reply was successfully sent! all comments are manually reviewed, so it'll take a bit before it shows up!
+      your reply was successfully sent! all comments are manually reviewed, so
+      it'll take a bit before it shows up!
     </div>
     <div
       class="rounded-xl w-fit p-4 bg-base-100 text-accent font-display border-2 border-accent text-lg"
@@ -103,7 +140,7 @@
     </div>
     <div
       v-if="replies.length"
-      class="flex flex-col gap-2 border-l-4 border-accent"
+      class="flex flex-col gap-2 border-l-4 border-accent ml-4"
     >
       <Comment
         :path="path"
@@ -128,11 +165,13 @@ const props = defineProps({
 const showReplyForm = ref(false);
 const showSuccessDisclaimer = ref(false);
 const showFailureDisclaimer = ref(false);
+const showGravatar = ref(true);
 
 // State for the reply comment
 const replyComment = ref({
   name: "",
   website: "",
+  email: "",
   comment: "",
 });
 
@@ -140,7 +179,29 @@ const replyComment = ref({
 function toggleReplyForm() {
   showReplyForm.value = !showReplyForm.value;
 }
+onMounted(() => {
+  checkGravatar();
+});
 
+function checkGravatar() {
+  if (props.comment.email) {
+    // Create a new image element to check the Gravatar
+    const img = new Image();
+    img.src = `https://gravatar.com/avatar/${props.comment.email}?d=404`;
+
+    img.onload = () => {
+      // Gravatar exists if the image loads successfully
+      showGravatar.value = true;
+    };
+
+    img.onerror = () => {
+      // Gravatar does not exist if there’s an error loading the image
+      showGravatar.value = false;
+    };
+  } else {
+    showGravatar.value = false;
+  }
+}
 // Submit the reply comment
 async function submitReply() {
   const formData = new URLSearchParams();
@@ -148,6 +209,7 @@ async function submitReply() {
 
   formData.append("options[slug]", props.path.slice(1));
   formData.append("fields[name]", name);
+  formData.append("fields[email]", replyComment.value.email);
   formData.append("fields[website]", replyComment.value.website);
   formData.append("fields[comment]", replyComment.value.comment);
   formData.append("fields[reply]", props.comment._id);
@@ -160,13 +222,14 @@ async function submitReply() {
     console.log("Reply submitted successfully:", response);
     replyComment.value.name = "";
     replyComment.value.website = "";
+    replyComment.value.email = "";
     replyComment.value.comment = "";
     showReplyForm.value = false;
-    showSuccessDisclaimer.value = true
-  showFailureDisclaimer.value = false
+    showSuccessDisclaimer.value = true;
+    showFailureDisclaimer.value = false;
   } catch (_err) {
-    showSuccessDisclaimer.value = false
-      showFailureDisclaimer.value = true
+    showSuccessDisclaimer.value = false;
+    showFailureDisclaimer.value = true;
   }
 }
 

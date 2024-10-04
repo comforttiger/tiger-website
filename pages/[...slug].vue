@@ -1,6 +1,6 @@
 <template>
   <article class="w-full flex items-center justify-center flex-col gap-2">
-    <div class="min-h-screen max-w-3xl flex flex-col gap-4">
+    <div class="min-h-screen max-w-3xl flex flex-col gap-12">
       <div>
         <PostTitle
           :timestamp="post.timestamp"
@@ -43,15 +43,24 @@
           </div>
         </div>
       </div>
-      <CommentForm :slug="useRoute().path.slice(1)" />
-      <div v-if="comments.length" class="flex flex-col gap-2 md:w-full w-screen">
-        <Comment :path="useRoute().path" :comment="comment" v-for="comment in comments" />
-      </div>
-      <div
-        v-else
-        class="rounded-xl p-5 text-accent bg-base-100 w-fit font-display text-lg flex gap-2 items-center"
-      >
-        there's no comments! yet...
+      <div class="flex flex-col gap-4">
+        <div
+          v-if="comments.length"
+          class="flex flex-col gap-2 md:w-full w-screen"
+        >
+          <Comment
+            :path="useRoute().path"
+            :comment="comment"
+            v-for="comment in comments"
+          />
+        </div>
+        <div
+          v-else
+          class="rounded-xl p-5 text-accent bg-base-100 w-fit font-display text-lg flex gap-2 items-center"
+        >
+          there's no comments! yet...
+        </div>
+        <CommentForm :slug="useRoute().path.slice(1)" />
       </div>
     </div>
   </article>
@@ -64,7 +73,7 @@ const post = await queryContent(useRoute().path).findOne();
 
 const comments = await queryContent(`/comments${useRoute().path}`)
   .sort({ timestamp: 1 })
-  .where({ reply: { $exists: false }})
+  .where({ reply: { $exists: false } })
   .find();
 
 // useHead({

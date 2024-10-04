@@ -1,15 +1,60 @@
 <template>
-    <div class="rounded-xl p-4 border-2 border-accent flex flex-col gap-4 bg-base-100 w-fit">
-        <span class="font-display text-lg "><FilledButton v-if="query.website" :url="query.website" target="_blank">{{ query.name }}</FilledButton><OutlineButton v-else>{{ query.name }}</OutlineButton> asked:</span>
-         <ContentRenderer :value="query"></ContentRenderer>
+  <div
+    class="rounded-xl p-4 border-2 border-accent flex flex-col gap-4 bg-base-100 w-fit"
+  >
+    <div class="flex gap-4">
+      <img
+        v-if="showGravatar"
+        :src="`https://gravatar.com/avatar/${query.email}?s=48&d=404&r=pg`"
+        class="rounded-xl h-12 w-12"
+      />
+      <div class="flex flex-col gap-4 w-full">
+        <div class="flex gap-1">
+        <span class="font-display text-lg"
+          ><FilledButton
+            v-if="query.website"
+            :url="query.website"
+            target="_blank"
+            >{{ query.name }}</FilledButton
+          ><OutlineButton v-else>{{ query.name }}</OutlineButton> asked:</span
+        >
+        </div>
+        <ContentRenderer :value="query"></ContentRenderer>
+      </div>
     </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { type ParsedContent } from "@nuxt/content/dist/runtime/types";
-    const props = defineProps({
-        ask: { type: String, required: true }
-    })
+const props = defineProps({
+  ask: { type: String, required: true },
+});
+const query = await queryContent(`/asks/${props.ask}`).findOne();
 
-    const query = await queryContent(`/asks/${props.ask}`).findOne()
+const showGravatar = ref(false);
+
+onMounted(() => {
+  checkGravatar();
+});
+
+function checkGravatar() {
+  if (query.email) {
+    // Create a new image element to check the Gravatar
+    const img = new Image();
+    img.src = `https://gravatar.com/avatar/${query.email}?d=404`;
+
+    img.onload = () => {
+      // Gravatar exists if the image loads successfully
+      showGravatar.value = true;
+    };
+
+    img.onerror = () => {
+      // Gravatar does not exist if there’s an error loading the image
+      showGravatar.value = false;
+    };
+  } else {
+    showGravatar.value = false;
+  }
+}
 </script>

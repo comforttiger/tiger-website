@@ -24,12 +24,12 @@
         </div>
       </div>
       <div class="flex items-center md:col-span-4 col-span-3">
-        <Ask v-if="post.ask" :ask="post.ask" />
-        <div v-else>
+        <div>
           <h3 class="text-3xl text-accent font-display pb-2">
             <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
           </h3>
-          <div class="flex flex-col gap-2">
+          <Ask v-if="post.ask" :ask="post.ask" />
+          <div v-else class="flex flex-col gap-2">
             {{ post.description }}
           </div>
         </div>

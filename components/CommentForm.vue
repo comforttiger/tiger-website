@@ -1,26 +1,37 @@
 <template>
-  <div class="w-2/3 flex flex-col gap-4">
+  <div class="w-full flex flex-col gap-4 bg-base-100 rounded-xl p-4">
     <form
       @submit.prevent="submitComment"
       class="flex flex-col gap-2"
     >
-      <input
-        v-model="comment.name"
-        type="text"
-        placeholder="name (optional)"
-        class="rounded-xl border-accent border-2 bg-base-100 p-2"
-      />
-      <input
-        v-model="comment.website"
-        type="text"
-        placeholder="website link (optional)"
-        class="rounded-xl border-accent border-2 bg-base-100 p-2"
-      />
+    <div class="grid grid-cols-3 gap-x-2">
+        <label class="font-display text-accent text-lg" for="name">name: </label>
+        <label class="font-display text-accent text-lg" for="email">email: </label>
+        <label class="font-display text-accent text-lg" for="website">website: </label>
+        <input
+          v-model="comment.name"
+          type="text"
+          id="name"
+          class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full"
+        />
+        <input
+          v-model="comment.email"
+          type="email"
+          id="email"
+          class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full"
+        />
+        <input
+          v-model="comment.website"
+          type="url"
+          id="website"
+          class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full"
+        />
+        </div>
       <textarea
         v-model="comment.comment"
-        placeholder="comment"
+        placeholder="write a comment!"
         class="rounded-xl border-accent border-2 bg-base-100 p-2"
-        rows="3"
+        rows="6"
         required
       ></textarea>
       <button
@@ -42,6 +53,7 @@
         comment!
       </button>
     </form>
+    <span class="text-sm italic">ur email is used to show ur <NuxtLink class="text-accent underline font-bold" to="https://gravatar.com/">gravatar</NuxtLink>, if u have one</span>
     <div
       class="rounded-xl w-fit p-4 bg-base-100 text-accent font-display text-lg"
       v-if="showSuccessDisclaimer"
@@ -66,8 +78,10 @@ const props = defineProps({
 
 const comment = ref({
   name: "",
+  email: "",
   website: "",
   comment: "",
+  subscribe: false,
 });
 
 const showSuccessDisclaimer = ref(false);
@@ -79,6 +93,7 @@ function submitComment() {
 
   formData.append("options[slug]", props.slug);
   formData.append("fields[name]", name);
+  formData.append("fields[email]", comment.value.email);
   formData.append("fields[website]", comment.value.website);
   formData.append("fields[comment]", comment.value.comment);
 
@@ -91,6 +106,7 @@ function submitComment() {
       console.log("Comment submitted successfully:", response);
       comment.value.website = "";
       comment.value.name = "";
+      comment.value.email = "";
       comment.value.comment = "";
       showSuccessDisclaimer.value = true
       showFailureDisclaimer.value = false
