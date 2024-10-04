@@ -1,7 +1,11 @@
 <template>
   <div class="rounded-xl bg-base-100 p-4 flex flex-col gap-6">
     <div class="flex gap-4">
-      <img
+      <NuxtLink v-if="comment.website" :to="comment.website" class="min-h-16 min-w-16"><img
+        :src="`https://gravatar.com/avatar/${comment.email}?s=64&d=https%3A%2F%2Ftiger.kittycat.homes%2Fimages%2Fanon.webp&r=pg`"
+        class="rounded-xl h-16 w-16"
+      /></NuxtLink>
+      <img v-else
         :src="`https://gravatar.com/avatar/${comment.email}?s=64&d=https%3A%2F%2Ftiger.kittycat.homes%2Fimages%2Fanon.webp&r=pg`"
         class="rounded-xl h-16 w-16"
       />
@@ -50,13 +54,13 @@
       <form @submit.prevent="submitReply" class="flex flex-col gap-2">
         <div class="grid grid-cols-3 gap-x-2">
           <label class="font-display text-accent text-lg" for="name"
-            >name:
+            >name (optional)
           </label>
           <label class="font-display text-accent text-lg" for="email"
-            >email:
+            >email (optional)
           </label>
           <label class="font-display text-accent text-lg" for="website"
-            >website:
+            >website (optional)
           </label>
           <input
             v-model="replyComment.name"

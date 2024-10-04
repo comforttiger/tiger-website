@@ -5,9 +5,9 @@
       class="flex flex-col gap-2"
     >
     <div class="grid grid-cols-3 gap-x-2">
-        <label class="font-display text-accent text-lg" for="name">name: </label>
-        <label class="font-display text-accent text-lg" for="email">email: </label>
-        <label class="font-display text-accent text-lg" for="website">website: </label>
+        <label class="font-display text-accent text-lg" for="name">name (optional)</label>
+        <label class="font-display text-accent text-lg" for="email">email (optional)</label>
+        <label class="font-display text-accent text-lg" for="website">website (optional)</label>
         <input
           v-model="comment.name"
           type="text"
