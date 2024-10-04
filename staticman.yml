@@ -7,7 +7,7 @@ comments:
   #
   # Names of the fields the form is allowed to submit. If a field that is
   # not here is part of the request, an error will be thrown.
-  allowedFields: ["name", "website", "comment", "reply"]
+  allowedFields: ["name", "email", "website", "comment", "reply"]
 
   allowedOrigins: ["tiger.kittycat.homes", "zoe.kittycat.homes", "localhost"]
 
@@ -48,6 +48,9 @@ comments:
   # Otherwise, entries will be published to the main branch automatically.
   moderation: true
 
+  notifications:
+    enabled: true
+
   # Name of the site. Used in notification emails.
   name: "tiger's website :3"
 
@@ -61,6 +64,7 @@ comments:
   requiredFields: ["name", "comment"]
 
   transforms:
+    email: "md5"
     comment: frontmatterContent
 
 asks:
@@ -68,7 +72,7 @@ asks:
   #
   # Names of the fields the form is allowed to submit. If a field that is
   # not here is part of the request, an error will be thrown.
-  allowedFields: ["name", "website", "ask"]
+  allowedFields: ["name", "email", "website", "ask"]
 
   allowedOrigins: ["tiger.kittycat.homes", "zoe.kittycat.homes", "localhost"]
 
@@ -86,7 +90,7 @@ asks:
   # (*) REQUIRED
   #
   # Destination path (filename) for the data files. Accepts placeholders.
-  filename: "ask-{@timestamp}"
+  filename: "ask-{fields.name}-{@timestamp}"
 
   # The format of the generated data files. Accepted values are "json", "yaml"
   # or "frontmatter"
@@ -122,4 +126,5 @@ asks:
   requiredFields: ["name", "ask"]
 
   transforms:
+    email: "md5"
     ask: frontmatterContent
