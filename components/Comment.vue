@@ -1,35 +1,78 @@
 <template>
   <div class="rounded-xl bg-base-100 p-4 flex flex-col gap-6">
     <div class="flex gap-4">
-      <NuxtLink v-if="comment.website" :to="comment.website" class="min-h-16 min-w-16"><img
-        :src="`https://gravatar.com/avatar/${comment.email}?s=64&d=https%3A%2F%2Ftiger.kittycat.homes%2Fimages%2Fanon.webp&r=pg`"
-        class="rounded-xl h-16 w-16"
+      <NuxtLink
+        v-if="comment.website"
+        :to="comment.website"
+        class="min-h-16 min-w-16"
+        ><img
+          :src="`https://gravatar.com/avatar/${comment.email}?s=64&d=https%3A%2F%2Ftiger.kittycat.homes%2Fimages%2Fanon.webp&r=pg`"
+          class="rounded-xl h-16 w-16"
       /></NuxtLink>
-      <img v-else
+      <img
+        v-else
         :src="`https://gravatar.com/avatar/${comment.email}?s=64&d=https%3A%2F%2Ftiger.kittycat.homes%2Fimages%2Fanon.webp&r=pg`"
         class="rounded-xl h-16 w-16"
       />
       <div class="flex flex-col gap-4 w-full">
-          <div class="flex gap-1">
-            <FilledButton
-              v-if="comment.website"
-              :url="comment.website"
-              target="_blank"
-              class="w-fit"
-              >{{ comment.name }}</FilledButton
-            >
-            <span
-              v-else
-              class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit"
-              >{{ comment.name }}</span
-            >
-            <DateComponent
+        <div class="flex gap-1">
+          <FilledButton
+            v-if="comment.website"
+            :url="comment.website"
+            target="_blank"
+            class="w-fit"
+            >{{ comment.name }}</FilledButton
+          >
+          <span
+            v-else
+            class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit"
+            >{{ comment.name }}</span
+          >
+          <DateComponent
             :timestamp="comment.timestamp"
             time
             class="px-2 py-1 text-accent bg-base-100 rounded-xl font-display italic w-fit"
           />
-          </div>
+        </div>
         <ContentRenderer :value="comment" class="space-y-2"></ContentRenderer>
+        <div
+          class="rounded-xl w-full flex gap-4 items-center p-4 bg-accent text-base-100 font-display text-lg border-2 border-accent"
+          v-if="showSuccessDisclaimer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="size-6 min-w-6 min-h-6"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          your comment was successfully sent! <br />
+          all comments are manually reviewed, so it'll take a bit before it
+          shows up!
+        </div>
+        <div
+          class="rounded-xl w-full flex gap-4 items-center p-4 bg-accent text-base-100 font-display text-lg border-2 border-accent"
+          v-if="showFailureDisclaimer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="size-6 min-w-6 min-h-6"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          something went wrong! try again later!
+        </div>
         <OutlineButton
           v-if="!showReplyForm"
           @click="toggleReplyForm"
@@ -54,13 +97,13 @@
       <form @submit.prevent="submitReply" class="flex flex-col gap-2">
         <div class="grid grid-cols-3 gap-x-2">
           <label class="font-display text-accent text-lg" for="name"
-            >name (optional)
+            >name
           </label>
           <label class="font-display text-accent text-lg" for="email"
-            >email (optional)
+            >email
           </label>
           <label class="font-display text-accent text-lg" for="website"
-            >website (optional)
+            >website
           </label>
           <input
             v-model="replyComment.name"
@@ -81,13 +124,27 @@
             class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full"
           />
         </div>
-        <textarea
-          v-model="replyComment.comment"
-          placeholder="write your reply!"
-          class="rounded-xl border-accent border-2 bg-base-100 p-2"
-          rows="6"
-          required
-        ></textarea>
+        <span class="text-sm italic text-center"
+          >ur email is used to show ur
+          <NuxtLink
+            class="text-accent underline font-bold"
+            to="https://gravatar.com/"
+            >gravatar</NuxtLink
+          >, if u have one</span
+        >
+        <div class="flex flex-col">
+          <label for="comment" class="font-display text-accent text-lg"
+            >reply (required)</label
+          >
+          <textarea
+            v-model="replyComment.comment"
+            placeholder="write a reply!"
+            class="rounded-xl border-accent border-2 bg-base-100 p-2"
+            rows="6"
+            id="comment"
+            required
+          ></textarea>
+        </div>
         <div class="flex gap-2">
           <button
             type="submit"
@@ -127,19 +184,6 @@
           </OutlineButton>
         </div>
       </form>
-    </div>
-    <div
-      class="rounded-xl w-fit p-4 bg-base-100 text-accent font-display text-lg border-2 border-accent"
-      v-if="showSuccessDisclaimer"
-    >
-      your reply was successfully sent! all comments are manually reviewed, so
-      it'll take a bit before it shows up!
-    </div>
-    <div
-      class="rounded-xl w-fit p-4 bg-base-100 text-accent font-display border-2 border-accent text-lg"
-      v-if="showFailureDisclaimer"
-    >
-      something went wrong! try again later!
     </div>
     <div
       v-if="replies.length"
