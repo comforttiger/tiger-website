@@ -2,8 +2,7 @@
   <div class="rounded-xl bg-base-100 p-4 flex flex-col gap-6">
     <div class="flex gap-4">
       <img
-        v-if="showGravatar"
-        :src="`https://gravatar.com/avatar/${comment.email}?s=64&d=404&r=pg`"
+        :src="`https://gravatar.com/avatar/${comment.email}?s=64&d=https%3A%2F%2Ftiger.kittycat.homes%2Fimages%2Fanon.webp&r=pg`"
         class="rounded-xl h-16 w-16"
       />
       <div class="flex flex-col gap-4 w-full">
@@ -165,7 +164,6 @@ const props = defineProps({
 const showReplyForm = ref(false);
 const showSuccessDisclaimer = ref(false);
 const showFailureDisclaimer = ref(false);
-const showGravatar = ref(true);
 
 // State for the reply comment
 const replyComment = ref({
@@ -179,29 +177,7 @@ const replyComment = ref({
 function toggleReplyForm() {
   showReplyForm.value = !showReplyForm.value;
 }
-onMounted(() => {
-  checkGravatar();
-});
 
-function checkGravatar() {
-  if (props.comment.email) {
-    // Create a new image element to check the Gravatar
-    const img = new Image();
-    img.src = `https://gravatar.com/avatar/${props.comment.email}?d=404`;
-
-    img.onload = () => {
-      // Gravatar exists if the image loads successfully
-      showGravatar.value = true;
-    };
-
-    img.onerror = () => {
-      // Gravatar does not exist if there’s an error loading the image
-      showGravatar.value = false;
-    };
-  } else {
-    showGravatar.value = false;
-  }
-}
 // Submit the reply comment
 async function submitReply() {
   const formData = new URLSearchParams();
