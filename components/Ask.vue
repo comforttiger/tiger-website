@@ -21,7 +21,7 @@
             :url="query.website"
             target="_blank"
             >{{ query.name }}</FilledButton
-          ><OutlineButton v-else>{{ query.name }}</OutlineButton> asked:</span
+          ><span class="rounded-xl px-2 py-1 text-accent bg-base-100 border-accent border-2 font-display" v-else>{{ query.name }}</span> asked:</span
         >
         </div>
         <ContentRenderer :value="query"></ContentRenderer>

@@ -1,7 +1,7 @@
 ---
 title: kokichi oma
 timestamp: 1652047200000
-tags: ["blog", "likes", "blorbos"]
+tags: ["blog", "likes", "games", "blorbos"]
 ---
 
 kokichi oma is from danganronpa v3!!! in general danganronpa v3 is like.
