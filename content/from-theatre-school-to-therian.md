@@ -1,7 +1,7 @@
 ---
 title: "from theatre school to therian"
 ask: ask-1728020771713
-image: images/you-are-kbity.webp
+image: /images/you-are-kbity.webp
 image_description: "two manga panels. in panel 1, a catgirl asks 'im kbity?' and the person replies 'you are kbity!'. panel 2 has a closeup of the catgirl and they say 'how?"
 tags: ["ask", "blog", "personal"]
 timestamp: 1728053077000
