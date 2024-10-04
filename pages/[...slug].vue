@@ -58,7 +58,7 @@
           v-else
           class="rounded-xl p-5 text-accent bg-base-100 w-fit font-display text-lg flex gap-2 items-center"
         >
-          there's no comments! yet...
+          there are no comments! yet...
         </div>
         <CommentForm :slug="useRoute().path.slice(1)" />
       </div>
@@ -76,15 +76,16 @@ const comments = await queryContent(`/comments${useRoute().path}`)
   .where({ reply: { $exists: false } })
   .find();
 
-// useHead({
-//   title: post.title,
-//   meta: [{ name: "description", content: post.description }],
-// });
+const ask = post.ask ? await queryContent(`/asks/${post.ask}`).findOne() : undefined;
+
+let description = "";
+description = ask ? `${ask.name} asked: ${ask.description}` : post.description
+
 useSeoMeta({
   title: post.title,
   ogTitle: post.title,
-  description: post.description,
-  ogDescription: post.description,
+  description: description,
+  ogDescription: description,
   ogImage: post.image,
 });
 </script>
