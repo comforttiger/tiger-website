@@ -48,6 +48,11 @@ comments:
   # Otherwise, entries will be published to the main branch automatically.
   moderation: true
 
+  notifications:
+    enabled: true
+    domain: BQzPOfWyO5CVJGgHI5KxDjgkOBXsg3rgAIMQYN+dVjm3N/ylsJFSwKMqoUybblfVnnanJ2WACaXLQUKmDuQRclNrkf2VWwhZt9PiH1Y/Przp7V6iSoOpKgUBSxY7im574yZCs6J4YShkiSiWKcvDQ/YKvuaMK+gCBVuT53sU51Kz1gt7JmB40JM2fZjp1agMKJohaCG23ynDsL0igj3bfAmHiCPGUmPpq/vjqyzTRlxzEYttcL+eu1ZndckRDXDznnVE+m9naV8gCcsUxBuXA7vxfxx+L+y+IKXALm3rWx5mlts/mQHpvXLsAdngvZXpRwijLw6wksXUPDPCI83Lrg==
+    apiKey: h/0H6FQmCOKvTJkZdEqFg+ag6QUhx9WffnzrhFwzJHJ5rzKSVnRpty1MfSxuos0yTMZPCeWyUkeosm68OdQn4QG46WKgG3oTj5i5G7geEbqvI89D2Oj1lB3aNDRKdUndnYJihc13IDu4aMk6Q692yQTJ3hVE1Dht9Cn3yO3OwZLx4F3JMyLznsGIGF1jcaUEGiz70aVMwPsThphLXzPmcm76yp4OdOOAXIMaP00mWlqq3Dh3JY0ydydzbF36e9CDiwM4PjBMxD5VQzL2BJp0Yv3YNSuIjcZod22q7pEDD3Ahc4aBu69yAzqgtpjU/D8f9ykSPgoTPb5mj3ubpHJbQg==
+
   # Name of the site. Used in notification emails.
   name: "tiger's website :3"
 
