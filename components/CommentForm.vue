@@ -125,7 +125,7 @@
             id="comment"
             required
           ></textarea>
-          <label for="comment" class="text-sm italic">required</label>
+          <label for="comment" class="text-sm italic">required (supports markdown and css crimes)</label>
         </div>
         <div class="flex gap-2">
           <button

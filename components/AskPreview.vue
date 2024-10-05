@@ -162,6 +162,9 @@ const converter = new showdown.Converter({
     olExtension,
     ulExtension,
   ],
+  strikethrough: true,
+  smoothLivePreview: true,
+  requireSpaceBeforeHeadingText: true,
 });
 
 const generateHueFromHash = (md5Hash: string) => {

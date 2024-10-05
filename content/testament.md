@@ -33,7 +33,7 @@ my favourite thing about testament is that their character development from prev
 
 i thought their entire arcade story was really pleasant. obviously, the arcade stories were really limited in what they could do, but i think it has some quotes that really stuck with me and made me appreciate testament for more than just their huge scythe. the entire plot of the arcade is basically just, testament tries to go for a walk, and everyone is like "what the fuck are you doing this place isnt safe for you", and then proceeds to attack testament to prove that this place isnt safe for them. the "rival" in this one, the recurring character no matter what path you go down, is chipp, who just gets increasingly amazed at testament's endless resolve to just *go for a walk*. my favourite exchange is [this one](https://youtu.be/xpPq5TfgTQc?t=121):
 
-> Chipp: That's so.. normal!! \
+> Chipp: That's so.. normal!!  
 > Testament: I AM NORMAL! What, does a life need to have some grand purpose to be worth living?
 
 it's a very simple sentiment, but i really appreciate it. you're right, testament. i can just live life for the sake of living it. it's so easy to spend every moment of life worrying if you're doing something Meaningful with it, and to forget that Living Life is meaningful enough already.

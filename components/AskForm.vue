@@ -104,7 +104,7 @@
             id="ask"
             required
           ></textarea>
-          <label for="ask" class="text-sm italic">required</label>
+          <label for="ask" class="text-sm italic">required (supports markdown and css crimes)</label>
         </div>
         <div class="flex gap-2">
           <button
