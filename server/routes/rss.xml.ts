@@ -54,7 +54,7 @@ export default defineEventHandler(async (event) => {
     if (doc.ask) {
       const ask = await serverQueryContent(event).where({ _path: {$eq: `/asks/${doc.ask}`} }).findOne();
       const askText = await readMarkdown(join(process.cwd(), "content/asks/", `${doc.ask}.md`))
-      content = content + `${ask.name} asked: ${askText}<hr>`
+      content = content + `<p>${ask.name} asked:</p> ${askText}<hr>`
       description = `${ask.name} asked: ${askText}`
     }
 

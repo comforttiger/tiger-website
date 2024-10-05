@@ -2,17 +2,8 @@
   <div
     class="rounded-xl p-4 border-2 border-accent flex flex-col gap-4 bg-base-100 w-fit"
   >
-    <div class="flex gap-4">
-      <NuxtLink :to="query.website" v-if="query.website" target="_blank" class="min-h-12 min-w-12">
-        <img
-        :src="`https://gravatar.com/avatar/${query.email}?s=48&d=https%3A%2F%2Ftiger.kittycat.homes%2Fimages%2Fanon.webp&r=pg`"
-        class="rounded-xl w-12 h-12"
-      />
-      </NuxtLink>
-      <img v-else
-        :src="`https://gravatar.com/avatar/${query.email}?s=48&d=https%3A%2F%2Ftiger.kittycat.homes%2Fimages%2Fanon.webp&r=pg`"
-        class="rounded-xl h-12 w-12"
-      />
+    <div class="flex gap-2">
+      <ProfilePicture :name="query.name" :email="query.email" :website="query.website" small />
       <div class="flex flex-col gap-4 w-full">
         <div class="flex gap-1">
         <span class="font-display text-lg"
@@ -31,7 +22,6 @@
 </template>
 
 <script setup lang="ts">
-import { type ParsedContent } from "@nuxt/content/dist/runtime/types";
 const props = defineProps({
   ask: { type: String, required: true },
 });

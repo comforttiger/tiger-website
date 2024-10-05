@@ -58,7 +58,8 @@
       {{ reply ? "reply" : "comment" }}</OutlineButton
     >
 
-    <div v-if="showForm" class="w-full">
+    <div v-if="showForm" class="w-full flex flex-col gap-4 items-center">
+      <CommentPreview :name="comment.name" :email="comment.email" :website="comment.website" class="w-full">{{ comment.comment }}</CommentPreview>
       <form @submit.prevent="submitComment" class="flex flex-col gap-2">
         <div class="flex md:flex-row flex-col gap-2">
           <div class="flex flex-col w-full">
@@ -71,6 +72,7 @@
               id="name"
               class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full input input-primary"
             />
+            <label for="name" class="text-sm italic">optional (leave blank to be "anonymous user")</label>
           </div>
           <div class="flex flex-col w-full">
             <label class="font-display text-accent text-lg" for="website"
@@ -82,6 +84,7 @@
               id="website"
               class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full input input-primary"
             />
+            <label for="website" class="text-sm italic">optional</label>
           </div>
           <div class="flex flex-col w-full">
             <label class="font-display text-accent text-lg" for="email"
@@ -93,19 +96,26 @@
               id="email"
               class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full input input-primary"
             />
+            <label for="email" class="text-sm italic"
+              >optional
+              (used to show ur
+              <NuxtLink
+                class="text-accent underline font-bold"
+                to="https://www.libravatar.org/"
+                >libravatar</NuxtLink
+              >
+              or
+              <NuxtLink
+                class="text-accent underline font-bold"
+                to="https://gravatar.com/"
+                >gravatar</NuxtLink
+              >)
+            </label>
           </div>
         </div>
-        <span class="text-sm italic text-center"
-          >ur email is used to show ur
-          <NuxtLink
-            class="text-accent underline font-bold"
-            to="https://gravatar.com/"
-            >gravatar</NuxtLink
-          >, if u have one</span
-        >
         <div class="flex flex-col">
-          <label for="comment" class="font-display text-accent text-lg"
-            >{{ reply ? "reply" : "comment" }} (required)</label
+          <label class="font-display text-accent text-lg" for="comment"
+            >comment</label
           >
           <textarea
             v-model="comment.comment"
@@ -115,6 +125,7 @@
             id="comment"
             required
           ></textarea>
+          <label for="comment" class="text-sm italic">required</label>
         </div>
         <div class="flex gap-2">
           <button
@@ -163,6 +174,7 @@
 
 <script setup lang="ts">
 import axios from "axios";
+import { Md5 } from "ts-md5";
 
 const props = defineProps({
   slug: { type: String, required: true },

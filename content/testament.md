@@ -1,10 +1,10 @@
 ---
 title: testament
 description: testament from guilty gear is so cool
-timestamp: 1726617214000
+timestamp: 1728153040000
 image: /images/testament.webp
 image_description: a picture of testament, from guilty gear strive
-tags: ["draft", "blog", "likes", "games", "blorbos"]
+tags: ["blog", "likes", "games", "blorbos"]
 ---
 testament is a character from guilty gear! they're the character i main in guilty gear strive, and i just think they're really cool.
 
@@ -18,7 +18,7 @@ but okay come on what are we doing. there's a non-binary gear with a huge fuckin
 like hello? of course i'm gonna play as the non-binary gear with the scythe. 
 
 ### playing as testament
-every move testament does looks fucking sick and they feel so fucking good to play as. as far as i understand, they're not considered the most competitively viable character to play as, because they're ultimately not the best zoner in the world? but, like, that really doesn't matter to me. 
+every move testament does looks fucking sick and they feel so fucking good to play as. as far as i understand, they're not considered the most competitively viable character to play as, they're just not the best zoner. but, like, that really doesn't matter to me. 
 
 when i play as testament, i get into this really satisfying flow of just absolutely fucking up the opponent with various mixes of the, like, three different moves that testament has. and every time i play guilty gear strive im just trying to get that awesome feeling again, where the opponent just stands absolutely no chance of getting anywhere near me.
 
@@ -29,7 +29,7 @@ i guess the scary bit there is that my opponent might know what theyre doing too
 ### okay but what about testament, the idea
 *or; tiger poorly recollects random bits of what she's read about testament, thus telling you of her own flawed idea about who testament is.*
 
-my favourite thing about testament is that their character development from previous games is like, going from being a spiteful, angry, and hurt main villain in the games before. which like, is reasonable. they were turned into a gear, brainwashed, killed their own dad who they loved, humans aren't exactly the nicest to gears, etc. etc. etc.. but they go from that to being someone who's learned to live life and not let everything bad stop them from enjoying the good. i love that testament is like, incredibly powerful, but they just wanna go for a relaxing walk. they just want to experience nice things.
+my favourite thing about testament is that their character development from previous games is like, going from being a spiteful, angry, and hurt main villain in the games before. which like, is reasonable. they were turned into a gear, brainwashed, killed their own dad, humans aren't exactly the nicest to gears, etc. etc. etc.. but they go from that to being someone who's learned to live life and not let everything bad stop them from enjoying the good. i love that testament is like, incredibly powerful, but they just wanna go for a relaxing walk. they just want to experience nice things.
 
 i thought their entire arcade story was really pleasant. obviously, the arcade stories were really limited in what they could do, but i think it has some quotes that really stuck with me and made me appreciate testament for more than just their huge scythe. the entire plot of the arcade is basically just, testament tries to go for a walk, and everyone is like "what the fuck are you doing this place isnt safe for you", and then proceeds to attack testament to prove that this place isnt safe for them. the "rival" in this one, the recurring character no matter what path you go down, is chipp, who just gets increasingly amazed at testament's endless resolve to just *go for a walk*. my favourite exchange is [this one](https://youtu.be/xpPq5TfgTQc?t=121):
 
