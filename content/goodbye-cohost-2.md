@@ -4,7 +4,7 @@ description: "cohost is read-only as of October 1, 2024."
 image: /images/cohost-read-only.webp
 image_description: 'a screenshot from cohost of text that says: "cohost is read-only as of October 1, 2024. The site will be fully shut down at the end of the year. Until then, you can use the site but can’t do anything that isn’t reading (following, liking posts, making or editing posts, sending asks, updating your profile, etc). thank you for having used cohost. we’ll see you around."'
 timestamp: 1727864294000
-tags: ["blog", "personal"]
+tags: ["blog", "personal", "website stuff"]
 ---
 cohost is officially actually read only. its been read only for like 24 hours. i wrote a post about cohost shutting down earlier this month, when it was first announced, but i was so stuck in "improving website in preparation for cohost shutdown" mode that i didnt really process my feelings around the shutdown yet. and then i had a trip to denmark where i met lots of people, and then i had a bunch of stuff to do when i was home. but now i dont have anything to do, and the fact that i cant scroll cohost now that i finally have time to chill is really being Felt. im really gonna miss cohost.
 

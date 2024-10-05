@@ -1,7 +1,7 @@
 ---
 title: "i have asks now!"
 ask: ask-1727994990406
-tags: ["ask"]
+tags: ["ask", "website stuff"]
 timestamp: 1727998454000
 ---
 i have asks now!!  

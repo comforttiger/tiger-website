@@ -1,7 +1,7 @@
 ---
 title: comments!
 timestamp: 1727925175000
-tags: ["blog", "personal"]
+tags: ["blog", "website stuff"]
 ---
 i wasnt planning on doing it at first, but now i have comments!
 

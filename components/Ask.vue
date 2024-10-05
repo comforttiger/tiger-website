@@ -3,7 +3,7 @@
     class="rounded-xl p-4 border-2 border-accent flex flex-col gap-4 bg-base-100 w-fit"
   >
     <div class="flex gap-4">
-      <NuxtLink :to="query.website" v-if="query.website" class="min-h-12 min-w-12">
+      <NuxtLink :to="query.website" v-if="query.website" target="_blank" class="min-h-12 min-w-12">
         <img
         :src="`https://gravatar.com/avatar/${query.email}?s=48&d=https%3A%2F%2Ftiger.kittycat.homes%2Fimages%2Fanon.webp&r=pg`"
         class="rounded-xl w-12 h-12"

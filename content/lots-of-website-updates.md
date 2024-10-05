@@ -1,7 +1,7 @@
 ---
 title: "*lots* of website updates!"
 timestamp: 1726448274000
-tags: ["blog", "personal"]
+tags: ["blog", "website stuff"]
 description: i have been working!! *non-stop* on this website the past few days!!! here's all the stuff i added and some of my thoughts on them :3
 ---
 

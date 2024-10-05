@@ -1,7 +1,7 @@
 ---
 title: new website!
 timestamp: 1707951600000
-tags: ["blog", "personal"]
+tags: ["blog", "personal", "website stuff"]
 ---
 
 this website is brand new! i spent this whoole week working on it!!!

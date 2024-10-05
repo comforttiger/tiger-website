@@ -1,7 +1,7 @@
 ---
 title: goodbye cohost
 timestamp: 1726005600000
-tags: ["blog", "personal"]
+tags: ["blog", "personal", "website stuff"]
 ---
 goodbye cohost, you will be missed
 

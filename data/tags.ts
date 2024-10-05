@@ -1,6 +1,6 @@
 export const made_tags = ["made", "photography", "art", "conlang", "gamedev"];
 
-export const blog_tags = ["blog", "personal", "learning", "likes"];
+export const blog_tags = ["blog", "personal", "website stuff", "learning", "likes"];
 
 export const unlisted_tags = [
   "pixel art",
