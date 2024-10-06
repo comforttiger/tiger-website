@@ -4,7 +4,7 @@
       <NuxtLink v-if="website" :to="website" class="min-w-12 min-h-12">
         <img
           :src="avatar"
-          class="rounded-xl w-12 h-fit object-cover"
+          class="rounded-xl w-12 h-fit object-scale-down"
           :style="fallbackStyle"
         />
       </NuxtLink>
@@ -12,14 +12,14 @@
         v-else
         :src="avatar"
         :style="fallbackStyle"
-        class="rounded-xl w-12 h-fit object-cover"
+        class="rounded-xl w-12 h-fit object-scale-down"
       />
     </div>
     <div class="min-h-16 min-w-16" v-else>
       <NuxtLink v-if="website" :to="website" class="min-w-16 min-h-16">
         <img
           :src="avatar"
-          class="rounded-xl w-16 h-fit object-cover"
+          class="rounded-xl w-16 h-fit object-scale-down"
           :style="fallbackStyle"
         />
       </NuxtLink>
@@ -27,7 +27,7 @@
         v-else
         :src="avatar"
         :style="fallbackStyle"
-        class="rounded-xl w-16 h-fit object-cover"
+        class="rounded-xl w-16 h-fit object-scale-down"
       />
     </div>
     <div class="flex flex-col gap-4 w-full">
