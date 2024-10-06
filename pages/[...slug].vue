@@ -80,6 +80,7 @@ const post = await queryContent(useRoute().path).findOne();
 const comments = await queryContent(`/comments${useRoute().path}`)
   .sort({ timestamp: 1 })
   .where({ reply: { $exists: false } })
+  .where({ pending: { $exists: false }})
   .find();
 
 const ask = post.ask

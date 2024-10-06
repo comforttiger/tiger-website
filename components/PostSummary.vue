@@ -36,17 +36,36 @@
       </div>
     </div>
     <div class="flex gap-2 flex-wrap">
-      <FilledButton class="py-1" v-if="post._path && post._extension == 'md' && post.ask" :url="post._path"
+      <FilledButton
+        class="py-1"
+        v-if="post._path && post._extension == 'md' && post.ask"
+        :url="post._path"
         >view answer</FilledButton
       >
-      <FilledButton class="py-1" v-else-if="post._path && post._extension == 'md'" :url="post._path"
+      <FilledButton
+        class="py-1"
+        v-else-if="post._path && post._extension == 'md'"
+        :url="post._path"
         >view post</FilledButton
       >
       <DateComponent
         :timestamp="post.timestamp"
         class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit"
       />
-      <Tag v-for="tag in post.tags" :tag="tag" />
+      <ul v-for="tag in post.tags" class="h-fit">
+        <li
+          v-if="selected ? selected.includes(tag) : false"
+          class="border-accent border-2 px-2 py-1 text-base-100 bg-accent rounded-xl font-display h-fit"
+        >
+          #{{ tag }}
+        </li>
+        <li
+          v-else
+          class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display h-fit"
+        >
+          #{{ tag }}
+        </li>
+      </ul>
     </div>
     <!-- <div>
       <ul class="flex gap-2 mt-5">
@@ -63,6 +82,7 @@ import { type ParsedContent } from "@nuxt/content/dist/runtime/types";
 
 defineProps({
   post: { type: Object as PropType<ParsedContent>, required: true },
+  selected: { type: Array<String>, required: false },
   big_pics: { type: Boolean, required: false },
 });
 </script>

@@ -30,7 +30,8 @@
         :timestamp="timestamp"
         class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display h-fit"
       />
-      <Tag v-for="tag in tags" :tag="tag" />
+      <span v-for="tag in tags" class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display h-fit">#{{ tag }}</span>
+      <!-- <Tag v-for="tag in tags" :tag="tag" class="hover:bg-base-100 hover:text-accent" /> -->
     </div>
   </div>
 </template>

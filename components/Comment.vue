@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-xl bg-base-100 p-4 flex flex-col gap-6">
+  <div class="rounded-xl bg-base-100 p-4 flex flex-col gap-6" :id="comment.timestamp">
     <div class="flex gap-4">
       <ProfilePicture :name="comment.name" :email="comment.email" :website="comment.website" />
       <div class="flex flex-col gap-4 w-full">
@@ -54,6 +54,7 @@ const props = defineProps({
 
 const replies = await queryContent(`comments${props.path}`)
   .where({ reply: props.comment._id })
+  .where({ pending: { $exists: false } })
   .sort({ timestamp: 1 })
   .find();
 </script>

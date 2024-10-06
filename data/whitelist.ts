@@ -1,0 +1,1 @@
+export const whitelist = ["0cc0ba53043d32fd800260b128e4e35b", "2daf8c240edb0c3b4803b9fe762394f1"]

@@ -1,19 +1,76 @@
-import { blog_tags, made_tags, unlisted_tags } from "../data/tags";
+import { readdirSync, readFileSync, statSync } from 'fs'; // Import synchronous file system functions
+import path from 'path'; // Import path for resolving file paths
 
-export function generateRoutes() {
-  const startPage = 0
-  const endPage = 10
-  const routes: string[] = Array.from({ length: endPage - startPage + 1 }, (_, i) => `/?page=${startPage + i}`);
+// Define an interface for the parsed frontmatter
+interface Frontmatter {
+  email?: string; // Email is optional
+  [key: string]: any; // Allow other optional frontmatter fields
+}
 
-  for (let tag of blog_tags) {
-    Array.prototype.push.apply(routes, Array.from({ length: endPage - startPage + 1 }, (_, i) => `/?page=${startPage + i}&tag=${tag}`))
-  }
-  for (let tag of made_tags) {
-    Array.prototype.push.apply(routes, Array.from({ length: endPage - startPage + 1 }, (_, i) => `/?page=${startPage + i}&tag=${tag}`))
-  }
-  for (let tag of unlisted_tags) {
-    Array.prototype.push.apply(routes, Array.from({ length: endPage - startPage + 1 }, (_, i) => `/?page=${startPage + i}&tag=${tag}`))
+// Function to parse frontmatter from the Markdown content
+function parseFrontmatter(content: string): Frontmatter {
+  const frontmatterRegex = /^---\n([\s\S]*?)\n---/; // Regex to match frontmatter
+  const match = content.match(frontmatterRegex);
+  
+  if (match) {
+    const frontmatter = match[1];
+    const lines = frontmatter.split('\n');
+    const frontmatterObj: Frontmatter = {};
+    
+    lines.forEach(line => {
+      const [key, value] = line.split(': ');
+      if (key && value) {
+        frontmatterObj[key.trim()] = value.trim();
+      }
+    });
+    
+    return frontmatterObj; // Return the frontmatter as an object
   }
 
-  return routes
+  return {}; // Return an empty object if no frontmatter is found
+}
+
+// Function to recursively read files from a directory
+function readDirRecursively(dir: string): string[] {
+  const results: string[] = [];
+  const list = readdirSync(dir); // Read the contents of the directory
+
+  list.forEach(file => {
+    const filePath = path.join(dir, file);
+    const stat = statSync(filePath); // Get the file status
+
+    if (stat && stat.isDirectory()) {
+      // If it's a directory, recurse into it
+      results.push(...readDirRecursively(filePath));
+    } else if (path.extname(file) === '.md') {
+      // If it's a Markdown file, add it to the results
+      results.push(filePath);
+    }
+  });
+
+  return results; // Return the array of file paths
+}
+
+// Main function to generate routes
+export function generateRoutes(): string[] {
+  const commentsDir = path.join(process.cwd(), 'content/comments'); // Directory path for comments
+  const routes: string[] = []; // Array to hold email routes
+
+  // Recursively read all Markdown files in the comments directory
+  const markdownFiles = readDirRecursively(commentsDir);
+
+  // Iterate over each Markdown file
+  for (const filePath of markdownFiles) {
+    const content: string = readFileSync(filePath, 'utf-8'); // Read the file content synchronously
+
+    // Parse frontmatter to extract email
+    const { email } = parseFrontmatter(content); // Get the email from the parsed frontmatter
+
+    // If the email exists, add it to the routes
+    if (email && email.length) {
+      routes.push(`/replies/${email}.xml`);
+    }
+  }
+
+  return routes; // Return the array of routes
 }

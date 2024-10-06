@@ -3,43 +3,22 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "Ubuntu";
-    src: url("/fonts/Ubuntu-Regular.woff2");
-  }
-  @font-face {
-    font-family: "Ubuntu";
-    src: url("/fonts/Ubuntu-Italic.woff2");
-    font-style: italic;
-  }
-  @font-face {
-    font-family: "Ubuntu";
-    src: url("/fonts/Ubuntu-Bold.woff2");
-    font-weight: bold;
-  }
-  @font-face {
-    font-family: "Ubuntu";
-    src: url("/fonts/Ubuntu-BoldItalic.woff2");
-    font-weight: bold;
-    font-style: italic;
-  }
-
-@font-face {
   font-family: "Andika";
-  src: url("/fonts/Andika-Regular.woff2");
+  src: url("/fonts/AndikaNewBasic-R.woff");
 }
   @font-face {
     font-family: "Andika";
-    src: url("/fonts/Andika-Italic.woff2");
+    src: url("/fonts/AndikaNewBasic-I.woff");
     font-style: italic;
   }
   @font-face {
     font-family: "Andika";
-    src: url("/fonts/Andika-Bold.woff2");
+    src: url("/fonts/AndikaNewBasic-B.woff");
     font-weight: bold;
   }
   @font-face {
     font-family: "Andika";
-    src: url("/fonts/Andika-BoldItalic.woff2");
+    src: url("/fonts/AndikaNewBasic-BI.woff");
     font-weight: bold;
     font-style: italic;
   }

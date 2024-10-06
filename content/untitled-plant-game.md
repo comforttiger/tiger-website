@@ -1,7 +1,7 @@
 ---
 title: untitled plant game
 timestamp: 1639004400000
-tags: ["made", "gamedev"]
+tags: ["made", "games"]
 image: /images/made/games/untitled-plant-game.webp
 image_description: screenshot of a game. on the left there is a plant, on the right there is a log of the plant saying things.
 description: a game where you take care of a very talkative plant.

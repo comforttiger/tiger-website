@@ -38,17 +38,6 @@ export default defineEventHandler(async (event) => {
       }
     }
 
-    // const filename = join(process.cwd(), "content", doc._file ?? "");
-    // const markdownText = await readFile(filename, "utf8");
-    // let contentWithoutFrontmatter = markdownText;
-    // const frontmatterEndIndex = markdownText.indexOf("---", 3);
-    // if (frontmatterEndIndex !== -1) {
-    //   contentWithoutFrontmatter = markdownText
-    //     .slice(frontmatterEndIndex + 3)
-    //     .trim();
-    // }
-    // content = content + converter.makeHtml(contentWithoutFrontmatter);
-
     let description = doc.description
 
     if (doc.ask) {

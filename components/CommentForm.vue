@@ -16,9 +16,15 @@
           clip-rule="evenodd"
         />
       </svg>
-      your {{ reply ? "reply" : "comment" }} was successfully sent! <br />
-      all comments are manually reviewed, so it'll take a bit before it shows
-      up!
+      <div class="flex flex-col gap-2">
+        <span
+          >your {{ reply ? "reply" : "comment" }} was successfully sent!
+        </span>
+        <span
+          >all comments are manually reviewed, so it'll take a bit before it
+          shows up!</span
+        >
+      </div>
     </div>
     <div
       class="rounded-xl w-full flex gap-4 items-center p-4 bg-base-100 text-accent font-display text-lg border-2 border-accent"
@@ -37,6 +43,34 @@
         />
       </svg>
       something went wrong! try again later!
+    </div>
+
+    <div class="justify-center flex" v-if="pastEmail && showSuccessDisclaimer">
+      <div
+        class="items-center justify-center flex flex-col gap-1 max-w-md text-center w-full"
+      >
+        <FilledButton
+          class="flex gap-1 text-lg whitespace-nowrap items-center"
+          :url="`/replies/${Md5.hashStr(pastEmail)}`"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="size-6"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3.75 4.5a.75.75 0 0 1 .75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 0 1-.75.75h-.75a.75.75 0 0 1-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 0 1-.75-.75V4.5Zm0 6.75a.75.75 0 0 1 .75-.75h.75a8.25 8.25 0 0 1 8.25 8.25v.75a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75v-.75a6 6 0 0 0-6-6H4.5a.75.75 0 0 1-.75-.75v-.75Zm0 7.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span>your replies feed</span></FilledButton
+        >
+        <span class="text-sm italic text-neutral font-sans"
+          >rss feed of all replies to comments with your email. may take a
+          minute to be generated if its your first comment</span
+        >
+      </div>
     </div>
 
     <OutlineButton
@@ -59,7 +93,13 @@
     >
 
     <div v-if="showForm" class="w-full flex flex-col gap-4 items-center">
-      <CommentPreview :name="comment.name" :email="comment.email" :website="comment.website" class="w-full">{{ comment.comment }}</CommentPreview>
+      <CommentPreview
+        :name="comment.name"
+        :email="comment.email"
+        :website="comment.website"
+        class="w-full"
+        >{{ comment.comment }}</CommentPreview
+      >
       <form @submit.prevent="submitComment" class="flex flex-col gap-2">
         <div class="flex md:flex-row flex-col gap-2">
           <div class="flex flex-col w-full">
@@ -72,7 +112,9 @@
               id="name"
               class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full input input-primary"
             />
-            <label for="name" class="text-sm italic">optional (leave blank to be "anonymous user")</label>
+            <label for="name" class="text-sm italic"
+              >optional (leave blank to be "anonymous user")</label
+            >
           </div>
           <div class="flex flex-col w-full">
             <label class="font-display text-accent text-lg" for="website"
@@ -97,8 +139,8 @@
               class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full input input-primary"
             />
             <label for="email" class="text-sm italic"
-              >optional
-              (used to show ur
+              >optional (used to make an rss feed of replies to your comments,
+              and to show ur
               <NuxtLink
                 class="text-accent underline font-bold"
                 to="https://www.libravatar.org/"
@@ -125,7 +167,9 @@
             id="comment"
             required
           ></textarea>
-          <label for="comment" class="text-sm italic">required (supports markdown and css crimes)</label>
+          <label for="comment" class="text-sm italic"
+            >required (supports markdown and css crimes)</label
+          >
         </div>
         <div class="flex gap-2">
           <button
@@ -175,6 +219,7 @@
 <script setup lang="ts">
 import axios from "axios";
 import { Md5 } from "ts-md5";
+import { whitelist } from "~/data/whitelist";
 
 const props = defineProps({
   slug: { type: String, required: true },
@@ -190,6 +235,7 @@ const comment = ref({
 
 const showSuccessDisclaimer = ref(false);
 const showFailureDisclaimer = ref(false);
+const pastEmail = ref("");
 const showForm = ref(false);
 
 if (!props.reply) {
@@ -209,6 +255,12 @@ function submitComment() {
   formData.append("fields[email]", comment.value.email);
   formData.append("fields[website]", comment.value.website);
   formData.append("fields[comment]", comment.value.comment);
+  if (
+    !comment.value.email ||
+    !whitelist.includes(Md5.hashStr(comment.value.email))
+  ) {
+    formData.append("fields[pending]", "true");
+  }
   if (props.reply) {
     formData.append("fields[reply]", props.reply);
   }
@@ -220,10 +272,11 @@ function submitComment() {
     )
     .then((response) => {
       console.log("Comment submitted successfully:", response);
-      comment.value.website = "";
-      comment.value.name = "";
-      comment.value.email = "";
+      pastEmail.value = comment.value.email;
       comment.value.comment = "";
+      comment.value.name = "";
+      comment.value.website = "";
+      comment.value.email = "";
       showSuccessDisclaimer.value = true;
       showFailureDisclaimer.value = false;
     })

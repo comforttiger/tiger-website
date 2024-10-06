@@ -16,3 +16,5 @@ export const unlisted_tags = [
   "draft",
   "ask"
 ];
+
+export const tags = ["blog", "ask", "personal", "website stuff", "learning", "likes", "made", "photography", "art", "conlang", "games"]

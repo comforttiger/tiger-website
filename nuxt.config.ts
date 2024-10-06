@@ -1,37 +1,40 @@
-import { generateRoutes } from "./scripts/generate-routes"
-
+import { generateRoutes } from "./scripts/generate-routes";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
+    pageTransition: { name: "page", mode: "out-in" },
     head: {
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
-      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }, { rel: 'alternate', type: 'application/rss+xml', title: "tiger's website", href: '/rss.xml'}],
-      title: "tiger's website"
-    }
+      link: [
+        { rel: "icon", type: "image/png", href: "/favicon.png" },
+        {
+          rel: "alternate",
+          type: "application/rss+xml",
+          title: "tiger's website",
+          href: "/rss.xml",
+        },
+      ],
+      title: "tiger's website",
+    },
   },
 
   nitro: {
     prerender: {
-      routes: [ '/rss.xml' ]
-    }
+      routes: ["/rss.xml"],
+    },
   },
 
   content: {
     highlight: {
-      langs: [
-        'rust',
-        'ruby',
-        'css',
-      ],
+      langs: ["rust", "ruby", "css"],
       theme: {
-        default: 'github-dark',
-        dark: 'dracula',
-        light: 'github-light'
-      }
-    }
+        default: "github-dark",
+        dark: "dracula",
+        light: "github-light",
+      },
+    },
   },
 
   devtools: { enabled: true },
@@ -42,12 +45,12 @@ export default defineNuxtConfig({
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
-    }
+    },
   },
 
   generate: {
-    routes: generateRoutes()
+    routes: generateRoutes(),
   },
 
-  compatibilityDate: '2024-10-02'
-})
+  compatibilityDate: "2024-10-02",
+});

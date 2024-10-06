@@ -1,7 +1,7 @@
 ---
 title: trainyard trouble
 timestamp: 1647730800000
-tags: ["made", "gamedev"]
+tags: ["made", "games"]
 description: trainyard trouble is a game where you stack cargo on trains. the goal is to make sure your cargo hold doesnt overflow, with only three trains at your disposal.
 video: https://www.youtube.com/embed/Gr1N7ptkmuE
 ---
