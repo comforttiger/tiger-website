@@ -1,5 +1,8 @@
 import { serverQueryContent } from "#content/server";
 import RSS from "rss";
+import showdown from "showdown";
+import { join } from "path";
+import { readFile } from "fs/promises";
 
 export default defineEventHandler(async (event) => {
   // Access dynamic params from the event context directly
@@ -45,11 +48,23 @@ export default defineEventHandler(async (event) => {
         .where({ _path: "/" + reply._path!.split("/").at(-2)! })
         .findOne();
 
+        let content = ""
+        const parentComment = await readMarkdown(join(process.cwd(), "content", comment._file ?? ""))
+        content = content + `<p>your comment:</p>${parentComment}<hr>`
+
+        const replyComment = await readMarkdown(join(process.cwd(), "content", reply._file ?? ""))
+        content = content + `<p>reply from ${reply.name}: ${replyComment}`
+
       // Add each reply to the RSS feed
       feed.item({
         title: `${reply.name} replied to your comment on "${post.title}"!`,
         url: `https://tiger.kittycat.homes${post._path}#${reply.timestamp}`,
-        description: reply.description, // Reply content
+        description: reply.description,
+        custom_elements: [
+          {
+            "content:encoded": { _cdata: content },
+          },
+        ],
       });
     }
   }
@@ -59,3 +74,17 @@ export default defineEventHandler(async (event) => {
   event.node.res.setHeader("content-type", "text/xml");
   event.node.res.end(feedString);
 });
+
+async function readMarkdown(filename: string): Promise<string> {
+  const converter = new showdown.Converter();
+
+  const markdownText = await readFile(filename, "utf8");
+  let contentWithoutFrontmatter = markdownText;
+  const frontmatterEndIndex = markdownText.indexOf("---", 3);
+  if (frontmatterEndIndex !== -1) {
+    contentWithoutFrontmatter = markdownText
+      .slice(frontmatterEndIndex + 3)
+      .trim();
+  }
+  return converter.makeHtml(contentWithoutFrontmatter)
+}
