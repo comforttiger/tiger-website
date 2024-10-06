@@ -1,7 +1,14 @@
 <template>
-  <div class="rounded-xl bg-base-100 p-4 flex flex-col gap-6" :id="comment.timestamp">
+  <div
+    class="rounded-xl bg-base-100 p-4 flex flex-col gap-6"
+    :id="comment.timestamp"
+  >
     <div class="flex gap-4">
-      <ProfilePicture :name="comment.name" :email="comment.email" :website="comment.website" />
+      <ProfilePicture
+        :name="comment.name"
+        :email="comment.email"
+        :website="comment.website"
+      />
       <div class="flex flex-col gap-4 w-full">
         <div class="flex md:flex-row flex-col gap-1">
           <FilledButton
@@ -47,14 +54,43 @@
 
 <script setup lang="ts">
 import { type ParsedContent } from "@nuxt/content/dist/runtime/types";
+
+// Props passed to the component
 const props = defineProps({
   comment: { type: Object as PropType<ParsedContent>, required: true },
   path: { type: String, required: true },
 });
 
-const replies = await queryContent(`comments${props.path}`)
+const replies = ref<ParsedContent[]>([]);
+
+const initialReplies = await queryContent(`comments${props.path}`)
   .where({ reply: props.comment._id })
   .where({ pending: { $exists: false } })
   .sort({ timestamp: 1 })
   .find();
+
+replies.value = initialReplies;
+
+const checkHashForPendingReply = async () => {
+  const hash = useRoute().hash;
+  if (hash.length) {
+    const timestamp = Number(hash.slice(1));
+    const pendingReply = await queryContent("/comments")
+      .where({ pending: { $exists: true } })
+      .where({ reply: props.comment._id })
+      .where({ timestamp })
+      .findOne();
+
+    if (
+      pendingReply &&
+      !replies.value.find((reply) => reply._id === pendingReply._id)
+    ) {
+      replies.value.push(pendingReply);
+    }
+  }
+};
+
+onMounted(async () => {
+  await checkHashForPendingReply();
+});
 </script>

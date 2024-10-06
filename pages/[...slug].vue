@@ -1,8 +1,6 @@
 <template>
   <div class="w-full flex items-center justify-center">
-    <div
-      class="min-h-screen max-w-3xl flex flex-col gap-16"
-    >
+    <div class="min-h-screen max-w-3xl flex flex-col gap-16">
       <article class="w-full flex items-center justify-center flex-col gap-2">
         <div class="flex flex-col gap-12">
           <div>
@@ -74,14 +72,42 @@
 
 <script setup lang="ts">
 import { useRoute } from "vue-router";
+import { type ParsedContent } from "@nuxt/content/dist/runtime/types";
 
 const post = await queryContent(useRoute().path).findOne();
 
-const comments = await queryContent(`/comments${useRoute().path}`)
+const comments = ref<ParsedContent[]>([]);
+
+const initialComments = await queryContent(`/comments${useRoute().path}`)
   .sort({ timestamp: 1 })
   .where({ reply: { $exists: false } })
-  .where({ pending: { $exists: false }})
+  .where({ pending: { $exists: false } })
   .find();
+
+comments.value = initialComments
+
+const checkHashForPendingComment = async () => {
+  const hash = useRoute().hash;
+  if (hash.length) {
+    const timestamp = Number(hash.slice(1));
+    const pendingComment = await queryContent("/comments")
+      .where({ pending: { $exists: true } })
+      .where({ reply: { $exists: false } })
+      .where({ timestamp })
+      .findOne();
+
+    if (
+      pendingComment &&
+      !comments.value.find((comment: ParsedContent) => comment._id === pendingComment._id)
+    ) {
+      comments.value.push(pendingComment);
+    }
+  }
+};
+
+onMounted(async () => {
+  await checkHashForPendingComment();
+});
 
 const ask = post.ask
   ? await queryContent(`/asks/${post.ask}`).findOne()

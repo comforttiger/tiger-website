@@ -6,10 +6,10 @@ import { readFile } from "fs/promises";
 
 export default defineEventHandler(async (event) => {
   // Access dynamic params from the event context directly
-  const email = event.context.params!['email.xml']
-    ? event.context.params!['email.xml'].replace('.xml', '')
+  const email = event.context.params!["email.xml"]
+    ? event.context.params!["email.xml"].replace(".xml", "")
     : ""; // Should get the MD5 hashed email here
-  
+
   // Handle case where the email hash is undefined
   if (!email) {
     throw createError({
@@ -17,7 +17,6 @@ export default defineEventHandler(async (event) => {
       message: "there's no feed for this email yet",
     });
   }
-
 
   // Email is already an MD5 hash, so no need to decode
   const hashedEmail = email;
@@ -33,14 +32,15 @@ export default defineEventHandler(async (event) => {
   // Query all comments made with this hashed email
   const comments = await serverQueryContent(event)
     .where({ email: hashedEmail }) // Query using the MD5-hashed email
+    .sort({ timestamp: -1 })
     .find();
 
   // For each comment, find its replies
   for (const comment of comments) {
-    
     const replies = await serverQueryContent(event)
       .where({ reply: comment._id })
       .where({ email: { $ne: hashedEmail } })
+      .sort({ timestamp: -1 })
       .find();
 
     for (const reply of replies) {
@@ -48,12 +48,16 @@ export default defineEventHandler(async (event) => {
         .where({ _path: "/" + reply._path!.split("/").at(-2)! })
         .findOne();
 
-        let content = ""
-        const parentComment = await readMarkdown(join(process.cwd(), "content", comment._file ?? ""))
-        content = content + `<p>your comment:</p>${parentComment}<hr>`
+      let content = "";
+      const parentComment = await readMarkdown(
+        join(process.cwd(), "content", comment._file ?? "")
+      );
+      content = content + `<p>your comment:</p>${parentComment}<hr>`;
 
-        const replyComment = await readMarkdown(join(process.cwd(), "content", reply._file ?? ""))
-        content = content + `<p>reply from ${reply.name}: ${replyComment}`
+      const replyComment = await readMarkdown(
+        join(process.cwd(), "content", reply._file ?? "")
+      );
+      content = content + `<p>reply from ${reply.name}: ${replyComment}`;
 
       // Add each reply to the RSS feed
       feed.item({
@@ -87,5 +91,5 @@ async function readMarkdown(filename: string): Promise<string> {
       .slice(frontmatterEndIndex + 3)
       .trim();
   }
-  return converter.makeHtml(contentWithoutFrontmatter)
+  return converter.makeHtml(contentWithoutFrontmatter);
 }
