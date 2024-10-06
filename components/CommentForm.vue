@@ -51,7 +51,7 @@
       >
         <FilledButton
           class="flex gap-1 text-lg whitespace-nowrap items-center"
-          :url="`/replies/${Md5.hashStr(pastEmail)}`"
+          :url="`/replies/${Md5.hashStr(pastEmail)}.xml`"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
