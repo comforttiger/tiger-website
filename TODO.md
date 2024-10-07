@@ -1,9 +1,6 @@
 # STUFF I WANNA DO!!
 
 3) other cool sites to add
-    - [pont!](https://pont.cool)
-    - [colrana](https://colrana.neocities.org/)
-    - [renkotsuban](https://renkotsuban.com/)
     - [splash mob](https://splashmob.neocities.org/)
 4) kitty webp
 5) write posts

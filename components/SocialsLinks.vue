@@ -1,10 +1,6 @@
 <template>
   <div class="bg-base-100 rounded-xl p-5 flex flex-col gap-5">
-    <h2
-      class="text-primary text-4xl font-display text-center"
-    >
-      links
-    </h2>
+    <h2 class="text-primary text-4xl font-display text-center">links</h2>
     <div class="flex justify-evenly">
       <OutlineButton
         external
@@ -215,5 +211,14 @@
         <li>newgrounds ~ <NuxtLink to="https://comforttiger.newgrounds.com" class="text-secondary underline">comforttiger</NuxtLink></li>
       </ul>
     </div> -->
+    <div class="items-center text-center flex flex-col justify-center gap-2">
+      if you want to link to my website, feel free to use this button!
+
+      <Button
+        img="/tiger-button.png"
+        alt="tiger's website"
+        link="https://tiger.kittycat.homes/"
+      />
+    </div>
   </div>
 </template>
