@@ -2,7 +2,7 @@
   <div class="w-full flex flex-col gap-4 bg-base-100 rounded-xl p-4">
     <div
       class="justify-center rounded-xl w-full flex flex-col gap-4 items-center p-4 bg-base-100 font-display text-lg border-2 border-accent"
-      v-if="showSuccessDisclaimer || true"
+      v-if="showSuccessDisclaimer"
     >
       <div class="text-center w-full">
         your comment was successfully sent!
@@ -10,7 +10,7 @@
       <!-- <div class="text-center w-full">
         comments are manually reviewed, so it may take a bit to show up!
       </div> -->
-      <div class="text-center w-full" v-if="pastEmail || true">
+      <div class="text-center w-full" v-if="pastEmail">
         get notified when someone replies to your comments by subscribing to
         <NuxtLink
           class="text-secondary inline items-center"
