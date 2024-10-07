@@ -28,7 +28,7 @@ export default defineNuxtConfig({
 
   content: {
     highlight: {
-      langs: ["rust", "ruby", "css"],
+      langs: ["rust", "ruby", "css", "html"],
       theme: {
         default: "github-dark",
         dark: "dracula",

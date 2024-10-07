@@ -4,14 +4,7 @@
     <ButtonsWall />
     <ul class="flex justify-center flex-col gap-10">
         <li><OtherBlogZoe /></li>
-        <li><OtherBlogErysdren /></li>
-        <li><OtherBlogAbyss /></li>
-        <li><OtherBlogMyno /></li>
-        <li><OtherBlogOatmealine /></li>
         <li><OtherBlogSummer /></li>
-        <li><OtherBlogIndieTsushin /></li>
-        <li><OtherBlogTulip /></li>
-        <li><OtherBlogCeciRobin /></li>
     </ul>
   </div>
 </template>
