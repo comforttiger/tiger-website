@@ -2,15 +2,15 @@
   <div class="w-full flex flex-col gap-4 bg-base-100 rounded-xl p-4">
     <div
       class="justify-center rounded-xl w-full flex flex-col gap-4 items-center p-4 bg-base-100 font-display text-lg border-2 border-accent"
-      v-if="showSuccessDisclaimer"
+      v-if="showSuccessDisclaimer || true"
     >
       <div class="text-center w-full">
         your comment was successfully sent!
       </div>
-      <div class="text-center w-full">
+      <!-- <div class="text-center w-full">
         comments are manually reviewed, so it may take a bit to show up!
-      </div>
-      <div class="text-center w-full" v-if="pastEmail">
+      </div> -->
+      <div class="text-center w-full" v-if="pastEmail || true">
         get notified when someone replies to your comments by subscribing to
         <NuxtLink
           class="text-secondary inline items-center"
@@ -31,7 +31,7 @@
           <span class="font-bold underline decoration-secondary decoration-2"
             >your replies feed</span
           ></NuxtLink
-        >. if
+        >. <br>if
         this is your first comment, it might take a minute before the feed is
         generated.
       </div>
@@ -237,12 +237,13 @@ function submitComment() {
   formData.append("fields[email]", comment.value.email);
   formData.append("fields[website]", comment.value.website);
   formData.append("fields[comment]", comment.value.comment);
-  if (
-    !comment.value.email ||
-    !whitelist.includes(Md5.hashStr(comment.value.email))
-  ) {
-    formData.append("fields[pending]", "true");
-  }
+  // if i ever want to enable moderation:
+  // if (
+  //   !comment.value.email ||
+  //   !whitelist.includes(Md5.hashStr(comment.value.email))
+  // ) {
+  //   formData.append("fields[pending]", "true");
+  // }
   if (props.reply) {
     formData.append("fields[reply]", props.reply);
   }
