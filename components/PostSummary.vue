@@ -50,18 +50,18 @@
       >
       <DateComponent
         :timestamp="post.timestamp"
-        class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit"
+        class="border-primary border-2 px-2 py-1 text-primary bg-base-100 rounded-xl font-display w-fit"
       />
       <ul v-for="tag in post.tags" class="h-fit">
         <li
           v-if="selected ? selected.includes(tag) : false"
-          class="border-accent border-2 px-2 py-1 text-base-100 bg-accent rounded-xl font-display h-fit"
+          class="border-primary border-2 px-2 py-1 text-base-100 bg-primary rounded-xl font-display h-fit"
         >
           #{{ tag }}
         </li>
         <li
           v-else
-          class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display h-fit"
+          class="border-primary border-2 px-2 py-1 text-primary bg-base-100 rounded-xl font-display h-fit"
         >
           #{{ tag }}
         </li>

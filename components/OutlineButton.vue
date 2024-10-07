@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink :external="external" :target="target" :to="url" class="rounded-xl px-2 py-1 text-accent bg-base-100 border-accent border-2 font-display hover:bg-accent hover:text-base-100"><slot /></NuxtLink>
+    <NuxtLink :external="external" :target="target" :to="url" class="rounded-xl px-2 py-1 text-primary bg-base-100 border-primary border-2 font-display hover:bg-primary hover:text-base-100"><slot /></NuxtLink>
 </template>
 
 <script setup lang="ts">

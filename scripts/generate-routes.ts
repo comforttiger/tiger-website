@@ -51,8 +51,7 @@ function readDirRecursively(dir: string): string[] {
   return results; // Return the array of file paths
 }
 
-// Main function to generate routes
-export function generateRoutes(): string[] {
+function generateEmailRoutes(): string[] {
   const commentsDir = path.join(process.cwd(), 'content/comments'); // Directory path for comments
   const routes: string[] = []; // Array to hold email routes
 
@@ -74,3 +73,38 @@ export function generateRoutes(): string[] {
 
   return routes; // Return the array of routes
 }
+
+function generatePageRoutes(): string[] {
+  const contentDir = path.join(process.cwd(), 'content');
+  const commentsDir = path.join(contentDir, 'comments'); // Path to comments directory
+  const routes: string[] = []; // Array to hold the page routes
+
+  // Recursively read all Markdown files in the content directory
+  const markdownFiles = readDirRecursively(contentDir);
+
+  // Iterate over each Markdown file
+  for (const filePath of markdownFiles) {
+    // Check if the file path starts with the comments directory
+    if (filePath.startsWith(commentsDir)) {
+      continue; // Skip any files in the comments directory
+    }
+
+    // Convert the file path to a route
+    const relativePath = path.relative(contentDir, filePath); // Get the path relative to content directory
+    const route = '/' + relativePath.replace(/\.md$/, '').replace(/\\/g, '/'); // Remove .md and replace backslashes with forward slashes
+
+    // Add the generated route to the routes array
+    routes.push(route);
+  }
+
+  return routes; // Return the array of routes
+}
+
+// Main function to generate routes
+export function generateRoutes(): string[] {
+  return [
+    ...generateEmailRoutes(),
+    ...generatePageRoutes(), // Include the page routes in the final routes
+  ];
+}
+

@@ -1,62 +1,26 @@
 <template>
   <div class="w-full flex flex-col gap-4 bg-base-100 rounded-xl p-4">
     <div
-      class="rounded-xl w-full flex gap-4 items-center p-4 bg-base-100 text-accent font-display text-lg border-2 border-accent"
+      class="justify-center rounded-xl w-full flex flex-col gap-4 items-center p-4 bg-base-100 font-display text-lg border-2 border-accent"
       v-if="showSuccessDisclaimer"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="size-6 min-w-6 min-h-6"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-          clip-rule="evenodd"
-        />
-      </svg>
-      <div class="flex flex-col gap-2">
-        <span
-          >your {{ reply ? "reply" : "comment" }} was successfully sent!
-        </span>
-        <span
-          >all comments are manually reviewed, so it'll take a bit before it
-          shows up!</span
-        >
+      <div class="text-center w-full">
+        your comment was successfully sent!
       </div>
-    </div>
-    <div
-      class="rounded-xl w-full flex gap-4 items-center p-4 bg-base-100 text-accent font-display text-lg border-2 border-accent"
-      v-if="showFailureDisclaimer"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="size-6 min-w-6 min-h-6"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
-          clip-rule="evenodd"
-        />
-      </svg>
-      something went wrong! try again later!
-    </div>
-
-    <div class="justify-center flex" v-if="pastEmail && showSuccessDisclaimer">
-      <div
-        class="items-center justify-center flex flex-col gap-1 max-w-md text-center w-full"
-      >
-        <FilledButton
-          class="flex gap-1 text-lg whitespace-nowrap items-center"
-          :url="`/replies/${Md5.hashStr(pastEmail)}.xml`"
+      <div class="text-center w-full">
+        comments are manually reviewed, so it may take a bit to show up!
+      </div>
+      <div class="text-center w-full" v-if="pastEmail">
+        get notified when someone replies to your comments by subscribing to
+        <NuxtLink
+          class="text-secondary inline items-center"
+          :to="`/replies/${Md5.hashStr(pastEmail)}.xml`"
+          target="_blank"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            class="size-6"
+            class="size-6 inline"
           >
             <path
               fill-rule="evenodd"
@@ -64,14 +28,32 @@
               clip-rule="evenodd"
             />
           </svg>
-          <span>your replies feed</span></FilledButton
-        >
-        <span class="text-sm italic text-neutral font-sans"
-          >rss feed of all replies to comments with your email. may take a
-          minute to be generated if its your first comment</span
-        >
+          <span class="font-bold underline decoration-secondary decoration-2"
+            >your replies feed</span
+          ></NuxtLink
+        >. if
+        this is your first comment, it might take a minute before the feed is
+        generated.
       </div>
     </div>
+    <div
+        class="rounded-xl w-full flex gap-4 items-center p-4 bg-base-100 text-accent font-display text-lg border-2 border-accent"
+        v-if="showFailureDisclaimer"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="size-6 min-w-6 min-h-6"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        something went wrong! try again later!
+      </div>
 
     <OutlineButton
       v-if="!showForm"
@@ -142,13 +124,13 @@
               >optional (used to make an rss feed of replies to your comments,
               and to show ur
               <NuxtLink
-                class="text-accent underline font-bold"
+                class="text-secondary underline font-bold"
                 to="https://www.libravatar.org/"
                 >libravatar</NuxtLink
               >
               or
               <NuxtLink
-                class="text-accent underline font-bold"
+                class="text-secondary underline font-bold"
                 to="https://gravatar.com/"
                 >gravatar</NuxtLink
               >)
@@ -174,7 +156,7 @@
         <div class="flex gap-2">
           <button
             type="submit"
-            class="rounded-xl px-2 py-1 text-base-100 bg-accent font-display hover:brightness-90 text-lg flex gap-2 items-center w-fit"
+            class="rounded-xl px-2 py-1 text-base-100 bg-primary font-display hover:brightness-90 text-lg flex gap-2 items-center w-fit"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -277,6 +259,9 @@ function submitComment() {
       comment.value.name = "";
       comment.value.website = "";
       comment.value.email = "";
+      if (props.reply) {
+        showForm.value = false
+      }
       showSuccessDisclaimer.value = true;
       showFailureDisclaimer.value = false;
     })

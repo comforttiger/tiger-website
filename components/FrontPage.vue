@@ -4,7 +4,6 @@
     <div class="2xl:w-4/5 w-full md:px-5 flex flex-col gap-3">
       <div class="xl:grid grid-cols-3 gap-5 flex flex-col">
         <div class="flex flex-col gap-5 md:col-span-2">
-          <AboutMe />
           <AllPosts />
         </div>
         <div class="flex flex-col gap-5">

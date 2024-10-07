@@ -39,23 +39,25 @@
       something went wrong! try again later!
     </div>
     <div class="w-full flex flex-col gap-4 items-center">
-      <AskPreview :name="ask.name" :email="ask.email" :website="ask.website">{{ ask.ask }}</AskPreview>
+      <AskPreview :name="ask.name" :email="ask.email" :website="ask.website">{{
+        ask.ask
+      }}</AskPreview>
       <form @submit.prevent="submitAsk" class="flex flex-col gap-2">
-        <div class="flex md:flex-row flex-col gap-2">
-          <div class="flex flex-col w-full">
-            <label class="font-display text-accent text-lg" for="name"
-              >name</label
-            >
-            <input
-              v-model="ask.name"
-              type="text"
-              id="name"
-              class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full input input-primary"
-            />
-            <label for="name" class="text-sm italic"
-              >optional (leave blank to be "anonymous user")</label
-            >
-          </div>
+        <div class="flex flex-col w-full">
+          <label class="font-display text-accent text-lg" for="name"
+            >name</label
+          >
+          <input
+            v-model="ask.name"
+            type="text"
+            id="name"
+            class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full input input-primary"
+          />
+          <label for="name" class="text-sm italic"
+            >optional (leave blank to be "anonymous user")</label
+          >
+        </div>
+        <div class="flex gap-2">
           <div class="flex flex-col w-full">
             <label class="font-display text-accent text-lg" for="website"
               >website</label
@@ -81,13 +83,13 @@
             <label for="email" class="text-sm italic"
               >optional (used to show ur
               <NuxtLink
-                class="text-accent underline font-bold"
+                class="text-secondary underline font-bold"
                 to="https://www.libravatar.org/"
                 >libravatar</NuxtLink
               >
               or
               <NuxtLink
-                class="text-accent underline font-bold"
+                class="text-secondary underline font-bold"
                 to="https://gravatar.com/"
                 >gravatar</NuxtLink
               >)
@@ -100,16 +102,18 @@
             v-model="ask.ask"
             :placeholder="`go ahead, write an ask`"
             class="rounded-xl border-accent border-2 bg-base-100 p-2 textarea textarea-primary"
-            rows="6"
+            rows="3"
             id="ask"
             required
           ></textarea>
-          <label for="ask" class="text-sm italic">required (supports markdown and css crimes)</label>
+          <label for="ask" class="text-sm italic"
+            >required (supports markdown and css crimes)</label
+          >
         </div>
         <div class="flex gap-2">
           <button
             type="submit"
-            class="rounded-xl px-2 py-1 text-base-100 bg-accent font-display hover:brightness-90 text-lg flex gap-2 items-center w-fit"
+            class="rounded-xl px-2 py-1 text-base-100 bg-primary font-display hover:brightness-90 text-lg flex gap-2 items-center w-fit"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

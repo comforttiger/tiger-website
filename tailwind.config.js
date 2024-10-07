@@ -43,9 +43,9 @@ export default {
           error: "#ffffff",
         },
         dark: {
-          primary: "#6633EE",
-          secondary: "#EE6633",
-          accent: "#EE6633",
+          primary: "#A67BFF",
+          secondary: "#7b92ff",
+          accent: "#ffa67b",
           neutral: "#eff3f3",
           "base-100": "#031014",
           info: "#3eb6e6",

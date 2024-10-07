@@ -1,6 +1,7 @@
 <template>
   <div
-    class="rounded-xl p-4 border-2 border-accent flex flex-col gap-4 bg-base-100 w-fit"
+    class="rounded-xl p-4 border-2 border-primary flex flex-col gap-4 bg-base-100 w-fit"
+    v-if="website || name || email || renderedContent"
   >
     <div class="flex gap-2">
       <div class="min-w-12 min-h-12">
@@ -25,7 +26,7 @@
               name ? name : "anonymous user"
             }}</FilledButton
             ><span
-              class="rounded-xl px-2 py-1 text-accent bg-base-100 border-accent border-2 font-display"
+              class="rounded-xl px-2 py-1 text-primary bg-base-100 border-primary border-2 font-display"
               v-else
               >{{ name ? name : "anonymous user" }}</span
             >
@@ -208,6 +209,10 @@ const fallbackStyle = ref({});
 const renderedContent = ref("");
 const slots = useSlots(); // Get the slots
 
+fallbackStyle.value = {
+  filter: `hue-rotate(${Math.floor(Math.random() * 360)}deg) saturate(0.3) brightness(1.5)`,
+};
+
 // Function to update avatar and fallback style based on props
 const updateAvatarAndStyle = () => {
   if (props.email) {
@@ -230,17 +235,16 @@ const updateAvatarAndStyle = () => {
           ? generateHueFromHash(Md5.hashStr(props.email))
           : generateHueFromString(props.name ? props.name : "anonymous user");
         fallbackStyle.value = {
-          filter: `hue-rotate(${hueRotation}deg)`,
+          filter: `hue-rotate(${hueRotation}deg) saturate(0.3) brightness(1.5)`,
         };
       }
     };
   } else {
     avatar.value = "/images/lilguy.png";
-    fallbackStyle.value = {};
     if (props.name) {
       const hueRotation = generateHueFromString(props.name);
       fallbackStyle.value = {
-        filter: `hue-rotate(${hueRotation}deg)`,
+        filter: `hue-rotate(${hueRotation}deg) saturate(0.3) brightness(1.5)`,
       };
     }
   }

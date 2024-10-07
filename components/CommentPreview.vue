@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-4">
+  <div class="flex gap-4" v-if="website || email || name || renderedContent">
     <div class="min-w-12 min-h-12" v-if="small">
       <NuxtLink v-if="website" :to="website" class="min-w-12 min-h-12">
         <img
@@ -31,7 +31,7 @@
       />
     </div>
     <div class="flex flex-col gap-4 w-full">
-      <div class="flex md:flex-row flex-col gap-1">
+      <div class="flex md:flex-row flex-col md:justify-between gap-1">
         <FilledButton
           v-if="website"
           :url="website"
@@ -41,13 +41,13 @@
         >
         <span
           v-else
-          class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit"
+          class="border-primary border-2 px-2 py-1 text-primary bg-base-100 rounded-xl font-display w-fit"
           >{{ name ? name : "anonymous user" }}</span
         >
         <DateComponent
           :timestamp="Date.now()"
           time
-          class="px-2 py-1 text-accent bg-base-100 rounded-xl font-display italic w-fit"
+          class="px-2 py-1 text-primary bg-base-100 rounded-xl font-display italic w-fit"
         />
       </div>
       <!-- Render Markdown slot content here -->
@@ -226,6 +226,9 @@ const fallbackStyle = ref({});
 const renderedContent = ref("");
 const slots = useSlots(); // Get the slots
 
+fallbackStyle.value = {
+  filter: `hue-rotate(${Math.floor(Math.random() * 360)}deg) saturate(0.3) brightness(1.5)`,
+};
 // Function to update avatar and fallback style based on props
 const updateAvatarAndStyle = () => {
   if (props.email) {
@@ -248,17 +251,16 @@ const updateAvatarAndStyle = () => {
           ? generateHueFromHash(Md5.hashStr(props.email))
           : generateHueFromString(props.name ? props.name : "anonymous user");
         fallbackStyle.value = {
-          filter: `hue-rotate(${hueRotation}deg)`,
+          filter: `hue-rotate(${hueRotation}deg) saturate(0.3) brightness(1.5)`,
         };
       }
     };
   } else {
     avatar.value = "/images/lilguy.png";
-    fallbackStyle.value = {};
     if (props.name) {
       const hueRotation = generateHueFromString(props.name);
       fallbackStyle.value = {
-        filter: `hue-rotate(${hueRotation}deg)`,
+        filter: `hue-rotate(${hueRotation}deg) saturate(0.3) brightness(1.5)`,
       };
     }
   }

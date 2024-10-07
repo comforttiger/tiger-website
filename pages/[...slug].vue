@@ -90,17 +90,25 @@ const checkHashForPendingComment = async () => {
   const hash = useRoute().hash;
   if (hash.length) {
     const timestamp = Number(hash.slice(1));
-    const pendingComment = await queryContent("/comments")
-      .where({ pending: { $exists: true } })
-      .where({ reply: { $exists: false } })
-      .where({ timestamp })
-      .findOne();
 
-    if (
-      pendingComment &&
-      !comments.value.find((comment: ParsedContent) => comment._id === pendingComment._id)
-    ) {
-      comments.value.push(pendingComment);
+    // Only continue if the timestamp is a valid number
+    if (!isNaN(timestamp)) {
+      try {
+        const pendingComment = await queryContent("/comments")
+          .where({ pending: { $exists: true } })
+          .where({ reply: { $exists: false } })
+          .where({ timestamp })
+          .find();
+
+        if (
+          pendingComment.length &&
+          !comments.value.find((comment: ParsedContent) => comment._id === pendingComment[0]._id)
+        ) {
+          comments.value.push(pendingComment[0]);
+        }
+      } catch (error) {
+        console.warn("No pending comment found for the timestamp:", timestamp);
+      }
     }
   }
 };

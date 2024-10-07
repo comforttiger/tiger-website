@@ -9,8 +9,8 @@
         :email="comment.email"
         :website="comment.website"
       />
-      <div class="flex flex-col gap-4 w-full">
-        <div class="flex md:flex-row flex-col gap-1">
+      <div class="flex flex-col gap-4 w-full px-0">
+        <div class="flex md:flex-row md:justify-between flex-col gap-1 w-full px-0">
           <FilledButton
             v-if="comment.website"
             :url="comment.website"
@@ -20,13 +20,13 @@
           >
           <span
             v-else
-            class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit"
+            class="border-primary border-2 px-2 py-1 text-primary bg-base-100 rounded-xl font-display w-fit"
             >{{ comment.name }}</span
           >
           <DateComponent
             :timestamp="comment.timestamp"
             time
-            class="px-2 py-1 text-accent bg-base-100 rounded-xl font-display italic w-fit"
+            class="px-2 py-1 text-primary bg-base-100 rounded-xl font-display italic w-fit"
           />
         </div>
         <ContentRenderer :value="comment" class="space-y-2"></ContentRenderer>
@@ -46,7 +46,7 @@
         :path="path"
         :comment="reply"
         v-for="reply in replies"
-        class="w-full p-0 pl-4"
+        class="w-full pr-0 pl-4"
       />
     </div>
   </div>
@@ -71,26 +71,32 @@ const initialReplies = await queryContent(`comments${props.path}`)
 
 replies.value = initialReplies;
 
-const checkHashForPendingReply = async () => {
+const checkHashForPendingComment = async () => {
   const hash = useRoute().hash;
   if (hash.length) {
     const timestamp = Number(hash.slice(1));
-    const pendingReply = await queryContent("/comments")
-      .where({ pending: { $exists: true } })
-      .where({ reply: props.comment._id })
-      .where({ timestamp })
-      .findOne();
 
-    if (
-      pendingReply &&
-      !replies.value.find((reply) => reply._id === pendingReply._id)
-    ) {
-      replies.value.push(pendingReply);
+    // Only continue if the timestamp is a valid number
+    if (!isNaN(timestamp)) {
+      const pendingComment = await queryContent("/comments")
+        .where({ pending: { $exists: true } })
+        .where({ reply: props.comment._id })
+        .where({ timestamp })
+        .find();
+
+      if (
+        pendingComment.length &&
+        !replies.value.find(
+          (reply: ParsedContent) => reply._id === pendingComment[0]._id
+        )
+      ) {
+        replies.value.push(pendingComment[0]);
+      }
     }
   }
 };
 
 onMounted(async () => {
-  await checkHashForPendingReply();
+  await checkHashForPendingComment();
 });
 </script>

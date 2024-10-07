@@ -57,6 +57,9 @@ const props = defineProps({
 // Reactive variables for avatar URL and fallback style
 const avatar = ref("/images/lilguy.png"); // Use default image immediately
 const fallbackStyle = ref({});
+fallbackStyle.value = {
+  filter: `hue-rotate(${Math.floor(Math.random() * 360)}deg) saturate(0.3) brightness(1.5)`,
+};
 
 // Function to update avatar and fallback style based on props
 const updateAvatarAndStyle = () => {
@@ -78,14 +81,14 @@ const updateAvatarAndStyle = () => {
           ? generateHueFromHash(props.email)
           : generateHueFromString(props.name ? props.name : "anonymous user");
         fallbackStyle.value = {
-          filter: `hue-rotate(${hueRotation}deg)`,
+          filter: `hue-rotate(${hueRotation}deg) saturate(0.3) brightness(1.5)`,
         };
       }
     };
   } else if (props.name) {
     const hueRotation = generateHueFromString(props.name);
     fallbackStyle.value = {
-      filter: `hue-rotate(${hueRotation}deg)`,
+      filter: `hue-rotate(${hueRotation}deg) saturate(0.3) brightness(1.5)`,
     };
   }
 };
