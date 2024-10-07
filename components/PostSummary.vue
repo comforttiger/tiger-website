@@ -55,13 +55,15 @@
       <ul v-for="tag in post.tags" class="h-fit">
         <li
           v-if="selected ? selected.includes(tag) : false"
-          class="border-primary border-2 px-2 py-1 text-base-100 bg-primary rounded-xl font-display h-fit"
+          class="border-primary border-2 px-2 py-1 text-base-100 bg-primary rounded-xl font-display h-fit hover:cursor-pointer hover:brightness-95"
+          @click="emitTag(tag)"
         >
           #{{ tag }}
         </li>
         <li
           v-else
-          class="border-primary border-2 px-2 py-1 text-primary bg-base-100 rounded-xl font-display h-fit"
+          class="border-primary border-2 px-2 py-1 text-primary bg-base-100 rounded-xl font-display h-fit hover:cursor-pointer hover:bg-primary hover:text-base-100"
+          @click="emitTag(tag)"
         >
           #{{ tag }}
         </li>
@@ -85,4 +87,10 @@ defineProps({
   selected: { type: Array<String>, required: false },
   big_pics: { type: Boolean, required: false },
 });
+
+const emit = defineEmits(['tag-clicked']);
+
+const emitTag = (tag: string) => {
+  emit('tag-clicked', tag);
+};
 </script>

@@ -30,7 +30,7 @@
         :timestamp="timestamp"
         class="border-primary border-2 px-2 py-1 text-primary bg-base-100 rounded-xl font-display h-fit"
       />
-      <span v-for="tag in tags" class="border-primary border-2 px-2 py-1 text-primary bg-base-100 rounded-xl font-display h-fit">#{{ tag }}</span>
+      <OutlineButton :to="{ path: '/', query: { tag: tag } }" v-for="tag in tags" class="h-fit">#{{ tag }}</OutlineButton>
       <!-- <Tag v-for="tag in tags" :tag="tag" class="hover:bg-base-100 hover:text-accent" /> -->
     </div>
   </div>

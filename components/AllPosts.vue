@@ -148,7 +148,11 @@
     <div class="flex flex-col gap-4 overflow-y-auto p-2">
       <div v-for="result in paginatedPosts" :key="result.id">
         <!-- Make sure to use a unique key -->
-        <PostSummary :post="result" :selected="selectedTags" />
+        <PostSummary
+          :post="result"
+          :selected="selectedTags"
+          @tag-clicked="handleTagClick"
+        />
       </div>
     </div>
 
@@ -255,6 +259,11 @@ async function toggleTagSelection(tag: string) {
   currentPage.value = 1;
 }
 
+function handleTagClick(tag: string) {
+  scrollToTarget();
+  toggleTagSelection(tag);
+}
+
 function resetTagSelection() {
   selectedTags.value = [];
 }
@@ -272,6 +281,23 @@ const availableTags = computed(() => {
   });
   foundTags = new Map([...foundTags].sort((a, b) => b[1] - a[1]));
   return foundTags;
+});
+
+onMounted(() => {
+  const tags = useRoute().query.tag;
+
+  if (tags) {
+    const tagArray = Array.isArray(tags)
+      ? tags
+      : typeof tags === "string"
+      ? tags.split(",")
+      : [];
+    tagArray.forEach((tag) => {
+      if (tag) {
+        toggleTagSelection(tag);
+      }
+    });
+  }
 });
 </script>
 
