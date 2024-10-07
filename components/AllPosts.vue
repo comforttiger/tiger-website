@@ -150,6 +150,7 @@
         <!-- Make sure to use a unique key -->
         <PostSummary
           :post="result"
+          :ask="findAsk(result.ask)"
           :selected="selectedTags"
           @tag-clicked="handleTagClick"
         />
@@ -203,6 +204,16 @@ const queryResults = await queryContent()
   .sort({ timestamp: -1 })
   .find();
 
+const queryAsks = await queryContent("/asks").find();
+
+function findAsk(askPath: string) {
+  if (askPath) {
+    return queryAsks.find((ask) => ask._file === `asks/${askPath}.md`);
+  } else {
+    return undefined;
+  }
+}
+
 const postsWithMatchingTags = computed(() => {
   if (selectedTags.value.length === 0) {
     return queryResults;
@@ -249,13 +260,66 @@ function previousPage() {
   }
 }
 
+const router = useRouter();
+const route = useRoute();
+
+function removeTag(tagToRemove: string) {
+  // Convert query.tag to an array by splitting the comma-separated string
+  const currentTags = route.query.tag
+    ? Array.isArray(route.query.tag)
+      ? [...route.query.tag] // If it's already an array, clone it
+      : route.query.tag.split(",") // If it's a comma-separated string, split it into an array
+    : [];
+
+  // Filter out the tag you want to remove
+  const updatedTags = currentTags.filter((tag) => tag !== tagToRemove);
+
+  // Join the updated tags back into a comma-separated string
+  const updatedTagsString = updatedTags.join(",");
+
+  // Push the updated query, or remove the tag if none are left
+  router.push({
+    path: route.path, // Keep the current path
+    query:
+      updatedTags.length > 0
+        ? { ...route.query, tag: updatedTagsString }
+        : { ...route.query, tag: undefined }, // Remove tag query if empty
+  });
+}
+
+function addTag(tag: string) {
+  // Convert the current `route.query.tag` into an array if it isn't already
+  let currentTags = route.query.tag
+    ? Array.isArray(route.query.tag)
+      ? [...route.query.tag] // If it's already an array, clone it
+      : [route.query.tag] // If it's a single string, convert to array
+    : [];
+
+  // Check if the tag is already present
+  if (!currentTags.includes(tag)) {
+    // Add the new tag if it doesn't already exist
+    currentTags.push(tag);
+  }
+
+  // Join the tags into a single comma-separated string
+  const updatedTags = currentTags.join(",");
+
+  // Push the updated query with a single `tag` parameter
+  router.push({
+    path: route.path, // Keep the current path
+    query: { ...route.query, tag: updatedTags }, // Update the `tag` query as a single comma-separated string
+  });
+}
+
 async function toggleTagSelection(tag: string) {
   if (selectedTags.value.includes(tag)) {
     selectedTags.value = selectedTags.value.filter((item) => item !== tag);
     currentPage.value = 1;
+    removeTag(tag);
     return;
   }
   selectedTags.value.push(tag);
+  addTag(tag);
   currentPage.value = 1;
 }
 
@@ -266,6 +330,10 @@ function handleTagClick(tag: string) {
 
 function resetTagSelection() {
   selectedTags.value = [];
+  router.push({
+    path: route.path,
+    query: {},
+  });
 }
 
 const availableTags = computed(() => {
@@ -294,7 +362,7 @@ onMounted(() => {
       : [];
     tagArray.forEach((tag) => {
       if (tag) {
-        toggleTagSelection(tag);
+        selectedTags.value.push(tag);
       }
     });
   }

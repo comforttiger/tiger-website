@@ -31,23 +31,23 @@
       />
     </div>
     <div class="flex flex-col gap-4 w-full">
-      <div class="flex md:flex-row flex-col md:justify-between gap-1">
+      <div class="flex md:flex-row flex-col md:justify-between gap-1 ">
         <FilledButton
           v-if="website"
           :url="website"
           target="_blank"
-          class="w-fit"
+          class="w-fit !bg-accent !border-accent"
           >{{ name ? name : "anonymous user" }}</FilledButton
         >
         <span
           v-else
-          class="border-primary border-2 px-2 py-1 text-primary bg-base-100 rounded-xl font-display w-fit"
+          class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit"
           >{{ name ? name : "anonymous user" }}</span
         >
         <DateComponent
           :timestamp="Date.now()"
           time
-          class="px-2 py-1 text-primary bg-base-100 rounded-xl font-display italic w-fit"
+          class="px-2 py-1 text-accent bg-base-100 rounded-xl font-display italic w-fit"
         />
       </div>
       <!-- Render Markdown slot content here -->

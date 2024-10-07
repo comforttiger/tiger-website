@@ -44,14 +44,14 @@
       }}</AskPreview>
       <form @submit.prevent="submitAsk" class="flex flex-col gap-2">
         <div class="flex flex-col w-full">
-          <label class="font-display text-accent text-lg" for="name"
+          <label class="font-display text-primary text-lg" for="name"
             >name</label
           >
           <input
             v-model="ask.name"
             type="text"
             id="name"
-            class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full input input-primary"
+            class="rounded-xl border-primary border-2 bg-base-100 p-2 w-full input input-primary"
           />
           <label for="name" class="text-sm italic"
             >optional (leave blank to be "anonymous user")</label
@@ -59,26 +59,26 @@
         </div>
         <div class="flex gap-2">
           <div class="flex flex-col w-full">
-            <label class="font-display text-accent text-lg" for="website"
+            <label class="font-display text-primary text-lg" for="website"
               >website</label
             >
             <input
               v-model="ask.website"
               type="url"
               id="website"
-              class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full input input-primary"
+              class="rounded-xl border-primary border-2 bg-base-100 p-2 w-full input input-primary"
             />
             <label for="website" class="text-sm italic">optional</label>
           </div>
           <div class="flex flex-col w-full">
-            <label class="font-display text-accent text-lg" for="email"
+            <label class="font-display text-primary text-lg" for="email"
               >email</label
             >
             <input
               v-model="ask.email"
               type="email"
               id="email"
-              class="rounded-xl border-accent border-2 bg-base-100 p-2 w-full input input-primary"
+              class="rounded-xl border-primary border-2 bg-base-100 p-2 w-full input input-primary"
             />
             <label for="email" class="text-sm italic"
               >optional (used to show ur
@@ -97,11 +97,11 @@
           </div>
         </div>
         <div class="flex flex-col">
-          <label class="font-display text-accent text-lg" for="ask">ask</label>
+          <label class="font-display text-primary text-lg" for="ask">ask</label>
           <textarea
             v-model="ask.ask"
             :placeholder="`go ahead, write an ask`"
-            class="rounded-xl border-accent border-2 bg-base-100 p-2 textarea textarea-primary"
+            class="rounded-xl border-primary border-2 bg-base-100 p-2 textarea textarea-primary"
             rows="3"
             id="ask"
             required

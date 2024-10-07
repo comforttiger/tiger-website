@@ -15,18 +15,18 @@
             v-if="comment.website"
             :url="comment.website"
             target="_blank"
-            class="w-fit"
+            class="w-fit !bg-accent !border-accent"
             >{{ comment.name }}</FilledButton
           >
           <span
             v-else
-            class="border-primary border-2 px-2 py-1 text-primary bg-base-100 rounded-xl font-display w-fit"
+            class="border-accent border-2 px-2 py-1 text-accent bg-base-100 rounded-xl font-display w-fit"
             >{{ comment.name }}</span
           >
           <DateComponent
             :timestamp="comment.timestamp"
             time
-            class="px-2 py-1 text-primary bg-base-100 rounded-xl font-display italic w-fit"
+            class="px-2 py-1 text-accent bg-base-100 rounded-xl font-display italic w-fit"
           />
         </div>
         <ContentRenderer :value="comment" class="space-y-2"></ContentRenderer>

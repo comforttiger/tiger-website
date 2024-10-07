@@ -28,7 +28,7 @@
           <h3 class="text-3xl text-accent font-display pb-2">
             <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
           </h3>
-          <Ask v-if="post.ask" :ask="post.ask" />
+          <Ask v-if="ask" :ask="ask" />
           <div v-else class="flex flex-col gap-2">
             {{ post.description }}
           </div>
@@ -69,13 +69,6 @@
         </li>
       </ul>
     </div>
-    <!-- <div>
-      <ul class="flex gap-2 mt-5">
-        <li v-for="tag in post.tags">
-          <Tag :tag="tag" />
-        </li>
-      </ul>
-    </div> -->
   </div>
 </template>
 
@@ -84,6 +77,7 @@ import { type ParsedContent } from "@nuxt/content/dist/runtime/types";
 
 defineProps({
   post: { type: Object as PropType<ParsedContent>, required: true },
+  ask: { type: Object as PropType<ParsedContent>, required: false },
   selected: { type: Array<String>, required: false },
   big_pics: { type: Boolean, required: false },
 });

@@ -58,7 +58,7 @@
     <OutlineButton
       v-if="!showForm"
       @click="toggleForm"
-      class="w-fit hover:cursor-pointer flex gap-2"
+      class="w-fit hover:cursor-pointer flex gap-2 !border-accent !text-accent hover:!text-base-100 hover:bg-accent"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -156,7 +156,7 @@
         <div class="flex gap-2">
           <button
             type="submit"
-            class="rounded-xl px-2 py-1 text-base-100 bg-primary font-display hover:brightness-90 text-lg flex gap-2 items-center w-fit"
+            class="rounded-xl px-2 py-1 text-base-100 bg-accent font-display hover:brightness-90 text-lg flex gap-2 items-center w-fit"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +175,7 @@
 
           <OutlineButton
             @click="toggleForm"
-            class="w-fit hover:cursor-pointer flex gap-1 items-center"
+            class="w-fit hover:cursor-pointer flex gap-1 items-center !border-accent !text-accent hover:!text-base-100 hover:bg-accent"
             v-if="reply"
           >
             <svg
