@@ -40,6 +40,7 @@ export default defineEventHandler(async (event) => {
     const replies = await serverQueryContent(event)
       .where({ reply: comment._id })
       .where({ email: { $ne: hashedEmail } })
+      .where({ pending: { $exists: false } })
       .sort({ timestamp: -1 })
       .find();
 
