@@ -295,6 +295,32 @@
           link="https://blinkies.cafe/"
         />
       </li>
+      <li>
+        <a href="https://aloe.gay" target="_blank"
+          ><picture>
+            <source
+              srcset="/buttons/aloe-drk.gif"
+              media="(prefers-color-scheme: dark)"
+            />
+            <img
+              src="/buttons/aloe.gif"
+              alt="aloe.gay"
+              class="hover:scale-[2] hover:relative w-[88px] h-[31px]"
+              style="
+                image-rendering: pixelated;
+                transition: filter 0.1s linear;
+                transition: transform 0.05s linear;
+              "
+            /> </picture
+        ></a>
+      </li>
+      <li>
+        <Button
+          img="/buttons/tulipbunny.png"
+          alt="irina's burrow"
+          link="https://tulipbunny.au/"
+        />
+      </li>
     </ul>
     <div class="items-center text-center flex flex-col justify-center gap-2">
       and here's my button!
