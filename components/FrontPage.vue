@@ -10,8 +10,8 @@
           <NowPlayingGame />
           <NowPlaying />
           <SocialsLinks class="h-fit" />
+          <ButtonsWall />
           <AskForm />
-          <OtherBlogs class="mb-5" />
           <WebringNavigation />
         </div>
       </div>

@@ -4,14 +4,12 @@
       class="justify-center rounded-xl w-full flex flex-col gap-4 items-center p-4 bg-base-100 font-display text-lg border-2 border-accent"
       v-if="showSuccessDisclaimer"
     >
-      <div class="text-center w-full">
-        your comment was successfully sent!
-      </div>
+      <div class="text-center w-full">your comment was successfully sent!</div>
       <!-- <div class="text-center w-full">
         comments are manually reviewed, so it may take a bit to show up!
       </div> -->
       <div class="text-center w-full" v-if="pastEmail">
-        get notified when someone replies to your comments by subscribing to
+        subscribe to your
         <NuxtLink
           class="text-secondary inline items-center"
           :to="`/replies/${Md5.hashStr(pastEmail)}.xml`"
@@ -31,34 +29,34 @@
           <span class="font-bold underline decoration-secondary decoration-2"
             >your replies feed</span
           ></NuxtLink
-        >. <br>if
-        this is your first comment, it might take a minute before the feed is
-        generated.
+        >
+        to get notified when someone replies to your comments! if this is
+        your first comment, it might take a minute before the feed is generated.
       </div>
     </div>
     <div
-        class="rounded-xl w-full flex gap-4 items-center p-4 bg-base-100 text-accent font-display text-lg border-2 border-accent"
-        v-if="showFailureDisclaimer"
+      class="rounded-xl w-full flex gap-4 items-center p-4 bg-base-100 text-accent font-display text-lg border-2 border-accent"
+      v-if="showFailureDisclaimer"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="size-6 min-w-6 min-h-6"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="size-6 min-w-6 min-h-6"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
-            clip-rule="evenodd"
-          />
-        </svg>
-        something went wrong! try again later!
-      </div>
+        <path
+          fill-rule="evenodd"
+          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+      something went wrong! try again later!
+    </div>
 
-    <OutlineButton
+    <OutlineButtonAccent
       v-if="!showForm"
       @click="toggleForm"
-      class="w-fit hover:cursor-pointer flex gap-2 !border-accent !text-accent hover:!text-base-100 hover:bg-accent"
+      class="w-fit hover:cursor-pointer flex gap-2 items-center"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -71,7 +69,7 @@
           clip-rule="evenodd"
         />
       </svg>
-      {{ reply ? "reply" : "comment" }}</OutlineButton
+      {{ reply ? "reply" : "comment" }}</OutlineButtonAccent
     >
 
     <div v-if="showForm" class="w-full flex flex-col gap-4 items-center">
@@ -154,9 +152,9 @@
           >
         </div>
         <div class="flex gap-2">
-          <button
+          <FilledButtonAccent
             type="submit"
-            class="rounded-xl px-2 py-1 text-base-100 bg-accent font-display hover:brightness-90 text-lg flex gap-2 items-center w-fit"
+            class="text-lg flex gap-2 items-center w-fit hover:cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -171,11 +169,11 @@
               />
             </svg>
             {{ reply ? "reply" : "comment" }}!
-          </button>
+          </FilledButtonAccent>
 
-          <OutlineButton
+          <OutlineButtonAccent
             @click="toggleForm"
-            class="w-fit hover:cursor-pointer flex gap-1 items-center !border-accent !text-accent hover:!text-base-100 hover:bg-accent"
+            class="w-fit hover:cursor-pointer flex gap-2 text-lg items-center"
             v-if="reply"
           >
             <svg
@@ -191,7 +189,7 @@
               />
             </svg>
             close
-          </OutlineButton>
+          </OutlineButtonAccent>
         </div>
       </form>
     </div>
@@ -261,7 +259,7 @@ function submitComment() {
       comment.value.website = "";
       comment.value.email = "";
       if (props.reply) {
-        showForm.value = false
+        showForm.value = false;
       }
       showSuccessDisclaimer.value = true;
       showFailureDisclaimer.value = false;
