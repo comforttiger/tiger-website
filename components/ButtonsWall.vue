@@ -321,6 +321,13 @@
           link="https://tulipbunny.au/"
         />
       </li>
+      <li>
+        <Button
+          img="/buttons/antdotcomputer.png"
+          alt="ant dot computer"
+          link="https://ant.computer/"
+        />
+      </li>
     </ul>
     <div class="items-center text-center flex flex-col justify-center gap-2">
       and here's my button!
