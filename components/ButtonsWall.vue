@@ -1,9 +1,11 @@
 <template>
     <ul class="flex justify-center flex-wrap gap-1 bg-base-100 p-4 rounded-xl">
+      <li><Button img="/buttons/zoe.png" alt="zoe website" link="https://zoe.kittycat.homes" /></li>
       <li><Button img="/buttons/erysdren.png" alt="erysdren's website" link="https://erysdren.me/" /></li>
       <li><Button img="/buttons/abyss.gif" alt="abyss' website" link="https://kobold60.com/" /></li>
       <li><Button img="/buttons/myno.gif" alt="myno's website" link="https://zatzhing.me" /></li>
       <li><Button img="/buttons/oat.png" alt="oat zone" link="https://oat.zone/" /></li>
+      <li><Button img="/buttons/summer.png" alt="summer's website" link="https://summergeist.art/" /></li>
       <li><Button img="/buttons/tulip.gif" alt="tulip's website" link="https://platinumtulip.garden/" /></li>
       <li><Button img="/buttons/cecirobin.png" alt="ceci robin's website" link="https://cecirobin.neocities.org/" /></li>
       <li><Button img="/buttons/indietsushin.gif" alt="インディー通信 Indie Tsushin" link="https://indietsushin.net" /></li>
