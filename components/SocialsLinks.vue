@@ -145,14 +145,5 @@
         >
       </li>
     </ul>
-    <div class="items-center text-center flex flex-col justify-center gap-2">
-      if you want to link to my website, feel free to use this button!
-
-      <Button
-        img="/tiger-button.png"
-        alt="tiger's website"
-        link="https://tiger.kittycat.homes/"
-      />
-    </div>
   </div>
 </template>
