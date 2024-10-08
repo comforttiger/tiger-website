@@ -15,6 +15,7 @@
           <WebringNavigation />
         </div>
       </div>
+      <Blinkies class="mt-5 bg-base-100 rounded-xl p-4" />
     </div>
   </div>
 </template>

@@ -288,6 +288,13 @@
           link="https://meow.garden/"
         />
       </li>
+      <li>
+        <Button
+          img="/buttons/blinkiescafe.gif"
+          alt="blinkies.cafe"
+          link="https://blinkies.cafe/"
+        />
+      </li>
     </ul>
     <div class="items-center text-center flex flex-col justify-center gap-2">
       and here's my button!
