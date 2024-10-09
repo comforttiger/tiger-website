@@ -60,13 +60,6 @@
     </li>
     <li>
       <img
-        src="/buttons/blinkies/jerma.gif"
-        alt="jerma"
-        style="image-rendering: pixelated"
-      />
-    </li>
-    <li>
-      <img
         src="/buttons/blinkies/autism.gif"
         alt="autism"
         style="image-rendering: pixelated"
