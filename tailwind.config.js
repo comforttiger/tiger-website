@@ -12,20 +12,20 @@ export default {
     fontFamily: {
       sans: ["Andika"],
       display: ["Dosis"],
-      zoe: ["Zoe"],
-      erysdren: ["Erysdren"],
-      abyss: ["Abyss"],
-      myno: ["Myno"],
-      oatmealine: ["Oatmealine"],
-      indietsushin: ["IndieTsushin"],
-      summer: ["Summer"],
-      "tulip-one": ["TulipOne"],
-      "tulip-two": ["TulipTwo"]
+      // zoe: ["Zoe"],
+      // erysdren: ["Erysdren"],
+      // abyss: ["Abyss"],
+      // myno: ["Myno"],
+      // oatmealine: ["Oatmealine"],
+      // indietsushin: ["IndieTsushin"],
+      // summer: ["Summer"],
+      // "tulip-one": ["TulipOne"],
+      // "tulip-two": ["TulipTwo"],
     },
     extend: {
       backgroundImage: {
-        'background-repeat': "url('/images/background-repeat.webp')",
-      }
+        "background-repeat": "url('/images/background-repeat.webp')",
+      },
     },
   },
   daisyui: {
@@ -56,5 +56,16 @@ export default {
       },
     ],
   },
-  plugins: [require("daisyui"), require("@tailwindcss/typography")],
+  plugins: [
+    require("daisyui"),
+    require("@tailwindcss/typography"),
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".text-shadow-heading": {
+          textShadow: `3px 3px oklch(var(--b1)), 3px -3px oklch(var(--b1)), -3px 3px oklch(var(--b1)), -3px -3px oklch(var(--b1))`,
+        },
+      };
+      addUtilities(newUtilities, ["responsive", "hover"]);
+    }    
+  ],
 };

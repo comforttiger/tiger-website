@@ -333,7 +333,7 @@
       and here's my button!
 
       <Button
-        img="/tiger-button.png"
+        img="/tiger-button.gif"
         alt="tiger's website"
         link="https://tiger.kittycat.homes/"
       />

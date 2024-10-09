@@ -1,6 +1,6 @@
 <template>
   <div
-    class="rounded-xl flex gap-2 items-center w-fit p-4 bg-base-100 text-accent font-display text-lg"
+    class="rounded-xl flex gap-2 items-center max-w-md w-fit p-4 bg-base-100 text-primary font-display text-lg"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

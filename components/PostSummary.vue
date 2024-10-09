@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-base-100 rounded-xl p-5 rounded-l-md border-l-4 border-accent flex flex-col gap-5"
+    class="bg-base-100 rounded-xl p-5 rounded-l-md border-l-4 border-primary flex flex-col gap-5"
   >
     <div class="grid grid-cols-5 gap-2">
       <div
@@ -25,7 +25,7 @@
       </div>
       <div class="flex items-center md:col-span-4 col-span-5">
         <div>
-          <h3 class="text-3xl text-accent font-display pb-2">
+          <h3 class="text-3xl text-primary font-display pb-2">
             <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
           </h3>
           <Ask v-if="ask" :ask="ask" />
