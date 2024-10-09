@@ -154,7 +154,7 @@
         <div class="flex gap-2">
           <button 
             type="submit"
-            class="rounded-xl px-2 py-1 text-accent bg-base-100 border-accent border-2 font-display hover:bg-accent hover:text-base-100 text-lg flex gap-2 items-center w-fit hover:cursor-pointer"
+            class="rounded-xl px-2 py-1 text-base-100 bg-accent font-display hover:brightness-90 border-2 border-accent text-lg flex gap-2 items-center w-fit hover:cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
