@@ -139,10 +139,8 @@
       </span>
     </div>
 
-    <!-- body -->
     <div class="flex flex-col gap-4 overflow-y-auto p-2">
       <div v-for="result in paginatedPosts" :key="result.id">
-        <!-- Make sure to use a unique key -->
         <PostSummary
           :post="result"
           :ask="findAsk(result.ask)"
@@ -152,7 +150,6 @@
       </div>
     </div>
 
-    <!-- Pagination Controls -->
     <div class="flex justify-between">
       <FilledButton
         @click="previousPage"
@@ -189,8 +186,8 @@
 
 <script setup lang="ts">
 const selectedTags: Ref<Array<string>> = ref([]);
-const postCount = ref(10); // Number of posts to show at once
-const currentPage = ref(1); // Track the current page
+const postCount = ref(10);
+const currentPage = ref(1);
 
 const queryResults = await queryContent()
   .where({ tags: { $exists: true } })
@@ -259,26 +256,22 @@ const router = useRouter();
 const route = useRoute();
 
 function removeTag(tagToRemove: string) {
-  // Convert query.tag to an array by splitting the comma-separated string
   const currentTags = route.query.tag
     ? Array.isArray(route.query.tag)
-      ? [...route.query.tag] // If it's already an array, clone it
-      : route.query.tag.split(",") // If it's a comma-separated string, split it into an array
+      ? [...route.query.tag]
+      : route.query.tag.split(",")
     : [];
 
-  // Filter out the tag you want to remove
   const updatedTags = currentTags.filter((tag) => tag !== tagToRemove);
 
-  // Join the updated tags back into a comma-separated string
   const updatedTagsString = updatedTags.join(",");
 
-  // Push the updated query, or remove the tag if none are left
   router.push({
-    path: route.path, // Keep the current path
+    path: route.path,
     query:
       updatedTags.length > 0
         ? { ...route.query, tag: updatedTagsString }
-        : { ...route.query, tag: undefined }, // Remove tag query if empty
+        : { ...route.query, tag: undefined },
   });
 }
 

@@ -4,6 +4,7 @@ ask: ask-luis-1728324900988
 tags: ["ask"]
 no-title: true
 timestamp: 1728336805000
+description: "its a hard question! theres many angles to look at it from."
 ---
 <!-- ask from luis: if one day everyone on earth could only eat 1 food item for the rest of their lives what would yours be? -->
 

@@ -1,71 +1,88 @@
 <template>
   <div class="w-full flex items-center justify-center">
-    <div class="min-h-screen max-w-3xl flex flex-col gap-16">
+    <div class="min-h-screen flex flex-col gap-16">
       <article class="w-full flex items-center justify-center flex-col gap-2">
-        <div class="flex flex-col gap-12">
-          <div>
-            <PostTitle
-              :timestamp="post.timestamp"
-              :tags="post.tags"
-              :draft="post.tags.includes('draft')"
-              >{{ post.title }}</PostTitle
-            >
-            <div class="flex flex-col gap-5">
-              <div
-                v-if="post.photos"
-                class="columns-lg gap-2 rounded-xl bg-base-100 p-5"
-              >
-                <div class="flex flex-col gap-2">
-                  <img v-for="photo in post.photos" :src="photo" />
-                </div>
-              </div>
-              <img
-                v-if="post.image && post.tags.includes('art')"
-                :src="post.image"
-                :alt="post.image_description"
-                class="h-fit w-fit p-5 bg-base-100 rounded-xl"
-              />
-              <img
-                v-else-if="post.image"
-                :src="post.image"
-                :alt="post.image_description"
-                class="max-w-full w-fit p-5 bg-base-100 rounded-xl"
-              />
-              <iframe
-                v-if="post.video"
-                :src="post.video"
-                class="max-w-full w-fit aspect-video p-5 bg-base-100 rounded-xl"
-              ></iframe>
-              <Ask v-if="ask" :ask="ask" class="max-w-xl" />
-              <div
-                v-if="post.body && post.body.children.length > 0"
-                class="text-neutral p-5 bg-base-100 rounded-xl"
-              >
-                <ContentRenderer :value="post" class="space-y-3" />
-              </div>
+        <div :class="gridClass" class="grid-layout w-screen">
+          <PostTitle
+            class="title"
+            :timestamp="post.timestamp"
+            :tags="post.tags"
+            :draft="post.tags.includes('draft')"
+            >{{ post.title }}</PostTitle
+          >
+          <div
+            v-if="post.photos"
+            class="columns-lg gap-2 rounded-xl bg-base-100 p-5 media"
+          >
+            <div class="flex flex-col gap-2">
+              <img v-for="photo in post.photos" :src="photo" />
             </div>
+          </div>
+          <img
+            v-if="post.image"
+            :src="post.image"
+            :alt="post.image_description"
+            class="w-fit p-5 bg-base-100 rounded-xl media"
+          />
+          <iframe
+            v-if="post.video"
+            :src="post.video"
+            class="w-fit aspect-video p-5 bg-base-100 rounded-xl media"
+          ></iframe>
+          <Ask v-if="ask" :ask="ask" class="max-w-xl ask" />
+          <div
+            v-if="post.body && post.body.toc!.links.length"
+            class="rounded-xl bg-base-100 p-4 flex flex-col gap-3 h-fit toc"
+          >
+            <h2
+              class="text-2xl text-primary font-display border-b-2 border-primary"
+            >
+              table of contents
+            </h2>
+            <ul
+              class="list-disc ml-4 text-primary font-bold flex flex-col gap-1"
+            >
+              <li v-for="link of post.body!.toc!.links" :key="link.id">
+                <a :href="`#${link.id}`" class="hover:text-accent">{{
+                  link.text
+                }}</a>
+                <ul class="list-disc ml-4">
+                  <li v-for="link1 of link.children" :key="link1.id">
+                    <a :href="`#${link1.id}`" class="hover:text-accent">{{
+                      link1.text
+                    }}</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div
+            v-if="post.body && post.body.children.length > 0"
+            class="text-neutral p-5 bg-base-100 rounded-xl content"
+          >
+            <ContentRenderer :value="post" class="space-y-3" />
+          </div>
+          <div class="flex flex-col gap-4 comments mt-16">
+            <div
+              v-if="comments.length"
+              class="flex flex-col gap-2 md:w-full w-screen"
+            >
+              <Comment
+                :path="useRoute().path"
+                :comment="comment"
+                v-for="comment in comments"
+              />
+            </div>
+            <div
+              v-else
+              class="rounded-xl p-5 text-accent bg-base-100 w-fit font-display text-lg flex gap-2 items-center"
+            >
+              there are no comments! yet...
+            </div>
+            <CommentForm :slug="useRoute().path.slice(1)" />
           </div>
         </div>
       </article>
-      <div class="flex flex-col gap-4">
-        <div
-          v-if="comments.length"
-          class="flex flex-col gap-2 md:w-full w-screen"
-        >
-          <Comment
-            :path="useRoute().path"
-            :comment="comment"
-            v-for="comment in comments"
-          />
-        </div>
-        <div
-          v-else
-          class="rounded-xl p-5 text-accent bg-base-100 w-fit font-display text-lg flex gap-2 items-center"
-        >
-          there are no comments! yet...
-        </div>
-        <CommentForm :slug="useRoute().path.slice(1)" />
-      </div>
     </div>
   </div>
 </template>
@@ -84,7 +101,7 @@ const initialComments = await queryContent(`/comments${useRoute().path}`)
   .where({ pending: { $exists: false } })
   .find();
 
-comments.value = initialComments
+comments.value = initialComments;
 
 const checkHashForPendingComment = async () => {
   const hash = useRoute().hash;
@@ -102,7 +119,9 @@ const checkHashForPendingComment = async () => {
 
         if (
           pendingComment.length &&
-          !comments.value.find((comment: ParsedContent) => comment._id === pendingComment[0]._id)
+          !comments.value.find(
+            (comment: ParsedContent) => comment._id === pendingComment[0]._id
+          )
         ) {
           comments.value.push(pendingComment[0]);
         }
@@ -131,4 +150,88 @@ useSeoMeta({
   ogDescription: description,
   ogImage: post.image,
 });
+
+const gridClass = computed(() => {
+  return post.body && post.body.toc && post.body.toc.links.length
+    ? "grid-2-cols"
+    : "grid-1-col";
+});
 </script>
+
+<style scoped>
+/* Define the grid layouts for 1-column and 2-column scenarios */
+.grid-layout {
+  gap: 16px;
+}
+
+/* Two-column layout for when the Table of Contents is present */
+.grid-2-cols {
+  display: grid;
+}
+
+@media only screen and (min-width: 768px) {
+  .grid-2-cols {
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas:
+      ". title"
+      ". media"
+      ". ask"
+      "toc content"
+      ". comments";
+    max-width: 64rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .grid-2-cols {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "media"
+      "ask"
+      "toc"
+      "content"
+      "comments";
+    max-width: 48rem /* 768px */;
+  }
+}
+
+/* One-column layout for when the Table of Contents is absent */
+.grid-1-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "title"
+    "media"
+    "ask"
+    "toc"
+    "content"
+    "comments";
+  max-width: 48rem /* 768px */;
+}
+
+.title {
+  grid-area: title;
+}
+
+.media {
+  grid-area: media;
+}
+
+.toc {
+  grid-area: toc;
+}
+
+.content {
+  grid-area: content;
+}
+
+.ask {
+  grid-area: ask;
+}
+
+.comments {
+  grid-area: comments;
+}
+</style>

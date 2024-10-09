@@ -28,8 +28,8 @@
           <h3 class="text-3xl text-primary font-display pb-2">
             <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
           </h3>
-          <Ask v-if="ask" :ask="ask" />
-          <div v-else class="flex flex-col gap-2">
+          <Ask v-if="ask" :ask="ask" class="mb-5" />
+          <div class="flex flex-col gap-2">
             {{ post.description }}
           </div>
         </div>
@@ -38,13 +38,7 @@
     <div class="flex gap-2 flex-wrap">
       <FilledButton
         class="py-1"
-        v-if="post._path && post._extension == 'md' && post.ask"
-        :url="post._path"
-        >view answer</FilledButton
-      >
-      <FilledButton
-        class="py-1"
-        v-else-if="post._path && post._extension == 'md'"
+        v-if="post._path && post._extension == 'md'"
         :url="post._path"
         >view post</FilledButton
       >
@@ -79,7 +73,6 @@ defineProps({
   post: { type: Object as PropType<ParsedContent>, required: true },
   ask: { type: Object as PropType<ParsedContent>, required: false },
   selected: { type: Array<String>, required: false },
-  big_pics: { type: Boolean, required: false },
 });
 
 const emit = defineEmits(['tag-clicked']);

@@ -5,6 +5,7 @@ image: /images/you-are-kbity.webp
 image_description: "two manga panels. in panel 1, a catgirl asks 'im kbity?' and the person replies 'you are kbity!'. panel 2 has a closeup of the catgirl and they say 'how?"
 tags: ["ask", "personal"]
 timestamp: 1728053077000
+description: "im gonna use this silly ask as an excuse to talk about the entire history of me being animals, and my relationship to being animals"
 ---
 hi, zoe, thank u for using my asks :3c
 

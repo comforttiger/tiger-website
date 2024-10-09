@@ -11,10 +11,10 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
 
-const askQuery = await queryContent(useRoute().path).findOne();
+const ask = (await queryContent(useRoute().path).find())[0];
 
-let ask = askQuery ? askQuery._path?.split('/').at(-1) : ''
-if (ask == undefined) {
-    ask = ''
-}
+// let ask = askQuery ? askQuery._path?.split('/').at(-1) : ''
+// if (ask == undefined) {
+//     ask = ''
+// }
 </script>
