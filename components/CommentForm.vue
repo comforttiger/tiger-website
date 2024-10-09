@@ -140,6 +140,16 @@
             >comment</label
           >
           <textarea
+          v-if="guestbook"
+            v-model="comment.comment"
+            :placeholder="`write a ${reply ? 'reply' : 'comment'}!`"
+            class="rounded-xl border-accent border-2 bg-base-100 p-2 textarea textarea-primary"
+            rows="2"
+            id="comment"
+            required
+          ></textarea>
+          <textarea
+          v-else
             v-model="comment.comment"
             :placeholder="`write a ${reply ? 'reply' : 'comment'}!`"
             class="rounded-xl border-accent border-2 bg-base-100 p-2 textarea textarea-primary"
@@ -204,6 +214,7 @@ import { whitelist } from "~/data/whitelist";
 const props = defineProps({
   slug: { type: String, required: true },
   reply: { type: String, required: false },
+  guestbook: {type: Boolean, required: false}
 });
 
 const comment = ref({

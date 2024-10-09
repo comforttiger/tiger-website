@@ -72,6 +72,7 @@
           there's lots of stuff i like that i haven't gotten around to writing
           about yet too, so stay tuned :3c
         </p>
+        <p>feel free to <NuxtLink to="/guestbook" class="underline text-secondary">sign my guestbook</NuxtLink> while you're here!</p>
       </div>
       <AboutMeButtons />
     </div>

@@ -34,6 +34,7 @@
           comment-name="reply"
           :slug="path.slice(1)"
           :reply="comment._id"
+          :guestbook="guestbook"
           class="!p-0"
         />
       </div>
@@ -45,6 +46,7 @@
       <Comment
         :path="path"
         :comment="reply"
+        :guestbook="guestbook"
         v-for="reply in replies"
         class="w-full pr-0 pl-4"
       />
@@ -59,6 +61,7 @@ import { type ParsedContent } from "@nuxt/content/dist/runtime/types";
 const props = defineProps({
   comment: { type: Object as PropType<ParsedContent>, required: true },
   path: { type: String, required: true },
+  guestbook: { type: Boolean, required: false}
 });
 
 const replies = ref<ParsedContent[]>([]);
