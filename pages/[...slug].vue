@@ -39,14 +39,19 @@
             >
               table of contents
             </h2>
+            <a
+              href="#"
+              class="hover:text-accent hidden md:inline text-primary font-bold"
+              >(top)</a
+            >
             <ul
-              class="list-disc ml-4 text-primary font-bold flex flex-col gap-1"
+              class="ml-4 text-primary font-bold flex flex-col gap-3"
             >
               <li v-for="link of post.body!.toc!.links" :key="link.id">
                 <a :href="`#${link.id}`" class="hover:text-accent">{{
                   link.text
                 }}</a>
-                <ul class="list-disc ml-4">
+                <ul class="ml-4 flex flex-col gap-1">
                   <li v-for="link1 of link.children" :key="link1.id">
                     <a :href="`#${link1.id}`" class="hover:text-accent">{{
                       link1.text
@@ -55,6 +60,12 @@
                 </ul>
               </li>
             </ul>
+            <a
+              href="#comments"
+              class="hover:text-accent text-primary font-bold flex gap-2 items-center"
+            >
+              comments</a
+            >
           </div>
           <div
             v-if="post.body && post.body.children.length > 0"
@@ -62,7 +73,7 @@
           >
             <ContentRenderer :value="post" class="space-y-3" />
           </div>
-          <div class="flex flex-col gap-4 comments mt-16">
+          <div class="flex flex-col gap-4 comments mt-16" id="comments">
             <div
               v-if="comments.length"
               class="flex flex-col gap-2 md:w-full w-screen"
