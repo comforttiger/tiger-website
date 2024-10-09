@@ -32,7 +32,7 @@
           <Ask v-if="ask" :ask="ask" class="max-w-xl ask" />
           <div
             v-if="post.body && post.body.toc!.links.length"
-            class="rounded-xl bg-base-100 p-4 flex flex-col gap-3 h-fit toc"
+            class="rounded-xl bg-base-100 p-4 flex flex-col gap-3 h-fit toc top-10 md:sticky"
           >
             <h2
               class="text-2xl text-primary font-display border-b-2 border-primary"
