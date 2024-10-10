@@ -1,5 +1,5 @@
 <template>
-    <p>{{ convertDate(new Date(timestamp)) }}</p>
+    <time>{{ convertDate(new Date(timestamp)) }}</time>
 </template>
 
 <script setup lang="ts">
