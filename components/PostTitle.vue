@@ -20,7 +20,7 @@
       >
     </div>
     <h1
-      class="text-primary font-display text-5xl underline decoration-accent decoration-4 bg-base-100 rounded-xl p-5 w-fit"
+      class="text-primary font-display text-5xl underline decoration-accent decoration-4 bg-base-100 rounded-xl p-5 w-fit p-name"
     >
       <slot />
     </h1>
@@ -51,7 +51,7 @@
           </svg>
           {{ tag }}
         </div>
-        <OutlineButton :to="{ path: '/', query: { tag: tag } }" v-else
+        <OutlineButton :to="{ path: '/', query: { tag: tag } }" class="p-category" v-else
           >#{{ tag }}</OutlineButton
         >
       </div>

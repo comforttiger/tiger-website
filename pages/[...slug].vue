@@ -1,8 +1,13 @@
 <template>
   <div class="w-full flex items-center justify-center">
     <div class="min-h-screen flex flex-col gap-16">
-      <article class="w-full flex items-center justify-center flex-col gap-2">
+      <article class="w-full flex items-center justify-center flex-col gap-2 h-entry">
         <div :class="gridClass" class="grid-layout w-screen">
+          <data class="p-author h-card">
+            <data class="p-name" value="tiger"></data>
+            <data class="u-url" value="/"></data>
+            <data class="u-logo" value="/favicon.png"></data>
+          </data>
           <PostTitle
             class="title"
             :timestamp="post.timestamp"
@@ -15,14 +20,14 @@
             class="columns-lg gap-2 rounded-xl bg-base-100 p-5 media"
           >
             <div class="flex flex-col gap-2">
-              <img v-for="photo in post.photos" :src="photo" />
+              <img v-for="photo in post.photos" :src="photo" class="u-photo" />
             </div>
           </div>
           <img
             v-if="post.image"
             :src="post.image"
             :alt="post.image_description"
-            class="w-fit p-5 bg-base-100 rounded-xl media"
+            class="w-fit p-5 bg-base-100 rounded-xl media u-photo"
           />
           <iframe
             v-if="post.video"
@@ -71,7 +76,7 @@
             v-if="post.body && post.body.children.length > 0"
             class="text-neutral p-5 bg-base-100 rounded-xl content"
           >
-            <ContentRenderer :value="post" class="space-y-3" />
+            <ContentRenderer :value="post" class="space-y-3 e-content" />
           </div>
           <div class="flex flex-col gap-4 comments mt-16" id="comments">
             <div
