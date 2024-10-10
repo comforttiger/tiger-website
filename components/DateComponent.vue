@@ -1,5 +1,5 @@
 <template>
-    <time>{{ convertDate(new Date(timestamp)) }}</time>
+    <time :datetime="new Date(timestamp).toISOString()">{{ convertDate(new Date(timestamp)) }}</time>
 </template>
 
 <script setup lang="ts">
