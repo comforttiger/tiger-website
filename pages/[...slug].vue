@@ -7,7 +7,10 @@
             <data class="p-name" value="tiger"></data>
             <data class="u-url" value="/"></data>
             <data class="u-logo" value="/favicon.png"></data>
+            <data class="u-photo" value="/favicon.png"></data>
           </data>
+          <data class="u-url" :value="useRoute().path"></data>
+          <data class="p-category" v-for="tag in post.tags" :value="tag"></data>
           <PostTitle
             class="title"
             :timestamp="post.timestamp"

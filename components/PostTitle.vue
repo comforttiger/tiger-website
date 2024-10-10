@@ -29,7 +29,7 @@
       <DateComponent
         v-if="!draft"
         :timestamp="timestamp"
-        class="border-primary border-2 px-2 py-1 text-primary bg-base-100 rounded-xl font-display h-fit"
+        class="border-primary border-2 px-2 py-1 text-primary bg-base-100 rounded-xl font-display h-fit dt-published"
       />
       <div v-for="tag in tags" class="flex">
         <div
@@ -51,7 +51,7 @@
           </svg>
           {{ tag }}
         </div>
-        <OutlineButton :to="{ path: '/', query: { tag: tag } }" class="p-category" v-else
+        <OutlineButton :to="{ path: '/', query: { tag: tag } }" v-else
           >#{{ tag }}</OutlineButton
         >
       </div>
