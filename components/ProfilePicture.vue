@@ -1,6 +1,6 @@
 <template>
   <div class="min-w-12 min-h-12" v-if="small">
-    <NuxtLink v-if="website" :to="website" class="min-w-12 min-h-12">
+    <NuxtLink v-if="website" :to="website" target="_blank" class="min-w-12 min-h-12">
       <img :src="avatar" class="rounded-xl w-12 h-fit object-scale-down" :style="fallbackStyle" />
     </NuxtLink>
     <img
@@ -11,7 +11,7 @@
     />
   </div>
   <div class="min-h-16 min-w-16" v-else>
-    <NuxtLink v-if="website" :to="website" class="min-h-16 min-w-16">
+    <NuxtLink v-if="website" :to="website" target="_blank" class="min-h-16 min-w-16">
       <img :src="avatar" class="rounded-xl w-16 h-fit object-scale-down" :style="fallbackStyle" />
     </NuxtLink>
     <img

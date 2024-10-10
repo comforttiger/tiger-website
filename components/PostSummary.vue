@@ -2,7 +2,7 @@
   <div
     class="bg-base-100 rounded-xl p-5 rounded-l-md border-l-4 border-primary flex flex-col gap-5"
   >
-    <div class="grid grid-cols-5 gap-2">
+    <div :class="grids(post.short)" class="grid gap-2">
       <div
         class="flex items-center justify-center md:col-span-1 col-span-5"
         v-if="post.image || post.photos || post.preview_image"
@@ -26,11 +26,14 @@
       <div class="flex items-center md:col-span-4 col-span-5">
         <div>
           <h3 class="text-3xl text-primary font-display pb-2">
-            <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
+            <NuxtLink :to="post._path" v-if="!post.no_title">{{ post.title }}</NuxtLink>
           </h3>
           <Ask v-if="ask" :ask="ask" class="mb-5" />
-          <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-2" v-if="!post.short">
             {{ post.description }}
+          </div>
+          <div v-else>
+            <ContentRenderer :value="post" class="space-y-2" />
           </div>
         </div>
       </div>
@@ -38,9 +41,15 @@
     <div class="flex gap-2 flex-wrap">
       <FilledButton
         class="py-1"
-        v-if="post._path && post._extension == 'md'"
+        v-if="post._path && post._extension == 'md' && !post.short"
         :url="post._path"
         >view post</FilledButton
+      >
+      <FilledButton
+        class="py-1"
+        v-else-if="post._path && post._extension == 'md' && post.short"
+        :url="post._path"
+        >view comments</FilledButton
       >
       <DateComponent
         :timestamp="post.timestamp"
@@ -74,6 +83,10 @@ defineProps({
   ask: { type: Object as PropType<ParsedContent>, required: false },
   selected: { type: Array<String>, required: false },
 });
+
+function grids(isShort: boolean) {
+  return isShort ? "grid-cols-1" : "grid-cols-5"
+}
 
 const emit = defineEmits(['tag-clicked']);
 

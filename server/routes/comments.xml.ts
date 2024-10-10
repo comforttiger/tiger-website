@@ -31,9 +31,20 @@ export default defineEventHandler(async (event) => {
         const body = await readMarkdown(join(process.cwd(), "content", comment._file ?? ""))
         content = content + body
 
+        let postTitle = ""
+
+        if (!post) {
+          postTitle = "guestbook"
+        } else if (post.no_title) {
+          const postText = await readPost(join(process.cwd(), "content", post._file ?? ""))
+          postTitle = `"${postText.length <= 100 ? postText : postText.slice(0, 100) + "..."}"`
+        } else {
+          postTitle = `"${post.title ?? ""}"`
+        }
+
       // Add each reply to the RSS feed
       feed.item({
-        title: `${comment.name} commented on "${post ? post.title : 'guestbook'}"!`,
+        title: `${comment.name} commented on ${postTitle}!`,
         url: `https://tiger.kittycat.homes${post ? post._path : '/guestbook'}#${comment.timestamp}`,
         date: comment.timestamp,
         description: comment.description,
@@ -63,4 +74,16 @@ async function readMarkdown(filename: string): Promise<string> {
       .trim();
   }
   return converter.makeHtml(contentWithoutFrontmatter)
+}
+
+async function readPost(filename: string): Promise<string> {
+  const markdownText = await readFile(filename, "utf8");
+  let contentWithoutFrontmatter = markdownText;
+  const frontmatterEndIndex = markdownText.indexOf("---", 3);
+  if (frontmatterEndIndex !== -1) {
+    contentWithoutFrontmatter = markdownText
+      .slice(frontmatterEndIndex + 3)
+      .trim();
+  }
+  return contentWithoutFrontmatter;
 }

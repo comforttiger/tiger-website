@@ -3,6 +3,7 @@ title: "i have asks now!"
 ask: ask-1727994990406
 tags: ["ask", "website stuff"]
 timestamp: 1727998454000
+short: true
 ---
 i have asks now!!  
 i realized i can use the same system that i use for comments, to also have asks! yay!!!!

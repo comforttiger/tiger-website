@@ -25,6 +25,7 @@ export default defineEventHandler(async (event) => {
 
   for (const doc of posts) {
     let content = "";
+    let placeholderTitle = "";
     if (doc.image != undefined) {
       content =
         content +
@@ -42,16 +43,22 @@ export default defineEventHandler(async (event) => {
 
     if (doc.ask) {
       const ask = await serverQueryContent(event).where({ _path: {$eq: `/asks/${doc.ask}`} }).findOne();
-      const askText = await readMarkdown(join(process.cwd(), "content/asks/", `${doc.ask}.md`))
-      content = content + `<p>${ask.name} asked:</p> ${askText}<hr>`
-      description = `${ask.name} asked: ${askText}`
+      const askText = await readPost(join(process.cwd(), "content/asks/", `${doc.ask}.md`))
+      const formattedAskText = converter.makeHtml(askText)
+      const titleText = `${ask.name} asked: ${askText}`;
+      placeholderTitle = titleText.length <= 100 ? titleText : titleText.slice(0, 100) + "...";
+      content = content + `<p>${ask.name} asked:</p> ${formattedAskText}<hr><p>answer:</p>`
+      description = `${ask.name} asked: ${formattedAskText}`
     }
 
-    const postText = await readMarkdown(join(process.cwd(), "content", doc._file ?? ""))
-    content = content + postText
+    const postText = await readPost(join(process.cwd(), "content", doc._file ?? ""))
+    const formattedPostText = converter.makeHtml(postText)
+    content = content + formattedPostText
+
+    placeholderTitle = placeholderTitle ? placeholderTitle : postText.length <= 100 ? postText : postText.slice(0, 100) + "...";
 
     feed.item({
-      title: doc.title,
+      title: doc.no_title ? placeholderTitle : doc.title,
       url: `https://tiger.kittycat.homes${doc._path}`,
       date: doc.timestamp,
       categories: doc.tags,
@@ -82,4 +89,16 @@ async function readMarkdown(filename: string): Promise<string> {
       .trim();
   }
   return converter.makeHtml(contentWithoutFrontmatter)
+}
+
+async function readPost(filename: string): Promise<string> {
+  const markdownText = await readFile(filename, "utf8");
+  let contentWithoutFrontmatter = markdownText;
+  const frontmatterEndIndex = markdownText.indexOf("---", 3);
+  if (frontmatterEndIndex !== -1) {
+    contentWithoutFrontmatter = markdownText
+      .slice(frontmatterEndIndex + 3)
+      .trim();
+  }
+  return contentWithoutFrontmatter;
 }
