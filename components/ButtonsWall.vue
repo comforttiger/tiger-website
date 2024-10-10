@@ -328,6 +328,27 @@
           link="https://ant.computer/"
         />
       </li>
+      <li>
+        <Button
+          img="/buttons/artificialangel.png"
+          alt="444631 / Artificial Angel's website"
+          link="https://444631.xyz/"
+        />
+      </li>
+      <li>
+        <Button
+          img="/buttons/lyra.png"
+          alt="lyra dot horse"
+          link="https://lyra.horse"
+        />
+      </li>
+      <li>
+        <Button
+          img="/buttons/cereza.gif"
+          alt="cereza.zone"
+          link="https://cereza.zone/"
+        />
+      </li>
     </ul>
     <div class="items-center text-center flex flex-col justify-center gap-2">
       and here's my button!

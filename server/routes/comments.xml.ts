@@ -34,7 +34,7 @@ export default defineEventHandler(async (event) => {
       // Add each reply to the RSS feed
       feed.item({
         title: `${comment.name} commented on "${post ? post.title : 'guestbook'}"!`,
-        url: `https://tiger.kittycat.homes${post ? post._path : 'guestbook'}#${comment.timestamp}`,
+        url: `https://tiger.kittycat.homes${post ? post._path : '/guestbook'}#${comment.timestamp}`,
         date: comment.timestamp,
         description: comment.description,
         custom_elements: [
