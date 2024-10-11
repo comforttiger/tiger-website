@@ -3,7 +3,7 @@
     <ul class="flex justify-center flex-wrap gap-1">
       <li>
         <Button
-          img="/buttons/zoe.png"
+          img="/buttons/zoe.gif"
           alt="zoe website"
           link="https://zoe.kittycat.homes"
         />
@@ -347,6 +347,13 @@
           img="/buttons/cereza.gif"
           alt="cereza.zone"
           link="https://cereza.zone/"
+        />
+      </li>
+      <li>
+        <Button
+          img="/buttons/elysia.png"
+          alt="elysia's website"
+          link="https://le.alphamethyl.barr0w.net/~elysia/"
         />
       </li>
     </ul>
