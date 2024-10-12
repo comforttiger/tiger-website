@@ -1,7 +1,7 @@
 ---
 timestamp: 1728480570000
 ask: ask-mc.c-1728458431354
-tags: ["ask"]
+tags: ["ask", "short"]
 no_title: true
 short: true
 ---

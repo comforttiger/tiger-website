@@ -1,7 +1,7 @@
 ---
 title: starting to learn guitar!
 timestamp: 1709161200000
-tags: ["blog", "learning", "learning guitar"]
+tags: ["blog", "learning", "guitar"]
 image: /images/blog/diary/guitar/0/guitar-selfie.webp
 image_description: "picture of me holding a black and white guitar. the background is pink and blurry."
 ---

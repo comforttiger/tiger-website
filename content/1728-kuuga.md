@@ -2,7 +2,7 @@
 no_title: true
 short: true
 timestamp: 1728586457000
-tags: ["blog", "movies"]
+tags: ["blog", "movies", "short"]
 ---
 im watching kamen rider kuuga right now and --
 
