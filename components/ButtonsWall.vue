@@ -361,10 +361,12 @@
       and here's my button!
 
       <Button
-        img="/tiger-button.gif"
+        img="/tiger.png"
         alt="tiger's website"
         link="https://tiger.kittycat.homes/"
       />
+
+      made by <NuxtLink to="https://zoe.kittycat.homes" class="underline text-secondary" target="_blank">zoe</NuxtLink> &lt;3
     </div>
   </div>
 </template>

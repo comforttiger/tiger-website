@@ -203,7 +203,7 @@ useSeoMeta({
   ogTitle: post.title,
   description: description,
   ogDescription: description,
-  ogImage: post.image,
+  ogImage: post.image ?? post.photos?.[0],
 });
 
 const gridClass = computed(() => {
