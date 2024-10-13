@@ -366,7 +366,7 @@
         link="https://tiger.kittycat.homes/"
       />
 
-      made by <NuxtLink to="https://zoe.kittycat.homes" class="underline text-secondary inline" target="_blank">zoe</NuxtLink> &lt;3
+      <span>made by <NuxtLink to="https://zoe.kittycat.homes" class="underline text-secondary inline" target="_blank">zoe</NuxtLink> &lt;3</span>
     </div>
   </div>
 </template>
