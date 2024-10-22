@@ -356,6 +356,13 @@
           link="https://le.alphamethyl.barr0w.net/~elysia/"
         />
       </li>
+      <li>
+        <Button
+          img="/buttons/ghoulnoise.gif"
+          alt="ghoulnoise's website"
+          link="https://ghoulnoise.com/"
+        />
+      </li>
     </ul>
     <div class="items-center text-center flex flex-col justify-center gap-2">
       and here's my button!
