@@ -363,17 +363,30 @@
           link="https://ghoulnoise.com/"
         />
       </li>
+      <li>
+        <Button
+          img="/buttons/alloyed.gif"
+          alt="kit!"
+          link="https://alloyed.me/"
+        />
+      </li>
     </ul>
     <div class="items-center text-center flex flex-col justify-center gap-2">
-      and here's my button!
-
+      and here are my buttons!
+      <div class="flex">
+      <Button 
+        img="/tiger-button.gif"
+        alt="tiger's website"
+        link="https://tiger.kittycat.homes/"
+        />
       <Button
         img="/tiger.png"
         alt="tiger's website"
         link="https://tiger.kittycat.homes/"
       />
+      </div>
 
-      <span>made by <NuxtLink to="https://zoe.kittycat.homes" class="underline text-secondary inline" target="_blank">zoe</NuxtLink> &lt;3</span>
+      <span>second one made by <NuxtLink to="https://zoe.kittycat.homes" class="underline text-secondary inline" target="_blank">zoe</NuxtLink> &lt;3</span>
     </div>
   </div>
 </template>
