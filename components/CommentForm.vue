@@ -8,7 +8,7 @@
       <!-- <div class="text-center w-full">
         comments are manually reviewed, so it may take a bit to show up!
       </div> -->
-      <div class="text-center w-full" v-if="pastEmail">
+      <div class="w-full" v-if="pastEmail">
         subscribe to your
         <NuxtLink
           class="text-secondary inline items-center"
