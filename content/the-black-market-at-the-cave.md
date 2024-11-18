@@ -1,9 +1,8 @@
 ---
 title: i went to the black market at the cave
 description: it was so cool
-tags: ["blog", "personal", "selfie"]
+tags: ["blog", "personal"]
 timestamp: 1730039964000
-image: /images/me-w-awesome-makeup.webp
 ---
 as i mentioned in my post yesterday, i went to a black market at a cave today!! it was a market for ppl who wear goth/dark clothing, not a market where they sell illegal goods... the best part honestly was just that going to a goth event made me feel more confident to experiment with my makeup, so i did a look thats a little bolder than what i usually dare to do, and now i'll probably be going with this look more often. i finally got to try out my black lipstick i bought recently, and i love how my eyemakeup looks.. i think it looks cool!!!! i look cool!!
 

@@ -1,7 +1,7 @@
 ---
 title: halloween
 description: i was at a halloween event today!!!
-tags: ["blog", "personal"]
+tags: ["blog", "personal", "short"]
 timestamp: 1730511874000
 short: true
 ---

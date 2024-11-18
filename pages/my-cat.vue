@@ -1,8 +1,12 @@
 <template>
-  <div class="md:p-20">
-    <PageTitle class="w-fit"> tiara </PageTitle>
+  <div class="md:p-20 flex flex-col gap-2">
+    <h1
+      class="text-primary font-display text-5xl underline decoration-accent decoration-4 bg-base-100 rounded-xl p-5 w-fit p-name"
+    >
+      tiara
+    </h1>
 
-    <div class="w-1/2">
+    <div class="w-full md:w-1/2">
       <ContentList :query="query" v-slot="{ list }">
         <div v-for="picture in list" :key="picture._path" class="pb-8">
           <PetsCard :picture="picture" />
