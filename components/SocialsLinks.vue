@@ -36,7 +36,7 @@
       <li>
         <OutlineButton
           class="flex gap-2 w-fit"
-          url="mailto:tiger@kittycat.homes"
+          url="mailto:tiger@comforttiger.space"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

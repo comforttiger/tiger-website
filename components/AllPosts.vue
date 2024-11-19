@@ -55,10 +55,7 @@
           some things i like are
           <NuxtLink to="/my-cat" class="underline text-secondary"
             >my cat</NuxtLink
-          >,
-          <NuxtLink to="/girlfriend" class="underline text-secondary"
-            >my girlfriend</NuxtLink
-          >, and
+          > and
           <button
             @click="
               resetTagSelection();
