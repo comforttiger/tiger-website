@@ -38,7 +38,7 @@ const props = defineProps({
 const isExternal = computed(() => {
   return (
     /^(http|https):\/\//.test(props.href) ||
-    props.href.includes("tiger.kittycat.homes")
+    props.href.includes("comforttiger.space")
   );
 });
 </script>

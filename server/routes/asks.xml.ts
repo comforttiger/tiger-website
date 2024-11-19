@@ -9,8 +9,8 @@ export default defineEventHandler(async (event) => {
   const feed = new RSS({
     title: `tiger's website :3 - asks`,
     description: "rss feed for asks, so i can get notified about new unanswered asks! this one's really just for me, i dunno why you'd want it!",
-    site_url: "https://tiger.kittycat.homes",
-    feed_url: `https://tiger.kittycat.homes/asks.xml`,
+    site_url: "https://comforttiger.space",
+    feed_url: `https://comforttiger.space/asks.xml`,
   });
 
   // Query all comments made with this hashed email
@@ -32,11 +32,11 @@ export default defineEventHandler(async (event) => {
 
         if (post) {
           title = `ask from ${ask.name} (ANSWERED)`
-          url = `https://tiger.kittycat.homes${post._path}`
+          url = `https://comforttiger.space${post._path}`
           timestamp = post.timestamp
         } else {
           title = `ask from ${ask.name}`
-          url = `https://tiger.kittycat.homes${ask._path}`
+          url = `https://comforttiger.space${ask._path}`
           timestamp = ask.timestamp
         }
 

@@ -5,4 +5,4 @@ image_description: a drawing of a long cat stretching out its paw
 timestamp: 1603490400000
 tags: ["made", "art", "doodle"]
 ---
-this is a drawing of my cat, [tiara](https://tiger.kittycat.homes/likes/pets/tiara). she likes to become reallly long
+this is a drawing of my cat, [tiara](https://comforttiger.space/likes/pets/tiara). she likes to become reallly long

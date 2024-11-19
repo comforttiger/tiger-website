@@ -6,4 +6,4 @@ timestamp: 1653343200000
 tags: ["made", "art", "pixel art"]
 ---
 
-i drew this one for [untitled plant game](https://tiger.kittycat.homes/untitled-plant-game)
+i drew this one for [untitled plant game](https://comforttiger.space/untitled-plant-game)

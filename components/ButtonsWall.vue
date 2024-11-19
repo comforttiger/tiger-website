@@ -377,16 +377,16 @@
       <Button 
         img="/tiger-button.gif"
         alt="tiger's website"
-        link="https://tiger.kittycat.homes/"
+        link="https://comforttiger.space/"
         />
       <Button
         img="/tiger.png"
         alt="tiger's website"
-        link="https://tiger.kittycat.homes/"
+        link="https://comforttiger.space/"
       />
       </div>
 
-      <span>second one made by <NuxtLink to="https://zoe.kittycat.homes" class="underline text-secondary inline" target="_blank">zoe</NuxtLink> &lt;3</span>
+      <span>second one made by <NuxtLink to="https://zoe.kittycat.homes" class="underline text-secondary inline" target="_blank">zoe</NuxtLink>!</span>
     </div>
   </div>
 </template>

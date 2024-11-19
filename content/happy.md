@@ -23,9 +23,9 @@ on it)
 
 so u get flip phone pics of the pretty mountain lol
 
-![picture of the mountain](https://tiger.kittycat.homes/images/made/photography/25022023/IMG_0033.webp)
+![picture of the mountain](https://comforttiger.space/images/made/photography/25022023/IMG_0033.webp)
 
-![another picture of the mountain from further away](https://tiger.kittycat.homes/images/made/photography/25022023/IMG_0036.webp)
+![another picture of the mountain from further away](https://comforttiger.space/images/made/photography/25022023/IMG_0036.webp)
 
 i am just so overall happy today :))
 

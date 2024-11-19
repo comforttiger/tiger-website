@@ -25,8 +25,8 @@ export default defineEventHandler(async (event) => {
   const feed = new RSS({
     title: `tiger's website :3 - replies`,
     description: `rss feed for replies to comments made by the user with the email hash ${hashedEmail}`,
-    site_url: "https://tiger.kittycat.homes",
-    feed_url: `https://tiger.kittycat.homes/replies/${hashedEmail}.xml`,
+    site_url: "https://comforttiger.space",
+    feed_url: `https://comforttiger.space/replies/${hashedEmail}.xml`,
   });
 
   // Query all comments made with this hashed email
@@ -74,7 +74,7 @@ export default defineEventHandler(async (event) => {
       // Add each reply to the RSS feed
       feed.item({
         title: `${reply.name} replied to your comment on ${postTitle}!`,
-        url: `https://tiger.kittycat.homes${post ? post._path : '/guestbook'}#${reply.timestamp}`,
+        url: `comforttiger.space${post ? post._path : '/guestbook'}#${reply.timestamp}`,
         date: reply.timestamp,
         description: reply.description,
         custom_elements: [

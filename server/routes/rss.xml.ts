@@ -9,8 +9,8 @@ export default defineEventHandler(async (event) => {
   const feed = new RSS({
     title: "tiger's website :3",
     description: "a feed for everything i'm up to",
-    site_url: "https://tiger.kittycat.homes",
-    feed_url: `https://tiger.kittycat.homes/rss.xml`,
+    site_url: "https://comforttiger.space",
+    feed_url: `https://comforttiger.space/rss.xml`,
     custom_namespaces: {
       media: "http://search.yahoo.com/mrss/",
     },
@@ -29,13 +29,13 @@ export default defineEventHandler(async (event) => {
     if (doc.image != undefined) {
       content =
         content +
-        `<img src='https://tiger.kittycat.homes${doc.image}' alt='${doc.image_description}' />`;
+        `<img src='https://comforttiger.space${doc.image}' alt='${doc.image_description}' />`;
     }
 
     if (doc.photos != undefined) {
       for (const photo of doc.photos) {
         content =
-          content + `<img src='https://tiger.kittycat.homes${photo}' />`;
+          content + `<img src='https://comforttiger.space${photo}' />`;
       }
     }
 
@@ -59,7 +59,7 @@ export default defineEventHandler(async (event) => {
 
     feed.item({
       title: doc.no_title ? placeholderTitle : doc.title,
-      url: `https://tiger.kittycat.homes${doc._path}`,
+      url: `https://comforttiger.space${doc._path}`,
       date: doc.timestamp,
       categories: doc.tags,
       description: description,
