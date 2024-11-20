@@ -5,7 +5,7 @@ tags: ["made", "conlang", "toki pona"]
 image: /images/made/conlang/toki-pona/ilo-pali-pi-nimi-sin.webp
 description: this website generates a brand new word for the conlang toki pona, along with example sentences and definitions!
 ---
-[o lukin e ona](https://nimisin.kittycat.homes) (check it out)
+[o lukin e ona](https://nimisin.comforttiger.space) (check it out)
 
 this website generates a brand new word for the conlang toki pona, along with example sentences and definitions! i mostly made this to teach myself more rust, and i figured combining the programming language im learning with my special interest would make me learn much faster! here's how it works:
 

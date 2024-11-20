@@ -7,14 +7,14 @@ image_description: the front page of the english version of my toki pona course.
 description: a ramble about a toki pona course i started working on in 2022
 ---
 
-[https://lipu-sona.kittycat.homes](https://lipu-sona.kittycat.homes)
+[https://lipu-sona.comforttiger.space](https://lipu-sona.comforttiger.space)
 
 in 2022 i made a course that covers my style of toki pona. lots of people use it, and it's even been translated into three other languages! it's pretty cool
 
 ## backstory
 i made this one in 2022! toki pona is one of my special interests, and i really wanted to share it w my girlfriend. but i realized one huge problem: no good toki pona courses existed! there were several courses out at the time, but i had problems with all of them
 
-my problem with the course that i personally used (jan Misali's 12 days of toki pona) was that it sort of just skipped, like, important grammatical rules? i didn't know what a [preverb](https://lipu-sona.kittycat.homes/en/preverbs) was until several months after i had finished the course! the way the course explains preverbs like "wile" literally actively impeded my ability to understand that preverbs were a thing, because jan Misali explained it as "you don't need e after wile because it's an indirect object", which like, no? thats wrong.
+my problem with the course that i personally used (jan Misali's 12 days of toki pona) was that it sort of just skipped, like, important grammatical rules? i didn't know what a [preverb](https://lipu-sona.comforttiger.space/en/preverbs) was until several months after i had finished the course! the way the course explains preverbs like "wile" literally actively impeded my ability to understand that preverbs were a thing, because jan Misali explained it as "you don't need e after wile because it's an indirect object", which like, no? thats wrong.
 
 anyways, i don't really fault jan Misali for that. they set a goal to make an entire toki pona course in only 12 days, of course the episodes are gonna be rushed. but there was no way i could recommend it to my girlfriend.
 
