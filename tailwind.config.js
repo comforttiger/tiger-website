@@ -12,15 +12,6 @@ export default {
     fontFamily: {
       sans: ["Andika"],
       display: ["Dosis"],
-      // zoe: ["Zoe"],
-      // erysdren: ["Erysdren"],
-      // abyss: ["Abyss"],
-      // myno: ["Myno"],
-      // oatmealine: ["Oatmealine"],
-      // indietsushin: ["IndieTsushin"],
-      // summer: ["Summer"],
-      // "tulip-one": ["TulipOne"],
-      // "tulip-two": ["TulipTwo"],
     },
     extend: {
       backgroundImage: {

@@ -39,3 +39,16 @@
   filter: blur(1rem);
 }
 </style>
+
+
+<script lang="ts">
+export default {
+  mounted() {
+    const userPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const savedTheme = localStorage.getItem("theme");
+
+    const theme = savedTheme || (userPrefersDark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  },
+};
+</script>
