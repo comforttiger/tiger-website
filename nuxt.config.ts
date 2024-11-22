@@ -16,6 +16,9 @@ export default defineNuxtConfig({
           href: "/rss.xml",
         },
       ],
+      meta: [
+        { name: 'color-scheme', content: 'light dark' },
+      ],
       title: "tiger's website",
     },
   },
