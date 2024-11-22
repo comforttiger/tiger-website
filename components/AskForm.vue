@@ -2,7 +2,7 @@
   <div class="w-full flex flex-col gap-4 rounded-xl bg-base-100 p-4">
     <h2 class="text-primary text-4xl font-display text-center">send an ask!</h2>
     <div
-      class="rounded-xl w-full flex gap-2 items-center justify-center p-4 bg-accent text-base-100 font-display text-lg border-2 border-accent"
+      class="rounded-xl w-full flex gap-2 items-center justify-center p-4 bg-primary text-base-100 font-display text-lg border-2 border-primary"
       v-if="showSuccessDisclaimer"
     >
       <svg
