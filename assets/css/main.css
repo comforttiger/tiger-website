@@ -71,3 +71,11 @@
   font-family: "TulipTwo";
   src: url("/fonts/other-blogs/tulip-two.woff2")
 }
+
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
