@@ -8,6 +8,9 @@ export default {
     "./app.vue",
     "./error.vue",
   ],
+  extend: {
+    forcedColorAdjust: 'none',
+  },
   theme: {
     fontFamily: {
       sans: ["Andika"],
