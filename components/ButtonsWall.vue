@@ -397,13 +397,6 @@
           link="https://zine.milliesquilly.com/"
         />
       </li>
-      <li>
-        <Button
-          img="/buttons/zoe.gif"
-          alt="zoe website"
-          link="https://zoe.kittycat.homes"
-        />
-      </li>
     </ul>
     <div class="items-center text-center flex flex-col justify-center gap-2">
       and here's my button!

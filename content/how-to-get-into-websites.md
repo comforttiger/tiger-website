@@ -23,9 +23,9 @@ the last tool i love, is just right-clicking people's websites and clicking "ins
 speaking of static site generators, that might be better than writing the html yourself, depending on your goals!
 
 ## static site generators
-static site generators will generally let you generate a whole website using markdown files and styling! its especially useful if you'll have a lot of pages that will be structured similarly, like a blog! ive never really used a static site generator, but my girlfriend used [hugo](https://gohugo.io/) for a while, which let her make a pretty good website! the drawback of this compared to writing everything from scratch, is that you'll have less direct control over every detail.
+static site generators will generally let you generate a whole website using markdown files and styling! its especially useful if you'll have a lot of pages that will be structured similarly, like a blog! ive never really used a static site generator, but zoe used [hugo](https://gohugo.io/) for a while, which let her make a pretty good website! the drawback of this compared to writing everything from scratch, is that you'll have less direct control over every detail.
 
-ive also seen some people using [bearblog](https://bearblog.dev/), which (from what i understand) is a really lightweight thing for if all you're doing is blogging. i assume thats not the case with you, though, so i think you'd probably benefit more from writing the html and css yourself, or using hugo. personally i really loved the feeling of making a whole website from the ground up in html, so im biased towards that. but my girlfriend loved hugo.
+ive also seen some people using [bearblog](https://bearblog.dev/), which (from what i understand) is a really lightweight thing for if all you're doing is blogging. i assume thats not the case with you, though, so i think you'd probably benefit more from writing the html and css yourself, or using hugo. personally i really loved the feeling of making a whole website from the ground up in html, so im biased towards that. but zoe loved hugo.
 
 ## how i do website now
 since you asked how i make my website, i'll answer that too! but note that this is needlessly complicated, and i dont think the vast majority of people would benefit from making websites the way i do.
