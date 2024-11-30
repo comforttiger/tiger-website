@@ -259,7 +259,7 @@ function submitComment() {
 
   axios
     .post(
-      "https://comments.kittycat.homes/v2/entry/comforttiger/tiger-website/main/comments",
+      "https://comments.comforttiger.space/v2/entry/comforttiger/tiger-website/main/comments",
       formData
     )
     .then((response) => {
