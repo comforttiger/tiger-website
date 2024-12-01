@@ -1,6 +1,6 @@
 ---
 title: akudama drive
-tags: ["blog", "likes", "movies"]
+tags: ["blog", "likes", "movies", "anime"]
 timestamp: 1732141897000
 ---
 
