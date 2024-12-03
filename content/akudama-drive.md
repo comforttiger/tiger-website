@@ -1,7 +1,9 @@
 ---
 title: akudama drive
-tags: ["blog", "likes", "movies", "anime"]
+tags: ["blog", "likes", "watching", "anime"]
 timestamp: 1732141897000
+image: /images/akudama-drive.webp
+image_description: poster for akudama drive
 ---
 
 i wanna start writing reviews here of stuff ive seen recently, especially when its stuff i like. so heres what i thought about akudama drive!

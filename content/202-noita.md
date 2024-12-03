@@ -1,7 +1,7 @@
 ---
 no_title: true
 short: true
-tags: ["blog", "games", "short"]
+tags: ["blog", "playing", "short"]
 timestamp: 1732218202000
 ---
 ive been getting into noita again lately and just had the best run yet!!

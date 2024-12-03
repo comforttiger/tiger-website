@@ -1,7 +1,7 @@
 ---
 title: "atypical"
 description: "it's not a good show! but it does have some really specific personal significance to me"
-tags: ["draft", "movies"]
+tags: ["draft", "hates", "watching"]
 timestamp: 1
 ---
 *(im gonna use "movies" as a catch-all tag for stuff im watching)*

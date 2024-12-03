@@ -1,7 +1,7 @@
 ---
 description: i love lying and deceiving
 timestamp: 1729093100000
-tags: ["blog", "games", "short"]
+tags: ["blog", "playing", "short"]
 short: true
 no_title: true
 ---

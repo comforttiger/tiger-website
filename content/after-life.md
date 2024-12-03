@@ -1,12 +1,12 @@
 ---
 title: after life (1998)
 description: a charming little movie about choosing a single memory to bring into the afterlife
-tags: ["blog", "likes", "movies", "actual movies", "draft"]
-timestamp: 0
+tags: ["blog", "likes", "watching", "movies"]
+image: /images/after-life.webp
+image_description: poster for after life (1998)
+timestamp: 1733231845000
 ---
-ok this is where i realize my tag for shows and movies being "movies" is kind of confusing. you'll just have to deal with the tag for actual movies being "actual movies"
-
-a short explanation of what its about: *after life (1998)* is set in an old-fashioned social services-like place, where the dead go and get three days to pick a single memory out of their entire life that they will take with them into the afterlife. the premise itself made me really wanna watch the movie when i read about it, because like. thats an interesting thing to think about! what would i do if i had to pick a single memory from my life, to spend the rest of eternity in? it feels like theres simultaneously too many memories and also no memories at all that are so important that i could definitely pick it as my one, single, most important, memory. 
+*after life (1998)* is set in an old-fashioned social services-like place, where the dead go and get three days to pick a single memory out of their entire life that they will take with them into the afterlife. the premise itself made me really wanna watch the movie when i read about it, because like. thats an interesting thing to think about! what would i do if i had to pick a single memory from my life, to spend the rest of eternity in? it feels like theres simultaneously too many memories and also no memories at all that are so important that i could definitely pick it as my one, single, most important, memory. 
 
 and the movie treats all of this in a really ordinary way. everyone acts like normal people making a difficult decision. different kinds of people are represented, different reactions to having to make a decision like this are represented. but throughout the entire movie, it never feels supernatural or extraordinary, and i think that made it really cozy to watch. it made all of it feel much easier to relate to as well. the movie is filmed sort of like a documentary at times, with lots of segments where its just a typical interview shot while someone talks about their completely normal life, and tries to think about which memories from that life are most important to them.
 

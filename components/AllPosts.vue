@@ -10,35 +10,34 @@
           <button
             @click="
               resetTagSelection();
-              toggleTagSelection('art');
+              toggleTagSelection('playing');
               scrollToTarget();
             "
             class="underline text-secondary"
           >
-            making art</button
+            playing games</button
+          >,
+          <button
+            @click="
+              resetTagSelection();
+              toggleTagSelection('watching');
+              scrollToTarget();
+            "
+            class="underline text-secondary"
+          >
+            watching movies and stuff</button
           >,
           <button
             @click="
               resetTagSelection();
               toggleTagSelection('games');
-              toggleTagSelection('made');
               scrollToTarget();
             "
             class="underline text-secondary"
           >
             developing games</button
           >,
-          <button
-            @click="
-              resetTagSelection();
-              toggleTagSelection('games');
-              toggleTagSelection('likes');
-              scrollToTarget();
-            "
-            class="underline text-secondary"
-          >
-            playing games</button
-          >, and
+          and
           <button
             @click="
               resetTagSelection();
