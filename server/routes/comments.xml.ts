@@ -7,7 +7,7 @@ import { readFile } from "fs/promises";
 export default defineEventHandler(async (event) => {
   // Create a new RSS feed for replies to comments made by this hashed email
   const feed = new RSS({
-    title: `tiger's website :3 - all comments`,
+    title: `lotte's space :3 - all comments`,
     description: "rss feed for all comments to my blog.",
     site_url: "https://comforttiger.space",
     feed_url: `https://comforttiger.space/comments.xml`,

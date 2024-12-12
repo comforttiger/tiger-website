@@ -6,7 +6,7 @@
       >
         <div :class="gridClass" class="grid-layout w-screen">
           <data class="p-author h-card">
-            <data class="p-name" value="tiger"></data>
+            <data class="p-name" value="lotte"></data>
             <data class="u-url" value="/"></data>
             <data class="u-logo" value="/favicon.png"></data>
             <data class="u-photo" value="/favicon.png"></data>
@@ -199,7 +199,7 @@ let description = "";
 description = ask ? `${ask.name} asked: ${ask.description}` : post.description;
 
 useSeoMeta({
-  title: post.no_title ? `tiger's website :3 - ${description.slice(0, 30)}...` : post.title,
+  title: post.no_title ? `lotte's space :3 - ${description.slice(0, 30)}...` : post.title,
   ogTitle: post.title,
   description: description,
   ogDescription: description,
