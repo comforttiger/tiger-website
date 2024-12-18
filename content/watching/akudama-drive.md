@@ -1,6 +1,6 @@
 ---
 title: akudama drive
-tags: ["blog", "likes", "watching", "anime"]
+watch_tags: ["likes", "anime"]
 timestamp: 1732141897000
 image: /images/akudama-drive.webp
 image_description: poster for akudama drive

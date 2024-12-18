@@ -17,15 +17,10 @@
           >
             playing games</button
           >,
-          <button
-            @click="
-              resetTagSelection();
-              toggleTagSelection('watching');
-              scrollToTarget();
-            "
+          <NuxtLink to="/watching"
             class="underline text-secondary"
           >
-            watching movies and stuff</button
+            watching movies and stuff</NuxtLink
           >,
           <button
             @click="

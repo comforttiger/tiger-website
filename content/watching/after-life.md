@@ -1,10 +1,10 @@
 ---
 title: after life (1998)
 description: a charming little movie about choosing a single memory to bring into the afterlife
-tags: ["blog", "likes", "watching", "movies"]
+watch_tags: ["likes", "movies"]
 image: /images/after-life.webp
 image_description: poster for after life (1998)
-timestamp: 1733231845000
+timestamp: 1732991628000
 ---
 *after life (1998)* is set in an old-fashioned social services-like place, where the dead go and get three days to pick a single memory out of their entire life that they will take with them into the afterlife. the premise itself made me really wanna watch the movie when i read about it, because like. thats an interesting thing to think about! what would i do if i had to pick a single memory from my life, to spend the rest of eternity in? it feels like theres simultaneously too many memories and also no memories at all that are so important that i could definitely pick it as my one, single, most important, memory. 
 

@@ -10,6 +10,7 @@
           <NowPlayingGame />
           <NowPlaying />
           <SocialsLinks class="h-fit" />
+          <RecentMovies />
           <ButtonsWall />
           <AskForm />
         </div>

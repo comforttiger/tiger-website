@@ -1,7 +1,7 @@
 ---
 title: tengoku daimakyou
-timestamp: 0
-tags: ["blog", "hates", "watching", "anime", "draft"]
+timestamp: 1732646028000
+watch_tags: ["hates", "anime"]
 image: /images/tengoku-daimakyou.webp
 ---
 ohhhh my goddd i wanted to like this one but i hated it so much by the end.

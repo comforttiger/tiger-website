@@ -33,6 +33,9 @@
           </svg>
           {{ tag }}
         </div>
+        <OutlineButton :to="{ path: '/watching', query: { tag: tag } }" v-else-if="watching"
+          >#{{ tag }}</OutlineButton
+        >
         <OutlineButton :to="{ path: '/', query: { tag: tag } }" v-else
           >#{{ tag }}</OutlineButton
         >
@@ -47,6 +50,7 @@ defineProps({
   timestamp: { type: Number, required: true },
   tags: { type: Array<string>, required: false },
   draft: { type: Boolean, required: false },
-  noTitle: { type: Boolean, required: false }
+  noTitle: { type: Boolean, required: false },
+  watching: { type: Boolean, required: false }
 });
 </script>
