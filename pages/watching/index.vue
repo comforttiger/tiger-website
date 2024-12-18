@@ -1,6 +1,6 @@
 <template>
 <div class="w-full flex items-center justify-center">
-<div class="min-h-screen flex flex-col gap-16 max-w-4xl items-center">
+  <div class="w-full min-h-screen flex flex-col gap-4 px-2 md:max-w-3xl max-w-full">
 <div
 class="flex h-full min-h-screen flex-col gap-4 rounded-xl"
 id="scrolltarget"
