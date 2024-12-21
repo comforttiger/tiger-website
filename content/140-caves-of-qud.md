@@ -3,7 +3,7 @@ no_title: true
 short: true
 description: this week i've been playing caves of qud!!
 timestamp: 1730000215000
-tags: ["blog", "games", "short"]
+tags: ["blog", "playing", "short"]
 ---
 ive been playing [caves of qud](https://www.cavesofqud.com/)!! non-stop!!! i bought it like a few days ago i think and now all im ever thinking about is caves of qud. ive not been able to sleep properly because either im thinking too much about caves of qud or im playing caves of qud. its 4am as i type this and i cant sleep cuz im too excited about this game!!! its such a fun game, ive not gotten that far into it yet cuz i keep dying and im enjoying the permadeath. ive started playing with fully randomized characters, which means i get to explore builds i wouldn't otherwise!
 

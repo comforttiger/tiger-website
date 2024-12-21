@@ -402,7 +402,7 @@
       and here's my button!
       <Button 
         img="/tiger-button.gif"
-        alt="tiger's website"
+        alt="lotte's space"
         link="https://comforttiger.space/"
         />
     </div>

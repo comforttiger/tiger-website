@@ -47,7 +47,7 @@
     developer: Array<string>;
     header_image: string;
     link: string;
-  }>("http://nowplaying.kittycat.homes/tiger/game");
+  }>("http://nowplaying.comforttiger.space/tiger/game");
   
   async function get_game() {
     await refresh();

@@ -23,7 +23,7 @@ export default defineEventHandler(async (event) => {
 
   // Create a new RSS feed for replies to comments made by this hashed email
   const feed = new RSS({
-    title: `tiger's website :3 - replies`,
+    title: `lotte's space :3 - replies`,
     description: `rss feed for replies to comments made by the user with the email hash ${hashedEmail}`,
     site_url: "https://comforttiger.space",
     feed_url: `https://comforttiger.space/replies/${hashedEmail}.xml`,

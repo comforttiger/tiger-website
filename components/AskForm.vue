@@ -159,7 +159,7 @@ function submitAsk() {
 
   axios
     .post(
-      "https://comments.kittycat.homes/v2/entry/comforttiger/tiger-website/main/asks",
+      "https://comments.comforttiger.space/v2/entry/comforttiger/tiger-website/main/asks",
       formData
     )
     .then((_response) => {

@@ -7,7 +7,7 @@ import { readFile } from "fs/promises";
 export default defineEventHandler(async (event) => {
   const converter = new showdown.Converter();
   const feed = new RSS({
-    title: "tiger's website :3",
+    title: "lotte's space :3",
     description: "a feed for everything i'm up to",
     site_url: "https://comforttiger.space",
     feed_url: `https://comforttiger.space/rss.xml`,

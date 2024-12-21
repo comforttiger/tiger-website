@@ -36,7 +36,7 @@ const comments = await queryContent("/comments/guestbook")
   .find();
 
 useSeoMeta({
-  title: "tiger's guestbook :3",
-  ogTitle: "tiger's guestbook :3",
+  title: "lotte's guestbook :3",
+  ogTitle: "lotte's guestbook :3",
 });
 </script>

@@ -73,7 +73,7 @@ const { data: track, refresh } = await useFetch<{
   artist: string;
   album: string;
   image: string;
-}>("https://nowplaying.kittycat.homes/tiger");
+}>("https://nowplaying.comforttiger.space/tiger");
 
 async function get_song() {
   await refresh();

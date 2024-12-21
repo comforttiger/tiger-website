@@ -4,7 +4,7 @@ description: testament from guilty gear is so cool
 timestamp: 1728153040000
 image: /images/testament.webp
 image_description: a picture of testament, from guilty gear strive
-tags: ["blog", "likes", "games", "blorbos"]
+tags: ["blog", "likes", "playing", "blorbos"]
 ---
 testament is a character from guilty gear! they're the character i main in guilty gear strive, and i just think they're really cool.
 
