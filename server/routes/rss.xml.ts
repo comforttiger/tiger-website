@@ -100,5 +100,5 @@ async function readPost(filename: string): Promise<string> {
       .slice(frontmatterEndIndex + 3)
       .trim();
   }
-  return contentWithoutFrontmatter;
+  return contentWithoutFrontmatter.replaceAll('{external}','');
 }
