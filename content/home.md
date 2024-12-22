@@ -7,4 +7,4 @@ short: true
 ---
 im homee!!! which means i get to see tiara again :)
 
-not much else happening! i did also update my [movie diary page](/watching) some more!!! now it has [an rss feed](/watching.xml)! the latest movie i watched was [the people's joker](/watching#the-peoples-joker) which i really liked. i love movies
+not much else happening! i did also update my [movie diary page](/watching) some more!!! now it has [an rss feed](/watching.xml){external}! the latest movie i watched was [the people's joker](/watching#the-peoples-joker) which i really liked. i love movies

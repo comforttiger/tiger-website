@@ -26,11 +26,11 @@ export default defineEventHandler(async (event) => {
   for (const doc of posts) {
     let content = "";
     let placeholderTitle = "";
-    if (doc.image != undefined) {
-      content =
-        content +
-        `<img src='https://comforttiger.space${doc.image}' alt='${doc.image_description}' />`;
-    }
+    // if (doc.image != undefined) {
+    //   content =
+    //     content +
+    //     `<img src='https://comforttiger.space${doc.image}' alt='${doc.image_description}' />`;
+    // }
 
     let description = doc.description
 
