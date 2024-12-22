@@ -4,7 +4,7 @@
   >
     <div :class="grids(post.short)" class="grid gap-2">
       <div
-        class="flex items-center justify-center md:col-span-1 col-span-5"
+        class="flex items-center md:col-span-1 col-span-5" :class="center(post.short)"
         v-if="post.image || post.photos || post.preview_image"
       >
         <img
@@ -86,6 +86,10 @@ defineProps({
 
 function grids(isShort: boolean) {
   return isShort ? "grid-cols-1" : "grid-cols-5"
+}
+
+function center(isShort: boolean) {
+  return isShort ? "" : "justify-center"
 }
 
 const emit = defineEmits(['tag-clicked']);

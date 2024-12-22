@@ -4,7 +4,7 @@
   >
     <div class="grid-cols-5 grid gap-2">
       <div
-        class="flex md:col-span-1 col-span-5"
+        class="flex col-span-1"
         v-if="post.image || post.photos || post.preview_image"
       >
         <img
@@ -22,7 +22,7 @@
           />
         </div>
       </div>
-      <div class="flex items-center md:col-span-4 col-span-5">
+      <div class="flex items-center col-span-4">
         <div>
           <h3 class="text-3xl text-primary font-display pb-2">
             <NuxtLink :to="post._path" v-if="!post.no_title">{{ post.title }}</NuxtLink>
