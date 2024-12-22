@@ -1,6 +1,6 @@
 ---
 title: the people's joker
-watch_tags: ["favourites", "likes", "movies"]
+watch_tags: ["loves", "likes", "movies"]
 image: /images/watching/the-peoples-joker.webp
 image_description: poster for the people's joker
 timestamp: 1734721200000

@@ -1,6 +1,6 @@
 ---
 title: the emperor's naked army marches on
-watch_tags: ["favourites", "likes", "movies"]
+watch_tags: ["loves", "likes", "movies"]
 image: "/images/watching/the-emperors-naked-army-marches-on.webp"
 timestamp: 1734287628000
 ---

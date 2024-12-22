@@ -25,7 +25,7 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      routes: ["/rss.xml", "/asks.xml", "/comments.xml", "/pending-comments.xml"],
+      routes: ["/rss.xml", "/asks.xml", "/comments.xml", "/pending-comments.xml", "/watching.xml"],
     },
   },
 

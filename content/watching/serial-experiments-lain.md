@@ -1,7 +1,7 @@
 ---
 title: serial experiments lain
 description: what if the internet is like fucked up
-watch_tags: ["favourites", "likes", "anime"]
+watch_tags: ["loves", "likes", "anime"]
 image: /images/serial-experiments-lain.webp
 image_description: poster for serial experiments lain
 timestamp: 1733066134000

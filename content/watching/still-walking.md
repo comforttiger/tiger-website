@@ -1,6 +1,6 @@
 ---
 title: still walking
-watch_tags: ["favourites", "likes", "movies"]
+watch_tags: ["loves", "likes", "movies"]
 image: "/images/watching/still-walking.webp"
 timestamp: 1734460428000
 ---

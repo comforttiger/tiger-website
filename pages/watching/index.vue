@@ -41,40 +41,8 @@ id="scrolltarget"
 </div>
 </div>
 
-<div class="flex justify-between">
-  <FilledButton
-    @click="previousPage"
-    v-if="currentPage > 1"
-    class="text-lg hover:cursor-pointer"
-  >
-    previous
-  </FilledButton>
-  <span
-    class="rounded-xl px-2 py-1 text-primary bg-base-100 border-primary border-2 font-display text-lg"
-    disabled
-    v-else
-  >
-    previous
-  </span>
-
-  <FilledButton
-    @click="nextPage"
-    v-if="hasMorePosts"
-    class="text-lg hover:cursor-pointer float-end disabled:text-4xl"
-  >
-    next
-  </FilledButton>
-  <span
-    class="rounded-xl px-2 py-1 text-primary bg-base-100 border-primary border-2 font-display text-lg"
-    disabled
-    v-else
-  >
-    next
-  </span>
-</div>
-
 <div class="flex flex-col gap-4 overflow-y-auto p-2">
-  <div v-for="result in paginatedPosts" :key="result.id">
+  <div v-for="result in postsWithMatchingTags" :key="result.id">
     <MovieCard
       :post="result"
       :id="result._path?.split('/')[2]"
@@ -84,37 +52,7 @@ id="scrolltarget"
   </div>
 </div>
 
-<div class="flex justify-between">
-  <FilledButton
-    @click="previousPage"
-    v-if="currentPage > 1"
-    class="text-lg hover:cursor-pointer"
-  >
-    previous
-  </FilledButton>
-  <span
-    class="rounded-xl px-2 py-1 text-primary bg-base-100 border-primary border-2 font-display text-lg"
-    disabled
-    v-else
-  >
-    previous
-  </span>
 
-  <FilledButton
-    @click="nextPage"
-    v-if="hasMorePosts"
-    class="text-lg hover:cursor-pointer float-end disabled:text-4xl"
-  >
-    next
-  </FilledButton>
-  <span
-    class="rounded-xl px-2 py-1 text-primary bg-base-100 border-primary border-2 font-display text-lg"
-    disabled
-    v-else
-  >
-    next
-  </span>
-</div>
 </div>
 </div>
 </div>
@@ -122,8 +60,6 @@ id="scrolltarget"
 
 <script setup lang="ts">
 const selectedTags: Ref<Array<string>> = ref([]);
-const postCount = ref(10);
-const currentPage = ref(1);
 
 const queryResults = await queryContent("/watching")
 .where({ watch_tags: { $exists: true } })
@@ -146,35 +82,10 @@ return true;
 });
 });
 
-const paginatedPosts = computed(() => {
-const start = (currentPage.value - 1) * postCount.value;
-return postsWithMatchingTags.value.slice(start, start + postCount.value);
-});
-
-const hasMorePosts = computed(() => {
-return (
-postsWithMatchingTags.value.length > currentPage.value * postCount.value
-);
-});
-
 function scrollToTarget() {
 const targetElement = document.getElementById("scrolltarget");
 if (targetElement) {
 targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-}
-
-function nextPage() {
-if (hasMorePosts.value) {
-currentPage.value += 1;
-scrollToTarget();
-}
-}
-
-function previousPage() {
-if (currentPage.value > 1) {
-currentPage.value -= 1;
-scrollToTarget();
 }
 }
 
@@ -228,13 +139,11 @@ query: { ...route.query, tag: updatedTags }, // Update the `tag` query as a sing
 async function toggleTagSelection(tag: string) {
 if (selectedTags.value.includes(tag)) {
 selectedTags.value = selectedTags.value.filter((item) => item !== tag);
-currentPage.value = 1;
 removeTag(tag);
 return;
 }
 selectedTags.value.push(tag);
 addTag(tag);
-currentPage.value = 1;
 }
 
 function handleTagClick(tag: string) {
@@ -287,6 +196,18 @@ useSeoMeta({
   ogTitle: "lotte's movie diary",
   description: "stuff im watching lately!!",
   ogDescription: "stuff im watching lately!!",
+});
+
+useHead({
+  title: "lotte's movie diary",
+  meta: [
+    { name: 'description', content: 'stuff im watching lately!!' },
+    { property: 'og:title', content: "lotte's movie diary" },
+    { property: 'og:description', content: 'stuff im watching lately!!' },
+  ],
+  link: [
+    { rel: 'alternate', type: 'application/rss+xml', href: '/watching.xml' },
+  ],
 });
 </script>
 

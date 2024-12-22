@@ -1,6 +1,6 @@
 ---
 title: noriko's dinner table
-watch_tags: ["favourites", "likes", "movies"]
+watch_tags: ["loves", "likes", "movies"]
 image: "/images/watching/norikos-dinner-table.webp"
 timestamp: 1734374028000
 ---
