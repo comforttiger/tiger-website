@@ -42,7 +42,7 @@ export default defineEventHandler(async (event) => {
 
     feed.item({
       title: doc.no_title ? placeholderTitle : doc.title,
-      url: `https://comforttiger.space/watching#${doc._path?.split('/')[2]}`,
+      url: `https://comforttiger.space${doc._path}`,
       date: doc.timestamp,
       categories: doc.watch_tags,
       description: description,
