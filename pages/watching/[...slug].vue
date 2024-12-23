@@ -22,26 +22,12 @@
               watching
               >{{ post.title }}</PostTitle
             >
-            <div
-              v-if="post.photos"
-              class="columns-lg gap-2 rounded-xl bg-base-100 p-5 media"
-            >
-              <div class="flex flex-col gap-2">
-                <img v-for="photo in post.photos" :src="photo" class="u-photo" />
-              </div>
-            </div>
             <img
               v-if="post.image"
               :src="post.image"
               :alt="post.image_description"
-              class="w-fit p-5 bg-base-100 rounded-xl media u-photo"
+              class="w-fit p-5 bg-base-100 rounded-xl toc u-photo"
             />
-            <iframe
-              v-if="post.video"
-              :src="post.video"
-              class="w-fit aspect-video p-5 bg-base-100 rounded-xl media"
-            ></iframe>
-            <Ask v-if="ask" :ask="ask" class="max-w-xl ask" />
             <div
               v-if="post.body && post.body.toc!.links.length"
               class="rounded-xl bg-base-100 p-4 flex flex-col gap-3 h-fit toc top-10 md:sticky"
@@ -230,8 +216,6 @@
       grid-template-columns: 1fr 4fr;
       grid-template-areas:
         ". title"
-        ". media"
-        ". ask"
         "toc content"
         ". tags"
         ". comments";
@@ -245,29 +229,46 @@
       grid-template-columns: 1fr;
       grid-template-areas:
         "title"
-        "media"
-        "ask"
-        "toc"
         "content"
         "tags"
         "comments";
       max-width: 48rem /* 768px */;
     }
+
+    .toc {
+      display: none;
+    }
   }
   
   /* One-column layout for when the Table of Contents is absent */
+  @media only screen and (min-width: 768px) {
   .grid-1-col {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 4fr;
     grid-template-areas:
-      "title"
-      "media"
-      "ask"
-      "toc"
-      "content"
-      "tags"
-      "comments";
+      ". title"
+      ". ask"
+      "toc content"
+      ". tags"
+      ". comments";
     max-width: 48rem /* 768px */;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+    .grid-1-col {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "title"
+        "content"
+        "tags"
+        "comments";
+      max-width: 48rem /* 768px */;
+    }
+    .toc {
+      display: none;
+    }
   }
   
   .title {
