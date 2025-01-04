@@ -12,7 +12,7 @@ description: a ramble about a toki pona course i started working on in 2022
 in 2022 i made a course that covers my style of toki pona. lots of people use it, and it's even been translated into three other languages! it's pretty cool
 
 ## backstory
-i made this one in 2022! toki pona is one of my special interests, and i really wanted to share it w my girlfriend. but i realized one huge problem: no good toki pona courses existed! there were several courses out at the time, but i had problems with all of them
+i made this one in 2022! toki pona is one of my special interests, and i really wanted to share it w my girlfriend at the time. but i realized one huge problem: no good toki pona courses existed! there were several courses out at the time, but i had problems with all of them
 
 my problem with the course that i personally used (jan Misali's 12 days of toki pona) was that it sort of just skipped, like, important grammatical rules? i didn't know what a [preverb](https://lipu-sona.comforttiger.space/en/preverbs) was until several months after i had finished the course! the way the course explains preverbs like "wile" literally actively impeded my ability to understand that preverbs were a thing, because jan Misali explained it as "you don't need e after wile because it's an indirect object", which like, no? thats wrong.
 

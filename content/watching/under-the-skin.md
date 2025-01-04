@@ -1,6 +1,6 @@
 ---
 title: under the skin
-watch_tags: ["loves?", "likes", "movies"]
+watch_tags: ["likes", "movies"]
 image: /images/watching/under-the-skin.webp
 image_description: poster for under the skin
 timestamp: 1734896295000
