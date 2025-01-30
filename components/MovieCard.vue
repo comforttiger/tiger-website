@@ -40,9 +40,13 @@
         >view comments</FilledButton
       >
       <DateComponent
+        v-if="post.timestamp"
         :timestamp="post.timestamp"
         class="border-primary border-2 px-2 py-1 text-primary bg-base-100 rounded-xl font-display w-fit"
       />
+      <div v-else class="border-primary border-2 px-2 py-1 text-primary bg-base-100 rounded-xl font-display w-fit">
+        <DateComponent :timestamp="post.start_timestamp" /> — <DateComponent :timestamp="post.end_timestamp" v-if="post.end_timestamp" />
+      </div>
       <ul v-for="tag in post.watch_tags" class="h-fit">
         <li
           v-if="selected ? selected.includes(tag) : false"
