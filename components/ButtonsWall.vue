@@ -1,5 +1,6 @@
 <template>
   <div class="bg-base-100 p-4 rounded-xl flex flex-col gap-4">
+    <h2 class="text-primary text-4xl font-display text-center">buttons!!</h2>
     <ul class="flex justify-center flex-wrap gap-1">
       <li>
         <Button
