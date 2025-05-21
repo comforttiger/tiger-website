@@ -3,7 +3,7 @@ title: 17th of may
 description: it was constitution day! i had a great time with friends :)
 image: /images/17-may.webp
 tags: ["blog", "personal", "selfie"]
-timestamp: 1747757780000
+timestamp: 1747757780001
 ---
 
 three days ago was the 17th of may! we celebrate that in norway because thats when a bunch of guys wrote a thing
