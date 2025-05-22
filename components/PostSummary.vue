@@ -1,55 +1,50 @@
 <template>
   <div
-    class="bg-base-100 rounded-xl p-5 rounded-l-md border-l-4 border-primary flex flex-col gap-5"
+    class="bg-base-100 rounded-xl p-5 rounded-l-md border-l-4 border-primary flex flex-col gap-2"
   >
-    <div :class="grids(post.short)" class="grid gap-2">
-      <div
-        class="flex items-center md:col-span-1 col-span-5" :class="center(post.short)"
-        v-if="post.image || post.photos || post.preview_image"
-      >
+  <div class="flex w-full">
         <img
-          v-if="post.preview_image"
           loading="lazy"
-          :src="post.preview_image"
+          v-if="post.image"
+          :src="post.image"
           :alt="post.image_description"
         />
-        <div v-else>
-          <img
-            loading="lazy"
-            v-if="post.image"
-            :src="post.image"
-            :alt="post.image_description"
-          />
-          <img loading="lazy" v-if="post.photos" :src="post.photos[0]" />
-        </div>
       </div>
-      <div class="flex items-center md:col-span-4 col-span-5">
-        <div>
-          <h3 class="text-3xl text-primary font-display pb-2">
-            <NuxtLink :to="post._path" v-if="!post.no_title">{{ post.title }}</NuxtLink>
-          </h3>
-          <Ask v-if="ask" :ask="ask" class="mb-5" />
-          <div class="flex flex-col gap-2" v-if="!post.short">
-            {{ post.description }}
-          </div>
-          <div v-else>
-            <ContentRenderer :value="post" class="space-y-2" />
-          </div>
-        </div>
+      <div
+        v-if="post.photos"
+        class="relative 2xl:columns-sm columns-2xs gap-2 overflow-hidden max-h-64"
+      >
+        <img
+          loading="lazy"
+          v-for="photo in post.photos"
+          :src="photo"
+          class="pb-2"
+        />
+        <div
+          class="absolute top-0 left-0 bg-gradient-to-b h-full w-full from-transparent from-85% to-base-100 pointer-events-none"
+        ></div>
       </div>
-    </div>
+
+      <h3 class="text-3xl text-accent font-display pb-2">
+        <NuxtLink :to="post._path" v-if="!post.no_title">{{
+          post.title
+        }}</NuxtLink>
+      </h3>
+
+      <Ask v-if="ask" :ask="ask" class="max-w-xl ask" />
+
+      <div class="relative" v-if="post.body && post.body.children.length > 0">
+        <ContentRenderer :value="post" class="space-y-2 overflow-hidden max-h-32" />
+        <div
+          class="absolute top-0 left-0 bg-gradient-to-b h-full w-full from-transparent from-85% to-base-100 pointer-events-none"
+        ></div>
+      </div>
     <div class="flex gap-2 flex-wrap">
       <FilledButton
         class="py-1"
-        v-if="post._path && post._extension == 'md' && !post.short"
+        v-if="post._path && post._extension == 'md'"
         :url="post._path"
         >view post</FilledButton
-      >
-      <FilledButton
-        class="py-1"
-        v-else-if="post._path && post._extension == 'md' && post.short"
-        :url="post._path"
-        >view comments</FilledButton
       >
       <DateComponent
         :timestamp="post.timestamp"
@@ -78,23 +73,23 @@
 <script setup lang="ts">
 import { type ParsedContent } from "@nuxt/content/dist/runtime/types";
 
-defineProps({
+const props = defineProps({
   post: { type: Object as PropType<ParsedContent>, required: true },
   ask: { type: Object as PropType<ParsedContent>, required: false },
   selected: { type: Array<String>, required: false },
 });
 
 function grids(isShort: boolean) {
-  return isShort ? "grid-cols-1" : "grid-cols-5"
+  return isShort ? "grid-cols-1" : "grid-cols-5";
 }
 
 function center(isShort: boolean) {
-  return isShort ? "" : "justify-center"
+  return isShort ? "" : "justify-center";
 }
 
-const emit = defineEmits(['tag-clicked']);
+const emit = defineEmits(["tag-clicked"]);
 
 const emitTag = (tag: string) => {
-  emit('tag-clicked', tag);
+  emit("tag-clicked", tag);
 };
 </script>

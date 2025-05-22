@@ -3,8 +3,8 @@
     <div class="bg-base-100 rounded-xl p-4">
       <h2 class="text-primary text-4xl font-display">who am i???</h2>
       <div class="space-y-2">
-        <p>hi! i'm lotte, a queer autistic nerd who's inside ur puter!!!</p>
-        <p>i love to fuck around, but somehow i have yet to find out...</p>
+        <p>hi!!! i'm <span class="text-primary font-bold">lotte</span>. welcome to my little website. my own little space to do whatever i want.</p>
+        <p>my favourite colour is <span class="text-primary font-bold">#a67bff</span> (but i also have strong feelings for <span class="text-[#E63E62] font-bold">#e63e62</span>), my favourite animal is the <span class="text-accent font-bold">tiger</span> <img class="inline w-6 h-6" src="/favicon.png" />, and i love <span class="text-secondary font-bold">rain 🌧️</span> more than anything else in the world</p>
         <p>
           some of my hobbies include
           <button
@@ -30,7 +30,7 @@
             "
             class="underline text-secondary"
           >
-            developing games</button
+            making games</button
           >,
           and
           <button
@@ -61,7 +61,7 @@
             other stuff too!
           </button>
           there's lots of stuff i like that i haven't gotten around to writing
-          about yet too, so stay tuned :3c
+          about yet too, but some day i will get to it!!
         </p>
         <p>feel free to <NuxtLink to="/guestbook" class="underline text-secondary">sign my guestbook</NuxtLink> while you're here!</p>
       </div>

@@ -6,7 +6,6 @@
 5) write posts
     - vylet pony, antonymph, and the pop-up music video
     - goodbye to halos
-    - zoe bat
     - heathers: the musical
     - guilty gear strive
     - shadows of doubt ('let's play')

@@ -338,13 +338,6 @@
 
       <li>
         <Button
-          img="/buttons/summer.png"
-          alt="summer's website"
-          link="https://summergeist.art/"
-        />
-      </li>
-      <li>
-        <Button
           img="/buttons/surasshu.gif"
           alt="surasshu's website"
           link="https://surasshu.com/"
