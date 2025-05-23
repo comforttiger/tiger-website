@@ -23,7 +23,7 @@
           >
           <div
             v-if="post.photos"
-            class="rounded-xl bg-base-100 pt-5 media"
+            class="rounded-xl bg-base-100 p-5 media"
           >
             <PhotosViewer :photos="post.photos" :first="post.first" />
           </div>

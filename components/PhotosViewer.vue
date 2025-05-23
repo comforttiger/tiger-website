@@ -1,42 +1,61 @@
 <template>
-  <div class="flex items-center justify-center">
-    <div class="flex flex-col gap-4 items-center justify-center">
-      <div class="flex gap-2 items-center">
-        <button @click="selected > 0 ? selected -= 1 : selected = photos.length - 1">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="lg:size-10 size-6"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z"
-            clip-rule="evenodd"
+  <div class="flex items-center justify-center w-full">
+    <div class="flex flex-col gap-4 items-center justify-center w-full">
+      <div class="flex flex-col gap-2 items-center w-full">
+        <NuxtLink :to="photos[selected]" external target="_blank">
+          <img
+            :src="photos[selected]"
+            class="lg:h-[80vh] h-[40vh] max-h-full max-w-full object-contain"
           />
-        </svg>
-        </button>
+        </NuxtLink>
 
-        <NuxtLink :to="photos[selected]" external target="_blank"><img :src="photos[selected]" class="max-h-[80vh]" /></NuxtLink>
-        <button @click="selected < photos.length - 1 ? selected += 1 : selected = 0">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="lg:size-10 size-6"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-            clip-rule="evenodd"
-          />
-        </svg>
-        </button>
+        <div class="flex justify-evenly w-full">
+          <button
+            @click="
+              selected > 0 ? (selected -= 1) : (selected = photos.length - 1)
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="size-10"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <button
+            @click="
+              selected < photos.length - 1 ? (selected += 1) : (selected = 0)
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="size-10"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
       <div class="flex flex-wrap gap-2 justify-center">
         <div v-for="(photo, index) in photos">
-            <button @click="selected = index" v-if="selected != index"><img :src="photo" class="lg:h-20 h-12" /></button>
-            <button v-else disabled><img :src="photo" class="lg:h-20 h-12 blur-[2px]" /></button>
+          <button @click="selected = index" v-if="selected != index">
+            <img :src="photo" class="lg:h-20 h-12" />
+          </button>
+          <button v-else disabled>
+            <img :src="photo" class="lg:h-20 h-12 blur-[2px]" />
+          </button>
         </div>
       </div>
     </div>
