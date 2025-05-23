@@ -150,7 +150,7 @@
     <div class="flex flex-col gap-4 overflow-y-auto p-2">
       <div
         v-for="(result, index) in paginatedPosts"
-        :key="`${currentPage}-${result.id}-${selectedTags}`"
+        :key="result.id"
       >
         <PostSummary
           :post="result"

@@ -11,7 +11,11 @@
       />
     </div>
     <div v-if="post.photos">
-      <PhotosViewer :photos="post.photos" :captions="post.captions" :first="post.first" />
+      <PhotosViewer
+        :photos="post.photos"
+        :captions="post.captions"
+        :first="post.first"
+      />
     </div>
 
     <h3 class="text-3xl text-accent font-display pb-2">
@@ -23,7 +27,10 @@
     <Ask v-if="ask" :ask="ask" class="max-w-xl ask" />
 
     <!-- <div class="relative" v-if="post.body && post.body.children.length > 0"> -->
-    <div v-if="post.body && post.body.children.length > 0" class="flex flex-col gap-2">
+    <div
+      v-if="post.body && post.body.children.length > 0"
+      class="flex flex-col gap-2"
+    >
       <ContentRenderer
         :value="post"
         class="space-y-2"
@@ -97,4 +104,12 @@ commentsCount.value = await queryContent(
 const emitTag = (tag: string) => {
   emit("tag-clicked", tag);
 };
+
+watchEffect(async () => {
+  expand.value = props.post.short;
+
+  const result = await queryContent(`/comments${props.post._path}`).count();
+  commentsCount.value = result;
+});
+
 </script>
