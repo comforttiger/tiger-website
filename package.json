@@ -5,7 +5,8 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate:comments": "npx tsx scripts/generate-comments-json.ts",
+    "generate": "npm run generate:comments && nuxi generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },

@@ -97,19 +97,26 @@ const expand = ref<boolean>(props.post.short);
 
 const commentsCount = ref<number>(0);
 
-commentsCount.value = await queryContent(
-  `/comments${props.post._path}`
-).count();
+if (process.client) {
+  watchEffect(async () => {
+    const post = props.post
+    expand.value = post.short
+
+    const data = await fetch('/comments.json').then((r) => r.json())
+    commentsCount.value = data[post._path] || 0
+  })
+}
+
 
 const emitTag = (tag: string) => {
   emit("tag-clicked", tag);
 };
 
-watchEffect(async () => {
-  expand.value = props.post.short;
+// watchEffect(async () => {
+//   expand.value = props.post.short;
 
-  const result = await queryContent(`/comments${props.post._path}`).count();
-  commentsCount.value = result;
-});
+//   const result = await queryContent(`/comments${props.post._path}`).count();
+//   commentsCount.value = result;
+// });
 
 </script>
