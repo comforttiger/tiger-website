@@ -12,17 +12,8 @@
       </div>
       <div
         v-if="post.photos"
-        class="relative 2xl:columns-sm columns-2xs gap-2 overflow-hidden max-h-64"
       >
-        <img
-          loading="lazy"
-          v-for="photo in post.photos"
-          :src="photo"
-          class="pb-2"
-        />
-        <div
-          class="absolute top-0 left-0 bg-gradient-to-b h-full w-full from-transparent from-85% to-base-100 pointer-events-none"
-        ></div>
+        <PhotosViewer :photos="post.photos" :first="post.first" />
       </div>
 
       <h3 class="text-3xl text-accent font-display pb-2">

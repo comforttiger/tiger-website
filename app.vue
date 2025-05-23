@@ -39,7 +39,7 @@
     </div>
     <footer class="text-center text-sm pb-10">
       <span class="bg-base-100 rounded-xl p-2"
-        >kittycats rule teh world forevah © 2024</span
+        >kittycats rule teh world forevah © 2025</span
       >
     </footer>
   </div>

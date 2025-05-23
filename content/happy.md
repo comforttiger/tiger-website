@@ -1,6 +1,6 @@
 ---
 title: happy :)
-preview_image: /images/made/photography/25022023/IMG_0036.webp
+image: /images/made/photography/25022023/IMG_0036.webp
 timestamp: 1677279600000
 tags: ["blog", "personal"]
 ---

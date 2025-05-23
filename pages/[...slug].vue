@@ -23,11 +23,9 @@
           >
           <div
             v-if="post.photos"
-            class="columns-lg gap-2 rounded-xl bg-base-100 p-5 media"
+            class="rounded-xl bg-base-100 pt-5 media"
           >
-            <div class="flex flex-col gap-2">
-              <img v-for="photo in post.photos" :src="photo" class="u-photo" />
-            </div>
+            <PhotosViewer :photos="post.photos" :first="post.first" />
           </div>
           <img
             v-if="post.image"

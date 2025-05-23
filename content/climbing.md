@@ -4,7 +4,7 @@ description: i hiked up a mountain!!! i have to do this more often
 timestamp: 1746545547000
 photos: ["/images/made/photography/20250506/1.webp", "/images/made/photography/20250506/2.webp", "/images/made/photography/20250506/3.webp", "/images/made/photography/20250506/4.webp", "/images/made/photography/20250506/5.webp", "/images/made/photography/20250506/6.webp", "/images/made/photography/20250506/7.webp", "/images/made/photography/20250506/8.webp", "/images/made/photography/20250506/9.webp"]
 tags: ["made", "photography", "panasonic lumix gx8"]
-preview_image: "/images/made/photography/20250506/7.webp"
+first: 6
 ---
 i finally hiked up a mountain again! and it made me remember holy shit this is like the best thing in the world theres literally nothing better than walking upwards why have i not been doing this every week??? i am posting this like 2 weeks after this hike and ive gone on one more hike since then, but didnt really take any photos on that one. i actually almost didnt even think to bring my camera to this hike but luckily a friend was like "oh you should bring your camera!" because like ive been talking so much about how i need to take photos more often and somehow i didnt put two and two together and think of bringing the camera on my own??
 
