@@ -2,7 +2,6 @@
 description: i love lying and deceiving
 timestamp: 1729093100000
 tags: ["blog", "playing", "short"]
-short: true
 no_title: true
 ---
 ive been playing town of salem 2!! its fun, but soo scary...

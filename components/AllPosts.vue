@@ -3,8 +3,20 @@
     <div class="bg-base-100 rounded-xl p-4">
       <h2 class="text-primary text-4xl font-display">who am i???</h2>
       <div class="space-y-2">
-        <p>hi!!! i'm <span class="text-primary font-bold">lotte</span>. welcome to my little website. my own little space to do whatever i want.</p>
-        <p>my favourite colour is <span class="text-primary font-bold">#a67bff</span> (but i also have strong feelings for <span class="text-[#E63E62] font-bold">#e63e62</span>), my favourite animal is the <span class="text-accent font-bold">tiger</span> <img class="inline w-6 h-6" src="/favicon.png" />, and i love <span class="text-secondary font-bold">rain 🌧️</span> more than anything else in the world</p>
+        <p>
+          hi!!! i'm <span class="text-primary font-bold">lotte</span>. welcome
+          to my little website. my own little space to do whatever i want.
+        </p>
+        <p>
+          my favourite colour is
+          <span class="text-primary font-bold">#a67bff</span> (but i also have
+          strong feelings for
+          <span class="text-[#E63E62] font-bold">#e63e62</span>), my favourite
+          animal is the <span class="text-accent font-bold">tiger</span>
+          <img class="inline w-6 h-6" src="/favicon.png" />, and i love
+          <span class="text-secondary font-bold">rain 🌧️</span> more than
+          anything else in the world
+        </p>
         <p>
           some of my hobbies include
           <button
@@ -17,9 +29,7 @@
           >
             playing games</button
           >,
-          <NuxtLink to="/watching"
-            class="underline text-secondary"
-          >
+          <NuxtLink to="/watching" class="underline text-secondary">
             watching movies and stuff</NuxtLink
           >,
           <button
@@ -31,8 +41,7 @@
             class="underline text-secondary"
           >
             making games</button
-          >,
-          and
+          >, and
           <button
             @click="
               resetTagSelection();
@@ -49,7 +58,8 @@
           some things i like are
           <NuxtLink to="/my-cat" class="underline text-secondary"
             >my cat</NuxtLink
-          > and
+          >
+          and
           <button
             @click="
               resetTagSelection();
@@ -63,7 +73,13 @@
           there's lots of stuff i like that i haven't gotten around to writing
           about yet too, but some day i will get to it!!
         </p>
-        <p>feel free to <NuxtLink to="/guestbook" class="underline text-secondary">sign my guestbook</NuxtLink> while you're here!</p>
+        <p>
+          feel free to
+          <NuxtLink to="/guestbook" class="underline text-secondary"
+            >sign my guestbook</NuxtLink
+          >
+          while you're here!
+        </p>
       </div>
       <AboutMeButtons />
     </div>
@@ -132,7 +148,10 @@
     </div>
 
     <div class="flex flex-col gap-4 overflow-y-auto p-2">
-      <div v-for="result in paginatedPosts" :key="result.id">
+      <div
+        v-for="(result, index) in paginatedPosts"
+        :key="`${currentPage}-${result.id}-${selectedTags}`"
+      >
         <PostSummary
           :post="result"
           :ask="findAsk(result.ask)"

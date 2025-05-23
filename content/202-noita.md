@@ -1,6 +1,5 @@
 ---
 no_title: true
-short: true
 tags: ["blog", "playing", "short"]
 timestamp: 1732218202000
 ---

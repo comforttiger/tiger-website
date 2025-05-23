@@ -5,5 +5,7 @@ photos: ["/images/made/photography/072023/1.webp", "/images/made/photography/072
 first: 4
 description: "i went on a long walk this month. my feet hurt but i met birds"
 tags: ["made", "photography", "sony dsc-wx500"]
+captions: ["", "", "", "he has places to be", "bird eating leaf 🌱", ""]
+short: true
 ---
 i went on a long walk this month. my feet hurt but i met birds

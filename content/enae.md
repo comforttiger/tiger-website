@@ -5,6 +5,7 @@ image: "/images/made/art/enae.webp"
 image_description: "its Enae from the webcomic Goodbye to Halos. she has three purple eyes, with a cool purple mark under two of them. she has horns, and shes smiling. she has two visible sharp teeth."
 timestamp: 1725141600000
 tags: ["made", "art", "fanart"]
+short: true
 ---
 this is my first time drawing in. A Long Time. 
 

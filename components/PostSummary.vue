@@ -2,40 +2,54 @@
   <div
     class="bg-base-100 rounded-xl p-5 rounded-l-md border-l-4 border-primary flex flex-col gap-2"
   >
-  <div class="flex w-full">
-        <img
-          loading="lazy"
-          v-if="post.image"
-          :src="post.image"
-          :alt="post.image_description"
-        />
-      </div>
-      <div
-        v-if="post.photos"
-      >
-        <PhotosViewer :photos="post.photos" :first="post.first" />
-      </div>
+    <div class="flex w-full">
+      <img
+        loading="lazy"
+        v-if="post.image"
+        :src="post.image"
+        :alt="post.image_description"
+      />
+    </div>
+    <div v-if="post.photos">
+      <PhotosViewer :photos="post.photos" :captions="post.captions" :first="post.first" />
+    </div>
 
-      <h3 class="text-3xl text-accent font-display pb-2">
-        <NuxtLink :to="post._path" v-if="!post.no_title">{{
-          post.title
-        }}</NuxtLink>
-      </h3>
+    <h3 class="text-3xl text-accent font-display pb-2">
+      <NuxtLink :to="post._path" v-if="!post.no_title">{{
+        post.title
+      }}</NuxtLink>
+    </h3>
 
-      <Ask v-if="ask" :ask="ask" class="max-w-xl ask" />
+    <Ask v-if="ask" :ask="ask" class="max-w-xl ask" />
 
-      <div class="relative" v-if="post.body && post.body.children.length > 0">
-        <ContentRenderer :value="post" class="space-y-2 overflow-hidden max-h-32" />
-        <div
-          class="absolute top-0 left-0 bg-gradient-to-b h-full w-full from-transparent from-85% to-base-100 pointer-events-none"
-        ></div>
+    <!-- <div class="relative" v-if="post.body && post.body.children.length > 0"> -->
+    <div v-if="post.body && post.body.children.length > 0" class="flex flex-col gap-2">
+      <ContentRenderer
+        :value="post"
+        class="space-y-2"
+        :class="expand ? 'h-full' : 'overflow-hidden h-32'"
+      />
+      <!-- <div
+        class="absolute top-0 left-0 bg-gradient-to-b h-full w-full from-transparent from-85% to-base-100"
+        v-if="!expand"
+      ></div> -->
+      <!-- </div> -->
+      <div class="flex justify-center">
+        <FilledButton
+          class="py-1 w-fit hover:cursor-pointer"
+          @click="expand = !expand"
+          v-if="!post.short"
+          >{{ expand ? "show less" : "show more" }}</FilledButton
+        >
       </div>
+    </div>
     <div class="flex gap-2 flex-wrap">
       <FilledButton
         class="py-1"
         v-if="post._path && post._extension == 'md'"
         :url="post._path"
-        >view post</FilledButton
+        >{{ commentsCount }}
+        {{ commentsCount == 1 ? "comment" : "comments" }}</FilledButton
       >
       <DateComponent
         :timestamp="post.timestamp"
@@ -70,15 +84,15 @@ const props = defineProps({
   selected: { type: Array<String>, required: false },
 });
 
-function grids(isShort: boolean) {
-  return isShort ? "grid-cols-1" : "grid-cols-5";
-}
-
-function center(isShort: boolean) {
-  return isShort ? "" : "justify-center";
-}
-
 const emit = defineEmits(["tag-clicked"]);
+
+const expand = ref<boolean>(props.post.short);
+
+const commentsCount = ref<number>(0);
+
+commentsCount.value = await queryContent(
+  `/comments${props.post._path}`
+).count();
 
 const emitTag = (tag: string) => {
   emit("tag-clicked", tag);

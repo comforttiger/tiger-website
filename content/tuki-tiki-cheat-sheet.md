@@ -6,6 +6,7 @@ image: /images/made/conlang/tuki-tiki/cheat-sheet.webp
 preview_image: /images/preview/cheat-sheet.webp
 image_description: "a screenshot of a pdf file that lists all the words in tuki tiki, and explains all the grammar"
 description: a small cheat sheet for tuki tiki, with all the grammar and vocabulary on one page!
+short: true
 ---
 [check it out](https://comforttiger.space/made/conlang/tuki-tiki/cheat-sheet.pdf){external}
 

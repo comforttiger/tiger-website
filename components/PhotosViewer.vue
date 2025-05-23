@@ -3,10 +3,15 @@
     <div class="flex flex-col gap-4 items-center justify-center w-full">
       <div class="flex flex-col gap-2 items-center w-full">
         <NuxtLink :to="photos[selected]" external target="_blank">
+          <figure class="flex flex-col gap-2 lg:h-[80vh] h-[40vh]">
           <img
             :src="photos[selected]"
-            class="lg:h-[80vh] h-[40vh] max-h-full max-w-full object-contain"
+            class="max-h-full max-w-full object-contain"
           />
+          <div class="flex justify-center">
+          <figcaption v-if="captions" class="italic text-balance text-center">{{ captions[selected] }}</figcaption>
+          </div>
+          </figure>
         </NuxtLink>
 
         <div class="flex justify-evenly w-full">
@@ -48,15 +53,15 @@
           </button>
         </div>
       </div>
-      <div class="flex flex-wrap gap-2 justify-center">
-        <div v-for="(photo, index) in photos">
-          <button @click="selected = index" v-if="selected != index">
-            <img :src="photo" class="lg:h-20 h-12" />
-          </button>
-          <button v-else disabled>
-            <img :src="photo" class="lg:h-20 h-12 blur-[2px]" />
-          </button>
-        </div>
+      <div class="flex overflow-x-auto gap-2">
+          <div v-for="(photo, index) in photos" class="min-w-fit">
+            <button @click="selected = index" v-if="selected != index">
+              <img :src="photo" class="lg:h-20 h-12" />
+            </button>
+            <button v-else disabled>
+              <img :src="photo" class="lg:h-20 h-12 blur-[2px]" />
+            </button>
+          </div>
       </div>
     </div>
   </div>
@@ -65,6 +70,7 @@
 <script setup lang="ts">
 const props = defineProps({
   photos: { type: Array<string>, required: true },
+  captions: { type: Array<string>, required: false },
   first: { type: Number, required: false },
 });
 

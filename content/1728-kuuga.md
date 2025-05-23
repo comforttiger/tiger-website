@@ -1,6 +1,5 @@
 ---
 no_title: true
-short: true
 timestamp: 1728586457000
 tags: ["blog", "watching", "short"]
 ---

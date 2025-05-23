@@ -1,6 +1,5 @@
 ---
 no_title: true
-short: true
 description: this week i've been playing caves of qud!!
 timestamp: 1730000215000
 tags: ["blog", "playing", "short"]
