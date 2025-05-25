@@ -3,7 +3,7 @@
     <div class="flex flex-col gap-4 items-center justify-center w-full">
       <div class="flex flex-col gap-2 items-center w-full">
         <NuxtLink :to="photos[selected]" external target="_blank">
-          <figure class="flex flex-col gap-2 lg:h-[80vh] h-[40vh]">
+          <figure class="flex flex-col gap-2 lg:h-[80vh] h-[60vh]">
           <img
             :src="photos[selected]"
             class="max-h-full max-w-full object-contain"

@@ -25,7 +25,7 @@
             v-if="post.photos"
             class="rounded-xl bg-base-100 p-5 media"
           >
-            <PhotosViewer :photos="post.photos" :first="post.first" />
+            <PhotosViewer :photos="post.photos" :captions="post.captions" :first="post.first" />
           </div>
           <img
             v-if="post.image"

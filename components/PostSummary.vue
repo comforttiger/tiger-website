@@ -97,13 +97,13 @@ const expand = ref<boolean>(props.post.short);
 
 const commentsCount = ref<number>(0);
 
-if (process.client) {
+if (import.meta.client) {
   watchEffect(async () => {
     const post = props.post
     expand.value = post.short
 
     const data = await fetch('/comments.json').then((r) => r.json())
-    commentsCount.value = data[post._path] || 0
+    commentsCount.value = post._path ? data[post._path] || 0 : 0
   })
 }
 
