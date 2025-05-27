@@ -1,5 +1,5 @@
 ---
-no-title: true
+no_title: true
 short: true
 tags: ["blog", "personal", "short"]
 timestamp: 1748314393000
