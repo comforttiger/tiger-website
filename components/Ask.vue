@@ -26,6 +26,9 @@
           >
         </div>
         <ContentRenderer :value="ask"></ContentRenderer>
+        <div class="flex justify-end">
+        <DateComponent :timestamp="ask.timestamp" class="px-2 py-1 text-primary bg-base-100 rounded-xl font-display italic w-fit"/>
+</div>
       </div>
     </div>
   </div>
