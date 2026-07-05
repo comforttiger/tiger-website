@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
     title: `lotte's space :3 - all comments`,
     description: "rss feed for all comments to my blog.",
     site_url: "https://comforttiger.space",
-    feed_url: `https://comforttiger.space/comments.xml`,
+    feed_url: `https://comforttiger.space/all-comments.xml`,
   });
 
   // Query all comments made with this hashed email
